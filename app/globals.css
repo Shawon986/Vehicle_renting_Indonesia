@@ -3993,3 +3993,30 @@ body { overflow-x:clip; }
 @media(max-width:680px) {
   .arrow-up,.vehicle-open,.service-process-step>i,.services-hub-card-art>i,.nav-chevron {font-family:Arial,sans-serif!important;font-variant:normal!important}
 }
+
+
+/* Vector sparkle marks replace font-dependent star/ornament glyphs on every
+   breakpoint, including marks placed over editorial photography. */
+.service-direction-art>span,
+.service-detail-symbol>span,
+.principle-icon,
+.services-hub-card-art>span {
+  display:inline-block;
+  width:1.35em;
+  height:1.35em;
+  overflow:hidden;
+  font-size:0!important;
+  line-height:1;
+  vertical-align:middle;
+  background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 1.5 19.8 12.2 30.5 16l-10.7 3.8L16 30.5l-3.8-10.7L1.5 16l10.7-3.8z' fill='%23000'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 1.5 19.8 12.2 30.5 16l-10.7 3.8L16 30.5l-3.8-10.7L1.5 16l10.7-3.8z' fill='%23000'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+.service-direction-art>span {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(34px,4vw,54px);height:clamp(34px,4vw,54px)}
+.service-detail-symbol>span {position:relative;z-index:2;width:58px;height:58px}
+.principle-icon {width:25px;height:25px;margin:24px 0 17px}
+.services-hub-card-art>span {width:30px;height:30px}
+@media(max-width:680px) {
+  .service-direction-art>span {width:clamp(34px,10vw,48px);height:clamp(34px,10vw,48px)}
+  .principle-icon {width:25px;height:25px;margin:0 12px 0 20px}
+}
