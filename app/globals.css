@@ -1261,3 +1261,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .service-form-grid>fieldset.service-form-field .service-check-grid{width:100%;min-width:0}
 .service-form-grid>fieldset.service-form-field .service-check-grid label{min-width:0;overflow-wrap:anywhere}
 @media(max-width:680px){.service-form-grid>fieldset.service-form-field .service-check-grid{grid-template-columns:1fr}}
+
+.service-form-grid .service-form-check,.service-check-grid label{display:flex;flex-direction:row;align-items:flex-start;gap:9px;font-size:10px;font-weight:400;letter-spacing:0;line-height:1.6}
+.service-form-grid .service-form-check input,.service-check-grid label input{flex:0 0 15px;width:15px;height:15px;min-height:15px;margin:1px 0 0;padding:0;accent-color:#31483a}
+.service-check-grid label{overflow-wrap:anywhere}
