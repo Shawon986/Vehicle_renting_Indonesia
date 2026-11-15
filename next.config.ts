@@ -4,7 +4,7 @@ const securityPolicy=[
  "default-src 'self'",
  "script-src "+scriptSources,
  "style-src 'self' 'unsafe-inline'",
- "img-src 'self' data: blob: https:",
+ "img-src 'self' data: blob: https://images.unsplash.com",
  "font-src 'self' data:",
  "connect-src 'self' https://challenges.cloudflare.com https://www.google-analytics.com https://region1.google-analytics.com",
  "frame-src https://challenges.cloudflare.com",
