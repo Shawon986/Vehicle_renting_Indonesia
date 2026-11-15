@@ -2075,3 +2075,69 @@ body { overflow-x:clip; }
     will-change:auto;
   }
 }
+
+
+/* Homepage section 04: restrained scroll depth on the journey photograph only. */
+.journey-section .journey-image {
+  background-position:center calc(50% + var(--parallax-y,0px));
+  background-size:cover;
+  will-change:background-position;
+}
+
+/* Restore the supporting-page hero slideshow indicators to their original
+   bottom-aligned placement and clear, clickable progress marks. */
+.service-gallery-count {
+  right:5.2%;
+  bottom:31px;
+  z-index:5;
+}
+.service-gallery-controls {
+  right:10.4%;
+  bottom:36px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  z-index:5;
+}
+.service-gallery-controls button {
+  display:block;
+  width:22px;
+  height:3px;
+  min-width:22px;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:rgba(255,255,255,.48);
+  cursor:pointer;
+  transition:width .3s ease,background-color .3s ease,opacity .3s ease;
+}
+.service-gallery-controls button.is-active {
+  width:38px;
+  background:#c5d66b;
+}
+.service-gallery-controls button:focus-visible {
+  outline:2px solid #c5d66b;
+  outline-offset:5px;
+}
+@media(max-width:680px) {
+  .journey-section .journey-image {
+    background-position:center calc(55% + var(--parallax-y,0px));
+  }
+  .service-gallery-count {
+    right:7%;
+    bottom:24px;
+  }
+  .service-gallery-controls {
+    right:7%;
+    bottom:58px;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .journey-section .journey-image {
+    background-position:center 50% !important;
+    will-change:auto;
+  }
+  .service-gallery-controls button {
+    transition:none !important;
+  }
+}
