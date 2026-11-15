@@ -12,8 +12,9 @@ const vehicles:Vehicle[] = [
 const categories=["All","Car","MPV","SUV","Van","Bus","Motorbike"];
 function Arrow(){return <span aria-hidden="true" className="arrow-up">↗</span>}
 export default function HomePage(){
- const [active,setActive]=useState("All"),[menuOpen,setMenuOpen]=useState(false);
+ const [active,setActive]=useState("All"),[menuOpen,setMenuOpen]=useState(false),[loading,setLoading]=useState(true);
  const filtered=useMemo(()=>active==="All"?vehicles:vehicles.filter(v=>v.category===active),[active]);
+ useEffect(()=>{const timer=window.setTimeout(()=>setLoading(false),700);return()=>window.clearTimeout(timer)},[]);
  useEffect(()=>{
   const nodes=Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
   if(!("IntersectionObserver" in window)){nodes.forEach(n=>n.classList.add("is-visible"));return}
@@ -21,6 +22,7 @@ export default function HomePage(){
   nodes.forEach(n=>observer.observe(n));return()=>observer.disconnect();
  },[active]);
  return <main>
+  <div className={loading?"preloader":"preloader is-done"} aria-hidden={!loading}><div className="loader-mark">M<span>.</span></div><div className="loader-track"><span/></div><small>PREPARING YOUR JOURNEY</small></div>
   <div className="announcement"><span className="announcement-dot"/>A more considered way to move through Indonesia<span className="announcement-right">PERSONAL JOURNEYS · THOUGHTFULLY ARRANGED</span></div>
   <header className="site-header">
    <a className="wordmark" href="#top" aria-label="Mobility Indonesia home"><span className="wordmark-symbol">M<span>.</span></span><span className="wordmark-copy">MOBILITY<span>INDONESIA</span></span></a>
@@ -29,7 +31,7 @@ export default function HomePage(){
    <a className="header-cta" href="#contact">Make an enquiry <Arrow/></a>
   </header>
   <section className="hero" id="top"><div className="hero-image"/><div className="hero-grain"/>
-   <div className="hero-content"><p className="eyebrow hero-eyebrow"><span>01</span> PRIVATE MOBILITY · INDONESIA</p><h1>Go beyond<br/><em>the expected.</em></h1><p className="hero-description">The journey should feel as considered as the destination. Find your way with a fleet shaped around comfort, confidence and the freedom to explore.</p><div className="hero-actions"><a className="button button-light" href="#fleet">Explore the fleet <Arrow/></a><a className="text-link light-link" href="#experience">Discover our approach <span>↓</span></a></div></div>
+   <div className="hero-content"><p className="eyebrow hero-eyebrow"><span>01</span><span className="typing-copy">PRIVATE MOBILITY · INDONESIA</span></p><h1>Go beyond<br/><em>the expected.</em></h1><p className="hero-description">The journey should feel as considered as the destination. Find your way with a fleet shaped around comfort, confidence and the freedom to explore.</p><div className="hero-actions"><a className="button button-light" href="#fleet">Explore the fleet <Arrow/></a><a className="text-link light-link" href="#experience">Discover our approach <span>↓</span></a></div></div>
    <div className="hero-side-note">BUILT AROUND<br/>YOUR JOURNEY</div><div className="hero-bottom"><span>JAKARTA · BALI · BEYOND</span><span className="hero-scroll"><span className="scroll-line"/> SCROLL TO EXPLORE</span><span>EST. FOR THE WAY YOU TRAVEL</span></div><div className="hero-index">01 <span>/</span> 04</div>
   </section>
   <section className="intro-section" id="experience"><div className="section-kicker" data-reveal><span>01 / THE DIFFERENCE</span><span>MORE THAN A RIDE</span></div><div className="intro-grid"><h2 data-reveal>Travel well.<br/><em>Feel the difference.</em></h2><div className="intro-copy" data-reveal><p className="large-copy">Every journey has its own rhythm. We bring together considered vehicles and attentive service to make getting there feel effortless.</p><p>From a smooth airport arrival to a few days discovering somewhere new, choose the vehicle and travel style that feels right for you.</p><a className="text-link dark-link" href="#journeys">A better way to move <Arrow/></a></div></div>
