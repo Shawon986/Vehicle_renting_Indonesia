@@ -17,6 +17,7 @@ export async function POST(request:NextRequest){
  if(process.env.CONTENT_APPROVED!=="true")return NextResponse.json({error:"Enquiry submissions are disabled until content and legal approval is complete"},{status:503});
  const required=["RESEND_API_KEY","INQUIRY_TO_EMAIL","INQUIRY_FROM_EMAIL","TURNSTILE_SECRET_KEY","UPSTASH_REDIS_REST_URL","UPSTASH_REDIS_REST_TOKEN"];
  if(required.some(key=>!process.env[key]))return NextResponse.json({error:"Inquiry service is not configured"},{status:503});
+ if(process.env.INQUIRY_SHEETS_WEBHOOK_URL&&!process.env.INQUIRY_SHEETS_SHARED_SECRET)return NextResponse.json({error:"Inquiry spreadsheet authentication is not configured"},{status:503});
  let body:Record<string,unknown>;try{const parsed=await request.json();if(!parsed||typeof parsed!=="object"||Array.isArray(parsed))throw new Error();body=parsed as Record<string,unknown>}catch{return NextResponse.json({error:"Invalid request"},{status:400})}
  const value=(key:string,max=2000)=>typeof body[key]==="string"?(body[key] as string).trim().slice(0,max):"";
  const leadId=randomUUID();
