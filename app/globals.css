@@ -695,3 +695,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .fleet-hero .wechat-contact .contact-config-note{color:#f3f0e8}
 .fleet-hero .wechat-id-row strong{color:#f3f0e8}
 @media(max-width:680px){.fleet-hero .page-hero-copy{width:86%;padding:75px 0 58px}.fleet-hero .page-hero-copy .contact-channels{gap:9px;margin-top:16px}.fleet-hero .contact-channel-button{min-width:0;width:100%}.fleet-hero .wechat-contact{padding:15px;gap:12px}.fleet-hero .wechat-qr{align-self:flex-start}}
+
+.inquiry-form .consent-row{display:flex;align-items:flex-start;flex-wrap:wrap;gap:4px 12px;margin:22px 0}
+.inquiry-form .consent-row .consent-check{margin:0;flex:1 1 280px}
+.consent-privacy-link{font-size:10px;line-height:1.7;color:#52634a;text-decoration:underline;text-underline-offset:3px}
