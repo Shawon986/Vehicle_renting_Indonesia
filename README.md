@@ -12,7 +12,7 @@ Next.js App Router, React 19 and TypeScript. The public site is display + contac
 - Vehicle rental collection with category/capacity/transmission/driver filters, card/table views, responsive comparison table and per-vehicle detail pages.
 - Vehicle detail service-inclusion matrix, add-on options, verified-only use-case guidance, non-numeric price-on-request slots, multi-image gallery support with keyboard-operable lightbox and breadcrumbs.
 - Locale-aware WhatsApp / WeChat / phone / email / enquiry contact components and mobile sticky contact actions (only verified channels appear when configured).
-- Vehicle enquiry form with pickup/return dates and times (Asia/Jakarta), pickup point, passengers, luggage, vehicle model or category, travel style, add-ons, WeChat ID on Chinese pages and configured contact-channel preference.
+- Vehicle enquiry form with pickup/return dates and times (Asia/Jakarta), pickup point and optional destination/drop-off point, passengers, luggage, vehicle model or category, travel style, add-ons, WeChat ID on Chinese pages and configured contact-channel preference.
 - Inquiry API with strict same-origin checks, bounded fields, date/time/category/add-on validation, vehicle/driver compatibility checks, honeypot, Cloudflare Turnstile, Upstash rate limiting, localized sales email and localized acknowledgement.
 - About, Contact, FAQ, Services hub and legal placeholder routes.
 - Locale-preserving language switcher with persisted preference, per-locale metadata, WebSite / Service / FAQ / Breadcrumb structured data, robots and sitemap foundations, plus locale-aware IDR formatting (no public rates).
