@@ -73,7 +73,7 @@ export function ServiceHeroGallery({serviceLine,hub=false,cases=false,locale}:{s
    <span className="service-gallery-caption">{cases?"SELECTED PROJECT STORIES":hub?"MOBILITY INDONESIA":serviceLine?.replace("-"," ").toUpperCase()}</span>
   </div>
   <div className="service-gallery-controls" aria-label={locale==="zh"?"切换图片":locale==="id"?"Pilih gambar":"Choose image"}>
-   {images.map((src,index)=><button key={src} type="button" className={index===active?"is-active":""} onClick={()=>goTo(index) aria-label={(locale==="zh"?"图片 ":locale==="id"?"Gambar ":"Image ")+(index+1)} aria-pressed={index===active}/>)}
+   {images.map((src,index)=><button key={src} type="button" className={index===active?"is-active":""} onClick={()=>goTo(index)} aria-label={(locale==="zh"?"图片 ":locale==="id"?"Gambar ":"Image ")+(index+1)} aria-pressed={index===active}/>)}
   </div>
  </div>;
 }
