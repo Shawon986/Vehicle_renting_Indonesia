@@ -1,7 +1,7 @@
 function doPost(e) {
   const props = PropertiesService.getScriptProperties();
   const expected = props.getProperty("SHARED_SECRET");
-  const supplied = e && e.parameter ? e.parameter.token : "";
+  
   if (!expected || supplied !== expected) {
     return json({ ok: false, error: "unauthorized" });
   }
@@ -12,6 +12,10 @@ function doPost(e) {
   } catch (error) {
     return json({ ok: false, error: "invalid_json" });
   }
+
+  const supplied = record.authToken || "";
+  delete record.authToken;
+  if (!expected || supplied !== expected) return json({ ok: false, error: "unauthorized" });
 
   const required = ["leadId", "serviceLine", "locale", "name", "email", "phone", "pickupDate", "returnDate", "pickupLocation"];
   if (required.some(function (key) { return !record[key]; })) {
