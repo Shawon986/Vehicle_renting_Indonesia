@@ -1607,3 +1607,116 @@ button,a{-webkit-tap-highlight-color:transparent}
  .case-category-card:hover,.service-direction-card:hover,.services-hub-card:hover{transform:none;box-shadow:none}
  .hero-slide,.service-gallery-frame,.detail-photo img,.service-direction-art,.services-hub-card-art,.case-category-art,.journey-image,.service-detail-symbol{animation:none!important}
 }
+
+
+/* Full-bleed photo heroes for the service, hub and portfolio pages.
+   Match the homepage's cinematic image-cover treatment while retaining each page's own copy/layout. */
+.service-hero,
+.services-hub-hero,
+.cases-hero{
+ position:relative;
+ isolation:isolate;
+ height:min(760px,calc(100svh - 122px));
+ min-height:610px;
+ overflow:hidden;
+}
+.service-hero-gallery,
+.services-hub-hero>.service-hero-gallery,
+.cases-hero>.service-hero-gallery{
+ position:absolute;
+ z-index:0;
+ inset:0;
+ width:100%;
+ max-width:none;
+ height:100%;
+ pointer-events:none;
+}
+.service-gallery-frame,
+.service-hub-gallery .service-gallery-frame,
+.cases-hero-gallery .service-gallery-frame{
+ position:absolute;
+ inset:0;
+ width:100%;
+ height:100%;
+ min-height:0;
+ max-height:none;
+ aspect-ratio:auto;
+ border:0;
+ box-shadow:none;
+}
+.service-gallery-frame:after{
+ background:
+  linear-gradient(90deg,rgba(8,19,15,.86) 0%,rgba(8,19,15,.68) 34%,rgba(8,19,15,.25) 70%,rgba(8,19,15,.12) 100%),
+  linear-gradient(0deg,rgba(8,18,14,.58) 0%,transparent 34%,rgba(8,18,14,.12) 100%);
+ border:0;
+}
+.service-gallery-image{
+ background-size:cover;
+ background-position:center 52%;
+ transform:scale(1.035);
+}
+.service-gallery-image.is-active{transform:scale(1)}
+.service-gallery-label{top:30px;left:10.4%;font-size:8px;letter-spacing:.2em}
+.service-gallery-caption{left:10.4%;bottom:34px}
+.service-gallery-count{right:5.2%;bottom:31px}
+.service-gallery-controls{
+ position:absolute;
+ z-index:4;
+ right:10.4%;
+ bottom:36px;
+ padding:0;
+ pointer-events:auto;
+}
+.service-hero-copy,
+.services-hub-copy,
+.cases-hero-copy{
+ position:relative;
+ z-index:2;
+}
+.service-hero-copy{width:min(680px,78%);max-width:680px}
+.services-hub-hero{display:flex;align-items:center;padding:82px 10.4% 88px}
+.services-hub-copy{width:min(700px,78%);max-width:700px}
+.services-hub-copy>p:last-child{max-width:440px}
+.cases-hero{display:flex;align-items:center;padding:82px 10.4% 88px}
+.cases-hero-copy{width:min(700px,78%);max-width:700px}
+.service-hero-index{z-index:3}
+.service-hero-bottom{z-index:3}
+.service-hero .contact-channels{max-width:550px}
+@media(max-width:1000px){
+ .service-hero,.services-hub-hero,.cases-hero{padding-left:7%;padding-right:7%}
+ .service-hero-copy,.services-hub-copy,.cases-hero-copy{width:min(700px,86%)}
+ .service-gallery-label,.service-gallery-caption{left:7%}
+ .service-gallery-controls{right:7%}
+}
+@media(max-width:680px){
+ .service-hero,.services-hub-hero,.cases-hero{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:stretch;
+  gap:0;
+  height:auto;
+  min-height:min(780px,calc(100svh - 68px));
+  padding:104px 7% 112px;
+ }
+ .service-hero-copy,.services-hub-copy,.cases-hero-copy{
+  width:100%;
+  max-width:590px;
+ }
+ .service-hero-copy h1{font-size:clamp(43px,11vw,64px)}
+ .services-hub-copy h1,.cases-hero-copy h1{font-size:clamp(43px,10.5vw,66px)}
+ .service-gallery-frame{min-height:0}
+ .service-gallery-image{background-position:58% center}
+ .service-gallery-label{top:22px;left:7%;font-size:7px}
+ .service-gallery-caption{left:7%;bottom:26px;font-size:6px}
+ .service-gallery-count{right:7%;bottom:24px;font-size:17px}
+ .service-gallery-controls{right:7%;bottom:58px}
+ .service-hero-bottom{left:7%;right:7%;bottom:18px;font-size:6px}
+ .service-hero-index{right:3%;top:43%;font-size:6px}
+ .service-hero-index span{font-size:18px}
+ .service-hero-index i{height:36px}
+ .service-hero .contact-channels{max-width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+ .service-gallery-image{transition:none!important;transform:none!important}
+}
