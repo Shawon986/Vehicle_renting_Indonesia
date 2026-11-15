@@ -35,25 +35,25 @@ Set `CONTENT_APPROVED=true` only after Indonesian, English and Simplified Chines
 - Self-host approved fonts and images for mainland China delivery.
 - Select and connect a CMS with editorial translation approval workflow (provider/project not yet selected). Vehicle records currently use typed seed data; WeChat QR/ID and coverage text are environment/static content, not yet CMS-editable.
 - Add verified fleet specifications, real multi-angle photos per vehicle, per-vehicle inclusion statuses, operating areas, driver/insurance/cancellation policy and named content owners. Capacity/transmission filters remain selectable but only verified options can be filtered; use-case labels and gallery images remain unpublished until verified assets/data are supplied.
-- Configure verified WhatsApp / WeChat ID + QR / phone / email, Turnstile, Resend, Upstash, Google Sheets webhook and GA4 in the hosting environment.
+- Configure verified WhatsApp / WeChat ID + QR / phone / email, the generic and optional per-service sales inboxes, Turnstile, Resend, Upstash, Google Sheets webhook and GA4 in the hosting environment.
 - Replace third-party Unsplash imagery with approved self-hosted fleet photography for mainland China delivery.
 - Obtain legal-approved privacy/cookie/terms content and confirm the response-time promise before setting `CONTENT_APPROVED=true`. The inquiry API and form remain disabled until this gate is deliberately enabled.
 
 No live availability, inventory quantities, public prices, customer holds, online bookings, payments, customer login or internal-portal API integration are present. Tours & Travel, Event Design and Gift Boxes now have public-facing landing pages and enquiry flows. Real packages, case studies, gift SKUs, delivery zones and photography still require verified company content before publication.
 
-## Vehicle enquiry handoff
+## Public enquiry handoff
 
-The enquiry APIs route each validated enquiry to its service-line sales inbox (with `INQUIRY_TO_EMAIL` as the fallback). If configured, they then make a best-effort authenticated copy to a Google Sheet for searchable lead history and CSV export. The sheet handoff supports vehicle, tour, event and gift enquiries; service-specific fields are retained in a `Service details JSON` column. A spreadsheet outage does not cause a customer to resubmit an enquiry already delivered to sales. This is a one-way handoff only; the public site does not connect to the internal operations portal.
+The enquiry APIs route each validated enquiry to its service-line sales inbox (`INQUIRY_TO_EMAIL_VEHICLE_RENTAL`, `INQUIRY_TO_EMAIL_TOURS`, `INQUIRY_TO_EMAIL_EVENTS`, or `INQUIRY_TO_EMAIL_GIFTS`, with `INQUIRY_TO_EMAIL` as the fallback). If configured, they then make a best-effort authenticated copy to a Google Sheet for searchable lead history and CSV export. The sheet handoff supports vehicle, tour, event and gift enquiries; service-specific fields are retained in a `Service details JSON` column. A spreadsheet outage does not cause a customer to resubmit an enquiry already delivered to sales. This is a one-way handoff only; the public site does not connect to the internal operations portal.
 
 1. Create a dedicated Google Spreadsheet for public website enquiries.
 2. Open **Extensions → Apps Script** and paste `integrations/google-sheets/Code.gs`.
 3. In Apps Script **Project Settings → Script properties**, set:
    - `SPREADSHEET_ID`: the ID from the spreadsheet URL.
    - `SHARED_SECRET`: a long random secret generated for this integration.
-   - `SHEET_NAME`: `Website enquiries` (or your chosen tab name).
+   - `SHEET_NAME`: `Website enquiries` (or your chosen tab name). The Apps Script accepts all four service lines and stores non-vehicle fields in `Service details JSON`.
 4. Deploy the script as a **Web app**, execute as the spreadsheet owner, and restrict access as tightly as the deployment model permits. The shared token is checked by the script.
 5. Set `INQUIRY_SHEETS_WEBHOOK_URL` to the deployed `/exec` URL and `INQUIRY_SHEETS_SHARED_SECRET` to the same secret in the hosting environment. The server sends the secret in its server-to-server POST body, never in a public URL. Never commit the real URL or secret.
-6. Submit a test enquiry and confirm it appears in the sheet. Use **File → Download → Comma-separated values (.csv)** for an export.
+6. Submit one test enquiry for each service line and confirm each appears in the sheet with its service-specific fields. Use **File → Download → Comma-separated values (.csv)** for an export.
 
 If the webhook variable is not configured, the site continues to deliver enquiries by email only; it does not claim that a CMS or spreadsheet copy exists.
 
