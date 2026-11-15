@@ -25,4 +25,4 @@ Next.js App Router, React 19 and TypeScript. The public site is display + contac
 - Self-host approved fonts and images for mainland China delivery.
 - Connect the CMS and editorial translation approval workflow.
 
-No live availability, inventory quantities, public prices, customer holds, online bookings, payments, customer login or internal-portal API integration are present. Tours & Travel, Event Design and Gift Boxes are listed as forthcoming modules only.
+No live availability, inventory quantities, public prices, customer holds, online bookings, payments, customer login or internal-portal API integration are present. Tours & Travel, Event Design and Gift Boxes are forthcoming modules only.
