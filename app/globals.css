@@ -2040,25 +2040,14 @@ body { overflow-x:clip; }
 
 /* Homepage-only parallax: the hero plus the vehicle collection imagery.
    Service, case-study and all other inner-page imagery remain static. */
-.hero-slide {
-  transform:translate3d(0,calc(var(--parallax-y,0px) * .38),0) scale(1.055);
+.hero-slide,.hero-slide-active {
+  transform:translate3d(0,var(--parallax-y,0px),0) scale(1.055);
   transition:opacity 1.25s ease;
   will-change:transform,opacity;
 }
-.hero-slide-active {
-  transform:translate3d(0,calc(var(--parallax-y,0px) * .38),0) scale(1.055);
-}
 .fleet-section .vehicle-image-wrap img {
-  object-position:center calc(50% + var(--parallax-y,0px) * .55);
+  object-position:center calc(50% + var(--parallax-y,0px));
   will-change:object-position;
-}
-@media(max-width:680px) {
-  .hero-slide,.hero-slide-active {
-    transform:translate3d(0,calc(var(--parallax-y,0px) * .24),0) scale(1.045);
-  }
-  .fleet-section .vehicle-image-wrap img {
-    object-position:center calc(50% + var(--parallax-y,0px) * .38);
-  }
 }
 @media(prefers-reduced-motion:reduce) {
   .hero-slide,.hero-slide-active,.fleet-section .vehicle-image-wrap img {
