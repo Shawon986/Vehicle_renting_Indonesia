@@ -34,12 +34,13 @@ export function ParallaxLayers(){
    }
   };
   const schedule=()=>{if(!frame)frame=window.requestAnimationFrame(update);};
+  const resize=()=>{collect();schedule();};
   collect();update();
   window.addEventListener("scroll",schedule,{passive:true});
   window.addEventListener("resize",()=>{collect();schedule()},{passive:true});
   const observer=new MutationObserver(()=>{collect();schedule();});
   observer.observe(document.body,{childList:true,subtree:true});
-  return()=>{window.removeEventListener("scroll",schedule);observer.disconnect();if(frame)window.cancelAnimationFrame(frame);nodes.forEach(node=>node.style.removeProperty("--parallax-y"));};
+  return()=>{window.removeEventListener("scroll",schedule);window.removeEventListener("resize",resize);observer.disconnect();if(frame)window.cancelAnimationFrame(frame);nodes.forEach(node=>node.style.removeProperty("--parallax-y"));};
  },[]);
  return null;
 }
