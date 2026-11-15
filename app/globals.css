@@ -1386,6 +1386,8 @@ button,a{-webkit-tap-highlight-color:transparent}
   background-position:center 48%;
   transform:translateZ(0);
   box-shadow:0 12px 28px rgba(23,36,31,.08);
+  transition:background-size .85s cubic-bezier(.2,.7,.2,1),background-position .85s ease,filter .6s ease,box-shadow .6s ease;
+  filter:saturate(.88);
 }
 .service-direction-art:before{
   inset:0;
@@ -1441,6 +1443,8 @@ button,a{-webkit-tap-highlight-color:transparent}
 .service-page-event-design .service-direction-card:nth-child(2) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=85")}
 .service-page-event-design .service-direction-card:nth-child(3) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1000&q=85")}
 .service-page-event-design .service-direction-card:nth-child(4) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1000&q=85")}
+.service-page-event-design .service-direction-card:nth-child(5) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=85")}
+.service-page-event-design .service-direction-card:nth-child(6) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=85")}
 
 /* Fruit and flower gifting — fresh florals and curated gift details. */
 .service-page-gift-boxes .service-direction-card:nth-child(1) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1000&q=85")}
@@ -2038,16 +2042,30 @@ body { overflow-x:clip; }
   .cases-hero:after {z-index:2;pointer-events:none}
 }
 
-/* Homepage-only parallax: the hero plus the vehicle collection imagery.
-   Service, case-study and all other inner-page imagery remain static. */
+/* Controlled parallax is intentionally limited to homepage photography.
+   Supporting pages use reveal and hover motion without scroll-linked image drift. */
 .hero-slide,.hero-slide-active {
-  transform:translate3d(0,var(--parallax-y,0px),0) scale(1.055);
+  transform:translate3d(0,var(--parallax-y,0px),0) scale(1.12);
   transition:opacity 1.25s ease;
   will-change:transform,opacity;
 }
 .fleet-section .vehicle-image-wrap img {
   object-position:center calc(50% + var(--parallax-y,0px));
   will-change:object-position;
+}
+.service-page .service-direction-art,
+.services-hub-page .services-hub-card-art,
+.cases-page .case-category-art {
+  background-size:cover;
+  transition:background-size .85s cubic-bezier(.2,.7,.2,1),filter .6s ease;
+}
+.service-page .service-direction-card:hover .service-direction-art,
+.services-hub-page .services-hub-card>a:hover .services-hub-card-art,
+.cases-page .case-category-card:hover .case-category-art {
+  filter:saturate(1.08) brightness(1.03);
+}
+@media(max-width:680px) {
+  .hero-slide,.hero-slide-active {transform:translate3d(0,var(--parallax-y,0px),0) scale(1.08)}
 }
 @media(prefers-reduced-motion:reduce) {
   .hero-slide,.hero-slide-active,.fleet-section .vehicle-image-wrap img {
