@@ -522,3 +522,25 @@ button,a{-webkit-tap-highlight-color:transparent}
  .main-nav a:last-child{border-bottom:0}
  .main-nav a:after{display:none}
 }
+
+
+/* Tablet portrait layouts: keep enquiry and vehicle detail content comfortably readable */
+@media (min-width:681px) and (max-width:760px){
+ .form-page{display:flex;flex-direction:column;gap:0;padding:70px 7% 82px;background:var(--paper)}
+ .form-page>.form-page-intro{position:static;width:100%;max-width:760px;margin:0 0 34px}
+ .form-page>.inquiry-form{width:100%;padding:30px}
+ .form-section{display:flex;flex-direction:column;gap:0;padding:72px 7% 82px}
+ .form-section-copy{position:static;width:100%;max-width:760px;margin:0 0 34px}
+ .form-section>.inquiry-form{width:100%;padding:30px}
+ .detail-hero{grid-template-columns:1fr}
+ .detail-photo{height:55vw;min-height:340px;max-height:480px}
+ .detail-title{padding:54px 7% 60px}
+ .detail-title h1{font-size:clamp(46px,8vw,64px)}
+ .detail-specs{grid-template-columns:repeat(2,minmax(0,1fr));padding:32px 7%;gap:25px}
+}
+
+/* Respect device safe areas for the mobile contact shortcut */
+@media(max-width:680px){
+ .sticky-contact{bottom:calc(12px + env(safe-area-inset-bottom))}
+ .site-footer{padding-bottom:calc(100px + env(safe-area-inset-bottom))}
+}
