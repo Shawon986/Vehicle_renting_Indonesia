@@ -2,34 +2,23 @@
 import {useEffect} from "react";
 
 /**
- * Scroll-linked image depth shared by the localized pages.
- * Only visible image layers are measured, and updates are coalesced to one
- * animation frame so the effect stays light while scrolling.
+ * Homepage-only image depth. The selector intentionally excludes every
+ * inner-page hero and card so those layouts remain completely static.
  */
 export function ParallaxLayers(){
  useEffect(()=>{
-  const reduce=window.matchMedia("(prefers-reduced-motion: reduce)");
-  if(reduce.matches)return;
-  const selector=[
-   ".hero-slide",
-   ".journey-image",
-   ".subpage-hero",
-   ".service-gallery-image",
-   ".service-direction-art",
-   ".services-hub-card-art",
-   ".case-category-art",
-   ".detail-photo img"
-  ].join(",");
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const selector=".hero-slide, .journey-image";
   const visible=new Set<HTMLElement>();
   let nodes:HTMLElement[]=[];
   let frame=0;
   const update=()=>{
    frame=0;
-   const height=window.innerHeight||1;
+   const midpoint=(window.innerHeight||1)*.5;
    visible.forEach(node=>{
     const rect=node.getBoundingClientRect();
-    const distance=rect.top+rect.height*.5-height*.5;
-    const offset=Math.max(-72,Math.min(72,-distance*.12));
+    const distance=rect.top+rect.height*.5-midpoint;
+    const offset=Math.max(-54,Math.min(54,-distance*.09));
     node.style.setProperty("--parallax-y",offset.toFixed(1)+"px");
    });
   };
@@ -41,7 +30,7 @@ export function ParallaxLayers(){
     else visible.delete(node);
    });
    schedule();
-  },{rootMargin:"120px 0px"});
+  },{rootMargin:"100px 0px"});
   const collect=()=>{
    const found=Array.from(document.querySelectorAll<HTMLElement>(selector));
    found.forEach(node=>{if(!nodes.includes(node)){nodes.push(node);observer.observe(node);}});
