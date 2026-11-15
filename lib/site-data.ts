@@ -18,3 +18,11 @@ export const vehicles:Vehicle[]=[
 {slug:"city-motorbike",category:"Motorbike",title:{id:"Motor untuk Kota",en:"City motorbike",zh:"城市摩托车"},summary:{id:"Pilihan praktis untuk menjelajahi area perkotaan.",en:"A practical way to explore urban areas.",zh:"探索城市区域的灵活选择。"},image:"https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1400&q=85",capacity:"Confirm with team",transmission:"Confirm with team",driver:"Self-drive"}
 ];
 export function localeAlternates(locale:Locale,path=""){const base=process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/,"");if(!base)return undefined;return{canonical:base+"/"+locale+path,languages:{id:base+"/id"+path,en:base+"/en"+path,zh:base+"/zh"+path,"x-default":base+"/id"+path}};}
+
+
+export function categoryLabel(locale:Locale,category:string){const index=["All","Car","MPV","SUV","Van","Bus","Motorbike"].indexOf(category);return index<0?category:getCopy(locale).categories[index];}
+export function vehicleFact(locale:Locale,value:string){const labels:Record<Locale,Record<string,string>>={
+id:{"Confirm with team":"Konfirmasi dengan tim","Self-drive":"Mengemudi sendiri","With driver":"Dengan pengemudi","Self-drive or with driver":"Mengemudi sendiri atau dengan pengemudi"},
+en:{"Confirm with team":"Confirm with team","Self-drive":"Self-drive","With driver":"With a driver","Self-drive or with driver":"Self-drive or with a driver"},
+zh:{"Confirm with team":"请咨询服务团队","Self-drive":"自驾","With driver":"配司机","Self-drive or with driver":"自驾或配司机"}
+};return labels[locale][value]??value;}
