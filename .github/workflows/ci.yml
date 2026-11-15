@@ -26,6 +26,8 @@ jobs:
         run: npm install
       - name: Dependency security audit
         run: npm audit --audit-level=high
+      - name: Verify vehicle rental scope
+        run: npm run verify:scope
       - name: Lint
         run: npm run lint
       - name: Build
