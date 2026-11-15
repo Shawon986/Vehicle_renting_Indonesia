@@ -1,11 +1,6 @@
 function doPost(e) {
   const props = PropertiesService.getScriptProperties();
   const expected = props.getProperty("SHARED_SECRET");
-  
-  if (!expected || supplied !== expected) {
-    return json({ ok: false, error: "unauthorized" });
-  }
-
   let record;
   try {
     record = JSON.parse(e.postData.contents || "{}");
