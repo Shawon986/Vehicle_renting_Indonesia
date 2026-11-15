@@ -4440,3 +4440,27 @@ input[type="checkbox"]:focus-visible {outline:2px solid #87994d;outline-offset:3
   .service-page .service-detail-band {grid-template-columns:minmax(0,1fr);gap:18px}
   .service-page .service-detail-symbol {width:100%;max-width:150px;height:150px}
 }
+
+
+/* Icon sizing and mobile hero controls: fixed pixel boxes prevent zero-size
+   em-based masks when the glyph itself is hidden from the text renderer. */
+.ui-arrow {width:14px;height:14px}
+.ui-down {width:13px;height:13px}
+.ui-chevron-left,.ui-chevron-right {width:18px;height:18px}
+.ui-sparkle {width:48px;height:48px}
+.principle-icon.ui-sparkle {width:25px;height:25px}
+@media(max-width:680px) {
+  .service-page .service-gallery-caption,
+  .service-page .service-gallery-count {bottom:40px!important}
+  .service-page .service-gallery-controls {
+    left:50%!important;
+    right:auto!important;
+    bottom:64px!important;
+    transform:translateX(-50%)!important;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .service-page .service-gallery-controls button {min-width:15px;min-height:12px}
+  .service-page .service-hero-bottom {bottom:13px!important}
+}
