@@ -1,4 +1,4 @@
-# Mobility Indonesia — Vehicle Rental module
+# Mobility Indonesia — Public Services Website
 Next.js App Router, React 19 and TypeScript. The public site is display + contact only.
 
 ## Local development
@@ -10,11 +10,14 @@ Next.js App Router, React 19 and TypeScript. The public site is display + contac
 - Premium responsive homepage and motion-led design system.
 - Locale-prefixed Indonesian (`/id`), English (`/en`) and Simplified Chinese (`/zh`) pages.
 - Vehicle rental collection with category/capacity/transmission/driver filters, card/table views, responsive comparison table and per-vehicle detail pages.
+- Dedicated Tours & Travel, Event Design, and Fruit & Flower Gift Boxes landing pages in all three locales, plus a unified services hub and homepage service discovery cards.
+- Service-specific enquiry forms for tours (dates, trip length, pax, group type, interests, departure city), events (event/alternate dates, occasion, venue, guest band, multi-select services and flexibility), and gifts (SKU/size, quantity, delivery date/area, recipient, card message, PO and same-day request).
+- Service-aware WhatsApp / WeChat prefill, sticky contact bar, per-service sales inbox routing and a separate anti-spam-protected service enquiry endpoint.
 - Vehicle detail service-inclusion matrix, add-on options, verified-only use-case guidance, non-numeric price-on-request slots, multi-image gallery support with keyboard-operable lightbox and breadcrumbs.
 - Locale-aware WhatsApp / WeChat / phone / email / enquiry contact components and mobile sticky contact actions (only verified channels appear when configured).
 - Vehicle enquiry form with pickup/return dates and times (Asia/Jakarta), pickup point and optional destination/drop-off point, passengers, luggage, vehicle model or category, travel style, add-ons, WeChat ID on Chinese pages and configured contact-channel preference.
 - Inquiry API with strict same-origin checks, bounded fields, date/time/category/add-on validation, vehicle/driver compatibility checks, honeypot, Cloudflare Turnstile, Upstash rate limiting, localized sales email and localized acknowledgement.
-- About, Contact, FAQ, Services hub and legal placeholder routes.
+- About, Contact, FAQ, Services hub and legal placeholder routes, with all service pages included in the localized sitemap.
 - Locale-preserving language switcher with persisted preference, per-locale metadata, WebSite / Service / FAQ / Breadcrumb structured data, robots and sitemap foundations, plus locale-aware IDR formatting (no public rates).
 - Consent-first cookie banner with reopenable preferences and GA4 loading only after analytics consent.
 - Vehicle enquiry analytics (start, field progress, submit, abandon), WeChat/WhatsApp/phone/email/QR actions, optional authenticated Google Sheets lead inbox handoff and spreadsheet CSV export.
@@ -31,23 +34,23 @@ Set `CONTENT_APPROVED=true` only after Indonesian, English and Simplified Chines
 - Confirm service inclusions, actual vehicle specifications, response-time promise and sales handoff recipient. Do not publish a response-time promise until the company confirms it can be met.
 - Self-host approved fonts and images for mainland China delivery.
 - Select and connect a CMS with editorial translation approval workflow (provider/project not yet selected). Vehicle records currently use typed seed data; WeChat QR/ID and coverage text are environment/static content, not yet CMS-editable.
-- Add verified fleet specifications, real multi-angle photos per vehicle, per-vehicle inclusion statuses, operating areas, driver/insurance/cancellation policy and named content owners. Capacity/transmission filters remain disabled until verified values are entered; use-case labels and gallery images remain unpublished until verified assets/data are supplied.
+- Add verified fleet specifications, real multi-angle photos per vehicle, per-vehicle inclusion statuses, operating areas, driver/insurance/cancellation policy and named content owners. Capacity/transmission filters remain selectable but only verified options can be filtered; use-case labels and gallery images remain unpublished until verified assets/data are supplied.
 - Configure verified WhatsApp / WeChat ID + QR / phone / email, Turnstile, Resend, Upstash, Google Sheets webhook and GA4 in the hosting environment.
 - Replace third-party Unsplash imagery with approved self-hosted fleet photography for mainland China delivery.
 - Obtain legal-approved privacy/cookie/terms content and confirm the response-time promise before setting `CONTENT_APPROVED=true`. The inquiry API and form remain disabled until this gate is deliberately enabled.
 
-No live availability, inventory quantities, public prices, customer holds, online bookings, payments, customer login or internal-portal API integration are present. Tours & Travel, Event Design and Gift Boxes are forthcoming modules only.
+No live availability, inventory quantities, public prices, customer holds, online bookings, payments, customer login or internal-portal API integration are present. Tours & Travel, Event Design and Gift Boxes now have public-facing landing pages and enquiry flows. Real packages, case studies, gift SKUs, delivery zones and photography still require verified company content before publication.
 
 ## Vehicle enquiry handoff
 
-The enquiry API sends the validated enquiry to the vehicle-rental sales inbox first. If configured, it then makes a best-effort authenticated copy to a Google Sheet for searchable lead history and CSV export. A spreadsheet outage does not cause a customer to resubmit an enquiry already delivered to sales. This is a one-way handoff only; the public site does not connect to the internal operations portal.
+The enquiry APIs route each validated enquiry to its service-line sales inbox (with `INQUIRY_TO_EMAIL` as the fallback). If configured, they then make a best-effort authenticated copy to a Google Sheet for searchable lead history and CSV export. The sheet handoff supports vehicle, tour, event and gift enquiries; service-specific fields are retained in a `Service details JSON` column. A spreadsheet outage does not cause a customer to resubmit an enquiry already delivered to sales. This is a one-way handoff only; the public site does not connect to the internal operations portal.
 
 1. Create a dedicated Google Spreadsheet for public website enquiries.
 2. Open **Extensions → Apps Script** and paste `integrations/google-sheets/Code.gs`.
 3. In Apps Script **Project Settings → Script properties**, set:
    - `SPREADSHEET_ID`: the ID from the spreadsheet URL.
    - `SHARED_SECRET`: a long random secret generated for this integration.
-   - `SHEET_NAME`: `Vehicle enquiries` (or your chosen tab name).
+   - `SHEET_NAME`: `Website enquiries` (or your chosen tab name).
 4. Deploy the script as a **Web app**, execute as the spreadsheet owner, and restrict access as tightly as the deployment model permits. The shared token is checked by the script.
 5. Set `INQUIRY_SHEETS_WEBHOOK_URL` to the deployed `/exec` URL and `INQUIRY_SHEETS_SHARED_SECRET` to the same secret in the hosting environment. The server sends the secret in its server-to-server POST body, never in a public URL. Never commit the real URL or secret.
 6. Submit a test enquiry and confirm it appears in the sheet. Use **File → Download → Comma-separated values (.csv)** for an export.
