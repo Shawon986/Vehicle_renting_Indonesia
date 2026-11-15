@@ -28,7 +28,7 @@ function doPost(e) {
     if (!sheet) sheet = spreadsheet.insertSheet(sheetName);
 
     const headers = [
-      "Lead ID", "Received at", "Service line", "Locale", "Name", "Email", "Phone",
+      "Lead ID", "Received at", "Service line", "Locale", "Timezone", "Name", "Email", "Phone",
       "Company", "WeChat ID", "Preferred channel", "Pickup date", "Pickup time",
       "Return date", "Return time", "Pickup location", "Passengers", "Luggage",
       "Vehicle", "Vehicle category", "Travel arrangement", "Add-ons", "Message", "Marketing consent",
@@ -39,7 +39,7 @@ function doPost(e) {
       sheet.setFrozenRows(1);
     }
     const values = [
-      record.leadId, record.receivedAt, record.serviceLine, record.locale, record.name,
+      record.leadId, record.receivedAt, record.serviceLine, record.locale, record.timeZone, record.name,
       record.email, record.phone, record.company, record.wechatId, record.preferredChannel,
       record.pickupDate, record.pickupTime, record.returnDate, record.returnTime,
       record.pickupLocation, record.passengers, record.luggage, record.vehicle,
