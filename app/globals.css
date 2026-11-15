@@ -2080,31 +2080,33 @@ body { overflow-x:clip; }
     will-change:auto;
   }
 }
-/* Homepage-only depth: the hero and the dedicated journey photo section.
-   No inner-page hero or card receives a parallax transform. */
+/* Homepage-only parallax: the hero plus the vehicle collection imagery.
+   Service, case-study and all other inner-page imagery remain static. */
 .hero-slide {
-  background-position:center calc(54% + var(--parallax-y,0px));
-  transform:translate3d(0,calc(var(--parallax-y,0px) * .32),0) scale(1.055);
-  transition:opacity 1.25s ease,transform 1.1s cubic-bezier(.2,.7,.2,1);
+  transform:translate3d(0,calc(var(--parallax-y,0px) * .38),0) scale(1.055);
+  transition:opacity 1.25s ease;
   will-change:transform,opacity;
 }
 .hero-slide-active {
-  background-position:center calc(54% + var(--parallax-y,0px));
-  transform:translate3d(0,calc(var(--parallax-y,0px) * .32),0) scale(1.015);
+  transform:translate3d(0,calc(var(--parallax-y,0px) * .38),0) scale(1.055);
 }
-.journey-image {
-  background-attachment:scroll!important;
-  background-position:center calc(52% + var(--parallax-y,0px));
-  background-size:cover;
-  will-change:background-position;
+.fleet-section .vehicle-image-wrap img {
+  object-position:center calc(50% + var(--parallax-y,0px) * .55);
+  will-change:object-position;
 }
 @media(max-width:680px) {
-  .hero-slide {transform:translate3d(0,calc(var(--parallax-y,0px) * .22),0) scale(1.045)}
-  .hero-slide-active {transform:translate3d(0,calc(var(--parallax-y,0px) * .22),0) scale(1.015)}
-  .journey-image {background-position:center calc(55% + var(--parallax-y,0px))}
+  .hero-slide,.hero-slide-active {
+    transform:translate3d(0,calc(var(--parallax-y,0px) * .24),0) scale(1.045);
+  }
+  .fleet-section .vehicle-image-wrap img {
+    object-position:center calc(50% + var(--parallax-y,0px) * .38);
+  }
 }
 @media(prefers-reduced-motion:reduce) {
-  .hero-slide,.hero-slide-active {transform:none!important;transition:none!important;will-change:auto}
-  .journey-image {background-position:center center!important;will-change:auto}
-  .service-gallery-image,.service-gallery-image.is-active {transform:none!important;transition:none!important}
+  .hero-slide,.hero-slide-active,.fleet-section .vehicle-image-wrap img {
+    transform:none!important;
+    transition:none!important;
+    object-position:center!important;
+    will-change:auto;
+  }
 }
