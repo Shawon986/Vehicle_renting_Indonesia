@@ -31,7 +31,7 @@ function doPost(e) {
       "Lead ID", "Received at", "Service line", "Locale", "Name", "Email", "Phone",
       "Company", "WeChat ID", "Preferred channel", "Pickup date", "Pickup time",
       "Return date", "Return time", "Pickup location", "Passengers", "Luggage",
-      "Vehicle", "Travel arrangement", "Add-ons", "Message", "Marketing consent",
+      "Vehicle", "Vehicle category", "Travel arrangement", "Add-ons", "Message", "Marketing consent",
       "Consent timestamp", "Source page"
     ];
     if (sheet.getLastRow() === 0) {
@@ -43,7 +43,7 @@ function doPost(e) {
       record.email, record.phone, record.company, record.wechatId, record.preferredChannel,
       record.pickupDate, record.pickupTime, record.returnDate, record.returnTime,
       record.pickupLocation, record.passengers, record.luggage, record.vehicle,
-      record.travelStyle, Array.isArray(record.addOns) ? record.addOns.join(", ") : "",
+      record.vehicleCategory, record.travelStyle, Array.isArray(record.addOns) ? record.addOns.join(", ") : "",
       record.message, record.marketingConsent ? "yes" : "no", record.consentAt,
       record.sourcePath
     ].map(safeCell);
