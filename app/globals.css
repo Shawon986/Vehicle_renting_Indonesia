@@ -2770,15 +2770,50 @@ body { overflow-x:clip; }
 }
 
 
-/* Homepage section 04: bring back scroll-linked depth on the journey photo only. */
+/* Homepage section 04 — restore the original cinematic scroll-driven parallax.
+   The photo moves within a clipped layer, while the text column stays still. */
 .journey-section .journey-image {
-  background-position:center calc(50% + var(--journey-parallax-y,0px)) !important;
-  background-size:cover !important;
-  will-change:background-position;
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  background-image:none !important;
+  background-position:center center !important;
+}
+.journey-section .journey-image::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(0deg,rgba(10,22,16,.18),rgba(10,22,16,.05)),
+    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1500&q=85");
+  background-size:cover;
+  background-position:center 45%;
+  transform:scale(1.08);
+  transform-origin:center;
+  will-change:background-position,transform;
+}
+@keyframes editorialJourneyDepth {
+  from { background-position:center 45%; transform:scale(1.08); }
+  to { background-position:center 62%; transform:scale(1.16); }
+}
+@supports (animation-timeline:scroll()) {
+  .journey-section .journey-image::before {
+    animation:editorialJourneyDepth linear both;
+    animation-timeline:scroll(root block);
+    animation-range:0px 900px;
+  }
+}
+@media(max-width:680px) {
+  .journey-section .journey-image::before {
+    background-position:center 48%;
+    transform:scale(1.1);
+  }
 }
 @media(prefers-reduced-motion:reduce) {
-  .journey-section .journey-image {
+  .journey-section .journey-image::before {
+    animation:none !important;
     background-position:center center !important;
-    will-change:auto !important;
+    transform:scale(1.05);
+    will-change:auto;
   }
 }
