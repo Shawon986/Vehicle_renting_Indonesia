@@ -1,6 +1,6 @@
 import {NextRequest,NextResponse} from "next/server";
 import {randomUUID} from "node:crypto";
-import {vehicles} from "@/lib/site-data";
+import {vehicles,vehicleSupportsDriver} from "@/lib/site-data";
 export const runtime="nodejs";
 const escapeHtml=(value:string)=>value.replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]??char));
 const validDate=(value:string)=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(value))return false;const date=new Date(value+"T00:00:00Z");return Number.isFinite(date.getTime())&&date.toISOString().slice(0,10)===value};
@@ -22,7 +22,7 @@ export async function POST(request:NextRequest){
  if(value("consent",10)!=="yes"||!validDate(pickupDate)||!validDate(returnDate)||returnDate<pickupDate||!/^\d{2}:\d{2}$/.test(pickupTime)||!/^\d{2}:\d{2}$/.test(returnTime)||(returnDate===pickupDate&&returnTime<pickupTime))return NextResponse.json({error:"Invalid trip details or consent"},{status:400});
  if(!["whatsapp","wechat","email","phone"].includes(value("preferredChannel",30)))return NextResponse.json({error:"Invalid contact preference"},{status:400});
  const vehicle=value("vehicle",80);if(vehicle&&!vehicles.some(item=>item.slug===vehicle))return NextResponse.json({error:"Unknown vehicle selection"},{status:400});
- const travelStyle=value("travelStyle",40);if(travelStyle&&!["self-drive","with-driver"].includes(travelStyle))return NextResponse.json({error:"Invalid travel arrangement"},{status:400});
+ const travelStyle=value("travelStyle",40);if(travelStyle&&!["self-drive","with-driver"].includes(travelStyle))return NextResponse.json({error:"Invalid travel arrangement"},{status:400});const selectedVehicle=vehicles.find(item=>item.slug===vehicle);if(selectedVehicle&&travelStyle&&!vehicleSupportsDriver(selectedVehicle,travelStyle as "self-drive"|"with-driver"))return NextResponse.json({error:"This vehicle does not support the selected driver arrangement"},{status:400});
  const addOnValues=Array.isArray(body.addOns)?body.addOns.filter((item):item is string=>typeof item==="string"&&["child-seat","cooler-box","wifi"].includes(item)):typeof body.addOns==="string"&&["child-seat","cooler-box","wifi"].includes(body.addOns)?[body.addOns]:[];
  const ip=request.headers.get("x-real-ip")||request.headers.get("x-vercel-forwarded-for")?.split(",")[0]?.trim()||request.headers.get("x-forwarded-for")?.split(",")[0]?.trim()||"unknown";
  try{
