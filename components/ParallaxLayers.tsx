@@ -3,22 +3,23 @@ import {useEffect} from "react";
 import {usePathname} from "next/navigation";
 
 /**
- * Lightweight scroll-linked depth for homepage-only photography.
- * Inner pages retain their reveal and hover animations, without parallax drift.
+ * Scroll-linked depth is reserved for the homepage hero, fleet photography,
+ * and the 04 "Your Journey, Your Way" image. Supporting pages never receive
+ * scroll-driven image offsets.
  */
 export function ParallaxLayers(){
  const pathname=usePathname();
  useEffect(()=>{
-  const localeHome=/^\/(id|en|zh)\/?$/.test(pathname);
-  if(!localeHome||window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const isHome=/^\/(id|en|zh)\/?$/.test(pathname);
+  if(!isHome||window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
 
   const main=document.querySelector<HTMLElement>("main");
-  const hero=main?.querySelector<HTMLElement>(":scope > .hero");
-  if(!main||!hero)return;
+  if(!main?.querySelector<HTMLElement>(":scope > .hero"))return;
 
-  const selector=".hero-slide, .fleet-section .vehicle-image-wrap img";
-  const visible=new Set<HTMLElement>();
+  const selector=".hero-slide, .fleet-section .vehicle-image-wrap img, .journey-section .journey-image";
   const nodes=Array.from(main.querySelectorAll<HTMLElement>(selector));
+  const visible=new Set<HTMLElement>();
+  if(!nodes.length)return;
   let frame=0;
 
   const update=()=>{
@@ -28,8 +29,9 @@ export function ParallaxLayers(){
    visible.forEach(node=>{
     const rect=node.getBoundingClientRect();
     const distance=rect.top+rect.height*.5-midpoint;
-    const travel=mobile?0.12:0.18;
-    const limit=mobile?52:84;
+    const isJourney=node.classList.contains("journey-image");
+    const travel=isJourney?(mobile?0.1:0.14):(mobile?0.12:0.18);
+    const limit=isJourney?(mobile?34:58):(mobile?52:84);
     const offset=Math.max(-limit,Math.min(limit,-distance*travel));
     node.style.setProperty("--parallax-y",offset.toFixed(1)+"px");
    });
@@ -42,7 +44,7 @@ export function ParallaxLayers(){
     else visible.delete(node);
    });
    schedule();
-  },{rootMargin:"140px 0px"});
+  },{rootMargin:"160px 0px"});
 
   nodes.forEach(node=>observer.observe(node));
   window.addEventListener("scroll",schedule,{passive:true});
