@@ -26,7 +26,7 @@ assert.match(api,/Origin verification required/,"API must require an origin head
 assert.match(api,/validTime\(pickupTime\)/,"Pickup time must be range-validated");
 assert.match(api,/vehicleSupportsDriver/,"Driver selection must match the selected vehicle");
 assert.match(api,/vehicleCategory/,"Enquiries must capture vehicle category when the exact model is unknown");
-assert.match(api,/timeZone:"Asia\/Jakarta"/,"Enquiry timestamps must use the declared operating timezone");
+assert.ok(api.includes('timeZone:"Asia/Jakarta"'),"Enquiry timestamps must use the declared operating timezone");
 assert.match(api,/TURNSTILE_SECRET_KEY/,"Turnstile server verification must be configured");
 assert.match(api,/UPSTASH_REDIS_REST_TOKEN/,"Rate limiting must be configured");
 assert.match(api,/INQUIRY_SHEETS_SHARED_SECRET/,"Spreadsheet handoff must use a server-side secret");
