@@ -3366,3 +3366,83 @@ body { overflow-x:clip; }
 @media(prefers-reduced-motion:reduce) {
   .contact-editorial-card {scroll-behavior:auto}
 }
+
+
+/* Contact page alignment pass: one consistent column edge and responsive grid rhythm. */
+.contact-page {
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  column-gap:clamp(34px,5vw,76px);
+  align-items:start;
+}
+.contact-page:before {display:none}
+.contact-page .form-page-intro {
+  position:relative;
+  top:auto;
+  align-self:start;
+  width:100%;
+  max-width:none;
+  min-width:0;
+  box-sizing:border-box;
+  padding:clamp(22px,2.6vw,34px);
+  background:linear-gradient(150deg,#e2e5d8 0%,#eeece4 100%);
+  border:1px solid rgba(23,36,31,.09);
+}
+.contact-page .form-page-intro>.eyebrow,
+.contact-page .form-page-intro>h1,
+.contact-page .form-page-intro>p:not(.eyebrow),
+.contact-page .contact-steps,
+.contact-page .contact-editorial-card,
+.contact-page .contact-disclaimer,
+.contact-page .contact-channels {
+  width:100%;
+  max-width:none;
+  box-sizing:border-box;
+}
+.contact-page .form-page-intro>.eyebrow {margin:0 0 22px}
+.contact-page .form-page-intro>h1 {
+  margin:0 0 20px;
+  line-height:.99;
+  text-wrap:balance;
+}
+.contact-page .form-page-intro>p:not(.eyebrow) {
+  margin:0;
+  line-height:1.8;
+}
+.contact-page .contact-steps {
+  margin:27px 0 24px;
+}
+.contact-page .contact-steps>div {
+  grid-template-columns:36px minmax(0,1fr);
+  align-items:start;
+  padding:15px 0;
+}
+.contact-page .contact-editorial-card {
+  margin:0 0 22px;
+}
+.contact-page .contact-editorial-image {min-height:clamp(185px,20vw,245px)}
+.contact-page .contact-editorial-caption {padding:clamp(20px,2.2vw,27px)}
+.contact-page .contact-editorial-caption h2 {max-width:100%;text-wrap:balance}
+.contact-page .contact-editorial-caption p {max-width:100%}
+.contact-page .contact-disclaimer {margin:0 0 15px}
+.contact-page .contact-channels {display:flex;flex-direction:column;align-items:stretch;gap:10px}
+.contact-page .contact-channels>* {width:100%;max-width:none;min-width:0;box-sizing:border-box}
+.contact-page>.inquiry-form {align-self:start;min-width:0}
+@media(max-width:900px) {
+  .contact-page {
+    grid-template-columns:minmax(0,1fr);
+    gap:32px;
+  }
+  .contact-page .form-page-intro {padding:clamp(22px,4vw,34px)}
+  .contact-page .contact-editorial-image {min-height:clamp(210px,35vw,300px)}
+}
+@media(max-width:680px) {
+  .contact-page {gap:25px;padding:58px 7% 70px}
+  .contact-page .form-page-intro {padding:21px 18px}
+  .contact-page .form-page-intro>.eyebrow {margin-bottom:18px}
+  .contact-page .form-page-intro>h1 {font-size:clamp(42px,11vw,58px);margin-bottom:17px}
+  .contact-page .contact-steps {margin:23px 0 20px}
+  .contact-page .contact-editorial-card {margin-bottom:19px}
+  .contact-page .contact-editorial-image {min-height:215px}
+  .contact-page .contact-editorial-caption {padding:21px 19px}
+  .contact-page .contact-channels {gap:9px}
+}
