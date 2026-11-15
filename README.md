@@ -49,7 +49,7 @@ The enquiry API can send a copy of each validated vehicle enquiry to a Google Sh
    - `SHARED_SECRET`: a long random secret generated for this integration.
    - `SHEET_NAME`: `Vehicle enquiries` (or your chosen tab name).
 4. Deploy the script as a **Web app**, execute as the spreadsheet owner, and restrict access as tightly as the deployment model permits. The shared token is checked by the script.
-5. Set `INQUIRY_SHEETS_WEBHOOK_URL` in the hosting environment to the deployed `/exec` URL with `?token=YOUR_SHARED_SECRET`. Never commit the real URL or secret.
+5. Set `INQUIRY_SHEETS_WEBHOOK_URL` to the deployed `/exec` URL and `INQUIRY_SHEETS_SHARED_SECRET` to the same secret in the hosting environment. The server sends the secret in its server-to-server POST body, never in a public URL. Never commit the real URL or secret.
 6. Submit a test enquiry and confirm it appears in the sheet. Use **File → Download → Comma-separated values (.csv)** for an export.
 
 If the webhook variable is not configured, the site continues to deliver enquiries by email only; it does not claim that a CMS or spreadsheet copy exists.
