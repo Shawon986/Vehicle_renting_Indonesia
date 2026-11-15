@@ -2768,3 +2768,17 @@ body { overflow-x:clip; }
     transition:none !important;
   }
 }
+
+
+/* Homepage section 04: bring back scroll-linked depth on the journey photo only. */
+.journey-section .journey-image {
+  background-position:center calc(50% + var(--journey-parallax-y,0px)) !important;
+  background-size:cover !important;
+  will-change:background-position;
+}
+@media(prefers-reduced-motion:reduce) {
+  .journey-section .journey-image {
+    background-position:center center !important;
+    will-change:auto !important;
+  }
+}
