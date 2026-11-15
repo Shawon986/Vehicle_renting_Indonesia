@@ -21,7 +21,7 @@ export const vehicles:Vehicle[]=[
 export function localeAlternates(locale:Locale,path=""){const base=process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/,"");if(!base)return undefined;return{canonical:base+"/"+locale+path,languages:{id:base+"/id"+path,en:base+"/en"+path,zh:base+"/zh"+path,"x-default":base+"/id"+path}};}
 
 
-export function vehicleSupportsDriver(vehicle:Vehicle,mode:"self-drive"|"with-driver"){return vehicle.driverModes?.includes(mode)??(vehicle.driver==="Self-drive or with driver"||(mode==="self-drive"&&vehicle.driver==="Self-drive")||(mode==="with-driver"&&vehicle.driver==="With driver"));}
+export function vehicleSupportsDriver(vehicle:Vehicle,mode:"self-drive"|"with-driver"){if(vehicle.driverModes?.length)return vehicle.driverModes.includes(mode);return vehicle.driver==="Self-drive or with driver"||(mode==="self-drive"&&vehicle.driver==="Self-drive")||(mode==="with-driver"&&vehicle.driver==="With driver");}
 export const vehicleInclusionKeys=["fuel","tolls","parking","driverMeals","overtime","extraKilometres","tax"] as const;
 export const vehicleAddOnKeys=["childSeat","coolerBox","wifi"] as const;
 export function categoryLabel(locale:Locale,category:string){const index=["All","Car","MPV","SUV","Van","Bus","Motorbike"].indexOf(category);return index<0?category:getCopy(locale).categories[index];}
