@@ -2770,40 +2770,33 @@ body { overflow-x:clip; }
 }
 
 
-/* Homepage section 04 — high-visibility image-only parallax.
-   The controller writes the offset directly to .journey-image on every scroll frame. */
+/* Section 04 uses the original high-quality background image and native scroll-linked background-position parallax.
+   No pseudo-image, transform scale, or enlarged crop is applied. */
 .journey-section .journey-image {
-  position:relative;
-  min-width:0;
-  overflow:hidden;
-  isolation:isolate;
-  background:none !important;
-  --journey-parallax-y:0px;
-}
-.journey-section .journey-image::before {
-  content:"";
-  position:absolute;
-  inset:-22% 0;
-  z-index:0;
-  display:block;
-  background-image:
-    linear-gradient(0deg,rgba(10,22,16,.18),rgba(10,22,16,.05)),
-    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1500&q=85");
-  background-size:cover;
-  background-position:center 50%;
-  transform:translate3d(0,var(--journey-parallax-y),0) scale(1.18);
-  transform-origin:center;
-  will-change:transform;
-  pointer-events:none;
+  background-image:linear-gradient(0deg,rgba(10,22,16,.18),rgba(10,22,16,.05)),url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1500&q=85") !important;
+  background-size:cover !important;
+  background-position:center 45%;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
 }
 @media(max-width:680px) {
-  .journey-section .journey-image::before {
-    inset:-18% 0;
-    transform:translate3d(0,var(--journey-parallax-y),0) scale(1.16);
+  .journey-section .journey-image {
+    background-position:center 55%;
+    background-attachment:scroll;
   }
 }
-@media(prefers-reduced-motion:reduce) {
-  .journey-section .journey-image::before {
-    will-change:transform;
+@supports (animation-timeline:scroll()) {
+  .journey-section .journey-image {
+    background-attachment:scroll;
+    animation:editorialJourneyDepth linear both;
+    animation-timeline:scroll(root block);
+    animation-range:0px 900px;
   }
+}
+@keyframes editorialJourneyDepth {
+  from { background-position:center 45%; }
+  to { background-position:center 62%; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .journey-section .journey-image { animation:none !important; }
 }
