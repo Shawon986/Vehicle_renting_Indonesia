@@ -1,30 +1,37 @@
 "use client";
 import {useEffect} from "react";
+import {usePathname} from "next/navigation";
 
 /**
- * Homepage-only parallax for the hero and vehicle collection photographs.
- * Route changes are observed so inner pages never receive parallax styling.
+ * Lightweight scroll-linked depth for homepage-only photography.
+ * Inner pages retain their reveal and hover animations, without parallax drift.
  */
 export function ParallaxLayers(){
+ const pathname=usePathname();
  useEffect(()=>{
-  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const localeHome=/^\/(id|en|zh)\/?$/.test(pathname);
+  if(!localeHome||window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+
+  const main=document.querySelector<HTMLElement>("main");
+  const hero=main?.querySelector<HTMLElement>(":scope > .hero");
+  if(!main||!hero)return;
 
   const selector=".hero-slide, .fleet-section .vehicle-image-wrap img";
   const visible=new Set<HTMLElement>();
-  let nodes:HTMLElement[]=[];
+  const nodes=Array.from(main.querySelectorAll<HTMLElement>(selector));
   let frame=0;
 
   const update=()=>{
    frame=0;
-   const midpoint=(window.innerHeight||1)*.5;
    const mobile=window.matchMedia("(max-width:680px)").matches;
+   const midpoint=window.innerHeight*.5;
    visible.forEach(node=>{
     const rect=node.getBoundingClientRect();
     const distance=rect.top+rect.height*.5-midpoint;
-    const rawOffset=Math.max(-48,Math.min(48,-distance*.075));
-    const isFleetImage=node.matches(".fleet-section .vehicle-image-wrap img");
-    const scale=isFleetImage ? (mobile ? 0.38 : 0.55) : (mobile ? 0.24 : 0.38);
-    node.style.setProperty("--parallax-y",(rawOffset*scale).toFixed(1)+"px");
+    const travel=mobile?0.12:0.18;
+    const limit=mobile?52:84;
+    const offset=Math.max(-limit,Math.min(limit,-distance*travel));
+    node.style.setProperty("--parallax-y",offset.toFixed(1)+"px");
    });
   };
   const schedule=()=>{if(!frame)frame=window.requestAnimationFrame(update);};
@@ -35,40 +42,20 @@ export function ParallaxLayers(){
     else visible.delete(node);
    });
    schedule();
-  },{rootMargin:"120px 0px"});
+  },{rootMargin:"140px 0px"});
 
-  const collect=()=>{
-   const current=document.querySelector<HTMLElement>("main");
-   const home=current?.querySelector(":scope > .hero")?current:null;
-   const found=home?Array.from(home.querySelectorAll<HTMLElement>(selector)):[];
-   found.forEach(node=>{
-    if(!nodes.includes(node)){nodes.push(node);observer.observe(node);}
-   });
-   nodes=nodes.filter(node=>{
-    if(node.isConnected)return true;
-    observer.unobserve(node);
-    visible.delete(node);
-    node.style.removeProperty("--parallax-y");
-    return false;
-   });
-  };
-
-  collect();
-  schedule();
+  nodes.forEach(node=>observer.observe(node));
   window.addEventListener("scroll",schedule,{passive:true});
-  const resizeHandler=()=>{collect();schedule();};
-  window.addEventListener("resize",resizeHandler,{passive:true});
-  const mutations=new MutationObserver(()=>{collect();schedule();});
-  mutations.observe(document.body,{childList:true,subtree:true});
+  window.addEventListener("resize",schedule,{passive:true});
+  schedule();
 
   return()=>{
    window.removeEventListener("scroll",schedule);
-   window.removeEventListener("resize",resizeHandler);
-   mutations.disconnect();
+   window.removeEventListener("resize",schedule);
    observer.disconnect();
    if(frame)window.cancelAnimationFrame(frame);
    nodes.forEach(node=>node.style.removeProperty("--parallax-y"));
   };
- },[]);
+ },[pathname]);
  return null;
 }
