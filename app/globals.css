@@ -2401,63 +2401,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 }
 
 
-/* Subtle editorial parallax and premium finish for inner pages.
-   The homepage hero parallax remains untouched. Scroll-linked motion is progressive
-   enhancement: browsers without view timelines keep the same static composition. */
-@supports (animation-timeline: view()) {
-  .subpage-hero:before {
-    transform:scale(1.1);
-    animation:innerHeroParallax linear both;
-    animation-timeline:view();
-    animation-range:cover 0% cover 100%;
-    will-change:transform;
-  }
-  .service-gallery-image {
-    animation:galleryParallax linear both;
-    animation-timeline:view();
-    animation-range:cover 0% cover 100%;
-    will-change:background-position;
-  }
-  .service-direction-art,
-  .services-hub-card-art {
-    animation:editorialPhotoParallax linear both;
-    animation-timeline:view();
-    animation-range:entry 0% exit 100%;
-    will-change:background-position;
-  }
-  .detail-photo img {
-    animation:detailPhotoParallax linear both;
-    animation-timeline:view();
-    animation-range:cover 0% cover 100%;
-    will-change:transform;
-  }
-  .services-hub-hero:before {
-    animation:hubAtmosphereParallax linear both;
-    animation-timeline:view();
-    animation-range:cover 0% cover 100%;
-  }
-}
-@keyframes innerHeroParallax {
-  from { transform:scale(1.1) translateY(-2%); }
-  to { transform:scale(1.1) translateY(5%); }
-}
-@keyframes galleryParallax {
-  from { background-position:50% 42%; }
-  to { background-position:50% 62%; }
-}
-@keyframes editorialPhotoParallax {
-  from { background-position:50% 38%; }
-  to { background-position:50% 62%; }
-}
-@keyframes detailPhotoParallax {
-  from { transform:scale(1.08) translateY(-2%); }
-  to { transform:scale(1.08) translateY(3%); }
-}
-@keyframes hubAtmosphereParallax {
-  from { transform:translateY(-2%) scale(1.04); }
-  to { transform:translateY(4%) scale(1.04); }
-}
-
 /* A more composed editorial rhythm across the supporting pages. */
 .editorial-page,
 .service-page {
@@ -2575,4 +2518,154 @@ button,a{-webkit-tap-highlight-color:transparent}
     animation:none!important;
     will-change:auto;
   }
+}
+
+
+/* Scroll-linked parallax driven by ParallaxLayers (works without CSS scroll-timeline support). */
+.hero-slide,
+.journey-image,
+.service-gallery-image,
+.service-direction-art,
+.services-hub-card-art,
+.case-category-art {
+  background-position:center calc(50% + var(--parallax-y, 0px));
+}
+.subpage-hero:before {
+  background-position:center calc(50% + var(--parallax-y, 0px));
+}
+.service-direction-art:before,
+.services-hub-card-art:before,
+.case-category-art:before {
+  background-position:center calc(50% + var(--parallax-y, 0px));
+}
+.detail-photo img {
+  object-position:center calc(50% + var(--parallax-y, 0px));
+}
+.hero-slide,
+.service-gallery-image,
+.journey-image,
+.subpage-hero:before,
+.service-direction-art:before,
+.services-hub-card-art:before,
+.case-category-art:before,
+.detail-photo img {
+  will-change:background-position,object-position;
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero-slide,
+  .journey-image,
+  .subpage-hero:before,
+  .service-gallery-image,
+  .service-direction-art:before,
+  .services-hub-card-art:before,
+  .case-category-art:before,
+  .detail-photo img {
+    background-position:center!important;
+    object-position:center!important;
+    will-change:auto;
+  }
+}
+
+/* Refined editorial finish across the non-home pages. */
+.services-hub-page,
+.cases-page,
+.editorial-page,
+.service-page {
+  --page-gutter:clamp(24px,10.4vw,160px);
+}
+.services-hub-hero,
+.cases-hero,
+.service-hero {
+  isolation:isolate;
+}
+.services-hub-hero:after,
+.cases-hero:after,
+.service-hero:after {
+  content:"";
+  position:absolute;
+  inset:16px;
+  border:1px solid rgba(243,240,232,.16);
+  pointer-events:none;
+  z-index:2;
+}
+.services-hub-grid-section,
+.cases-grid-section,
+.service-intro,
+.service-detail-band,
+.service-cta-band,
+.service-form-section {
+  position:relative;
+}
+.services-hub-grid-section,
+.cases-grid-section {
+  padding-top:clamp(76px,9vw,124px);
+  padding-bottom:clamp(82px,10vw,138px);
+}
+.services-hub-card>a {
+  box-shadow:0 12px 34px rgba(23,36,31,.045);
+  transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease;
+}
+.services-hub-card>a:hover {
+  transform:translateY(-7px);
+  box-shadow:0 24px 55px rgba(23,36,31,.12);
+}
+.services-hub-card-copy {
+  padding:clamp(22px,3vw,38px);
+}
+.services-hub-card-copy h2,
+.case-category-card h2 {
+  letter-spacing:-.055em;
+}
+.service-direction-card,
+.case-category-card {
+  border:1px solid rgba(23,36,31,.09);
+  background:rgba(255,255,255,.2);
+  box-shadow:0 12px 34px rgba(23,36,31,.035);
+  transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease,border-color .3s ease;
+}
+.service-direction-card:hover,
+.case-category-card:hover {
+  transform:translateY(-6px);
+  border-color:rgba(23,36,31,.18);
+  box-shadow:0 24px 55px rgba(23,36,31,.1);
+}
+.service-direction-art,
+.case-category-art,
+.services-hub-card-art {
+  background-size:cover;
+  overflow:hidden;
+}
+.service-process {
+  position:relative;
+}
+.service-process-step {
+  transition:padding .3s ease,color .3s ease;
+}
+.service-process-step:hover {
+  padding-left:12px;
+}
+.service-detail-band {
+  background-image:radial-gradient(ellipse at 95% 10%,rgba(197,214,107,.12),transparent 34%);
+}
+.service-cta-band {
+  background-image:radial-gradient(ellipse at 8% 95%,rgba(197,214,107,.1),transparent 36%);
+}
+.cases-category-grid {
+  gap:clamp(16px,2vw,28px);
+}
+.case-category-card {
+  padding:clamp(18px,2.2vw,28px);
+}
+.case-content-pending {
+  border-top:1px solid rgba(23,36,31,.14);
+  padding-top:15px;
+  margin-top:22px;
+}
+@media(max-width:680px) {
+  .services-hub-hero:after,
+  .cases-hero:after,
+  .service-hero:after { inset:9px; }
+  .service-direction-card:hover,
+  .case-category-card:hover,
+  .services-hub-card>a:hover { transform:none; }
 }
