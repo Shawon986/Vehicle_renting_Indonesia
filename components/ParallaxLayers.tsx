@@ -13,18 +13,25 @@ export function ParallaxLayers(){
   if(!isHome||window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
 
   const contact=document.querySelector<HTMLElement>("main .contact-section");
-  if(!contact)return;
+  const journeyImage=document.querySelector<HTMLElement>("main .journey-section .journey-image");
+  if(!contact&&!journeyImage)return;
 
   let frame=0;
   const update=()=>{
    frame=0;
-   const rect=contact.getBoundingClientRect();
-   const distance=rect.top+rect.height*.5-window.innerHeight*.5;
    const mobile=window.matchMedia("(max-width:680px)").matches;
-   const travel=mobile?0.12:0.17;
-   const limit=mobile?38:58;
-   const offset=Math.max(-limit,Math.min(limit,-distance*travel));
-   contact.style.setProperty("--contact-parallax-y",offset.toFixed(1)+"px");
+   if(contact){
+    const rect=contact.getBoundingClientRect();
+    const distance=rect.top+rect.height*.5-window.innerHeight*.5;
+    const offset=Math.max(mobile?-34:-52,Math.min(mobile?34:52,-distance*(mobile?0.11:0.15)));
+    contact.style.setProperty("--contact-parallax-y",offset.toFixed(1)+"px");
+   }
+   if(journeyImage){
+    const rect=journeyImage.getBoundingClientRect();
+    const distance=rect.top+rect.height*.5-window.innerHeight*.5;
+    const offset=Math.max(mobile?-42:-68,Math.min(mobile?42:68,-distance*(mobile?0.14:0.19)));
+    journeyImage.style.setProperty("--journey-parallax-y",offset.toFixed(1)+"px");
+   }
   };
   const schedule=()=>{if(!frame)frame=window.requestAnimationFrame(update);};
   window.addEventListener("scroll",schedule,{passive:true});
@@ -35,7 +42,8 @@ export function ParallaxLayers(){
    window.removeEventListener("scroll",schedule);
    window.removeEventListener("resize",schedule);
    if(frame)window.cancelAnimationFrame(frame);
-   contact.style.removeProperty("--contact-parallax-y");
+   contact?.style.removeProperty("--contact-parallax-y");
+   journeyImage?.style.removeProperty("--journey-parallax-y");
   };
  },[pathname]);
  return null;
