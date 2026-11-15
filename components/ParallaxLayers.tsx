@@ -8,8 +8,8 @@ import {useEffect} from "react";
 export function ParallaxLayers(){
  useEffect(()=>{
   if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
-  const home=document.querySelector("main > .hero");
-  if(!home)return;
+  const home=document.querySelector("main");
+  if(!home?.querySelector(":scope > .hero"))return;
 
   const selector=".hero-slide, .fleet-section .vehicle-image-wrap img";
   const visible=new Set<HTMLElement>();
