@@ -1223,6 +1223,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .cases-page{background:var(--cream);overflow:hidden}
 .cases-hero{position:relative;isolation:isolate;min-height:560px;padding:105px 10.4% 95px;background:#1d3028;color:#f3f0e8;overflow:hidden}
 .cases-hero:before{content:"";position:absolute;z-index:-1;inset:-15%;background:radial-gradient(ellipse at 80% 40%,rgba(197,214,107,.18),transparent 31%),radial-gradient(ellipse at 68% 85%,rgba(100,133,104,.3),transparent 42%),linear-gradient(125deg,#14251f,#31483a 60%,#1a2b24);animation:serviceAtmosphere 18s ease-in-out infinite alternate}
+.cases-hero:after{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(rgba(231,237,220,.2) 1px,transparent 1px),linear-gradient(90deg,rgba(231,237,220,.2) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(90deg,transparent,#000 60%,#000)}
 .cases-hero h1{max-width:850px;margin:0;font:500 clamp(52px,7vw,92px)/.98 var(--font-display);letter-spacing:-.08em}
 .cases-hero h1 em{font-family:var(--font-serif);font-weight:500}
 .cases-hero>p:last-child{max-width:490px;margin:27px 0 0;color:rgba(243,240,232,.76);font-size:13px;line-height:1.9}
