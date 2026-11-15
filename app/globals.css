@@ -1522,9 +1522,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 .case-category-card:nth-child(3) .case-category-art{background-image:url("https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1000&q=85")}
 .case-category-card:nth-child(4) .case-category-art{background-image:url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1000&q=85")}
 
-/* A restrained scroll-linked depth effect; regular transitions remain the fallback. */
-to{background-position:center 68%}
-}
 
 /* Homepage "More ways we help" — convert the three service links into photo-led editorial cards. */
 .home-services-section{
