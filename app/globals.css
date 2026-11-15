@@ -658,3 +658,8 @@ button,a{-webkit-tap-highlight-color:transparent}
 .locale-full{display:inline}.locale-short{display:none}
 @media(max-width:760px){.locale-full{display:none}.locale-short{display:inline}.locale-switch a{min-width:27px;padding:0 5px}}
 @media(max-width:680px){.hero .contact-channels{gap:8px;margin-top:14px}.hero .contact-channel-button{min-width:0;width:auto;padding:10px 12px}.hero .contact-channel-button strong{font-size:9px}.hero .contact-channel-link{font-size:8px}}
+
+.price-slot{display:flex;align-items:center;justify-content:space-between;gap:20px;width:min(100%,430px);min-height:68px;margin:20px 0 24px;padding:15px 18px;border:1px solid rgba(23,36,31,.2);background:rgba(255,255,255,.24)}
+.price-slot>span{font-size:8px;letter-spacing:.14em;color:#748077}
+.price-slot>strong{font:500 17px var(--font-display);color:#293a30}
+@media(max-width:680px){.price-slot{min-height:64px;margin:16px 0 22px;padding:13px 14px}.price-slot>strong{font-size:15px}}
