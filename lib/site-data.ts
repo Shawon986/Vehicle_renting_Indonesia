@@ -30,3 +30,5 @@ id:{"Confirm with team":"Konfirmasi dengan tim","Self-drive":"Mengemudi sendiri"
 en:{"Confirm with team":"Confirm with team","Self-drive":"Self-drive","With driver":"With a driver","Self-drive or with driver":"Self-drive or with a driver"},
 zh:{"Confirm with team":"请咨询服务团队","Self-drive":"自驾","With driver":"配司机","Self-drive or with driver":"自驾或配司机"}
 };return labels[locale][value]??value;}
+
+export function formatIDR(locale:Locale,amount:number){if(!Number.isFinite(amount)||amount<0)throw new RangeError("IDR amount must be a finite non-negative number");const formatted=new Intl.NumberFormat(locale==="en"?"en-US":"id-ID",{maximumFractionDigits:0}).format(amount);return (locale==="zh"?"IDR ":"Rp ")+formatted;}
