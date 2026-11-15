@@ -2533,3 +2533,145 @@ body { overflow-x:clip; }
     will-change:auto !important;
   }
 }
+
+ 
+/* Final motion boundary: only the homepage contact section may parallax. */
+.vehicle-image-wrap img,
+.detail-photo img {
+  transform:none !important;
+  will-change:auto !important;
+  transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s ease;
+}
+.vehicle-card:hover .vehicle-image-wrap img {
+  transform:scale(1.045) !important;
+}
+.journey-section .journey-image,
+.service-direction-art,
+.services-hub-card-art,
+.case-category-art,
+.subpage-hero:before {
+  background-position:center center !important;
+  will-change:auto !important;
+}
+.service-gallery-image {
+  /* Keep the editorial slideshow's gentle fade/zoom, never scroll-linked drift. */
+  will-change:opacity,transform;
+}
+.hero-image {
+  animation:heroReveal 1.2s cubic-bezier(.2,.7,.2,1) both !important;
+}
+.contact-section {
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  --contact-parallax-y:0px;
+}
+.contact-section:before {
+  content:"";
+  position:absolute;
+  z-index:0;
+  inset:-90px -4%;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 82% 28%,rgba(197,214,107,.24),transparent 36%),
+    radial-gradient(ellipse at 12% 88%,rgba(93,117,91,.15),transparent 40%);
+  transform:translate3d(0,var(--contact-parallax-y),0);
+  will-change:transform;
+}
+.contact-top,
+.contact-grid {
+  position:relative;
+  z-index:1;
+}
+
+/* Keep the subpage gallery caption, slide controls and count on one footer line. */
+.service-gallery-caption,
+.service-gallery-count,
+.service-gallery-controls {
+  bottom:68px !important;
+}
+.service-gallery-caption {left:10.4%;max-width:34%}
+.service-gallery-count {right:10.4%}
+.service-gallery-controls {
+  left:50%;
+  right:auto !important;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+.service-hero-bottom {
+  left:10.4%;
+  right:10.4%;
+  bottom:22px !important;
+  align-items:center;
+}
+.service-hero-bottom span:last-child {
+  max-width:45%;
+  white-space:normal;
+}
+@media(max-width:1000px) {
+  .service-gallery-caption {left:7%}
+  .service-gallery-count {right:7%}
+  .service-hero-bottom {left:7%;right:7%}
+}
+@media(max-width:680px) {
+  .contact-section:before {inset:-48px -8%}
+  .service-gallery-caption {
+    left:7%;
+    bottom:64px !important;
+    max-width:35%;
+    font-size:6px;
+    line-height:1.5;
+  }
+  .service-gallery-count {
+    right:7%;
+    bottom:64px !important;
+    font-size:14px;
+  }
+  .service-gallery-controls {
+    left:50%;
+    right:auto !important;
+    bottom:64px !important;
+    transform:translateX(-50%);
+    gap:5px;
+  }
+  .service-gallery-controls button {width:14px;min-width:14px}
+  .service-gallery-controls button.is-active {width:25px}
+  .service-hero-bottom {
+    left:7%;
+    right:7%;
+    bottom:17px !important;
+    gap:10px;
+    font-size:6px;
+    line-height:1.5;
+  }
+  .service-hero-bottom span:first-child,
+  .service-hero-bottom span:last-child {max-width:48%}
+  .service-hero-index {
+    top:auto !important;
+    right:7% !important;
+    bottom:105px !important;
+    transform:none !important;
+    writing-mode:horizontal-tb !important;
+    flex-direction:row !important;
+    gap:8px;
+    font-size:6px;
+  }
+  .service-hero-index i {width:28px;height:1px !important}
+}
+@media(prefers-reduced-motion:reduce) {
+  .contact-section:before {transform:none!important;will-change:auto!important}
+  .vehicle-image-wrap img,
+  .vehicle-card:hover .vehicle-image-wrap img,
+  .detail-photo img,
+  .journey-section .journey-image,
+  .service-direction-art,
+  .services-hub-card-art,
+  .case-category-art {
+    transform:none!important;
+    background-position:center center!important;
+    will-change:auto!important;
+  }
+}
