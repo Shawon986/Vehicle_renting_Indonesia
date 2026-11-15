@@ -1247,3 +1247,10 @@ button,a{-webkit-tap-highlight-color:transparent}
 @media(max-width:1000px){.cases-hero,.cases-grid-section,.cases-contact{padding-left:7%;padding-right:7%}}
 @media(max-width:680px){.cases-hero{min-height:500px;padding:85px 7% 75px}.cases-hero h1{font-size:clamp(45px,11.5vw,65px)}.cases-hero>p:last-child{font-size:12px}.cases-grid-section{padding:70px 7% 75px}.cases-category-grid{grid-template-columns:1fr;gap:12px;margin-top:28px}.case-category-card{padding:14px}.case-category-art{min-height:180px}.case-category-card h2{font-size:21px}.cases-contact{grid-template-columns:1fr;gap:26px;padding:70px 7%}.cases-contact h2{font-size:44px}}
 @media(prefers-reduced-motion:reduce){.cases-hero:before,.case-category-art:before,.case-category-art:after{animation:none!important;transition:none!important}}
+
+@supports (animation-timeline:scroll()){
+ .service-hero:after{animation:serviceGridParallax linear both;animation-timeline:scroll(root block);animation-range:0px 720px}
+ .services-hub-orbit,.cases-hero:after{animation:serviceGridParallax linear both;animation-timeline:scroll(root block);animation-range:0px 720px}
+}
+@keyframes serviceGridParallax{from{translate:0 -2%}to{translate:0 18%}}
+@media(prefers-reduced-motion:reduce){.service-hero:after,.services-hub-orbit,.cases-hero:after{animation:none!important}}
