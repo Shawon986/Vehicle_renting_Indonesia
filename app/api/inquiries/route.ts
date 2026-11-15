@@ -8,6 +8,7 @@ const localeText={id:{subject:"Pertanyaan sewa kendaraan",ack:"Kami telah meneri
 export async function POST(request:NextRequest){
  const origin=request.headers.get("origin"),host=request.headers.get("host");
  if(origin&&host){try{if(new URL(origin).host!==host)return NextResponse.json({error:"Invalid origin"},{status:403})}catch{return NextResponse.json({error:"Invalid origin"},{status:403})}}
+ if(process.env.CONTENT_APPROVED!=="true")return NextResponse.json({error:"Enquiry submissions are disabled until content and legal approval is complete"},{status:503});
  const required=["RESEND_API_KEY","INQUIRY_TO_EMAIL","INQUIRY_FROM_EMAIL","TURNSTILE_SECRET_KEY","UPSTASH_REDIS_REST_URL","UPSTASH_REDIS_REST_TOKEN"];
  if(required.some(key=>!process.env[key]))return NextResponse.json({error:"Inquiry service is not configured"},{status:503});
  let body:Record<string,unknown>;try{const parsed=await request.json();if(!parsed||typeof parsed!=="object"||Array.isArray(parsed))throw new Error();body=parsed as Record<string,unknown>}catch{return NextResponse.json({error:"Invalid request"},{status:400})}
