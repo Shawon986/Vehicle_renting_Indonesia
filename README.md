@@ -9,11 +9,15 @@ Next.js App Router, React 19 and TypeScript. The public site is display + contac
 ## Implemented
 - Premium responsive homepage and motion-led design system.
 - Locale-prefixed Indonesian (`/id`), English (`/en`) and Simplified Chinese (`/zh`) pages.
-- Vehicle rental collection and category detail pages.
+- Vehicle rental collection with category/driver filters, card/table views, responsive comparison table and per-vehicle detail pages.
+- Vehicle detail service-inclusion matrix, add-on options, use-case guidance, price-on-request placeholders, gallery lightbox and breadcrumbs.
+- Locale-aware WhatsApp / WeChat / phone / email / enquiry contact components and mobile sticky contact actions (only verified channels appear when configured).
 - Vehicle enquiry form with dates, pickup point, passengers, luggage, vehicle, travel style and add-ons.
 - Inquiry API with origin validation, field validation, honeypot, Cloudflare Turnstile, Upstash rate limiting and Resend email delivery.
 - About, Contact, FAQ, Services hub and legal placeholder routes.
-- Locale-preserving language switcher, metadata, robots and sitemap foundations.
+- Locale-preserving language switcher with persisted preference, per-locale metadata, WebSite / Service / FAQ / Breadcrumb structured data, robots and sitemap foundations.
+- Consent-first cookie banner with reopenable preferences and GA4 loading only after analytics consent.
+- Vehicle enquiry form analytics (start, field progress, submit, abandon), localized acknowledgement email, optional Google Sheets lead inbox handoff and CSV export path.
 - Reduced-motion support and keyboard focus styles.
 
 ## Content publication gate
@@ -26,7 +30,11 @@ Set `CONTENT_APPROVED=true` only after Indonesian, English and Simplified Chines
 - Legal must provide and approve all legal pages in all three locales. The privacy policy must be complete before accepting personal data.
 - Confirm service inclusions, actual vehicle specifications, response-time promise and sales handoff recipient.
 - Self-host approved fonts and images for mainland China delivery.
-- Connect the CMS and editorial translation approval workflow.
+- Connect a CMS and editorial translation approval workflow (provider/project not yet selected).
+- Add verified fleet specifications, photos, per-vehicle inclusion statuses, operating areas, driver/insurance/cancellation policy and named content owners. Capacity/transmission filters remain disabled until verified values are entered.
+- Configure verified WhatsApp / WeChat ID + QR / phone / email, Turnstile, Resend, Upstash, Google Sheets webhook and GA4 in the hosting environment.
+- Replace third-party Unsplash imagery with approved self-hosted fleet photography for mainland China delivery.
+- Obtain legal-approved privacy/cookie/terms content and confirm the response-time promise before setting `CONTENT_APPROVED=true`.
 
 No live availability, inventory quantities, public prices, customer holds, online bookings, payments, customer login or internal-portal API integration are present. Tours & Travel, Event Design and Gift Boxes are forthcoming modules only.
 
