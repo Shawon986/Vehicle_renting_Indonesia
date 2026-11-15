@@ -16,6 +16,9 @@ Next.js App Router, React 19 and TypeScript. The public site is display + contac
 - Locale-preserving language switcher, metadata, robots and sitemap foundations.
 - Reduced-motion support and keyboard focus styles.
 
+## Content publication gate
+Set `CONTENT_APPROVED=true` only after Indonesian, English and Simplified Chinese content has been human-reviewed and the legal documents are approved. Until then, production metadata and robots intentionally keep the site out of search indexes.
+
 ## Required before production
 - Replace provisional brand mark, sample vehicle entries and illustrative photography with approved brand and fleet content.
 - Confirm company legal name, NIB, licences, office address, operating cities and real contact channels.
