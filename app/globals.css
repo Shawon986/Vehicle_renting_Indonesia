@@ -2810,12 +2810,12 @@ body { overflow-x:clip; }
   background-repeat:no-repeat !important;
   animation:none;
 }
-@supports (animation-timeline:scroll()) {
+@supports (animation-timeline:view()) {
   .journey-section .journey-image {
     background-attachment:scroll !important;
     animation:editorialJourneyDepth linear both !important;
-    animation-timeline:scroll(root block) !important;
-    animation-range:0px 900px !important;
+    animation-timeline:view(block) !important;
+    animation-range:entry 0% exit 100% !important;
   }
 }
 @media(max-width:680px) {
