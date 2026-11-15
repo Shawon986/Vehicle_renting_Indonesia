@@ -2770,50 +2770,36 @@ body { overflow-x:clip; }
 }
 
 
-/* Homepage section 04 — restore the original cinematic scroll-driven parallax.
-   The photo moves within a clipped layer, while the text column stays still. */
+/* Homepage section 04 — strong viewport-linked parallax, driven by ParallaxLayers. */
 .journey-section .journey-image {
   position:relative;
   overflow:hidden;
   isolation:isolate;
-  background-image:none !important;
-  background-position:center center !important;
+  background:none !important;
+  --journey-parallax-y:0px;
 }
 .journey-section .journey-image::before {
   content:"";
   position:absolute;
-  inset:0;
+  inset:-12% 0;
   background-image:
     linear-gradient(0deg,rgba(10,22,16,.18),rgba(10,22,16,.05)),
     url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1500&q=85");
   background-size:cover;
-  background-position:center 45%;
-  transform:scale(1.08);
+  background-position:center 50%;
+  transform:translate3d(0,var(--journey-parallax-y),0) scale(1.16);
   transform-origin:center;
-  will-change:background-position,transform;
-}
-@keyframes editorialJourneyDepth {
-  from { background-position:center 45%; transform:scale(1.08); }
-  to { background-position:center 62%; transform:scale(1.16); }
-}
-@supports (animation-timeline:scroll()) {
-  .journey-section .journey-image::before {
-    animation:editorialJourneyDepth linear both;
-    animation-timeline:scroll(root block);
-    animation-range:0px 900px;
-  }
+  will-change:transform;
+  pointer-events:none;
 }
 @media(max-width:680px) {
   .journey-section .journey-image::before {
-    background-position:center 48%;
-    transform:scale(1.1);
+    transform:translate3d(0,var(--journey-parallax-y),0) scale(1.14);
   }
 }
 @media(prefers-reduced-motion:reduce) {
   .journey-section .journey-image::before {
-    animation:none !important;
-    background-position:center center !important;
-    transform:scale(1.05);
+    transform:scale(1.05) !important;
     will-change:auto;
   }
 }
