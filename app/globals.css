@@ -272,3 +272,108 @@ button,a{-webkit-tap-highlight-color:transparent}
  .inclusion-placeholder>div{padding:12px 9px}
  .form-page>.inquiry-form{padding:18px 13px}
 }
+
+
+/* Route-wide visual pass: editorial page headers, balanced content widths and resilient grids */
+.editorial-page{background:var(--cream);min-height:60vh}
+.subpage-hero{position:relative;isolation:isolate;min-height:430px;display:flex;align-items:flex-end;overflow:hidden;background:var(--forest);color:var(--cream)}
+.subpage-hero:before{content:"";position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center}
+.subpage-hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,25,19,.88),rgba(12,25,19,.48) 62%,rgba(12,25,19,.24)),linear-gradient(0deg,rgba(8,18,14,.5),transparent 70%)}
+.about-hero:before{background-image:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=85")}
+.faq-hero:before{background-image:url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2000&q=85")}
+.services-hero:before{background-image:url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=85")}
+.legal-hero:before{background-image:url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=85")}
+.subpage-hero-content{width:min(920px,79%);padding:88px 0 78px;margin-left:10.4%}
+.subpage-hero-content .eyebrow{margin:0 0 25px;color:#d4ddd2}
+.subpage-hero-content h1{max-width:850px;color:#fff;font:500 clamp(48px,6.2vw,84px)/.99 var(--font-display);letter-spacing:-.075em;margin:0 0 22px;text-wrap:balance}
+.subpage-hero-lead{max-width:560px;color:rgba(255,255,255,.78);font-size:14px;line-height:1.85;margin:0}
+.editorial-content{padding:clamp(68px,8vw,112px) 10.4%;background:var(--cream)}
+.about-page .editorial-content{padding-top:78px;padding-bottom:110px}
+.about-page .text-columns{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(42px,8vw,120px);border:0;padding:0}
+.about-page .text-columns section{max-width:unset;padding:30px 0 0;border-top:1px solid rgba(23,36,31,.2)}
+.about-page .text-columns h2{font-size:clamp(28px,3vw,40px)}
+.about-page .content-placeholder{margin-top:22px}
+.faq-content{padding-top:74px;padding-bottom:100px}
+.faq-content .faq-list{max-width:100%;margin:0;border-top:1px solid rgba(23,36,31,.2)}
+.faq-content .faq-list summary{padding:28px 8px;font-size:clamp(18px,2vw,24px)}
+.faq-content .faq-list details>p{padding:0 70px 28px 8px;font-size:13px}
+.services-content{padding-top:78px;padding-bottom:105px}
+.services-content .service-hub-grid{margin:0;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px}
+.services-content .service-hub-card{min-height:300px;padding:clamp(28px,4vw,52px);position:relative}
+.services-content .service-hub-card:after{content:"";width:34px;height:1px;background:#9bad4f;position:absolute;right:clamp(28px,4vw,52px);top:52px}
+.services-content .service-hub-card h2{margin-top:48px}
+.services-content .service-hub-card p{min-height:0;max-width:440px}
+.legal-content{padding-top:68px;padding-bottom:100px}
+.legal-content .legal-draft{max-width:900px;margin:0;padding:clamp(28px,4vw,52px);border-left:2px solid #9bad4f;background:#e9e5db}
+.legal-content .legal-draft>p{font-size:13px;line-height:1.9}
+.form-page{background:linear-gradient(90deg,#e9e5db 0%,#e9e5db 39%,var(--cream) 39%,var(--cream) 100%);min-height:680px}
+.form-page-intro{max-width:510px}
+.form-page-intro h1{font-size:clamp(48px,5.4vw,74px);text-wrap:balance}
+.form-page>.inquiry-form{box-shadow:0 24px 70px rgba(23,36,31,.09);border-color:rgba(23,36,31,.14)}
+.form-section{background:#e9e5db}
+.form-section-copy{position:sticky;top:130px}
+.form-section>.inquiry-form{background:#f8f6f0;box-shadow:0 22px 60px rgba(23,36,31,.08)}
+.inner-section{background:var(--cream)}
+.fleet-hero{min-height:560px}
+.fleet-hero .page-hero-image{background-image:linear-gradient(90deg,rgba(10,22,18,.84),rgba(10,22,18,.38) 72%),linear-gradient(0deg,rgba(8,18,14,.5),transparent 68%),url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=85')}
+.inner-section .section-heading{align-items:flex-end}
+.inner-section .section-heading h2{max-width:650px;text-wrap:balance}
+.vehicle-filters{padding:18px 0;margin-bottom:38px}
+.vehicle-filter-list button,.view-switch button{min-height:36px}
+.vehicle-filter-list button:hover,.view-switch button:hover{border-color:rgba(23,36,31,.3);color:var(--ink)}
+.vehicle-table-wrap{background:#f8f6f0;border:1px solid rgba(23,36,31,.12)}
+.vehicle-table th,.vehicle-table td{padding:18px 16px}
+.vehicle-table tbody tr:hover{background:#eeece4}
+.detail-hero{background:#e9e5db}
+.detail-photo:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(9,20,15,.18),transparent 55%)}
+.detail-title{padding-left:clamp(34px,7vw,105px);padding-right:clamp(34px,7vw,105px)}
+.detail-title .eyebrow{line-height:1.7}
+.detail-title h1{text-wrap:balance}
+.detail-specs{background:#f8f6f0}
+.inclusion-section{background:#e9e5db}
+.inclusion-placeholder{background:rgba(248,246,240,.36)}
+.site-footer{flex-wrap:wrap}
+@media(max-width:900px){
+ .subpage-hero{min-height:390px}
+ .subpage-hero-content{width:86%;margin-left:7%;padding:76px 0 66px}
+ .editorial-content{padding-left:7%;padding-right:7%}
+ .form-page{background:var(--paper)}
+ .form-section-copy{position:static}
+ .services-content .service-hub-card:after{top:36px}
+}
+@media(max-width:680px){
+ .subpage-hero{min-height:390px}
+ .subpage-hero-content{width:86%;padding:66px 0 56px}
+ .subpage-hero-content h1{font-size:clamp(43px,11.5vw,64px)}
+ .subpage-hero-lead{font-size:12px;line-height:1.8}
+ .editorial-content{padding:62px 7% 78px}
+ .about-page .editorial-content{padding-top:58px;padding-bottom:78px}
+ .about-page .text-columns{grid-template-columns:1fr;gap:32px}
+ .about-page .text-columns section{padding-top:22px}
+ .faq-content .faq-list summary{padding:22px 2px;font-size:17px}
+ .faq-content .faq-list details>p{padding:0 38px 22px 2px;font-size:12px}
+ .services-content .service-hub-grid{grid-template-columns:1fr}
+ .services-content .service-hub-card{min-height:245px;padding:26px}
+ .services-content .service-hub-card:after{right:26px;top:31px}
+ .services-content .service-hub-card h2{margin-top:38px}
+ .legal-content .legal-draft{padding:24px 20px}
+ .legal-content .legal-draft>p{font-size:12px}
+ .form-page{min-height:0;padding:62px 7% 78px}
+ .form-page-intro h1{font-size:clamp(43px,12vw,62px)}
+ .form-page>.inquiry-form{box-shadow:0 12px 35px rgba(23,36,31,.07)}
+ .fleet-hero{min-height:470px}
+ .inner-section{padding-top:62px;padding-bottom:62px}
+ .vehicle-table-wrap{margin-right:-1px}
+ .detail-hero{grid-template-columns:1fr}
+ .detail-photo{height:68vw;min-height:290px}
+ .detail-title{padding:38px 7% 48px}
+ .detail-specs{gap:22px 15px}
+ .site-footer{gap:18px}
+ .footer-links{flex-wrap:wrap;gap:13px 20px}
+}
+@media(max-width:380px){
+ .subpage-hero-content h1{font-size:41px}
+ .subpage-hero-content{padding-top:58px}
+ .faq-content .faq-list summary{gap:12px}
+ .vehicle-table{min-width:560px}
+}
