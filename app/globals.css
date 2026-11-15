@@ -1900,18 +1900,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 }
 
 
-/* Final motion pass: keep photographic depth on the compositor and avoid fixed
-   backgrounds, which can stutter on touch devices and lower-powered laptops. */
-.hero-slide {
-  background-position:center calc(54% + var(--parallax-y, 0px));
-  transform:translate3d(0,var(--parallax-y,0px),0) scale(1.055);
-  transition:opacity 1.35s ease,transform 7s cubic-bezier(.2,.7,.2,1);
-  will-change:transform,opacity;
-}
-.hero-slide-active {
-  background-position:center calc(54% + var(--parallax-y, 0px));
-  transform:translate3d(0,var(--parallax-y,0px),0) scale(1.015);
-}
 html { scroll-behavior:smooth; }
 body { overflow-x:clip; }
 /* Hero recovery: make the service, hub and case-study photo layers explicit.
@@ -2050,36 +2038,6 @@ body { overflow-x:clip; }
   .cases-hero:after {z-index:2;pointer-events:none}
 }
 
-/* Homepage-only parallax: the hero plus the vehicle collection imagery.
-   Service, case-study and all other inner-page imagery remain static. */
-.hero-slide {
-  transform:translate3d(0,calc(var(--parallax-y,0px) * .38),0) scale(1.055);
-  transition:opacity 1.25s ease;
-  will-change:transform,opacity;
-}
-.hero-slide-active {
-  transform:translate3d(0,calc(var(--parallax-y,0px) * .38),0) scale(1.055);
-}
-.fleet-section .vehicle-image-wrap img {
-  object-position:center calc(50% + var(--parallax-y,0px) * .55);
-  will-change:object-position;
-}
-@media(max-width:680px) {
-  .hero-slide,.hero-slide-active {
-    transform:translate3d(0,calc(var(--parallax-y,0px) * .24),0) scale(1.045);
-  }
-  .fleet-section .vehicle-image-wrap img {
-    object-position:center calc(50% + var(--parallax-y,0px) * .38);
-  }
-}
-@media(prefers-reduced-motion:reduce) {
-  .hero-slide,.hero-slide-active,.fleet-section .vehicle-image-wrap img {
-    transform:none!important;
-    transition:none!important;
-    object-position:center!important;
-    will-change:auto;
-  }
-}
 /* Homepage-only parallax: the hero plus the vehicle collection imagery.
    Service, case-study and all other inner-page imagery remain static. */
 .hero-slide {
