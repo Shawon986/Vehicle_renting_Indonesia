@@ -2,8 +2,9 @@
 import {useEffect} from "react";
 
 /**
- * Lightweight, scroll-driven image depth for every localized route.
- * Uses a passive scroll listener + one animation frame and leaves layout untouched.
+ * Scroll-linked image depth shared by the localized pages.
+ * Only visible image layers are measured, and updates are coalesced to one
+ * animation frame so the effect stays light while scrolling.
  */
 export function ParallaxLayers(){
  useEffect(()=>{
@@ -19,28 +20,49 @@ export function ParallaxLayers(){
    ".case-category-art",
    ".detail-photo img"
   ].join(",");
+  const visible=new Set<HTMLElement>();
   let nodes:HTMLElement[]=[];
   let frame=0;
-  const collect=()=>{nodes=Array.from(document.querySelectorAll<HTMLElement>(selector));};
   const update=()=>{
    frame=0;
    const height=window.innerHeight||1;
-   for(const node of nodes){
+   visible.forEach(node=>{
     const rect=node.getBoundingClientRect();
-    if(rect.bottom<-120||rect.top>height+120)continue;
-    const distance=(rect.top+rect.height*.5-height*.5);
-    const offset=Math.max(-110,Math.min(110,-distance*.18));
+    const distance=rect.top+rect.height*.5-height*.5;
+    const offset=Math.max(-72,Math.min(72,-distance*.12));
     node.style.setProperty("--parallax-y",offset.toFixed(1)+"px");
-   }
+   });
   };
   const schedule=()=>{if(!frame)frame=window.requestAnimationFrame(update);};
+  const observer=new IntersectionObserver(entries=>{
+   entries.forEach(entry=>{
+    const node=entry.target as HTMLElement;
+    if(entry.isIntersecting)visible.add(node);
+    else visible.delete(node);
+   });
+   schedule();
+  },{rootMargin:"120px 0px"});
+  const collect=()=>{
+   const found=Array.from(document.querySelectorAll<HTMLElement>(selector));
+   found.forEach(node=>{if(!nodes.includes(node)){nodes.push(node);observer.observe(node);}});
+   nodes=nodes.filter(node=>{
+    if(node.isConnected)return true;
+    observer.unobserve(node);visible.delete(node);node.style.removeProperty("--parallax-y");return false;
+   });
+  };
   const resize=()=>{collect();schedule();};
-  collect();update();
+  collect();schedule();
   window.addEventListener("scroll",schedule,{passive:true});
   window.addEventListener("resize",resize,{passive:true});
-  const observer=new MutationObserver(()=>{collect();schedule();});
-  observer.observe(document.body,{childList:true,subtree:true});
-  return()=>{window.removeEventListener("scroll",schedule);window.removeEventListener("resize",resize);observer.disconnect();if(frame)window.cancelAnimationFrame(frame);nodes.forEach(node=>node.style.removeProperty("--parallax-y"));};
+  const mutations=new MutationObserver(()=>{collect();schedule();});
+  mutations.observe(document.body,{childList:true,subtree:true});
+  return()=>{
+   window.removeEventListener("scroll",schedule);
+   window.removeEventListener("resize",resize);
+   mutations.disconnect();observer.disconnect();
+   if(frame)window.cancelAnimationFrame(frame);
+   nodes.forEach(node=>node.style.removeProperty("--parallax-y"));
+  };
  },[]);
  return null;
 }
