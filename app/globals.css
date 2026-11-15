@@ -2675,3 +2675,96 @@ body { overflow-x:clip; }
     will-change:auto!important;
   }
 }
+
+
+/* Supporting-page photo cards: calm editorial hover, with no image zoom or colour pop. */
+.service-page .service-direction-art,
+.services-hub-page .services-hub-card-art,
+.cases-page .case-category-art {
+  transform:none !important;
+  filter:none !important;
+  background-size:cover !important;
+  background-position:center center !important;
+  transition:filter .35s ease !important;
+}
+.service-page .service-direction-card:hover .service-direction-art,
+.services-hub-page .services-hub-card:hover .services-hub-card-art,
+.cases-page .case-category-card:hover .case-category-art {
+  transform:none !important;
+  filter:none !important;
+  background-size:cover !important;
+  background-position:center center !important;
+}
+.service-page .service-direction-art:before,
+.services-hub-page .services-hub-card-art:before,
+.cases-page .case-category-art:before {
+  opacity:1;
+  transition:background-color .3s ease,opacity .3s ease;
+}
+.service-page .service-direction-card:hover .service-direction-art:before,
+.services-hub-page .services-hub-card:hover .services-hub-card-art:before,
+.cases-page .case-category-card:hover .case-category-art:before {
+  opacity:1;
+}
+
+/* Reduce the card movement and soften the elevation instead of a dramatic hover jump. */
+.service-page .service-direction-card,
+.cases-page .case-category-card,
+.services-hub-page .services-hub-card>a {
+  border:1px solid rgba(23,36,31,.1);
+  box-shadow:0 8px 24px rgba(23,36,31,.045);
+  transition:transform .32s ease,box-shadow .32s ease,border-color .32s ease;
+}
+.service-page .service-direction-card:hover,
+.cases-page .case-category-card:hover,
+.services-hub-page .services-hub-card>a:hover {
+  transform:translateY(-2px);
+  border-color:rgba(23,36,31,.16);
+  box-shadow:0 13px 30px rgba(23,36,31,.075);
+}
+.service-page .service-direction-card {
+  padding:clamp(12px,1.6vw,18px);
+}
+.cases-page .case-category-card {
+  padding:clamp(14px,1.8vw,22px);
+}
+.services-hub-page .services-hub-card-copy {
+  padding:clamp(20px,2.5vw,30px);
+}
+.service-page .service-direction-art {
+  box-shadow:none;
+}
+.service-page .service-direction-card:hover .service-direction-art {
+  box-shadow:none;
+}
+.service-page .service-direction-art:after {
+  opacity:.42;
+  transition:opacity .3s ease;
+}
+.service-page .service-direction-card:hover .service-direction-art:after {
+  opacity:.42;
+}
+@media(max-width:680px) {
+  .service-page .service-direction-card,
+  .cases-page .case-category-card {
+    padding:12px;
+  }
+  .services-hub-page .services-hub-card-copy {
+    padding:20px 18px 22px;
+  }
+  .service-page .service-direction-card:hover,
+  .cases-page .case-category-card:hover,
+  .services-hub-page .services-hub-card>a:hover {
+    transform:none;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .service-page .service-direction-card,
+  .cases-page .case-category-card,
+  .services-hub-page .services-hub-card>a,
+  .service-page .service-direction-art,
+  .services-hub-page .services-hub-card-art,
+  .cases-page .case-category-art {
+    transition:none !important;
+  }
+}
