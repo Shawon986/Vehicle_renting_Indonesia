@@ -1912,3 +1912,66 @@ button,a{-webkit-tap-highlight-color:transparent}
   .service-detail-band:hover .service-detail-symbol,.services-hub-card:hover .services-hub-card-art,
   .case-category-card:hover .case-category-art{transform:none;box-shadow:none}
 }
+
+
+/* Final hero footer alignment: reserve separate rows for the slide UI and scroll cue. */
+.service-hero-bottom{
+  left:10.4%;
+  right:10.4%;
+  bottom:22px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:end;
+  column-gap:28px;
+  pointer-events:none;
+}
+.service-hero-bottom span:first-child{
+  justify-self:start;
+  text-align:left;
+  max-width:48%;
+}
+.service-hero-bottom span:last-child{
+  justify-self:end;
+  width:max-content;
+  max-width:100%;
+  margin:0;
+  padding:0;
+  text-align:right;
+  white-space:nowrap;
+  line-height:1.4;
+}
+.service-gallery-count{right:10.4%;bottom:105px}
+.service-gallery-controls{right:10.4%;bottom:70px}
+.service-gallery-caption{bottom:62px}
+@media(max-width:1000px){
+  .service-hero-bottom{left:7%;right:7%;bottom:20px}
+  .service-gallery-count{right:7%;bottom:101px}
+  .service-gallery-controls{right:7%;bottom:66px}
+  .service-gallery-caption{bottom:58px}
+}
+@media(max-width:680px){
+  .service-hero-bottom{
+    display:grid;
+    left:7%;
+    right:7%;
+    bottom:18px;
+    grid-template-columns:minmax(0,1fr) auto;
+    column-gap:12px;
+    font-size:6px;
+    letter-spacing:.08em;
+  }
+  .service-hero-bottom span:first-child{max-width:100%;white-space:nowrap}
+  .service-hero-bottom span:last-child{
+    max-width:150px;
+    white-space:normal;
+    line-height:1.5;
+  }
+  .service-gallery-count{right:7%;bottom:91px}
+  .service-gallery-controls{right:7%;bottom:59px}
+  .service-gallery-caption{left:7%;bottom:57px}
+  .service-hero-index{right:7%;bottom:17px;top:auto}
+}
+@media(max-width:380px){
+  .service-hero-bottom{font-size:5px;letter-spacing:.04em;column-gap:8px}
+  .service-hero-bottom span:last-child{max-width:116px}
+}
