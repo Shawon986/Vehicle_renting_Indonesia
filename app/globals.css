@@ -1975,3 +1975,159 @@ button,a{-webkit-tap-highlight-color:transparent}
   .service-hero-bottom{font-size:5px;letter-spacing:.04em;column-gap:8px}
   .service-hero-bottom span:last-child{max-width:116px}
 }
+
+/* Two additional editorial photographs for private dining and launch experiences. */
+.service-page-event-design .service-direction-card:nth-child(5) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=85")}
+.service-page-event-design .service-direction-card:nth-child(6) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=85")}
+
+
+/* Premium post-hero editorial treatment shared across service and portfolio pages. */
+.service-intro,.cases-grid-section,.services-hub-grid-section{
+  position:relative;
+  isolation:isolate;
+}
+.service-intro:before,.cases-grid-section:before,.services-hub-grid-section:before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 92% 8%,rgba(164,179,106,.10),transparent 30%),
+    linear-gradient(180deg,rgba(255,255,255,.22),transparent 42%);
+}
+.service-section-meta{
+  padding-bottom:20px;
+  border-bottom-color:rgba(23,36,31,.16);
+}
+.service-intro-grid{padding-top:82px;padding-bottom:84px}
+.service-intro-grid h2,.service-process-heading h2,.service-detail-band h2,
+.service-cta-band h2,.service-form-copy h2,.services-fit-section h2,
+.services-hub-contact h2,.cases-contact h2{
+  text-wrap:balance;
+}
+.service-direction-grid{gap:30px 18px}
+.service-direction-card{
+  padding:0 0 22px;
+  border-bottom-color:rgba(23,36,31,.15);
+  transition:transform .45s cubic-bezier(.2,.7,.2,1);
+}
+.service-direction-card:hover{transform:translateY(-5px)}
+.service-direction-art{
+  aspect-ratio:1.28;
+  border-radius:3px;
+  box-shadow:0 12px 30px rgba(23,36,31,.07);
+}
+.service-direction-card h3{margin-top:20px;font-size:clamp(16px,1.35vw,19px)}
+.service-direction-card p{max-width:34ch;font-size:11px;line-height:1.85}
+.service-process{
+  position:relative;
+  isolation:isolate;
+  background:
+    radial-gradient(ellipse at 12% 15%,rgba(197,214,107,.11),transparent 34%),
+    linear-gradient(125deg,#172820,#263d31 58%,#1b2e25);
+}
+.service-process:after,.services-hub-contact:after,.cases-contact:after{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(243,240,232,.12);
+  pointer-events:none;
+}
+.service-process-heading .eyebrow,.service-cta-band .eyebrow,
+.service-form-copy .eyebrow{letter-spacing:.18em}
+.service-process-step{transition:padding .3s ease,background .3s ease}
+.service-process-step:hover{padding-left:10px;background:rgba(255,255,255,.035)}
+.service-detail-band{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 10% 80%,rgba(164,179,106,.13),transparent 35%),
+    linear-gradient(135deg,#efede5,#e5e2d8);
+}
+.service-detail-band>div:last-child{max-width:760px}
+.service-detail-band h2{margin-bottom:18px}
+.service-cta-band{
+  position:relative;
+  background:linear-gradient(180deg,#f4f2eb,#ebe9df);
+}
+.service-cta-band:before{
+  content:"";
+  position:absolute;
+  left:10.4%;right:10.4%;top:0;
+  height:1px;background:rgba(23,36,31,.15);
+}
+.service-cta-side{padding:26px 28px;border:1px solid rgba(23,36,31,.12);background:rgba(255,255,255,.34);box-shadow:0 16px 38px rgba(23,36,31,.045)}
+.service-form-section{
+  background:
+    radial-gradient(ellipse at 85% 12%,rgba(164,179,106,.12),transparent 30%),
+    #e3e1d8;
+}
+.service-inquiry-form{
+  border:1px solid rgba(23,36,31,.12);
+  border-radius:5px;
+  background:rgba(255,254,250,.88);
+  box-shadow:0 22px 55px rgba(23,36,31,.09);
+  backdrop-filter:blur(12px);
+}
+.service-form-field input,.service-form-field select,.service-form-field textarea{
+  border-radius:4px;
+  transition:border-color .2s,box-shadow .2s,background .2s;
+}
+.service-form-field input:focus,.service-form-field select:focus,.service-form-field textarea:focus{
+  box-shadow:0 0 0 4px rgba(135,153,66,.09);
+}
+.services-hub-grid-section,.cases-grid-section{background:linear-gradient(180deg,#f4f2eb,#e9e7dd)}
+.services-hub-card,.case-category-card{
+  border:1px solid rgba(23,36,31,.10);
+  border-radius:4px;
+  background:rgba(255,255,255,.48);
+  box-shadow:0 14px 36px rgba(23,36,31,.045);
+  transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s,border-color .4s;
+}
+.services-hub-card:hover,.case-category-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(135,153,66,.35);
+  box-shadow:0 22px 48px rgba(23,36,31,.10);
+}
+.services-hub-card-art,.case-category-art{border-radius:2px}
+.services-hub-card-copy{padding:3px 4px 5px}
+.services-hub-card-copy h2{letter-spacing:-.045em}
+.services-fit-section{
+  position:relative;
+  background:linear-gradient(135deg,#e5e3d9,#f1efe7);
+}
+.services-fit-table{border:1px solid rgba(23,36,31,.12);background:rgba(255,255,255,.34);box-shadow:0 16px 38px rgba(23,36,31,.05)}
+.services-fit-row{transition:background .25s}
+.services-fit-row:not(.services-fit-head):hover{background:rgba(255,255,255,.55)}
+.services-hub-contact,.cases-contact{
+  position:relative;
+  isolation:isolate;
+  background:
+    radial-gradient(ellipse at 90% 10%,rgba(197,214,107,.13),transparent 35%),
+    linear-gradient(125deg,#172820,#263d31 60%,#1b2e25);
+}
+.cases-category-grid{gap:22px}
+.case-category-card{padding:18px}
+.case-category-art{min-height:260px}
+.case-category-card h2{margin-top:25px}
+@media(max-width:1000px){
+  .service-intro-grid{padding-top:64px;padding-bottom:64px}
+  .service-cta-side{padding:22px}
+  .case-category-art{min-height:220px}
+}
+@media(max-width:680px){
+  .service-intro-grid{padding-top:44px;padding-bottom:40px}
+  .service-direction-grid{gap:22px 12px}
+  .service-direction-card{padding-bottom:17px}
+  .service-direction-art{aspect-ratio:1.08}
+  .service-cta-side{padding:18px}
+  .service-inquiry-form{border-radius:4px;padding:20px 16px}
+  .service-process:after,.services-hub-contact:after,.cases-contact:after{inset:10px}
+  .cases-category-grid{gap:14px}
+  .case-category-card{padding:13px}
+  .case-category-art{min-height:190px}
+}
+@media(prefers-reduced-motion:reduce){
+  .service-direction-card,.service-process-step,.services-hub-card,.case-category-card{transition:none!important}
+}
