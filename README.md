@@ -40,7 +40,7 @@ No live availability, inventory quantities, public prices, customer holds, onlin
 
 ## Vehicle enquiry handoff
 
-The enquiry API can send a copy of each validated vehicle enquiry to a Google Sheet before it sends the sales notification. This provides a searchable lead inbox and a CSV export path without connecting this public site to the internal operations portal.
+The enquiry API sends the validated enquiry to the vehicle-rental sales inbox first. If configured, it then makes a best-effort authenticated copy to a Google Sheet for searchable lead history and CSV export. A spreadsheet outage does not cause a customer to resubmit an enquiry already delivered to sales. This is a one-way handoff only; the public site does not connect to the internal operations portal.
 
 1. Create a dedicated Google Spreadsheet for public website enquiries.
 2. Open **Extensions → Apps Script** and paste `integrations/google-sheets/Code.gs`.
