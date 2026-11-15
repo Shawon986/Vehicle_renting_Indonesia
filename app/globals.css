@@ -2399,3 +2399,180 @@ button,a{-webkit-tap-highlight-color:transparent}
   .home-service-card,.home-service-card:before,.home-service-card i{transition:none!important}
   .home-service-card:hover{transform:none}
 }
+
+
+/* Subtle editorial parallax and premium finish for inner pages.
+   The homepage hero parallax remains untouched. Scroll-linked motion is progressive
+   enhancement: browsers without view timelines keep the same static composition. */
+@supports (animation-timeline: view()) {
+  .subpage-hero:before {
+    transform:scale(1.1);
+    animation:innerHeroParallax linear both;
+    animation-timeline:view();
+    animation-range:cover 0% cover 100%;
+    will-change:transform;
+  }
+  .service-gallery-image {
+    animation:galleryParallax linear both;
+    animation-timeline:view();
+    animation-range:cover 0% cover 100%;
+    will-change:background-position;
+  }
+  .service-direction-art,
+  .services-hub-card-art {
+    animation:editorialPhotoParallax linear both;
+    animation-timeline:view();
+    animation-range:entry 0% exit 100%;
+    will-change:background-position;
+  }
+  .detail-photo img {
+    animation:detailPhotoParallax linear both;
+    animation-timeline:view();
+    animation-range:cover 0% cover 100%;
+    will-change:transform;
+  }
+  .services-hub-hero:before {
+    animation:hubAtmosphereParallax linear both;
+    animation-timeline:view();
+    animation-range:cover 0% cover 100%;
+  }
+}
+@keyframes innerHeroParallax {
+  from { transform:scale(1.1) translateY(-2%); }
+  to { transform:scale(1.1) translateY(5%); }
+}
+@keyframes galleryParallax {
+  from { background-position:50% 42%; }
+  to { background-position:50% 62%; }
+}
+@keyframes editorialPhotoParallax {
+  from { background-position:50% 38%; }
+  to { background-position:50% 62%; }
+}
+@keyframes detailPhotoParallax {
+  from { transform:scale(1.08) translateY(-2%); }
+  to { transform:scale(1.08) translateY(3%); }
+}
+@keyframes hubAtmosphereParallax {
+  from { transform:translateY(-2%) scale(1.04); }
+  to { transform:translateY(4%) scale(1.04); }
+}
+
+/* A more composed editorial rhythm across the supporting pages. */
+.editorial-page,
+.service-page {
+  --editorial-rule:rgba(23,36,31,.15);
+}
+.editorial-page .subpage-hero {
+  min-height:clamp(470px,56vw,680px);
+  border-bottom:1px solid rgba(243,240,232,.16);
+}
+.editorial-page .subpage-hero:after {
+  background:
+    linear-gradient(90deg,rgba(12,25,19,.86),rgba(12,25,19,.43) 60%,rgba(12,25,19,.18)),
+    linear-gradient(0deg,rgba(8,18,14,.58),transparent 72%);
+}
+.editorial-page .subpage-hero-content {
+  padding-top:110px;
+  padding-bottom:clamp(76px,9vw,112px);
+}
+.editorial-content {
+  position:relative;
+}
+.editorial-content > .eyebrow,
+.editorial-content .eyebrow {
+  letter-spacing:.19em;
+}
+.editorial-page .text-columns section,
+.editorial-page .faq-list,
+.editorial-page .service-hub-card {
+  transition:border-color .3s ease,box-shadow .35s ease,transform .35s ease;
+}
+.editorial-page .service-hub-card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 18px 42px rgba(23,36,31,.08);
+}
+.service-page .service-intro,
+.service-page .service-detail-band,
+.service-page .service-cta-band,
+.service-page .service-form-section {
+  position:relative;
+}
+.service-page .service-intro:after,
+.editorial-page .editorial-content:after {
+  content:"";
+  position:absolute;
+  left:10.4%;
+  right:10.4%;
+  bottom:0;
+  height:1px;
+  background:var(--editorial-rule);
+  pointer-events:none;
+}
+.service-page .service-hero {
+  box-shadow:inset 0 -1px rgba(243,240,232,.18);
+}
+.service-page .service-hero-copy h1 {
+  text-wrap:balance;
+  text-shadow:0 4px 30px rgba(0,0,0,.16);
+}
+.service-page .service-direction-card {
+  background:rgba(255,255,255,.16);
+}
+.service-page .service-direction-card h3 {
+  letter-spacing:-.035em;
+}
+.service-page .service-direction-art {
+  overflow:hidden;
+}
+.service-page .service-process-step {
+  border-color:rgba(243,240,232,.2);
+}
+.service-page .service-detail-band,
+.service-page .service-cta-band {
+  overflow:hidden;
+}
+.services-hub-grid-section .services-hub-card>a {
+  overflow:hidden;
+  border:1px solid rgba(23,36,31,.08);
+}
+.services-hub-card-art {
+  background-size:cover;
+  background-position:center;
+  transition:background-size .7s ease,filter .5s ease;
+}
+.services-hub-card>a:hover .services-hub-card-art {
+  filter:saturate(1.08);
+}
+.cases-grid-section {
+  background:
+    radial-gradient(ellipse at 90% 4%,rgba(164,179,106,.09),transparent 32%),
+    var(--cream);
+}
+@media(max-width:900px) {
+  .editorial-page .subpage-hero-content { margin-left:7%;width:86%; }
+  .service-page .service-intro:after,
+  .editorial-page .editorial-content:after { left:7%;right:7%; }
+}
+@media(max-width:680px) {
+  .editorial-page .subpage-hero {
+    min-height:570px;
+  }
+  .editorial-page .subpage-hero-content {
+    padding-top:86px;
+    padding-bottom:68px;
+  }
+  .service-page .service-intro:after,
+  .editorial-page .editorial-content:after { left:7%;right:7%; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .subpage-hero:before,
+  .service-gallery-image,
+  .service-direction-art,
+  .services-hub-card-art,
+  .detail-photo img,
+  .services-hub-hero:before {
+    animation:none!important;
+    will-change:auto;
+  }
+}
