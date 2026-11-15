@@ -2802,23 +2802,33 @@ body { overflow-x:clip; }
 }
 
 
-/* Final override: fill the complete journey image panel while keeping the original fixed-background parallax. */
+/* Keep the full panel covered while preserving the original starry-sky focal framing and scroll parallax. */
 .journey-section .journey-image {
   background-size:cover !important;
-  background-position:center center !important;
+  background-position:center 45% !important;
   background-attachment:fixed !important;
   background-repeat:no-repeat !important;
-  animation:none !important;
+  animation:none;
+}
+@supports (animation-timeline:scroll()) {
+  .journey-section .journey-image {
+    background-attachment:scroll !important;
+    animation:editorialJourneyDepth linear both !important;
+    animation-timeline:scroll(root block) !important;
+    animation-range:0px 900px !important;
+  }
 }
 @media(max-width:680px) {
   .journey-section .journey-image {
     background-size:cover !important;
     background-attachment:scroll !important;
     background-position:center 55% !important;
+    animation:none !important;
   }
 }
 @media(prefers-reduced-motion:reduce) {
   .journey-section .journey-image {
+    animation:none !important;
     background-attachment:fixed !important;
   }
 }
