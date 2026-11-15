@@ -4218,3 +4218,14 @@ input[type="checkbox"]:focus-visible {outline:2px solid #87994d;outline-offset:3
   .service-page .service-detail-band {grid-template-columns:minmax(0,1fr);gap:18px}
   .service-page .service-detail-symbol {width:100%;height:150px}
 }
+
+.service-form-editorial-foot b.service-arrow-mark {
+  display:inline-block;
+  width:12px;
+  height:12px;
+  vertical-align:middle;
+  background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 18 18 6M7 6h11v11' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 18 18 6M7 6h11v11' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  font-size:0;
+}
