@@ -32,6 +32,9 @@ assert.match(api,/vehicleSupportsDriver/,"Driver selection must match the select
 assert.match(api,/vehicleCategory/,"Enquiries must capture vehicle category when the exact model is unknown");
 assert.ok(api.includes('timeZone:"Asia/Jakarta"'),"Enquiry timestamps must use the declared operating timezone");
 assert.match(api,/TURNSTILE_SECRET_KEY/,"Turnstile server verification must be configured");
+assert.match(api,/verdict.hostname!==expectedHost/,"Turnstile hostname must be verified");
+assert.match(api,/verdict.action!=="vehicle_rental_enquiry"/,"Turnstile action must be verified");
+assert.match(form,/action:"vehicle_rental_enquiry"/,"Turnstile widget must send the expected action");
 assert.match(api,/UPSTASH_REDIS_REST_TOKEN/,"Rate limiting must be configured");
 assert.match(api,/INQUIRY_SHEETS_SHARED_SECRET/,"Spreadsheet handoff must use a server-side secret");
 assert.match(api,/sheetResult\.ok!==true/,"Spreadsheet errors must not be treated as successful saves");
