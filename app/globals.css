@@ -3824,3 +3824,206 @@ body { overflow-x:clip; }
   .home-service-card-image {transform:none}
   .home-service-card:hover .home-service-card-image {transform:none}
 }
+
+
+/* Consistent symbol rendering across desktop and mobile, including photo overlays. */
+.arrow-up,
+.vehicle-open,
+.nav-chevron,
+.service-process-step>i,
+.services-hub-card-art>i,
+.service-direction-art>span,
+.service-detail-symbol>span,
+.principle-icon,
+.services-hub-card-art>span,
+.service-gallery-count i,
+.service-form-editorial-foot b,
+.contact-channel-button svg,
+.contact-channel-link svg,
+.contact-channels svg,
+.service-page svg,
+.inner-page svg {
+  font-family:Arial,"Segoe UI Symbol","Noto Sans Symbols 2",sans-serif;
+  font-variant-emoji:text;
+  font-style:normal;
+  font-weight:400;
+  font-synthesis:none;
+  text-rendering:geometricPrecision;
+  -webkit-font-smoothing:antialiased;
+}
+.arrow-up,
+.vehicle-open,
+.nav-chevron,
+.service-process-step>i,
+.services-hub-card-art>i {
+  line-height:1;
+  font-variant-ligatures:none;
+}
+.service-direction-art>span,
+.service-detail-symbol>span,
+.principle-icon,
+.services-hub-card-art>span {
+  font-family:"Segoe UI Symbol","Noto Sans Symbols 2",Georgia,serif;
+  font-variant-emoji:text;
+  line-height:1;
+  font-variant-ligatures:none;
+}
+.contact-channel-button svg,
+.contact-channel-link svg,
+.contact-channels svg,
+.service-page svg,
+.inner-page svg {
+  flex-shrink:0;
+  vertical-align:middle;
+}
+@media(max-width:680px) {
+  .arrow-up {font-size:15px;margin-left:8px;vertical-align:-.06em}
+  .vehicle-open {font-size:20px}
+  .nav-chevron {font-size:13px}
+  .service-process-step>i {font-size:14px}
+  .service-direction-art>span,
+  .service-detail-symbol>span,
+  .principle-icon,
+  .services-hub-card-art>span {font-variant-emoji:text}
+  .contact-channel-button svg,
+  .contact-channel-link svg,
+  .contact-channels svg,
+  .service-page svg,
+  .inner-page svg {width:1.05em;height:1.05em}
+}
+
+/* Rebuild the service detail hero as a true stacked mobile layout.
+   The gallery participates in document flow instead of covering the copy. */
+@media(max-width:680px) {
+  .service-page .service-hero {
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:flex-start;
+    gap:0;
+    min-height:0;
+    height:auto;
+    padding:82px 7% 78px;
+    overflow:hidden;
+  }
+  .service-page .service-hero-copy {
+    position:relative;
+    z-index:4;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    margin:0;
+    padding:0;
+  }
+  .service-page .service-hero-copy h1 {
+    max-width:100%;
+    font-size:clamp(39px,10.5vw,58px);
+    line-height:1.02;
+    overflow-wrap:normal;
+    word-break:normal;
+    text-wrap:balance;
+  }
+  .service-page .service-hero-lead {
+    max-width:38rem;
+    font-size:12px;
+    line-height:1.75;
+    margin:17px 0 20px;
+  }
+  .service-page .service-hero-actions {
+    align-items:flex-start;
+    gap:12px 17px;
+    margin-bottom:18px;
+  }
+  .service-page .service-hero .contact-channels {
+    margin-top:16px;
+  }
+  .service-page .service-hero-gallery {
+    position:relative;
+    inset:auto;
+    z-index:3;
+    display:block;
+    width:100%;
+    height:clamp(220px,65vw,330px);
+    min-height:220px;
+    flex:0 0 auto;
+    margin:25px 0 0;
+  }
+  .service-page .service-gallery-frame {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    min-height:0;
+    overflow:hidden;
+  }
+  .service-page .service-gallery-image {
+    inset:0;
+    width:100%;
+    height:100%;
+    background-position:center 48%;
+  }
+  .service-page .service-gallery-label {top:13px;left:13px}
+  .service-page .service-gallery-caption {
+    left:13px;
+    bottom:15px !important;
+    max-width:38%;
+    font-size:6px;
+  }
+  .service-page .service-gallery-count {
+    right:13px;
+    bottom:13px !important;
+    font-size:13px;
+  }
+  .service-page .service-gallery-controls {
+    left:50%;
+    right:auto !important;
+    bottom:18px !important;
+    transform:translateX(-50%);
+    z-index:5;
+  }
+  .service-page .service-gallery-controls button {min-height:12px}
+  .service-page .service-hero-index {display:none}
+  .service-page .service-hero-bottom {
+    position:relative;
+    left:auto;
+    right:auto;
+    bottom:auto !important;
+    width:100%;
+    margin-top:22px;
+    padding-top:13px;
+    border-top:1px solid rgba(243,240,232,.18);
+    font-size:6px;
+  }
+  .service-page .service-hero-bottom span {max-width:48%}
+  .service-page .service-hero-bottom span:last-child {text-align:right}
+  .service-page .service-direction-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px 13px;
+  }
+  .service-page .service-direction-card {min-width:0}
+  .service-page .service-direction-art {width:100%;aspect-ratio:1/1}
+  .service-page .service-direction-card h3 {
+    font-size:clamp(12px,3.5vw,15px);
+    line-height:1.35;
+    overflow-wrap:break-word;
+  }
+  .service-page .service-direction-card p {font-size:10px;line-height:1.7}
+  .service-page .service-process-step {
+    grid-template-columns:30px minmax(0,1fr) 30px;
+    gap:10px;
+  }
+  .service-page .service-process-step>i {width:30px;height:30px}
+  .service-page .service-form-editorial {
+    width:100%;
+    min-width:0;
+    overflow:hidden;
+  }
+  .service-page .service-form-editorial-bottom span {min-width:0;overflow-wrap:anywhere}
+}
+@media(max-width:390px) {
+  .service-page .service-hero {padding:76px 6% 66px}
+  .service-page .service-hero-copy h1 {font-size:clamp(36px,10.3vw,43px)}
+  .service-page .service-hero-gallery {height:clamp(210px,67vw,260px);min-height:210px}
+  .service-page .service-direction-grid {grid-template-columns:1fr}
+  .service-page .service-direction-art {aspect-ratio:1.28/1}
+}
