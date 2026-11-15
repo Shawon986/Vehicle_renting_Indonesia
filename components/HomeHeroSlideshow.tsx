@@ -1,28 +1,16 @@
 "use client";
-
 import {useEffect,useState} from "react";
-
-const slides=[
-  "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2400&q=85",
-  "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=2400&q=85",
-  "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=2400&q=85",
-  "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2400&q=85"
-];
-
-export function HomeHeroSlideshow(){
-  const [active,setActive]=useState(0);
-
-  useEffect(()=>{
-    const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if(reduceMotion)return;
-    const timer=window.setInterval(()=>setActive(current=>(current+1)%slides.length),6000);
-    return()=>window.clearInterval(timer);
-  },[]);
-
-  return <>
-    <div className="hero-image" aria-hidden="true">
-      {slides.map((src,index)=><div key={src} className={index===active?"hero-slide hero-slide-active":"hero-slide"} style={{backgroundImage:`linear-gradient(90deg,rgba(10,22,18,.84),rgba(10,22,18,.58) 39%,rgba(10,22,18,.1)),linear-gradient(0deg,rgba(8,18,14,.52),transparent 40%),url("${src}")`}}/>)}
-    </div>
-    <div className="hero-index" aria-live="off">{String(active+1).padStart(2,"0")} <span>/</span> {String(slides.length).padStart(2,"0")}</div>
-  </>;
+const vehicleSlides=["https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2400&q=85","https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=2400&q=85","https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=2400&q=85","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2400&q=85"];
+const serviceSlides={
+ "tours-travel":["https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=2400&q=85","https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2400&q=85","https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=2400&q=85"],
+ "event-design":["https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2400&q=85","https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=2400&q=85","https://images.unsplash.com/photo-146 잘?auto=format&fit=crop&w=2400&q=85"],
+ "gift-boxes":["https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=2400&q=85","https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=2400&q=85","https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=2400&q=85"]};
+const hubSlides=["https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=2400&q=85","https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2400&q=85","https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=2400&q=85"];
+type Props={serviceLine?:"tours-travel"|"event-design"|"gift-boxes";hub?:boolean};
+export function HomeHeroSlideshow({serviceLine,hub=false}:Props){
+ const slides=serviceLine?serviceSlides[serviceLine]:hub?hubSlides:vehicleSlides;
+ const [active,setActive]=useState(0);
+ useEffect(()=>{if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;const timer=window.setInterval(()=>setActive(current=>(current+1)%slides.length),6000);return()=>window.clearInterval(timer)},[slides.length]);
+ const serviceMode=Boolean(serviceLine||hub);
+ return <><div className={serviceMode?"service-hero-slideshow":"hero-image"} aria-hidden="true">{slides.map((src,index)=><div key={src} className={index===active?(serviceMode?"service-hero-slide service-hero-slide-active":"hero-slide hero-slide-active"):(serviceMode?"service-hero-slide":"hero-slide")} style={{backgroundImage:'linear-gradient(90deg,rgba(10,22,18,.84),rgba(10,22,18,.58) 42%,rgba(10,22,18,.18)),linear-gradient(0deg,rgba(8,18,14,.52),transparent 45%),url("'+src+'")'}}/>)}</div>{serviceMode?<div className="service-hero-slide-count" aria-live="off">{String(active+1).padStart(2,"0")} <span>/</span> {String(slides.length).padStart(2,"0")}</div>:<div className="hero-index" aria-live="off">{String(active+1).padStart(2,"0")} <span>/</span> {String(slides.length).padStart(2,"0")}</div>}</>;
 }
