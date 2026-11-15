@@ -1217,3 +1217,33 @@ button,a{-webkit-tap-highlight-color:transparent}
 }
 @media(max-width:380px){.service-hero-copy h1{font-size:40px}.service-direction-grid{grid-template-columns:1fr}.service-hero-index{top:19%}}
 @media(prefers-reduced-motion:reduce){.service-hero:before,.service-hero-grid,.service-hero-orbit,.service-hero-copy,.service-direction-art:before,.service-direction-art:after,.service-direction-art span,.home-service-card,.home-service-card:before{animation:none!important;transition:none!important}.service-hero-copy{opacity:1;transform:none}}
+
+
+/* Case portfolio framework — real project material is permission-gated */
+.cases-page{background:var(--cream);overflow:hidden}
+.cases-hero{position:relative;isolation:isolate;min-height:560px;padding:105px 10.4% 95px;background:#1d3028;color:#f3f0e8;overflow:hidden}
+.cases-hero:before{content:"";position:absolute;z-index:-1;inset:-15%;background:radial-gradient(ellipse at 80% 40%,rgba(197,214,107,.18),transparent 31%),radial-gradient(ellipse at 68% 85%,rgba(100,133,104,.3),transparent 42%),linear-gradient(125deg,#14251f,#31483a 60%,#1a2b24);animation:serviceAtmosphere 18s ease-in-out infinite alternate}
+.cases-hero h1{max-width:850px;margin:0;font:500 clamp(52px,7vw,92px)/.98 var(--font-display);letter-spacing:-.08em}
+.cases-hero h1 em{font-family:var(--font-serif);font-weight:500}
+.cases-hero>p:last-child{max-width:490px;margin:27px 0 0;color:rgba(243,240,232,.76);font-size:13px;line-height:1.9}
+.cases-grid-section{padding:95px 10.4% 105px}
+.cases-category-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:40px}
+.case-category-card{min-width:0;padding:20px;background:#e7e5dc}
+.case-category-art{position:relative;display:grid;place-items:center;min-height:230px;overflow:hidden;background:linear-gradient(145deg,#d4dbcf,#e9e8df)}
+.case-category-art:before,.case-category-art:after{content:"";position:absolute;width:65%;aspect-ratio:1;border:1px solid rgba(43,64,49,.2);border-radius:50%;box-shadow:0 0 0 24px rgba(43,64,49,.035),0 0 0 58px rgba(43,64,49,.025);transition:transform .7s}
+.case-category-art:after{width:43%;border-style:dashed}
+.case-category-card:hover .case-category-art:before{transform:scale(1.14) rotate(22deg)}
+.case-category-art>span{position:relative;z-index:1;color:#788b50;font:400 70px Georgia,serif}
+.case-category-art small{position:absolute;left:15px;bottom:13px;color:#778278;font-size:7px;letter-spacing:.12em}
+.case-category-card h2{margin:22px 0 8px;font:500 23px var(--font-display);letter-spacing:-.05em;color:#24362c}
+.case-category-card>p{margin:0;color:#758077;font-size:11px;line-height:1.8}
+.case-content-pending{margin-top:17px;padding:12px 13px;background:#efeee7;border-left:2px solid #a7b56b;color:#778278;font-size:9px;line-height:1.7}
+.cases-contact{display:grid;grid-template-columns:1fr .8fr;gap:8%;align-items:center;padding:85px 10.4%;background:#1d3028;color:#f3f0e8}
+.cases-contact h2{max-width:620px;margin:0;font:500 clamp(40px,5vw,68px)/1.02 var(--font-display);letter-spacing:-.07em}
+.cases-contact .contact-channel-button{background:rgba(243,240,232,.12);border:1px solid rgba(243,240,232,.34)}
+.cases-contact .contact-channel-link{color:#f3f0e8;border-color:rgba(243,240,232,.55)}
+.cases-contact .wechat-contact{background:rgba(243,240,232,.1);border:1px solid rgba(243,240,232,.24)}
+.cases-contact .wechat-contact h3,.cases-contact .wechat-contact p,.cases-contact .wechat-contact .contact-config-note,.cases-contact .wechat-id-row strong{color:#f3f0e8}
+@media(max-width:1000px){.cases-hero,.cases-grid-section,.cases-contact{padding-left:7%;padding-right:7%}}
+@media(max-width:680px){.cases-hero{min-height:500px;padding:85px 7% 75px}.cases-hero h1{font-size:clamp(45px,11.5vw,65px)}.cases-hero>p:last-child{font-size:12px}.cases-grid-section{padding:70px 7% 75px}.cases-category-grid{grid-template-columns:1fr;gap:12px;margin-top:28px}.case-category-card{padding:14px}.case-category-art{min-height:180px}.case-category-card h2{font-size:21px}.cases-contact{grid-template-columns:1fr;gap:26px;padding:70px 7%}.cases-contact h2{font-size:44px}}
+@media(prefers-reduced-motion:reduce){.cases-hero:before,.case-category-art:before,.case-category-art:after{animation:none!important;transition:none!important}}
