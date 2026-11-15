@@ -1387,3 +1387,15 @@ button,a{-webkit-tap-highlight-color:transparent}
  .service-process-step{transition:none}
  .service-detail-band:before{display:none}
 }
+
+.services-hub-hero h1,.cases-hero h1{
+ clip-path:inset(0 100% 0 0);
+ border-right:1px solid rgba(197,214,107,.9);
+ padding-right:.08em;
+ animation:premiumTypeReveal 2.15s steps(34,end) .28s forwards,premiumCaretBlink .85s step-end 2.45s infinite;
+}
+@keyframes premiumCardParallax{from{background-position:center 46%}to{background-position:center 58%}}
+@supports (animation-timeline:scroll()){
+ .service-direction-art,.services-hub-card-art{animation-name:premiumCardParallax;animation-duration:auto;animation-timing-function:linear;animation-fill-mode:both;animation-timeline:scroll(root block);animation-range:0px 900px}
+}
+@media(prefers-reduced-motion:reduce){.services-hub-hero h1,.cases-hero h1{clip-path:none;border-right:0;animation:none}}
