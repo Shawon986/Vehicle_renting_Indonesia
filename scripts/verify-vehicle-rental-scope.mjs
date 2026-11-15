@@ -12,6 +12,7 @@ const config=read("next.config.ts");
 const workflow=read(".github/workflows/ci.yml");
 
 assert.match(data,/\["id","en","zh"\]/,"All three locales must remain enabled");
+assert.match(data,/formatIDR\(locale:Locale,amount:number\)/,"Locale-aware IDR formatter must be available without exposing prices");
 assert.match(catalogue,/setView\("cards"\)/,"Vehicle card view must exist");
 assert.match(catalogue,/setView\("table"\)/,"Vehicle table view must exist");
 assert.match(catalogue,/setCategory/,"Category filtering must exist");
