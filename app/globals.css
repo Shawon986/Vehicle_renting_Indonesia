@@ -665,3 +665,8 @@ button,a{-webkit-tap-highlight-color:transparent}
 @media(max-width:680px){.price-slot{min-height:64px;margin:16px 0 22px;padding:13px 14px}.price-slot>strong{font-size:15px}}
 
 .cookie-settings{display:inline-block;margin:14px 14px 0 0;padding:0;border:0;border-bottom:1px solid #8a9788;background:transparent;color:#667269;font-size:9px;cursor:pointer}
+
+.breadcrumbs{display:flex;align-items:center;gap:10px;padding:16px 5.2%;background:#e9e5db;color:#758078;font-size:9px;letter-spacing:.04em}
+.breadcrumbs a{color:#425548;border-bottom:1px solid #9ba77c;padding-bottom:3px}
+.breadcrumbs span[aria-current=page]{color:#293a30}
+@media(max-width:680px){.breadcrumbs{padding:13px 7%;font-size:8px}}
