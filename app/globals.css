@@ -377,3 +377,66 @@ button,a{-webkit-tap-highlight-color:transparent}
  .faq-content .faq-list summary{gap:12px}
  .vehicle-table{min-width:560px}
 }
+
+
+/* Dedicated enquiry form design for contact and vehicle-rental pages */
+.inquiry-form{width:100%;min-width:0;max-width:100%;padding:clamp(26px,3vw,42px);background:#fbfaf6;border:1px solid rgba(23,36,31,.13);box-shadow:0 22px 65px rgba(23,36,31,.075);border-radius:2px}
+.inquiry-form-heading{padding:0 0 25px;margin:0 0 27px;border-bottom:1px solid rgba(23,36,31,.14)}
+.inquiry-form-index{display:block;margin-bottom:13px;color:#87964d;font-size:8px;font-weight:700;letter-spacing:.18em}
+.inquiry-form-heading h3{font:500 clamp(23px,2.3vw,31px)/1.12 var(--font-display);letter-spacing:-.045em;margin:0 0 10px;color:var(--ink)}
+.inquiry-form-heading p{max-width:470px;font-size:11px;line-height:1.75;color:#778078;margin:0}
+.form-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 17px}
+.form-grid label{gap:9px;font-size:9px;line-height:1.45;letter-spacing:.055em;color:#59655c}
+.form-grid input,.form-grid select,.form-grid textarea{min-height:49px;padding:13px 14px;border-radius:2px;border:1px solid #d6d9d0;background:#fffefa;font-size:12px;color:#24332b}
+.form-grid input::placeholder,.form-grid textarea::placeholder{color:#a0a69d}
+.form-grid input:hover,.form-grid select:hover,.form-grid textarea:hover{border-color:#aab39b}
+.form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus{border-color:#82934b;box-shadow:0 0 0 3px rgba(155,173,79,.14);background:#fff}
+.form-grid select{appearance:auto}
+.form-grid textarea{min-height:120px}
+.inquiry-form .consent-check{align-items:flex-start;margin:24px 0 20px;font-size:10px;line-height:1.7}
+.inquiry-form .consent-check input{width:16px;height:16px;flex:0 0 16px;margin:1px 0 0}
+.inquiry-form>.button{min-width:190px;min-height:52px;padding:16px 22px;justify-content:space-between;font-size:10px;letter-spacing:.07em}
+.inquiry-form>.form-note{max-width:520px;font-size:9px;line-height:1.75}
+.inquiry-form .turnstile-slot{min-height:0}
+.inquiry-form .form-config-note{padding:10px 12px;background:#f2eee4;border-left:2px solid #b1bd76}
+.inquiry-form .honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.form-page{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);align-items:start;gap:clamp(34px,5.5vw,84px);padding:clamp(78px,8vw,116px) 10.4%;background:linear-gradient(90deg,#e9e5db 0%,#e9e5db 39%,var(--cream) 39%,var(--cream) 100%)}
+.form-page>.form-page-intro{position:sticky;top:125px;max-width:470px;margin:0}
+.form-page-intro>.eyebrow{margin-bottom:26px}
+.form-page-intro h1{max-width:500px;font-size:clamp(46px,5vw,70px);line-height:.99;letter-spacing:-.07em;margin:0 0 24px}
+.form-page-intro>p:not(.eyebrow){max-width:390px;font-size:13px;line-height:1.9;color:#657168}
+.form-page-intro .contact-channel-note{max-width:390px;padding:16px 18px;margin-top:30px;border-left:2px solid #9bad4f;background:rgba(255,255,255,.34);font-size:10px;line-height:1.8;color:#68736a}
+.form-page>.inquiry-form{grid-column:2;grid-row:1;margin:0;align-self:start}
+.form-section{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);align-items:start;gap:clamp(32px,5vw,76px);padding:clamp(76px,8vw,108px) 10.4%;background:#e9e5db}
+.form-section-copy{position:sticky;top:125px;max-width:440px}
+.form-section-copy h2{max-width:440px;font:500 clamp(42px,4.6vw,64px)/.99 var(--font-display);letter-spacing:-.07em;margin:0 0 22px}
+.form-section-copy>p:last-child{max-width:360px;font-size:12px;line-height:1.9;color:#68736a}
+.form-section>.inquiry-form{grid-column:2;width:100%;margin:0;background:#fbfaf6}
+@media(max-width:1000px){
+ .form-page{padding-left:7%;padding-right:7%;gap:30px;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr)}
+ .form-section{padding-left:7%;padding-right:7%;gap:30px;grid-template-columns:minmax(0,.68fr) minmax(0,1.32fr)}
+ .inquiry-form{padding:25px}
+}
+@media(max-width:680px){
+ .form-page{display:flex;flex-direction:column;gap:0;padding:64px 7% 76px;background:#e9e5db}
+ .form-page>.form-page-intro{position:static;width:100%;max-width:100%;margin:0 0 30px}
+ .form-page-intro h1{font-size:clamp(43px,11.5vw,60px)}
+ .form-page-intro>p:not(.eyebrow){font-size:12px}
+ .form-page-intro .contact-channel-note{margin-top:20px}
+ .form-page>.inquiry-form{width:100%;padding:23px 18px}
+ .form-section{display:flex;flex-direction:column;gap:0;padding:64px 7% 76px}
+ .form-section-copy{position:static;width:100%;max-width:100%;margin:0 0 28px}
+ .form-section-copy h2{font-size:clamp(40px,10.5vw,54px)}
+ .form-section>.inquiry-form{width:100%;padding:23px 18px}
+ .inquiry-form-heading{padding-bottom:20px;margin-bottom:22px}
+ .inquiry-form-heading h3{font-size:25px}
+ .form-grid{grid-template-columns:1fr;gap:15px}
+ .form-grid .full-field{grid-column:auto}
+ .form-grid input,.form-grid select{min-height:48px}
+ .inquiry-form>.button{width:100%;min-width:0}
+}
+@media(max-width:380px){
+ .form-page>.inquiry-form,.form-section>.inquiry-form{padding:20px 14px}
+ .form-grid{gap:14px}
+ .form-grid input,.form-grid select,.form-grid textarea{font-size:11px;padding:11px 12px}
+}
