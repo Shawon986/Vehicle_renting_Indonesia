@@ -29,7 +29,7 @@ export function ParallaxLayers(){
     const rect=node.getBoundingClientRect();
     if(rect.bottom<-120||rect.top>height+120)continue;
     const distance=(rect.top+rect.height*.5-height*.5);
-    const offset=Math.max(-58,Math.min(58,-distance*.105));
+    const offset=Math.max(-110,Math.min(110,-distance*.18));
     node.style.setProperty("--parallax-y",offset.toFixed(1)+"px");
    }
   };
