@@ -685,3 +685,13 @@ button,a{-webkit-tap-highlight-color:transparent}
 .vehicle-lightbox-nav{position:absolute;z-index:3;top:50%;transform:translateY(-50%);width:46px;height:46px;border:1px solid #ffffff80;border-radius:50%;background:#17241fcc;color:#fff;font-size:30px;line-height:1;cursor:pointer}
 .vehicle-lightbox-prev{left:22px}.vehicle-lightbox-next{right:22px}
 @media(max-width:680px){.vehicle-gallery-thumbs{left:10px;bottom:10px;gap:5px;max-width:calc(100% - 20px)}.vehicle-gallery-thumbs button{flex-basis:48px;width:48px;height:36px}.vehicle-gallery-count{left:10px;top:10px}.vehicle-lightbox-nav{width:40px;height:40px}.vehicle-lightbox-prev{left:10px}.vehicle-lightbox-next{right:10px}}
+
+.page-hero-copy>p{max-width:470px;color:rgba(255,255,255,.78);font-size:13px;line-height:1.85;margin:0}
+.fleet-hero .page-hero-copy .contact-channels{margin-top:22px}
+.fleet-hero .contact-channel-button{background:rgba(243,240,232,.13);border:1px solid rgba(243,240,232,.4);backdrop-filter:blur(12px)}
+.fleet-hero .contact-channel-link{color:#f3f0e8;border-color:rgba(243,240,232,.6)}
+.fleet-hero .wechat-contact{background:rgba(243,240,232,.12);border:1px solid rgba(243,240,232,.25)}
+.fleet-hero .wechat-contact h3,.fleet-hero .wechat-contact p{color:#f3f0e8}
+.fleet-hero .wechat-contact .contact-config-note{color:#f3f0e8}
+.fleet-hero .wechat-id-row strong{color:#f3f0e8}
+@media(max-width:680px){.fleet-hero .page-hero-copy{width:86%;padding:75px 0 58px}.fleet-hero .page-hero-copy .contact-channels{gap:9px;margin-top:16px}.fleet-hero .contact-channel-button{min-width:0;width:100%}.fleet-hero .wechat-contact{padding:15px;gap:12px}.fleet-hero .wechat-qr{align-self:flex-start}}
