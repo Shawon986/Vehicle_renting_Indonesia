@@ -7,7 +7,8 @@ import {Locale} from "@/lib/site-data";
 import {trackEvent} from "@/lib/analytics";
 
 export function ContactChannels({locale,itemTitle}:{locale:Locale;itemTitle?:string}){
- const path=usePathname();\n const wechatRef=useRef<HTMLDivElement>(null);
+ const path=usePathname();
+ const wechatRef=useRef<HTMLDivElement>(null);
  const number=(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"").replace(/[^0-9]/g,"");
  const phone=(process.env.NEXT_PUBLIC_PHONE||"").replace(/[^+0-9]/g,"");
  const email=process.env.NEXT_PUBLIC_CONTACT_EMAIL||"";
