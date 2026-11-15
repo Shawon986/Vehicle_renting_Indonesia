@@ -2802,12 +2802,12 @@ body { overflow-x:clip; }
 }
 
 
-/* Final override: preserve the original section-sized photo crop while retaining fixed-background parallax.
-   The desktop image is sized to the original half-width x 740px panel, not the full viewport. */
+/* Final override: fill the complete journey image panel while keeping the original fixed-background parallax. */
 .journey-section .journey-image {
-  background-size:max(50vw, 1110px) auto !important;
+  background-size:cover !important;
   background-position:center center !important;
   background-attachment:fixed !important;
+  background-repeat:no-repeat !important;
   animation:none !important;
 }
 @media(max-width:680px) {
