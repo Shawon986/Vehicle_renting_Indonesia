@@ -43,7 +43,7 @@ export async function POST(request:NextRequest){
   const token=value("turnstileToken",4096);if(!token)return NextResponse.json({error:"Security verification required"},{status:400});
   const verify=await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify",{method:"POST",headers:{"content-type":"application/x-www-form-urlencoded"},body:new URLSearchParams({secret:process.env.TURNSTILE_SECRET_KEY!,response:token,remoteip:ip}),signal:AbortSignal.timeout(8000)});
   if(!verify.ok)return NextResponse.json({error:"Security verification failed"},{status:400});
-  const verdict=await verify.json() as {success:boolean};if(!verdict.success)return NextResponse.json({error:"Security verification failed"},{status:400});
+  const verdict=await verify.json() as {success:boolean;hostname?:string;action?:string};const expectedHost=new URL("https://"+host).hostname;if(!verdict.success||verdict.hostname!==expectedHost||verdict.action!=="vehicle_rental_enquiry")return NextResponse.json({error:"Security verification failed"},{status:400});
  }catch{return NextResponse.json({error:"Security verification is temporarily unavailable"},{status:503})}
  const record={leadId,serviceLine:"vehicle-rental",locale,timeZone:"Asia/Jakarta",name,email,phone,company:value("company",160),wechatId:locale==="zh"?value("wechatId",100):"",preferredChannel:value("preferredChannel",30),pickupDate,pickupTime,returnDate,returnTime,pickupLocation,passengers,luggage,vehicle,vehicleCategory:selectedVehicle?.category||vehicleCategory,travelStyle,addOns:addOnValues,message:value("message",2000),marketingConsent:value("marketingConsent",10)==="yes",consentAt:new Date().toISOString(),sourcePath:value("pagePath",300),receivedAt:new Date().toISOString()};
 
