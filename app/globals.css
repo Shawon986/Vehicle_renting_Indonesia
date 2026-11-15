@@ -1265,3 +1265,74 @@ button,a{-webkit-tap-highlight-color:transparent}
 .service-form-grid .service-form-check,.service-check-grid label{display:flex;flex-direction:row;align-items:flex-start;gap:9px;font-size:10px;font-weight:400;letter-spacing:0;line-height:1.6}
 .service-form-grid .service-form-check input,.service-check-grid label input{flex:0 0 15px;width:15px;height:15px;min-height:15px;margin:1px 0 0;padding:0;accent-color:#31483a}
 .service-check-grid label{overflow-wrap:anywhere}
+
+
+/* Editorial photography + cinematic motion system for the new service pages */
+.service-hero{isolation:isolate}
+.service-hero:before{inset:0;z-index:-2;background-image:linear-gradient(90deg,rgba(9,20,16,.88) 0%,rgba(9,20,16,.66) 43%,rgba(9,20,16,.24) 100%),linear-gradient(0deg,rgba(8,18,14,.58),transparent 55%),url("https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=2400&q=88");background-size:cover;background-position:center 52%;animation:servicePhotoDrift 26s ease-in-out infinite alternate}
+.service-hero:after{z-index:-1;opacity:.16}
+.service-hero.event-art:before{background-image:linear-gradient(90deg,rgba(20,16,14,.88),rgba(20,16,14,.63) 43%,rgba(20,16,14,.22)),linear-gradient(0deg,rgba(18,13,11,.56),transparent 58%),url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=2400&q=88")}
+.service-hero.gift-art:before{background-image:linear-gradient(90deg,rgba(19,25,20,.88),rgba(19,25,20,.62) 43%,rgba(19,25,20,.2)),linear-gradient(0deg,rgba(15,20,15,.55),transparent 58%),url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=2400&q=88")}
+.service-hero.tour-art:before{background-image:linear-gradient(90deg,rgba(9,20,16,.88),rgba(9,20,16,.64) 43%,rgba(9,20,16,.2)),linear-gradient(0deg,rgba(8,18,14,.55),transparent 58%),url("https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=2400&q=88")}
+.service-hero-grid{mix-blend-mode:screen;opacity:.72}
+.service-hero-copy{animation:serviceCopyIn 1s .15s both}
+.service-hero-photo{position:absolute;z-index:-1;inset:0;pointer-events:none;background:radial-gradient(ellipse at 78% 46%,rgba(211,224,166,.15),transparent 35%);mix-blend-mode:screen}
+.service-direction-grid{gap:25px 17px}
+.service-direction-card{overflow:hidden}
+.service-direction-art{aspect-ratio:1.34;background-size:cover;background-position:center;isolation:isolate;box-shadow:inset 0 0 0 1px rgba(23,36,31,.08);transition:transform .65s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+.service-direction-art:before{inset:0;width:auto;aspect-ratio:auto;border:0;border-radius:0;background:linear-gradient(180deg,rgba(12,24,18,.03),rgba(12,24,18,.42));z-index:-1;transition:opacity .45s}
+.service-direction-art:after{width:38%;border-color:rgba(255,255,255,.58);z-index:0}
+.service-direction-art span{color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.3)}
+.service-direction-art small{color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.service-direction-card:hover .service-direction-art{transform:translateY(-4px);box-shadow:0 18px 35px rgba(23,36,31,.17)}
+.service-direction-card:hover .service-direction-art:before{opacity:.7}
+.service-direction-card:hover .service-direction-art:after{transform:scale(.88) rotate(-35deg)}
+.service-direction-art[data-service="tours-travel"][data-index="0"]{background-image:url("https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=82")}
+.service-direction-art[data-service="tours-travel"][data-index="1"]{background-image:url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=82")}
+.service-direction-art[data-service="tours-travel"][data-index="2"]{background-image:url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=82")}
+.service-direction-art[data-service="tours-travel"][data-index="3"]{background-image:url("https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=900&q=82")}
+.service-direction-art[data-service="tours-travel"][data-index="4"]{background-image:url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=82")}
+.service-direction-art[data-service="tours-travel"][data-index="5"]{background-image:url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=82")}
+.service-direction-art[data-service="event-design"][data-index="0"]{background-image:url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=82")}
+.service-direction-art[data-service="event-design"][data-index="1"]{background-image:url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=82")}
+.service-direction-art[data-service="event-design"][data-index="2"]{background-image:url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=82")}
+.service-direction-art[data-service="event-design"][data-index="3"]{background-image:url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=82")}
+.service-direction-art[data-service="gift-boxes"][data-index="0"]{background-image:url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=82")}
+.service-direction-art[data-service="gift-boxes"][data-index="1"]{background-image:url("https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=900&q=82")}
+.service-direction-art[data-service="gift-boxes"][data-index="2"]{background-image:url("https://images.unsplash.com/photo-1513883049090-d0b7439799bf?auto=format&fit=crop&w=900&q=82")}
+.service-direction-art[data-service="gift-boxes"][data-index="3"]{background-image:url("https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=900&q=82")}
+.service-direction-art[data-service="gift-boxes"][data-index="4"]{background-image:url("https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=900&q=82")}
+.service-direction-art[data-service="gift-boxes"][data-index="5"]{background-image:url("https://images.unsplash.com/photo-1513883049090-d0b7439799bf?auto=format&fit=crop&w=900&q=82")}
+.services-hub-card-art{position:relative;isolation:isolate;overflow:hidden;background-size:cover;background-position:center}
+.services-hub-card-art:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(10,22,16,.12),rgba(10,22,16,.66));transition:opacity .4s}
+.services-hub-card-art:after{content:"";position:absolute;z-index:-1;inset:0;border:1px solid rgba(255,255,255,.25);pointer-events:none}
+.services-hub-card-art>span,.services-hub-card-art>small,.services-hub-card-art>i{color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.services-hub-card-art>span{transition:transform .6s}
+.services-hub-card:hover .services-hub-card-art>span{transform:translateY(-7px) rotate(10deg)}
+.services-hub-card-art[data-service="vehicle-rental"]{background-image:url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1100&q=85")}
+.services-hub-card-art[data-service="tours-travel"]{background-image:url("https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1100&q=85")}
+.services-hub-card-art[data-service="event-design"]{background-image:url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1100&q=85")}
+.services-hub-card-art[data-service="gift-boxes"]{background-image:url("https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1100&q=85")}
+.cases-hero{isolation:isolate}
+.cases-hero:before{inset:0;z-index:-2;background-image:linear-gradient(90deg,rgba(10,22,16,.88),rgba(10,22,16,.63) 48%,rgba(10,22,16,.22)),linear-gradient(0deg,rgba(8,18,14,.5),transparent 60%),url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=2200&q=86");background-size:cover;background-position:center 48%}
+.cases-hero-photo{position:absolute;z-index:-1;inset:0;pointer-events:none;background:radial-gradient(ellipse at 80% 50%,rgba(211,224,166,.13),transparent 38%)}
+.case-category-art{position:relative;isolation:isolate;background-size:cover;background-position:center;min-height:260px}
+.case-category-art:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(9,20,15,.05),rgba(9,20,15,.58))}
+.case-category-art>span,.case-category-art>small{color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.case-category-art[data-category="01"]{background-image:url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=84")}
+.case-category-art[data-category="02"]{background-image:url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=84")}
+.case-category-art[data-category="03"]{background-image:url("https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=84")}
+.case-category-art[data-category="04"]{background-image:url("https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1200&q=84")}
+@keyframes servicePhotoDrift{from{transform:scale(1.02);background-position:50% 52%}to{transform:scale(1.1);background-position:53% 46%}}
+@media(max-width:680px){
+ .service-hero:before{background-position:62% center}
+ .service-hero-copy{max-width:100%}
+ .service-direction-art{aspect-ratio:1.15}
+ .services-hub-card-art{min-height:150px}
+ .case-category-art{min-height:190px}
+}
+@media(prefers-reduced-motion:reduce){
+ .service-hero:before{animation:none!important}
+ .service-direction-card:hover .service-direction-art{transform:none}
+ .services-hub-card-art>span{transition:none}
+}
