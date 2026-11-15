@@ -19,10 +19,8 @@
 .loader-track{width:110px;height:1px;background:rgba(243,240,232,.2);overflow:hidden}.loader-track span{display:block;width:100%;height:100%;background:var(--lime);transform:scaleX(0);transform-origin:left;animation:loaderProgress .7s cubic-bezier(.7,0,.2,1) forwards}
 .preloader small{font-size:7px;letter-spacing:.22em;color:#aab5a9}
 .typing-copy{display:inline-block!important;overflow:hidden;white-space:nowrap;vertical-align:bottom;max-width:0;margin:0!important;color:inherit!important;animation:typingReveal 1.45s steps(27,end) .45s forwards}
-.journey-image{background-attachment:fixed}
 @keyframes loaderProgress{to{transform:scaleX(1)}}
 @keyframes typingReveal{to{max-width:260px}}
-@media(max-width:680px){.journey-image{background-attachment:scroll}}
 @media(prefers-reduced-motion:reduce){.typing-copy{max-width:none;animation:none}.preloader{display:none}}
 
 /* Vehicle module detail pages and support layouts */
@@ -1797,51 +1795,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 }
 
 
-/* Scroll-linked parallax driven by ParallaxLayers (works without CSS scroll-timeline support). */
-.hero-slide,
-.journey-image,
-.service-gallery-image,
-.service-direction-art,
-.services-hub-card-art,
-.case-category-art {
-  background-position:center calc(50% + var(--parallax-y, 0px));
-}
-.subpage-hero:before {
-  background-position:center calc(50% + var(--parallax-y, 0px));
-}
-.service-direction-art:before,
-.services-hub-card-art:before,
-.case-category-art:before {
-  background-position:center calc(50% + var(--parallax-y, 0px));
-}
-.detail-photo img {
-  object-position:center calc(50% + var(--parallax-y, 0px));
-}
-.hero-slide,
-.service-gallery-image,
-.journey-image,
-.subpage-hero:before,
-.service-direction-art:before,
-.services-hub-card-art:before,
-.case-category-art:before,
-.detail-photo img {
-  will-change:background-position,object-position;
-}
-@media(prefers-reduced-motion:reduce) {
-  .hero-slide,
-  .journey-image,
-  .subpage-hero:before,
-  .service-gallery-image,
-  .service-direction-art:before,
-  .services-hub-card-art:before,
-  .case-category-art:before,
-  .detail-photo img {
-    background-position:center!important;
-    object-position:center!important;
-    will-change:auto;
-  }
-}
-
 /* Refined editorial finish across the non-home pages. */
 .services-hub-page,
 .cases-page,
@@ -1959,51 +1912,8 @@ button,a{-webkit-tap-highlight-color:transparent}
   background-position:center calc(54% + var(--parallax-y, 0px));
   transform:translate3d(0,var(--parallax-y,0px),0) scale(1.015);
 }
-.service-gallery-image {
-  background-position:center calc(52% + var(--parallax-y, 0px));
-  transform:translate3d(0,var(--parallax-y,0px),0) scale(1.065);
-  transition:opacity 1.25s ease,transform 7s cubic-bezier(.2,.7,.2,1);
-  will-change:transform,opacity;
-}
-.service-gallery-image.is-active {
-  transform:translate3d(0,var(--parallax-y,0px),0) scale(1.025);
-}
-.journey-image {
-  background-attachment:scroll;
-  background-position:center calc(50% + var(--parallax-y, 0px));
-  will-change:auto;
-}
-.detail-photo img {
-  transform:translate3d(0,var(--parallax-y,0px),0) scale(1.06);
-  transition:transform .8s cubic-bezier(.2,.7,.2,1);
-  will-change:transform;
-}
-.service-direction-art,
-.services-hub-card-art,
-.case-category-art {
-  background-position:center calc(50% + var(--parallax-y, 0px));
-  will-change:auto;
-}
 html { scroll-behavior:smooth; }
 body { overflow-x:clip; }
-@media(max-width:680px) {
-  .hero-slide { transform:translate3d(0,var(--parallax-y,0px),0) scale(1.045); }
-  .hero-slide-active { transform:translate3d(0,var(--parallax-y,0px),0) scale(1.015); }
-  .service-gallery-image { transform:translate3d(0,var(--parallax-y,0px),0) scale(1.045); }
-  .service-gallery-image.is-active { transform:translate3d(0,var(--parallax-y,0px),0) scale(1.015); }
-  .detail-photo img { transform:none; }
-}
-@media(prefers-reduced-motion:reduce) {
-  .hero-slide,.hero-slide-active,
-  .service-gallery-image,.service-gallery-image.is-active,
-  .detail-photo img {
-    transform:none!important;
-    transition:none!important;
-    will-change:auto;
-  }
-}
-
-
 /* Hero recovery: make the service, hub and case-study photo layers explicit.
    Each slide fills the frame; only the active slide is visible above the base. */
 .service-hero,
@@ -2140,6 +2050,36 @@ body { overflow-x:clip; }
   .cases-hero:after {z-index:2;pointer-events:none}
 }
 
+/* Homepage-only parallax: the hero plus the vehicle collection imagery.
+   Service, case-study and all other inner-page imagery remain static. */
+.hero-slide {
+  transform:translate3d(0,calc(var(--parallax-y,0px) * .38),0) scale(1.055);
+  transition:opacity 1.25s ease;
+  will-change:transform,opacity;
+}
+.hero-slide-active {
+  transform:translate3d(0,calc(var(--parallax-y,0px) * .38),0) scale(1.055);
+}
+.fleet-section .vehicle-image-wrap img {
+  object-position:center calc(50% + var(--parallax-y,0px) * .55);
+  will-change:object-position;
+}
+@media(max-width:680px) {
+  .hero-slide,.hero-slide-active {
+    transform:translate3d(0,calc(var(--parallax-y,0px) * .24),0) scale(1.045);
+  }
+  .fleet-section .vehicle-image-wrap img {
+    object-position:center calc(50% + var(--parallax-y,0px) * .38);
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero-slide,.hero-slide-active,.fleet-section .vehicle-image-wrap img {
+    transform:none!important;
+    transition:none!important;
+    object-position:center!important;
+    will-change:auto;
+  }
+}
 /* Homepage-only depth: the hero and the dedicated journey photo section.
    No inner-page hero or card receives a parallax transform. */
 .hero-slide {
