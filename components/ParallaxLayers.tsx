@@ -56,9 +56,7 @@ export function ParallaxLayers(){
   collect();
   schedule();
   window.addEventListener("scroll",schedule,{passive:true});
-  window.addEventListener("resize",()=>{collect();schedule();},{passive:true});
   const resizeHandler=()=>{collect();schedule();};
-  window.removeEventListener("resize",resizeHandler);
   window.addEventListener("resize",resizeHandler,{passive:true});
   const mutations=new MutationObserver(()=>{collect();schedule();});
   mutations.observe(document.body,{childList:true,subtree:true});
