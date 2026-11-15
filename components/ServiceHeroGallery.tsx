@@ -11,12 +11,12 @@ const slides:Record<ServiceLine,string[]>={
  "event-design":[
   "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1500&q=85",
   "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1500&q=85",
-  "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1500&q=85"
+  "https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1500&q=85"
  ],
  "gift-boxes":[
   "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1500&q=85",
   "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=1500&q=85",
-  "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=1500&q=85"
+  "https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=1500&q=85"
  ]
 };
 const caseSlides=[
