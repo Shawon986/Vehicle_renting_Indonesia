@@ -15,7 +15,7 @@ Next.js App Router, React 19 and TypeScript. The public site is display + contac
 - Vehicle enquiry form with pickup/return dates and times (Asia/Jakarta), pickup point, passengers, luggage, vehicle model or category, travel style, add-ons, WeChat ID on Chinese pages and configured contact-channel preference.
 - Inquiry API with strict same-origin checks, bounded fields, date/time/category/add-on validation, vehicle/driver compatibility checks, honeypot, Cloudflare Turnstile, Upstash rate limiting, localized sales email and localized acknowledgement.
 - About, Contact, FAQ, Services hub and legal placeholder routes.
-- Locale-preserving language switcher with persisted preference, per-locale metadata, WebSite / Service / FAQ / Breadcrumb structured data, robots and sitemap foundations.
+- Locale-preserving language switcher with persisted preference, per-locale metadata, WebSite / Service / FAQ / Breadcrumb structured data, robots and sitemap foundations, plus locale-aware IDR formatting (no public rates).
 - Consent-first cookie banner with reopenable preferences and GA4 loading only after analytics consent.
 - Vehicle enquiry analytics (start, field progress, submit, abandon), WeChat/WhatsApp/phone/email/QR actions, optional authenticated Google Sheets lead inbox handoff and spreadsheet CSV export.
 - Reduced-motion support, keyboard focus styles, focus-trapped gallery lightbox and CI scope guard (`npm run verify:scope`).
