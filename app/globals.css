@@ -654,3 +654,7 @@ button,a{-webkit-tap-highlight-color:transparent}
  .cookie-banner{padding:15px}
  .cookie-actions{align-items:stretch;flex-direction:column}
 }
+
+.locale-full{display:inline}.locale-short{display:none}
+@media(max-width:760px){.locale-full{display:none}.locale-short{display:inline}.locale-switch a{min-width:27px;padding:0 5px}}
+@media(max-width:680px){.hero .contact-channels{gap:8px;margin-top:14px}.hero .contact-channel-button{min-width:0;width:auto;padding:10px 12px}.hero .contact-channel-button strong{font-size:9px}.hero .contact-channel-link{font-size:8px}}
