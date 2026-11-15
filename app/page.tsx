@@ -1,1 +1,2 @@
-import {redirect} from "next/navigation";export default function RootPage(){redirect("/id");}
+import {cookies,headers} from "next/headers";import {redirect} from "next/navigation";import {isLocale} from "@/lib/site-data";
+export default async function RootPage(){const jar=await cookies();const saved=jar.get("site_locale")?.value;if(saved&&isLocale(saved))redirect("/"+saved);const h=await headers();const accept=(h.get("accept-language")||"").toLowerCase();if(accept.includes("zh"))redirect("/zh");if(accept.includes("en"))redirect("/en");redirect("/id");}

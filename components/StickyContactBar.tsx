@@ -1,0 +1,1 @@
+"use client";import Link from "next/link";import {Locale,getCopy} from "@/lib/site-data";export function StickyContactBar({locale}:{locale:Locale}){const t=getCopy(locale);return <Link className="sticky-contact" href={"/"+locale+"/contact"}><span>{locale==="zh"?"联系服务团队":locale==="id"?"Hubungi tim kami":"Talk to our team"}</span><strong>{t.enquiry} ↗</strong></Link>}
