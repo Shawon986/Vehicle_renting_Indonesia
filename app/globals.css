@@ -545,3 +545,112 @@ button,a{-webkit-tap-highlight-color:transparent}
  .sticky-contact{bottom:calc(12px + env(safe-area-inset-bottom))}
  .site-footer{padding-bottom:calc(100px + env(safe-area-inset-bottom))}
 }
+
+
+/* Vehicle rental catalogue, inclusion tables and contact actions */
+.vehicle-filter-panel{margin:0 0 30px;padding:18px 0 16px;border-top:1px solid #c6c9bd;border-bottom:1px solid #c6c9bd}
+.vehicle-filter-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.vehicle-result-count{font:500 12px var(--font-display);color:#69766b}
+.vehicle-filters{display:grid;grid-template-columns:repeat(4,minmax(130px,1fr)) auto;align-items:end;gap:12px}
+.vehicle-filter-control{display:flex;min-width:0;flex-direction:column;gap:7px;color:#68736a;font-size:9px;letter-spacing:.08em;text-transform:uppercase}
+.vehicle-filter-control select{width:100%;min-width:0;min-height:42px;padding:0 12px;border:1px solid #d0d2c8;border-radius:2px;background:#f8f6f0;color:#26362e;font:inherit;letter-spacing:0;text-transform:none}
+.vehicle-filter-control select:disabled{opacity:.65;cursor:not-allowed}
+.vehicle-view-tools{display:flex;align-items:center;justify-content:flex-end;gap:10px;min-height:42px}
+.filter-reset{border:0;border-bottom:1px solid #8c9a64;padding:6px 0;background:transparent;color:#52634a;font-size:9px;cursor:pointer;white-space:nowrap}
+.vehicle-filter-note,.form-date-hint{margin:10px 0 0;color:#778178;font-size:10px;line-height:1.7}
+.vehicle-card-facts{display:flex;flex-wrap:wrap;gap:7px 14px;margin-top:12px;color:#788278;font-size:9px;line-height:1.6}
+.vehicle-card-facts span{max-width:100%}
+.vehicle-table{min-width:920px}
+.vehicle-table th{font-size:9px;letter-spacing:.07em;text-transform:uppercase;text-align:left;color:#748077}
+.vehicle-table tbody th{font-weight:500;text-transform:none;letter-spacing:0;color:#25362d}
+.vehicle-table tbody th strong{font:600 13px var(--font-display)}
+.vehicle-table td,.vehicle-table tbody th{padding:17px 12px;border-bottom:1px solid #e1e1d8;vertical-align:middle}
+.vehicle-table td:last-child{white-space:nowrap}
+.vehicle-table-wrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.vehicle-service-details{padding-top:82px;padding-bottom:82px}
+.vehicle-inclusion-table-wrap{max-width:900px;margin-top:28px;overflow-x:auto}
+.vehicle-inclusion-table{width:100%;border-collapse:collapse;text-align:left}
+.vehicle-inclusion-table th,.vehicle-inclusion-table td{padding:16px 18px;border-bottom:1px solid #d6d8ce;font-size:11px;line-height:1.6}
+.vehicle-inclusion-table thead th{font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:#748077}
+.vehicle-inclusion-table tbody th{width:55%;font-weight:600;color:#28382f}
+.vehicle-inclusion-table tbody td{color:#748077}
+.vehicle-detail-lower{display:grid;grid-template-columns:1fr 1fr;gap:42px;max-width:900px;margin:38px 0}
+.vehicle-detail-lower h3,.vehicle-guidance h3{font:500 22px var(--font-display);margin:0 0 16px}
+.vehicle-detail-lower ul{list-style:none;margin:0;padding:0}
+.vehicle-detail-lower li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #d6d8ce;font-size:11px}
+.vehicle-detail-lower li span{color:#778178;text-align:right}
+.vehicle-guidance{max-width:900px;padding:24px 0 0;border-top:1px solid #d6d8ce}
+.vehicle-guidance>div{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.vehicle-guidance>div span{padding:14px;background:#ebe9df;font-size:10px;line-height:1.6}
+.vehicle-guidance p{max-width:760px;color:#778178;font-size:10px;line-height:1.8}
+.vehicle-gallery-trigger{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:#ddd;cursor:zoom-in;text-align:left}
+.vehicle-gallery-trigger>span{position:absolute;right:20px;bottom:20px;z-index:2;padding:10px 13px;background:rgba(23,36,31,.82);color:#f3f0e8;font-size:9px;letter-spacing:.08em}
+.vehicle-lightbox{position:fixed;inset:0;z-index:1100;display:flex;align-items:center;justify-content:center;background:rgba(8,15,12,.96);cursor:zoom-out}
+.vehicle-lightbox img{object-fit:contain;padding:5vw}
+.vehicle-lightbox p{position:absolute;bottom:20px;left:5vw;color:#f3f0e8;font-size:12px}
+.vehicle-lightbox-close{position:absolute;top:20px;right:24px;z-index:3;width:44px;height:44px;border:1px solid rgba(255,255,255,.5);border-radius:50%;background:transparent;color:white;font-size:28px;cursor:pointer}
+.contact-channels{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin:22px 0}
+.contact-channel-button{display:inline-flex;flex-direction:column;gap:5px;padding:14px 18px;background:#1d3028;color:#f3f0e8;text-decoration:none;min-width:220px}
+.contact-channel-button>span{font-size:7px;letter-spacing:.16em;opacity:.7}
+.contact-channel-button strong{font-size:11px;font-weight:600}
+.contact-channel-link{font-size:10px;color:#52634a;border-bottom:1px solid #a2ae7a;padding-bottom:4px;text-decoration:none}
+.contact-config-note{margin:0;color:#788278;font-size:10px;line-height:1.7}
+.wechat-contact{display:flex;align-items:center;justify-content:space-between;gap:24px;width:100%;max-width:640px;padding:22px;background:#ebe9df}
+.wechat-contact h3{margin:8px 0;font:500 23px var(--font-display);color:#25362d}
+.wechat-contact p{max-width:400px;color:#778178;font-size:10px;line-height:1.7}
+.wechat-id-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:14px}
+.wechat-id-row strong{font:600 13px var(--font-display);letter-spacing:.04em}
+.wechat-id-row button{border:1px solid #9aa58b;background:transparent;padding:8px 11px;color:#33463a;font-size:9px;cursor:pointer}
+.wechat-qr{display:block;flex:0 0 144px;width:144px;height:144px;padding:6px;background:white}
+.wechat-qr img{width:100%;height:100%;object-fit:contain}
+.form-addons{display:flex;flex-wrap:wrap;gap:12px 22px;min-width:0;margin:0;padding:15px 16px;border:1px solid #d4d6cd}
+.form-addons legend{padding:0 5px;color:#6d796f;font-size:9px}
+.form-addons label{display:flex;align-items:center;gap:7px;color:#34443a;font-size:10px}
+.form-addons input{accent-color:#33483b}
+.cookie-banner{position:fixed;z-index:1200;right:20px;bottom:20px;display:flex;align-items:flex-end;justify-content:space-between;gap:26px;width:min(720px,calc(100vw - 40px));padding:24px 26px;background:#f5f2e9;border:1px solid #d6d8ce;box-shadow:0 18px 60px rgba(15,28,20,.2)}
+.cookie-copy{max-width:440px}
+.cookie-copy h2{margin:8px 0;font:500 22px var(--font-display);color:#24352c}
+.cookie-copy p{margin:0 0 10px;color:#68736a;font-size:10px;line-height:1.7}
+.cookie-copy>a{font-size:9px;color:#52634a;border-bottom:1px solid #9ba77c;text-decoration:none}
+.cookie-actions{display:flex;flex:0 0 auto;flex-direction:column;align-items:stretch;gap:10px}
+.cookie-actions .button{white-space:nowrap;padding:12px 14px;font-size:9px}
+.cookie-reject{border:0;background:transparent;color:#5d6a60;font-size:9px;text-decoration:underline;cursor:pointer}
+.sticky-primary{display:flex;flex:1;min-width:0;flex-direction:column;gap:4px;color:inherit;text-decoration:none}
+.sticky-primary>span{font-size:7px;letter-spacing:.13em;opacity:.72}
+.sticky-primary>strong{font-size:11px}
+.sticky-secondary{flex:0 0 auto;color:#f3f0e8;font-size:9px;text-decoration:none;border-bottom:1px solid rgba(243,240,232,.6);padding-bottom:3px}
+.hero .contact-channels{margin-top:22px}
+.hero .contact-channel-button{background:rgba(243,240,232,.13);border:1px solid rgba(243,240,232,.4);backdrop-filter:blur(12px)}
+.hero .contact-channel-link{color:#f3f0e8;border-color:rgba(243,240,232,.6)}
+@media(max-width:1050px){
+ .vehicle-filters{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .vehicle-view-tools{justify-content:flex-start}
+}
+@media(max-width:680px){
+ .vehicle-filter-panel{padding:15px 0}
+ .vehicle-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .vehicle-filter-control select{min-height:44px;font-size:11px}
+ .vehicle-view-tools{grid-column:1/-1;justify-content:space-between}
+ .vehicle-detail-lower{grid-template-columns:1fr;gap:26px}
+ .vehicle-guidance>div{grid-template-columns:1fr}
+ .vehicle-service-details{padding:62px 7%}
+ .vehicle-inclusion-table th,.vehicle-inclusion-table td{padding:13px 10px;font-size:10px}
+ .wechat-contact{align-items:flex-start;flex-direction:column;padding:18px}
+ .wechat-qr{align-self:flex-start}
+ .contact-channels{align-items:flex-start;flex-direction:column}
+ .contact-channel-button{width:100%}
+ .cookie-banner{right:10px;bottom:calc(88px + env(safe-area-inset-bottom));width:calc(100vw - 20px);padding:18px;gap:14px;flex-direction:column;align-items:stretch}
+ .cookie-copy{max-width:none}
+ .cookie-copy h2{font-size:19px}
+ .cookie-actions{flex-direction:row;align-items:center;justify-content:space-between}
+ .cookie-actions .button{white-space:normal}
+ .sticky-contact{bottom:calc(12px + env(safe-area-inset-bottom));left:10px;right:10px;gap:12px;padding:12px 15px}
+ .sticky-primary>strong{font-size:10px}
+ .sticky-secondary{font-size:8px}
+}
+@media(max-width:360px){
+ .vehicle-filters{grid-template-columns:1fr}
+ .vehicle-view-tools{grid-column:auto}
+ .cookie-banner{padding:15px}
+ .cookie-actions{align-items:stretch;flex-direction:column}
+}
