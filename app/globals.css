@@ -2317,3 +2317,60 @@ button,a{-webkit-tap-highlight-color:transparent}
   .case-category-card:hover,
   .services-hub-card>a:hover { transform:none; }
 }
+
+
+/* Final motion pass: keep photographic depth on the compositor and avoid fixed
+   backgrounds, which can stutter on touch devices and lower-powered laptops. */
+.hero-slide {
+  background-position:center calc(54% + var(--parallax-y, 0px));
+  transform:translate3d(0,var(--parallax-y,0px),0) scale(1.055);
+  transition:opacity 1.35s ease,transform 7s cubic-bezier(.2,.7,.2,1);
+  will-change:transform,opacity;
+}
+.hero-slide-active {
+  background-position:center calc(54% + var(--parallax-y, 0px));
+  transform:translate3d(0,var(--parallax-y,0px),0) scale(1.015);
+}
+.service-gallery-image {
+  background-position:center calc(52% + var(--parallax-y, 0px));
+  transform:translate3d(0,var(--parallax-y,0px),0) scale(1.065);
+  transition:opacity 1.25s ease,transform 7s cubic-bezier(.2,.7,.2,1);
+  will-change:transform,opacity;
+}
+.service-gallery-image.is-active {
+  transform:translate3d(0,var(--parallax-y,0px),0) scale(1.025);
+}
+.journey-image {
+  background-attachment:scroll;
+  background-position:center calc(50% + var(--parallax-y, 0px));
+  will-change:auto;
+}
+.detail-photo img {
+  transform:translate3d(0,var(--parallax-y,0px),0) scale(1.06);
+  transition:transform .8s cubic-bezier(.2,.7,.2,1);
+  will-change:transform;
+}
+.service-direction-art,
+.services-hub-card-art,
+.case-category-art {
+  background-position:center calc(50% + var(--parallax-y, 0px));
+  will-change:auto;
+}
+html { scroll-behavior:smooth; }
+body { overflow-x:clip; }
+@media(max-width:680px) {
+  .hero-slide { transform:translate3d(0,var(--parallax-y,0px),0) scale(1.045); }
+  .hero-slide-active { transform:translate3d(0,var(--parallax-y,0px),0) scale(1.015); }
+  .service-gallery-image { transform:translate3d(0,var(--parallax-y,0px),0) scale(1.045); }
+  .service-gallery-image.is-active { transform:translate3d(0,var(--parallax-y,0px),0) scale(1.015); }
+  .detail-photo img { transform:none; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero-slide,.hero-slide-active,
+  .service-gallery-image,.service-gallery-image.is-active,
+  .detail-photo img {
+    transform:none!important;
+    transition:none!important;
+    will-change:auto;
+  }
+}
