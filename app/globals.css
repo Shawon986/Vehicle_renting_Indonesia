@@ -1425,3 +1425,121 @@ button,a{-webkit-tap-highlight-color:transparent}
  .service-hero-slide{transition:none;transform:none}
  .service-hero-copy .typing-copy,.services-hub-hero .typing-copy{max-width:100%;animation:none}
 }
+
+
+/* Bespoke service-page hero composition: same editorial language, distinct layout */
+.service-hero{
+ display:grid;
+ grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);
+ align-items:center;
+ justify-content:space-between;
+ column-gap:clamp(34px,5vw,82px);
+ min-height: min(760px,calc(100svh - 122px));
+ padding:86px 10.4% 100px;
+ background:linear-gradient(125deg,#172b25 0%,#263d32 58%,#1b3028 100%);
+}
+.service-hero-copy{width:auto;max-width:700px;min-width:0;animation:contentIn .85s .12s both}
+.service-hero-copy .eyebrow{margin-bottom:27px}
+.service-hero-copy h1{font-size:clamp(46px,5.7vw,78px);line-height:.99;max-width:660px}
+.service-hero-lead{max-width:430px;font-size:13px;line-height:1.9;margin:23px 0 27px}
+.service-hero-gallery{
+ position:relative;z-index:1;width:100%;min-width:0;max-width:590px;justify-self:end;
+}
+.service-gallery-frame{
+ position:relative;isolation:isolate;overflow:hidden;aspect-ratio: .88;
+ min-height:390px;max-height:570px;background:#34473b;
+ box-shadow:0 28px 65px rgba(0,0,0,.22);
+}
+.service-gallery-frame:after{
+ content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+ background:linear-gradient(180deg,rgba(10,20,15,.26),transparent 24%,transparent 65%,rgba(10,20,15,.42));
+ border:1px solid rgba(243,240,232,.22)
+}
+.service-gallery-image{
+ position:absolute;inset:0;background-size:cover;background-position:center;
+ opacity:0;transform:scale(1.055);
+ transition:opacity 1.2s ease,transform 7s cubic-bezier(.2,.7,.2,1);
+}
+.service-gallery-image.is-active{opacity:1;transform:scale(1)}
+.service-gallery-label,.service-gallery-count,.service-gallery-caption{position:absolute;z-index:2;color:#fff}
+.service-gallery-label{top:20px;left:21px;font-size:8px;letter-spacing:.2em}
+.service-gallery-count{right:21px;bottom:22px;font:500 21px var(--font-display);letter-spacing:-.05em}
+.service-gallery-count i{font-style:normal;color:var(--lime);font-size:11px;padding:0 4px}
+.service-gallery-caption{left:21px;bottom:25px;font-size:7px;letter-spacing:.18em;color:rgba(255,255,255,.75)}
+.service-gallery-controls{display:flex;align-items:center;gap:7px;padding-top:15px}
+.service-gallery-controls button{
+ display:block;width:28px;height:2px;padding:0;border:0;border-radius:0;
+ background:rgba(243,240,232,.28);cursor:pointer;transition:width .35s,background .35s
+}
+.service-gallery-controls button.is-active{width:48px;background:var(--lime)}
+.service-hero-index{right:4.1%;top:50%;font-size:7px}
+.service-hero-bottom{left:5.2%;right:5.2%}
+.services-hub-hero{
+ display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);
+ align-items:center;gap:clamp(34px,5vw,82px);
+ min-height:620px;padding:82px 10.4% 88px;
+ background:linear-gradient(125deg,#172b25 0%,#263d32 58%,#1b3028 100%);
+}
+.services-hub-copy{position:relative;z-index:1;max-width:700px;min-width:0}
+.services-hub-copy .eyebrow{margin:0 0 28px}
+.services-hub-copy h1{font-size:clamp(48px,6vw,80px);line-height:.98;max-width:700px}
+.services-hub-copy>p:last-child{max-width:440px;margin:24px 0 0;color:rgba(243,240,232,.76);font-size:13px;line-height:1.9}
+.service-hub-gallery{max-width:590px}
+.service-hub-gallery .service-gallery-frame{aspect-ratio:1.02;min-height:340px;max-height:480px}
+.service-hub-gallery .service-gallery-controls{justify-content:flex-end}
+.service-hero-copy .typing-copy,.services-hub-copy .typing-copy{
+ display:inline-block;overflow:hidden;white-space:nowrap;max-width:0;vertical-align:bottom;
+ animation:homeSmallTyping 2.4s steps(42,end) .35s forwards
+}
+@media(max-width:1000px){
+ .service-hero,.services-hub-hero{grid-template-columns:minmax(0,1fr) minmax(270px,.85fr);gap:28px;padding-left:7%;padding-right:7%}
+ .service-hero-copy h1{font-size:clamp(43px,5.8vw,66px)}
+ .service-gallery-frame{min-height:340px}
+ .service-hero-index{right:3%}
+}
+@media(max-width:680px){
+ .service-hero{
+  display:flex;flex-direction:column;align-items:stretch;gap:27px;
+  min-height:0;padding:75px 7% 88px;
+ }
+ .service-hero-copy{width:100%;max-width:none}
+ .service-hero-copy h1{font-size:clamp(43px,11vw,64px);max-width:560px}
+ .service-hero-lead{font-size:12px;margin:18px 0 22px}
+ .service-hero-actions{gap:16px}
+ .service-hero .contact-channels{max-width:100%}
+ .service-hero-gallery{width:100%;max-width:none;justify-self:stretch}
+ .service-gallery-frame{aspect-ratio:1.24;min-height:0;max-height:340px}
+ .service-gallery-label{top:14px;left:15px}
+ .service-gallery-caption{left:15px;bottom:19px}
+ .service-gallery-count{right:15px;bottom:16px;font-size:18px}
+ .service-gallery-controls{padding-top:11px}
+ .service-hero-index{top:auto;right:7%;bottom:17px;transform:none;writing-mode:horizontal-tb;flex-direction:row}
+ .service-hero-index i{width:30px;height:1px}
+ .service-hero-bottom{display:none}
+ .services-hub-hero{
+  display:flex;flex-direction:column;align-items:stretch;gap:28px;
+  min-height:0;padding:76px 7% 75px;
+ }
+ .services-hub-copy{width:100%}
+ .services-hub-copy h1{font-size:clamp(44px,11vw,66px)}
+ .services-hub-copy>p:last-child{font-size:12px;margin-top:20px}
+ .service-hub-gallery{width:100%;max-width:none}
+ .service-hub-gallery .service-gallery-frame{aspect-ratio:1.22;min-height:0;max-height:330px}
+ .service-hub-gallery .service-gallery-controls{justify-content:flex-start}
+ .service-hero-copy .typing-copy,.services-hub-copy .typing-copy{white-space:normal;animation-duration:1.8s}
+}
+@media(max-width:380px){
+ .service-hero-copy h1{font-size:40px}
+ .service-gallery-frame{aspect-ratio:1.08}
+ .services-hub-copy h1{font-size:42px}
+}
+@supports (animation-timeline:scroll()){
+ .service-gallery-frame{animation:serviceGalleryDepth linear both;animation-timeline:scroll(root block);animation-range:0px 650px}
+}
+@keyframes serviceGalleryDepth{from{transform:translateY(0)}to{transform:translateY(34px)}}
+@media(prefers-reduced-motion:reduce){
+ .service-gallery-image{transition:none;transform:none}
+ .service-gallery-controls button{transition:none}
+ .service-hero-copy .typing-copy,.services-hub-copy .typing-copy{max-width:100%;animation:none}
+ .service-gallery-frame{animation:none!important}
+}
