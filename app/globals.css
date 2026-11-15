@@ -526,6 +526,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 /* Tablet portrait layouts: keep enquiry and vehicle detail content comfortably readable */
 @media (min-width:681px) and (max-width:760px){
+ .contact-page:before{display:none}
  .form-page{display:flex;flex-direction:column;gap:0;padding:70px 7% 82px;background:var(--paper)}
  .form-page>.form-page-intro{position:static;width:100%;max-width:760px;margin:0 0 34px}
  .form-page>.inquiry-form{width:100%;padding:30px}
