@@ -3,8 +3,8 @@ import {useEffect} from "react";
 import {usePathname} from "next/navigation";
 
 /**
- * Scroll-linked parallax is reserved exclusively for the homepage contact section.
- * No hero, post-hero image, card, or supporting-page element receives scroll motion.
+ * Scroll-linked parallax is reserved for the homepage contact section.
+ * The journey photo uses its original CSS background parallax, without image scaling.
  */
 export function ParallaxLayers(){
  const pathname=usePathname();
@@ -14,9 +14,7 @@ export function ParallaxLayers(){
   if(!isHome)return;
 
   const contact=document.querySelector<HTMLElement>("main .contact-section");
-  const journey=document.querySelector<HTMLElement>("main .journey-section");
-  const journeyPhoto=journey?.querySelector<HTMLElement>(".journey-image");
-  if(!contact&&!journeyPhoto)return;
+  if(!contact)return;
 
   let frame=0;
   const update=()=>{
@@ -28,15 +26,7 @@ export function ParallaxLayers(){
     const offset=Math.max(mobile?-34:-52,Math.min(mobile?34:52,-distance*(mobile?0.11:0.15)));
     contact.style.setProperty("--contact-parallax-y",offset.toFixed(1)+"px");
    }
-   if(journey){
-    const rect=journey.getBoundingClientRect();
-    const distance=rect.top+rect.height*.5-window.innerHeight*.5;
-    const travel=mobile?0.30:0.42;
-    const limit=mobile?96:150;
-    const offset=Math.max(-limit,Math.min(limit,-distance*travel));
-    journeyPhoto?.style.setProperty("--journey-parallax-y",offset.toFixed(1)+"px");
-   }
-  };
+   };
   const schedule=()=>{if(!frame)frame=window.requestAnimationFrame(update);};
   window.addEventListener("scroll",schedule,{passive:true});
   window.addEventListener("resize",schedule,{passive:true});
@@ -47,8 +37,7 @@ export function ParallaxLayers(){
    window.removeEventListener("resize",schedule);
    if(frame)window.cancelAnimationFrame(frame);
    contact?.style.removeProperty("--contact-parallax-y");
-   journeyPhoto?.style.removeProperty("--journey-parallax-y");
-  };
+   };
  },[pathname]);
  return null;
 }
