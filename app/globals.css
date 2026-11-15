@@ -207,3 +207,68 @@ button,a{-webkit-tap-highlight-color:transparent}
 @media(prefers-reduced-motion:reduce){
  .service-hub-card,.faq-list summary span,.form-grid input,.form-grid select,.form-grid textarea{transition:none}
 }
+
+
+/* Final layout corrections after route-by-route review */
+.form-page{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);column-gap:clamp(36px,6vw,92px)}
+.form-page>.inquiry-form{grid-column:2;grid-row:1;width:100%;max-width:100%;align-self:start}
+.form-page>.form-page-intro{grid-column:1;grid-row:1;min-width:0}
+.form-page>.form-page-intro h1{overflow-wrap:normal;text-wrap:balance}
+.form-page .inquiry-form{margin:0}
+.form-section>.inquiry-form{width:100%;max-width:100%}
+.inner-page{width:100%;min-width:0}
+.inner-page section,.inner-page article{min-width:0}
+.inner-page h1,.inner-page h2,.inner-page h3{overflow-wrap:break-word}
+.text-page>.page-lead{ text-wrap:pretty}
+.text-columns p,.service-hub-card p,.legal-draft p{ text-wrap:pretty}
+.service-hub-card h2{max-width:520px}
+.service-hub-card p{min-height:3.6em}
+.vehicle-info{align-items:flex-start}
+.inner-section .vehicle-info{gap:18px}
+.inner-section .vehicle-info>div{min-width:0}
+.inner-section .vehicle-info h3{font-size:clamp(18px,2vw,23px);line-height:1.2}
+.inner-section .vehicle-info .vehicle-summary{max-width:460px;margin:9px 0 0;color:#748077;font-size:11px;line-height:1.75}
+.inner-section .small-link{flex:0 0 auto;align-self:flex-end;font-size:9px;font-weight:700;border-bottom:1px solid #9bad4f;padding-bottom:6px;white-space:nowrap}
+.inner-section .vehicle-card{min-width:0}
+.inner-section .vehicle-image-wrap{height:clamp(230px,30vw,390px)}
+.vehicle-filters{min-width:0}
+.vehicle-filter-list{min-width:0}
+.vehicle-filter-list button,.view-switch button{transition:background .2s,color .2s,border-color .2s}
+.vehicle-table-wrap{max-width:100%;border-bottom:1px solid rgba(23,36,31,.1)}
+.vehicle-table td:first-child strong{font:600 13px var(--font-display)}
+.detail-title{min-width:0}
+.detail-title .button{margin-top:3px}
+.detail-specs>div{min-width:0}
+.detail-specs strong{max-width:100%}
+.faq-list summary{list-style:none}
+.faq-list summary:focus-visible{outline-offset:5px}
+.page-hero-copy h1{text-wrap:balance}
+.page-hero-copy>p:last-child{text-wrap:pretty}
+.inclusion-placeholder>div{min-width:0}
+.inclusion-placeholder>div span,.inclusion-placeholder>div strong{overflow-wrap:anywhere}
+.site-footer{min-width:0}
+@media(max-width:900px){
+ .form-page{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);column-gap:32px}
+ .form-page>.inquiry-form{padding:24px 20px}
+ .inner-section .vehicle-image-wrap{height:clamp(220px,31vw,320px)}
+}
+@media(max-width:680px){
+ .form-page{display:flex;flex-direction:column;gap:0}
+ .form-page>.form-page-intro{width:100%;margin:0 0 32px}
+ .form-page>.inquiry-form{width:100%;padding:21px 16px}
+ .form-page-intro h1{font-size:clamp(43px,12vw,62px)}
+ .inner-section .vehicle-image-wrap{height:clamp(230px,68vw,360px)}
+ .inner-section .vehicle-info{gap:12px}
+ .inner-section .vehicle-info h3{font-size:19px}
+ .inner-section .small-link{font-size:8px}
+ .service-hub-card p{min-height:0}
+ .service-hub-card h2{overflow-wrap:anywhere}
+ .detail-specs strong{font-size:12px}
+ .site-footer{padding-bottom:100px}
+}
+@media(max-width:380px){
+ .vehicle-filter-list button{font-size:8px;padding:7px 8px}
+ .view-switch button{font-size:8px;padding:7px 9px}
+ .inclusion-placeholder>div{padding:12px 9px}
+ .form-page>.inquiry-form{padding:18px 13px}
+}
