@@ -2802,33 +2802,24 @@ body { overflow-x:clip; }
 }
 
 
-/* Keep the full panel covered while preserving the original starry-sky focal framing and scroll parallax. */
+/* Preserve image dimensions and star focal framing; JS updates only this background offset on desktop scroll. */
 .journey-section .journey-image {
   background-size:cover !important;
-  background-position:center 45% !important;
-  background-attachment:fixed !important;
+  background-position:center calc(45% + var(--journey-parallax-y, 0px)) !important;
+  background-attachment:scroll !important;
   background-repeat:no-repeat !important;
-  animation:none;
-}
-@supports (animation-timeline:view()) {
-  .journey-section .journey-image {
-    background-attachment:scroll !important;
-    animation:editorialJourneyDepth linear both !important;
-    animation-timeline:view(block) !important;
-    animation-range:entry 0% exit 100% !important;
-  }
+  animation:none !important;
 }
 @media(max-width:680px) {
   .journey-section .journey-image {
     background-size:cover !important;
-    background-attachment:scroll !important;
     background-position:center 55% !important;
+    background-attachment:scroll !important;
     animation:none !important;
   }
 }
 @media(prefers-reduced-motion:reduce) {
   .journey-section .journey-image {
-    animation:none !important;
-    background-attachment:fixed !important;
+    background-position:center 45% !important;
   }
 }
