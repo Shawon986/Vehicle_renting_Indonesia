@@ -1003,3 +1003,11 @@ button,a{-webkit-tap-highlight-color:transparent}
 @media(prefers-reduced-motion:reduce){
  .vehicle-view-tools .view-switch button,.inquiry-form,.form-grid input,.form-grid select,.form-grid textarea,.inquiry-form>.button{transition:none}
 }
+
+
+/* Homepage hero image carousel */
+.hero-image{background-image:none!important;animation:none!important}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center 55%;opacity:0;transition:opacity 1.25s ease;will-change:opacity}
+.hero-slide-active{opacity:1}
+@media(max-width:680px){.hero-slide{background-position:57% center}}
+@media(prefers-reduced-motion:reduce){.hero-slide{transition:none}}
