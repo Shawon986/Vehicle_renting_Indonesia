@@ -663,3 +663,5 @@ button,a{-webkit-tap-highlight-color:transparent}
 .price-slot>span{font-size:8px;letter-spacing:.14em;color:#748077}
 .price-slot>strong{font:500 17px var(--font-display);color:#293a30}
 @media(max-width:680px){.price-slot{min-height:64px;margin:16px 0 22px;padding:13px 14px}.price-slot>strong{font-size:15px}}
+
+.cookie-settings{display:inline-block;margin:14px 14px 0 0;padding:0;border:0;border-bottom:1px solid #8a9788;background:transparent;color:#667269;font-size:9px;cursor:pointer}
