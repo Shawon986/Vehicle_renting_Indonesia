@@ -22,8 +22,11 @@ export function ParallaxLayers(){
    visible.forEach(node=>{
     const rect=node.getBoundingClientRect();
     const distance=rect.top+rect.height*.5-midpoint;
-    const offset=Math.max(-48,Math.min(48,-distance*.075));
-    node.style.setProperty("--parallax-y",offset.toFixed(1)+"px");
+    const rawOffset=Math.max(-48,Math.min(48,-distance*.075));
+    const mobile=window.matchMedia("(max-width:680px)").matches;
+    const isFleetImage=node.matches(".fleet-section .vehicle-image-wrap img");
+    const scale=isFleetImage?(mobile?.38:.55):(mobile?.24:.38);
+    node.style.setProperty("--parallax-y",(rawOffset*scale).toFixed(1)+"px");
    });
   };
   const schedule=()=>{if(!frame)frame=window.requestAnimationFrame(update);};
