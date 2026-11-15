@@ -57,3 +57,12 @@ button,a{-webkit-tap-highlight-color:transparent}
 @media(max-width:380px){.wordmark{gap:7px}.wordmark-symbol{font-size:30px}.wordmark-copy{font-size:8px}.locale-switch a{min-width:24px;padding:0 4px}.site-header{gap:7px}}
 
 @media(max-width:760px){.header-actions{order:2;margin-left:auto}.menu-toggle{order:3;margin:0}.main-nav{order:4}}
+
+/* Indonesian homepage hero: balanced title width and consistent left alignment */
+.hero-id .hero-content{left:10.4%;right:auto;width:min(680px,70%);max-width:680px}
+.hero-id h1{max-width:680px;font-size:clamp(64px,7.2vw,104px);line-height:.98;letter-spacing:-.07em}
+.hero-id .hero-description{max-width:440px;margin-top:27px}
+.hero-id .hero-actions{align-items:center}
+@media(max-width:900px){.hero-id .hero-content{left:7%;width:min(680px,82%)}.hero-id h1{font-size:clamp(58px,8vw,88px)}}
+@media(max-width:680px){.hero-id .hero-content{left:7%;right:7%;top:45%;width:auto;max-width:560px;transform:translateY(-42%)}.hero-id h1{font-size:clamp(54px,13vw,76px);line-height:.98;max-width:100%}.hero-id .hero-description{max-width:340px;margin:21px 0 24px}.hero-id .hero-actions{align-items:flex-start}}
+@media(max-width:360px){.hero-id .hero-content{top:44%;transform:translateY(-38%)}.hero-id h1{font-size:clamp(49px,13vw,58px)}.hero-id .hero-description{font-size:11px;line-height:1.75}}
