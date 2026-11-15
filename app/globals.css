@@ -1431,28 +1431,10 @@ button,a{-webkit-tap-highlight-color:transparent}
 .service-direction-card:hover .service-direction-art:before{opacity:.78}
 
 /* Tours & travel — landscapes, culture and Indonesian destinations. */
-.service-page-tours-travel .service-direction-card:nth-child(1) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1000&q=85")}
-.service-page-tours-travel .service-direction-card:nth-child(2) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=85")}
-.service-page-tours-travel .service-direction-card:nth-child(3) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85")}
-.service-page-tours-travel .service-direction-card:nth-child(4) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1000&q=85")}
-.service-page-tours-travel .service-direction-card:nth-child(5) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85")}
-.service-page-tours-travel .service-direction-card:nth-child(6) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85")}
 
 /* Event design — real celebration, styling and venue photography. */
-.service-page-event-design .service-direction-card:nth-child(1) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85")}
-.service-page-event-design .service-direction-card:nth-child(2) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=85")}
-.service-page-event-design .service-direction-card:nth-child(3) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1000&q=85")}
-.service-page-event-design .service-direction-card:nth-child(4) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1000&q=85")}
-.service-page-event-design .service-direction-card:nth-child(5) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=85")}
-.service-page-event-design .service-direction-card:nth-child(6) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=85")}
 
 /* Fruit and flower gifting — fresh florals and curated gift details. */
-.service-page-gift-boxes .service-direction-card:nth-child(1) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1000&q=85")}
-.service-page-gift-boxes .service-direction-card:nth-child(2) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=1000&q=85")}
-.service-page-gift-boxes .service-direction-card:nth-child(3) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=1000&q=85")}
-.service-page-gift-boxes .service-direction-card:nth-child(4) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1000&q=85")}
-.service-page-gift-boxes .service-direction-card:nth-child(5) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1000&q=85")}
-.service-page-gift-boxes .service-direction-card:nth-child(6) .service-direction-art{background-image:url("https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&w=1000&q=85")}
 
 /* Large editorial image moment in the service-detail section. */
 .service-detail-symbol{
@@ -1477,9 +1459,6 @@ button,a{-webkit-tap-highlight-color:transparent}
   transform:translateY(-6px) rotate(-1deg);
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.25),inset 0 -90px 100px rgba(8,18,14,.3),0 30px 58px rgba(23,36,31,.18);
 }
-.service-page-tours-travel .service-detail-symbol{background-image:linear-gradient(180deg,rgba(8,18,14,.06),rgba(8,18,14,.24)),url("https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1100&q=88")}
-.service-page-event-design .service-detail-symbol{background-image:linear-gradient(180deg,rgba(8,18,14,.04),rgba(8,18,14,.25)),url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1100&q=88")}
-.service-page-gift-boxes .service-detail-symbol{background-image:linear-gradient(180deg,rgba(8,18,14,.04),rgba(8,18,14,.25)),url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1100&q=88")}
 
 /* Photo-led cards on the services hub and portfolio index. */
 .services-hub-card-art,.case-category-art{
@@ -3787,4 +3766,45 @@ body { overflow-x:clip; }
   .service-page .service-hero {padding-bottom:142px}
   .service-page .service-hero .wechat-contact {grid-template-columns:minmax(0,1fr) 72px}
   .service-page .service-hero .wechat-qr {width:72px;height:72px}
+}
+
+
+/* Service editorial photos use native lazy-loaded images instead of eager CSS backgrounds. */
+.service-direction-art {isolation:isolate}
+.service-direction-art:before,
+.service-direction-art:after {z-index:1}
+.service-direction-art .service-direction-photo {
+  position:absolute;
+  z-index:0;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.service-direction-art>span,
+.service-direction-art>small {z-index:2}
+.service-detail-symbol {
+  isolation:isolate;
+  overflow:hidden;
+  background-image:none !important;
+}
+.service-detail-photo {
+  position:absolute;
+  z-index:0;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:brightness(.78);
+}
+.service-detail-symbol:before,
+.service-detail-symbol:after {z-index:1;pointer-events:none}
+.service-detail-symbol>span {position:relative;z-index:2}
+@media(max-width:680px) {
+  .service-direction-art .service-direction-photo {object-position:center 48%}
+  .service-detail-photo {object-position:center 48%}
 }
