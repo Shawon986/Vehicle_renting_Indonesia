@@ -48,4 +48,15 @@ assert.match(gallery,/aria-modal="true"/,"Vehicle lightbox must expose a modal d
 assert.match(config,/Content-Security-Policy/,"Security headers must remain configured");
 assert.match(workflow,/npm audit --audit-level=high/,"CI must run dependency security audit");
 assert.equal(existsSync(new URL("../app/[locale]/availability",import.meta.url)),false,"Public availability route must not be added");
-console.log("Vehicle rental scope checks passed.");
+for (const path of ["app/[locale]/services/tours-travel/page.tsx","app/[locale]/services/event-design/page.tsx","app/[locale]/services/gift-boxes/page.tsx","components/ServiceLandingPage.tsx","components/ServiceEnquiryForm.tsx","app/api/service-inquiries/route.ts"]) assert.ok(existsSync(new URL("../"+path,import.meta.url)),`Missing service module: ${path}`);
+const serviceApi=read("app/api/service-inquiries/route.ts");
+const serviceForm=read("components/ServiceEnquiryForm.tsx");
+assert.match(serviceApi,/CONTENT_APPROVED!=="true"/,"Service enquiries must remain gated by legal/content approval");
+assert.match(serviceApi,/TURNSTILE_SECRET_KEY/,"Service enquiries must verify Turnstile");
+assert.match(serviceApi,/UPSTASH_REDIS_REST_TOKEN/,"Service enquiries must be rate limited");
+assert.match(serviceApi,/serviceLine/,"Service enquiries must retain service-line attribution");
+assert.doesNotMatch(serviceForm,/name="budget"/,"Public service forms must not collect budgets");
+assert.match(serviceForm,/name="startDate"/,"Tour enquiries must capture start date");
+assert.match(serviceForm,/name="eventDate"/,"Event enquiries must capture event date");
+assert.match(serviceForm,/name="deliveryDate"/,"Gift enquiries must capture requested delivery date");
+console.log("Public website service scope checks passed.");
