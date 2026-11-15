@@ -41,7 +41,7 @@ export function VehicleInquiryForm({locale,vehicleSlug,enabled=false}:{locale:Lo
  <label className="full-field">{t.message}<textarea name="message" rows={4} maxLength={2000} onBlur={e=>progressField("message",e.currentTarget.value)}/></label>
  </div>
  <p className="form-date-hint">{labels.dateHint} {labels.timeZoneNote}</p>
- <label className="consent-check"><input type="checkbox" name="consent" value="yes" required/>{t.consent}</label>
+ <label className="consent-check"><input type="checkbox" name="consent" value="yes" required/>{t.consent} <Link href={"/"+locale+"/legal/privacy"}>{locale==="zh"?"隐私政策":locale==="id"?"Kebijakan privasi":"Privacy policy"}</Link></label>
  <label className="consent-check marketing-consent"><input type="checkbox" name="marketingConsent" value="yes"/>{labels.marketing}</label>
  <div className="honeypot" aria-hidden="true"><label>Leave empty<input name="website" tabIndex={-1} autoComplete="off"/></label></div>
  {enabled&&siteKey?<div ref={slot} className="turnstile-slot"/>:<p className="form-config-note">{!enabled?(locale==="zh"?"隐私政策及三种语言内容审核完成后，咨询表单才会启用。":locale==="id"?"Formulir akan diaktifkan setelah kebijakan privasi dan konten tiga bahasa disetujui.":"The enquiry form will be enabled after the privacy policy and all three language versions are approved."):t.formUnavailable}</p>}
