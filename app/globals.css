@@ -3868,3 +3868,128 @@ body { overflow-x:clip; }
   .service-page .service-cta-band,
   .service-page .service-form-section {min-width:0;overflow-x:clip}
 }
+
+
+/* Final mobile correction: restore the established full-bleed service hero.
+   The gallery remains the hero background; copy and controls sit above it. */
+@media (max-width:680px) {
+  .service-page .service-hero {
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:center;
+    width:100%;
+    min-height:min(760px,calc(100svh - 99px));
+    height:auto;
+    padding:112px 7% 116px;
+    overflow:hidden;
+  }
+  .service-page .service-hero-gallery {
+    position:absolute;
+    z-index:0;
+    inset:0;
+    display:block;
+    width:100%;
+    height:100%;
+    max-width:none;
+    pointer-events:none;
+  }
+  .service-page .service-gallery-frame {position:absolute;inset:0;width:100%;height:100%;min-height:0}
+  .service-page .service-gallery-image {inset:-2%;width:104%;height:104%;background-position:58% center}
+  .service-page .service-hero-copy {
+    position:relative;
+    z-index:4;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    margin:0;
+    padding:0;
+  }
+  .service-page .service-hero-copy>.eyebrow {margin:0 0 24px;font-size:7px;line-height:1.6;letter-spacing:.15em}
+  .service-page .service-hero-copy h1 {
+    max-width:100%;
+    margin:0;
+    font-size:clamp(39px,10.2vw,56px);
+    line-height:1.02;
+    letter-spacing:-.065em;
+    overflow-wrap:normal;
+    word-break:normal;
+    text-wrap:balance;
+  }
+  .service-page .service-hero-lead {max-width:38rem;margin:18px 0 22px;font-size:11px;line-height:1.8}
+  .service-page .service-hero-actions {display:flex;align-items:flex-start;flex-wrap:wrap;gap:12px 17px;margin:0 0 18px}
+  .service-page .service-hero .contact-channels {
+    position:relative;
+    z-index:4;
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    width:100%;
+    max-width:420px;
+    gap:8px;
+    margin-top:14px;
+  }
+  .service-page .service-hero .contact-channel-button,
+  .service-page .service-hero .contact-channel-link {width:100%;min-width:0;max-width:100%;box-sizing:border-box}
+  .service-page .service-hero .wechat-contact {grid-template-columns:minmax(0,1fr) 76px;gap:10px;padding:11px}
+  .service-page .service-hero .wechat-qr {width:76px;height:76px}
+  .service-page .service-hero .wechat-qr img {width:100%;height:100%;object-fit:contain}
+  .service-page .service-hero-index {display:none}
+  .service-page .service-hero-bottom {
+    position:absolute;
+    z-index:4;
+    left:7%;
+    right:7%;
+    bottom:18px!important;
+    display:flex;
+    justify-content:space-between;
+    gap:8px;
+    font-size:6px;
+    line-height:1.5;
+    letter-spacing:.1em;
+  }
+  .service-page .service-hero-bottom span {max-width:48%}
+  .service-page .service-hero-bottom span:last-child {text-align:right}
+  .service-page .service-gallery-label {top:22px;left:7%;font-size:7px}
+  .service-page .service-gallery-caption {left:7%;bottom:28px!important;max-width:38%;font-size:6px}
+  .service-page .service-gallery-count {right:7%;bottom:76px!important;font-size:14px}
+  .service-page .service-gallery-controls {left:auto;right:7%!important;bottom:42px!important;transform:none;z-index:5;gap:6px}
+  .service-page .service-gallery-controls button {min-width:14px;min-height:12px}
+}
+@media (max-width:390px) {
+  .service-page .service-hero {min-height:min(740px,calc(100svh - 99px));padding:104px 6% 112px}
+  .service-page .service-hero-copy h1 {font-size:clamp(36px,10.3vw,44px)}
+  .service-page .service-hero .wechat-contact {grid-template-columns:minmax(0,1fr) 68px}
+  .service-page .service-hero .wechat-qr {width:68px;height:68px}
+}
+
+/* Use vector masks for repeated interface symbols. This avoids platform font
+   substitution (especially iOS emoji/symbol fallback) on every mobile page. */
+.arrow-up,.vehicle-open,.service-process-step>i,.services-hub-card-art>i {
+  display:inline-grid;
+  place-items:center;
+  font-size:0!important;
+  font-style:normal;
+  line-height:1;
+  background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 18 18 6M7 6h11v11' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 18 18 6M7 6h11v11' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+.arrow-up {width:1em;height:1em;min-width:1em;margin-left:8px;vertical-align:middle}
+.vehicle-open {width:20px;height:20px}
+.service-process-step>i,.services-hub-card-art>i {width:14px;height:14px}
+.nav-chevron {
+  display:inline-block;
+  width:12px;
+  height:12px;
+  overflow:hidden;
+  font-size:0!important;
+  vertical-align:middle;
+  background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4 6 4 4 4-4' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4 6 4 4 4-4' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+@media(max-width:680px) {
+  .arrow-up,.vehicle-open,.service-process-step>i,.services-hub-card-art>i,.nav-chevron {font-family:Arial,sans-serif!important;font-variant:normal!important}
+}
