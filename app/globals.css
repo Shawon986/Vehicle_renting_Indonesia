@@ -749,3 +749,56 @@ button,a{-webkit-tap-highlight-color:transparent}
 @media(prefers-reduced-motion:reduce){
  .vehicle-filter-control,.vehicle-filter-control select{transition:none}
 }
+
+
+/* Final fleet filter layout and interaction polish */
+.vehicle-filter-panel{min-width:0}
+.vehicle-filters{
+ display:grid;
+ grid-template-columns:repeat(4,minmax(0,1fr)) auto;
+ align-items:end;
+ gap:12px;
+}
+.vehicle-filter-control{min-width:0;gap:8px;color:#68736a;transition:color .18s ease}
+.vehicle-filter-control>span{display:inline-block;transition:color .18s ease}
+.vehicle-filter-control:hover,.vehicle-filter-control:focus-within{color:#35483b}
+.vehicle-filter-control:hover>span,.vehicle-filter-control:focus-within>span{color:#35483b}
+.vehicle-filter-control select{
+ display:block;
+ width:100%;
+ min-width:0;
+ height:46px;
+ padding:0 38px 0 13px;
+ border:1px solid #c9cec2;
+ border-radius:3px;
+ background-color:#f8f6f0;
+ color:#26362e;
+ font:500 11px/1.2 var(--font-sans);
+ letter-spacing:0;
+ text-transform:none;
+ cursor:pointer;
+ transition:border-color .18s ease,background-color .18s ease,box-shadow .18s ease;
+}
+.vehicle-filter-control select:hover:not(:disabled){border-color:#87966f;background-color:#fffdf7}
+.vehicle-filter-control select:focus-visible{outline:2px solid #8d9f57;outline-offset:2px;border-color:#71834d;box-shadow:0 0 0 3px rgba(141,159,87,.13)}
+.vehicle-filter-control select option{background:#f8f6f0;color:#26362e}
+.vehicle-filter-control select option:checked{background:#dfe5d2;color:#1d3028}
+.vehicle-view-tools{min-width:max-content;gap:12px}
+.filter-reset{transition:color .18s ease,border-color .18s ease}
+.filter-reset:hover{color:#26362e;border-color:#52634a}
+@media(max-width:1050px){
+ .vehicle-filters{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .vehicle-view-tools{grid-column:1/-1;justify-content:space-between}
+}
+@media(max-width:680px){
+ .vehicle-filters{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .vehicle-filter-control select{height:46px;font-size:11px}
+ .vehicle-view-tools{grid-column:1/-1}
+}
+@media(max-width:360px){
+ .vehicle-filters{grid-template-columns:minmax(0,1fr)}
+ .vehicle-view-tools{grid-column:auto}
+}
+@media(prefers-reduced-motion:reduce){
+ .vehicle-filter-control,.vehicle-filter-control>span,.vehicle-filter-control select,.filter-reset{transition:none}
+}
