@@ -2800,3 +2800,24 @@ body { overflow-x:clip; }
 @media(prefers-reduced-motion:reduce) {
   .journey-section .journey-image { animation:none !important; }
 }
+
+
+/* Final override: reproduce the original homepage journey-photo parallax.
+   Fixed attachment creates natural scroll depth without enlarging or transforming the source photo. */
+.journey-section .journey-image {
+  background-size:cover !important;
+  background-position:center center !important;
+  background-attachment:fixed !important;
+  animation:none !important;
+}
+@media(max-width:680px) {
+  .journey-section .journey-image {
+    background-attachment:scroll !important;
+    background-position:center 55% !important;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .journey-section .journey-image {
+    background-attachment:fixed !important;
+  }
+}
