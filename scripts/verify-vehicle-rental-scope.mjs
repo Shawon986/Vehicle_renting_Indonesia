@@ -25,6 +25,8 @@ assert.match(api,/CONTENT_APPROVED!=="true"/,"Enquiries must remain behind legal
 assert.match(api,/Origin verification required/,"API must require an origin header");
 assert.match(api,/validTime\(pickupTime\)/,"Pickup time must be range-validated");
 assert.match(api,/vehicleSupportsDriver/,"Driver selection must match the selected vehicle");
+assert.match(api,/vehicleCategory/,"Enquiries must capture vehicle category when the exact model is unknown");
+assert.match(api,/timeZone:"Asia\\/Jakarta"/,"Enquiry timestamps must use the declared operating timezone");
 assert.match(api,/TURNSTILE_SECRET_KEY/,"Turnstile server verification must be configured");
 assert.match(api,/UPSTASH_REDIS_REST_TOKEN/,"Rate limiting must be configured");
 assert.match(api,/INQUIRY_SHEETS_SHARED_SECRET/,"Spreadsheet handoff must use a server-side secret");
@@ -34,6 +36,7 @@ assert.match(channels,/wechat_contact_view/,"Chinese WeChat contact views must b
 assert.match(channels,/whatsapp_click/,"WhatsApp click-throughs must be measured");
 assert.match(channels,/wechat_qr_saved/,"WeChat QR actions must be measured");
 assert.match(gallery,/ArrowRight/,"Vehicle gallery must support keyboard navigation");
+assert.match(gallery,/VehicleImage/,"Vehicle content must support multiple localized gallery assets");
 assert.match(gallery,/aria-modal="true"/,"Vehicle lightbox must expose a modal dialog");
 assert.match(config,/Content-Security-Policy/,"Security headers must remain configured");
 assert.match(workflow,/npm audit --audit-level=high/,"CI must run dependency security audit");
