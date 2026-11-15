@@ -25,7 +25,7 @@ export function ParallaxLayers(){
     const rawOffset=Math.max(-48,Math.min(48,-distance*.075));
     const mobile=window.matchMedia("(max-width:680px)").matches;
     const isFleetImage=node.matches(".fleet-section .vehicle-image-wrap img");
-    const scale=isFleetImage?(mobile?.38:.55):(mobile?.24:.38);
+    const scale=isFleetImage ? (mobile ? 0.38 : 0.55) : (mobile ? 0.24 : 0.38);
     node.style.setProperty("--parallax-y",(rawOffset*scale).toFixed(1)+"px");
    });
   };
