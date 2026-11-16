@@ -7753,3 +7753,21 @@ html[lang="zh-CN"] .vehicle-card .vehicle-info h3 {
 @media(max-width:680px) {
   .vehicle-card-zh .vehicle-info h3 {font-size:21px;line-height:1.45}
 }
+
+
+/* Use the official RentCarOcean identity in shared service-page intro panels. */
+.service-intro-mark {
+  display: block;
+  width: clamp(150px, 18vw, 220px);
+  height: auto;
+  max-width: 100%;
+  margin-top: 28px;
+  object-fit: contain;
+  object-position: left center;
+}
+@media (max-width: 680px) {
+  .service-intro-mark {
+    width: clamp(145px, 42vw, 190px);
+    margin-top: 22px;
+  }
+}
