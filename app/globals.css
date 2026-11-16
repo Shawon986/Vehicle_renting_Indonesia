@@ -6001,3 +6001,21 @@ input[type="checkbox"]::before {width:11px;height:11px}
 @media(max-width:1050px){.about-brand-page .editorial-content{padding-left:6%;padding-right:6%}.about-brand-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-brand-service-image{height:250px}}
 @media(max-width:700px){.about-brand-hero{min-height:590px;padding:95px 7% 82px}.about-brand-hero-content h1{font-size:clamp(40px,11vw,58px)}.about-brand-hero-index{left:7%;right:auto;font-size:8px}.about-brand-hero-meta{gap:8px;font-size:8px}.about-brand-hero-meta i{width:12px}.about-brand-intro{grid-template-columns:1fr;gap:22px;padding-top:72px;padding-bottom:75px}.about-brand-intro-heading h2{font-size:40px}.about-brand-intro-copy{padding-top:0}.about-brand-services{padding:72px 0 78px}.about-brand-section-head{grid-template-columns:1fr;gap:20px;padding-bottom:30px}.about-brand-section-head h2{font-size:40px}.about-brand-service-grid{grid-template-columns:1fr;gap:14px}.about-brand-service-image{height:245px}.about-brand-service-copy{padding:21px 18px}.about-brand-service-copy h3{font-size:23px}.about-brand-approach{grid-template-columns:1fr;gap:28px;padding-top:75px;padding-bottom:78px}.about-brand-approach-heading h2{font-size:39px}.about-brand-company{grid-template-columns:1fr;gap:28px;padding-top:72px;padding-bottom:76px}.about-brand-facts>div{min-height:112px;padding:14px}.about-brand-contact{align-items:flex-start;flex-direction:column;padding-top:68px;padding-bottom:72px}.about-brand-contact h2{font-size:39px}.about-brand-contact .button{width:100%;justify-content:center}}
 @media(prefers-reduced-motion:reduce){.about-brand-service-card,.about-brand-service-image img{transition:none}}
+
+
+/* About page — richer service detail and refined editorial hierarchy */
+.about-brand-service-card{box-shadow:0 18px 42px rgba(0,0,0,.10)}
+.about-brand-service-copy{min-height:245px}
+.about-brand-service-copy p{font-size:13px;line-height:1.9}
+.about-brand-service-scope{display:block;margin:0 0 20px;padding:11px 0 0;border-top:1px solid rgba(225,197,142,.13);color:#e0d2b4;font-size:10px;line-height:1.8;letter-spacing:.035em}
+.about-brand-service-copy>span{margin-top:auto}
+.about-brand-intro-copy>p{font-size:16px;line-height:2.05}
+.about-brand-values article{padding:28px 0}
+.about-brand-facts>div{min-height:138px;padding:20px 22px}
+.about-brand-contact{border-top:1px solid rgba(23,58,50,.12)}
+@media(max-width:700px){
+ .about-brand-service-copy{min-height:0}
+ .about-brand-service-scope{font-size:10px;line-height:1.75}
+ .about-brand-intro-copy>p{font-size:14px;line-height:1.9}
+ .about-brand-facts>div{min-height:116px}
+}
