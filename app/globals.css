@@ -7771,3 +7771,57 @@ html[lang="zh-CN"] .vehicle-card .vehicle-info h3 {
     margin-top: 22px;
   }
 }
+
+
+/* Site-wide readability uplift: make useful content easier to read while
+   preserving display headings, eyebrow labels, counters and decorative metadata. */
+main p:not(.eyebrow):not(.service-hero-lead):not(.service-gallery-caption),
+main li:not(.eyebrow),
+main td,
+main th,
+main label,
+footer p,
+footer li {
+  font-size: max(13px, .9em);
+  line-height: 1.75;
+}
+
+/* Small supporting copy and card descriptions should remain comfortably legible. */
+main .vehicle-info p,
+main .service-direction-card p,
+main .service-intro-copy p,
+main .service-detail-band p,
+main .service-process-step p,
+main .service-form-copy p,
+main .service-cta-band p,
+main .contact-channel p,
+main .contact-channels p,
+main .form-field label,
+main .field-group label {
+  font-size: max(13px, .9em);
+  line-height: 1.75;
+}
+
+/* Improve dense controls and data views without enlarging utility icons. */
+main input,
+main select,
+main textarea,
+main .button,
+main button,
+main .table-view,
+main .vehicle-filter label {
+  font-size: max(13px, .9em);
+}
+
+@media (max-width: 680px) {
+  main p:not(.eyebrow):not(.service-hero-lead):not(.service-gallery-caption),
+  main li:not(.eyebrow),
+  main td,
+  main th,
+  main label,
+  footer p,
+  footer li {
+    font-size: max(13px, .92em);
+    line-height: 1.75;
+  }
+}
