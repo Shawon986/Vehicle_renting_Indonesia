@@ -5546,3 +5546,302 @@ input[type="checkbox"]::before {width:11px;height:11px}
 @media(max-width:760px){.site-header .wordmark-image{width:clamp(174px,46vw,215px);max-height:48px}.locale-switch{gap:1px;padding:3px}.locale-switch a{min-width:27px;height:26px;padding:0 5px}.locale-switch a:hover{transform:none}}
 @media(max-width:600px){.site-footer{padding:38px 6% 0}.site-footer:after{right:-70px;top:65px;width:120px;height:120px}.footer-topline{align-items:flex-start;flex-direction:column;gap:8px;font-size:8px}.footer-main{grid-template-columns:minmax(0,1fr);gap:27px;padding:30px 0 35px}.footer-brand{grid-column:auto}.footer-wordmark .footer-logo-image{width:min(255px,82vw);max-height:58px}.footer-brand h2{font-size:32px}.footer-navigation{grid-template-columns:1fr 1fr;gap:16px;padding-top:0}.footer-navigation>div{gap:12px}.footer-contact{padding-top:20px}.footer-bottom{grid-template-columns:1fr;gap:8px;margin:0 -6.82%;padding:18px 6.82%}.footer-bottom span:nth-child(3){grid-column:auto}}
 @media(prefers-reduced-motion:reduce){.locale-switch a,.footer-whatsapp,.footer-navigation a,.footer-navigation .cookie-settings{transition:none}}
+
+
+/* RentCarOcean — unified enquiry form layout across desktop, tablet and mobile */
+.inquiry-form,
+.service-inquiry-form {
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  padding:clamp(22px,3vw,38px);
+  border-radius:18px;
+  box-sizing:border-box;
+}
+.inquiry-form *,
+.service-inquiry-form * { box-sizing:border-box; }
+.inquiry-form-heading,
+.inquiry-form-heading h3,
+.inquiry-form-heading p,
+.form-note,
+.form-date-hint,
+.form-config-note,
+.form-success,
+.form-error { max-width:100%; min-width:0; overflow-wrap:anywhere; }
+.form-grid,
+.service-form-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:start;
+  gap:18px 20px;
+  width:100%;
+  min-width:0;
+}
+.form-grid > *,
+.service-form-grid > * { min-width:0; max-width:100%; }
+.form-grid > label,
+.service-form-grid > label,
+.service-form-field {
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:8px;
+  min-width:0;
+  width:100%;
+  line-height:1.45;
+}
+.form-grid .full-field,
+.form-grid .service-form-wide,
+.service-form-grid .service-form-wide,
+.form-grid > fieldset,
+.service-form-grid > fieldset { grid-column:1 / -1; }
+.inquiry-form input:not([type=checkbox]):not([type=radio]),
+.inquiry-form select,
+.inquiry-form textarea,
+.service-inquiry-form input:not([type=checkbox]):not([type=radio]),
+.service-inquiry-form select,
+.service-inquiry-form textarea {
+  display:block;
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  min-height:50px;
+  padding:13px 15px;
+  border-radius:8px;
+  font:inherit;
+  font-size:16px;
+  line-height:1.4;
+}
+.inquiry-form textarea,
+.service-inquiry-form textarea { min-height:126px; resize:vertical; }
+.inquiry-form fieldset,
+.service-inquiry-form fieldset {
+  min-width:0;
+  width:100%;
+  max-width:100%;
+  margin:0;
+  padding:18px;
+  border-radius:10px;
+}
+.form-addons,
+.service-check-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:13px 18px;
+}
+.form-addons > label,
+.service-check-grid > label,
+.inquiry-form .consent-check,
+.inquiry-form .marketing-consent,
+.service-inquiry-form .service-form-check {
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+  gap:10px;
+  min-width:0;
+  max-width:100%;
+  line-height:1.55;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.inquiry-form input[type=checkbox],
+.service-inquiry-form input[type=checkbox] {
+  flex:0 0 18px;
+  width:18px;
+  min-width:18px;
+  height:18px;
+  min-height:18px;
+  margin:2px 0 0;
+}
+.inquiry-form .consent-row {
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px 20px;
+  width:100%;
+  min-width:0;
+  margin:18px 0 12px;
+}
+.inquiry-form > button[type=submit],
+.service-inquiry-form > button[type=submit],
+.inquiry-form > .button,
+.service-inquiry-form > .button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:min(220px,100%);
+  min-height:52px;
+  max-width:100%;
+  white-space:normal;
+  text-align:center;
+}
+.inquiry-form .turnstile-slot,
+.service-inquiry-form .turnstile-slot {
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  overflow-x:auto;
+  overflow-y:hidden;
+}
+.form-page,
+.contact-page,
+.service-form-section,
+.vehicle-form-section { min-width:0; }
+@media (max-width: 900px) {
+  .inquiry-form,
+  .service-inquiry-form { padding:24px 20px; }
+  .form-grid,
+  .service-form-grid { gap:15px 14px; }
+  .service-form-section,
+  .service-page .service-form-section,
+  .vehicle-form-section {
+    grid-template-columns:minmax(0,1fr);
+    min-width:0;
+  }
+  .service-form-copy { position:static; min-width:0; }
+}
+@media (max-width: 680px) {
+  .form-page,
+  .contact-page { display:grid; grid-template-columns:minmax(0,1fr); gap:22px; width:100%; }
+  .form-page-intro,
+  .contact-page .form-page-intro { position:static; width:100%; max-width:100%; min-width:0; }
+  .inquiry-form,
+  .inquiry-form.service-inquiry-form,
+  .service-inquiry-form,
+  .form-page > .inquiry-form,
+  .form-section > .inquiry-form,
+  .contact-page > .inquiry-form {
+    display:block;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    margin:0;
+    padding:clamp(17px,4.5vw,23px);
+    border-radius:14px;
+    overflow:visible;
+  }
+  .form-grid,
+  .service-form-grid {
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:14px;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+  }
+  .form-grid > *,
+  .service-form-grid > *,
+  .form-grid .full-field,
+  .form-grid .service-form-wide,
+  .service-form-grid .service-form-wide {
+    grid-column:1 / -1;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+  }
+  .form-grid > label,
+  .service-form-grid > label,
+  .service-form-field {
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:7px;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+  }
+  .inquiry-form input:not([type=checkbox]):not([type=radio]),
+  .inquiry-form select,
+  .inquiry-form textarea,
+  .service-inquiry-form input:not([type=checkbox]):not([type=radio]),
+  .service-inquiry-form select,
+  .service-inquiry-form textarea {
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    min-height:49px;
+    padding:12px 13px;
+    font-size:16px;
+  }
+  .inquiry-form textarea,
+  .service-inquiry-form textarea { min-height:112px; }
+  .inquiry-form fieldset,
+  .service-inquiry-form fieldset { width:100%; max-width:100%; min-width:0; padding:14px 12px; }
+  .form-addons,
+  .service-check-grid { grid-template-columns:minmax(0,1fr); gap:12px; }
+  .form-addons > label,
+  .service-check-grid > label,
+  .inquiry-form .consent-check,
+  .inquiry-form .marketing-consent,
+  .service-inquiry-form .service-form-check {
+    display:flex;
+    flex-direction:row;
+    align-items:flex-start;
+    gap:10px;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    font-size:12px;
+    line-height:1.55;
+    white-space:normal;
+    overflow-wrap:anywhere;
+  }
+  .inquiry-form input[type=checkbox],
+  .service-inquiry-form input[type=checkbox] {
+    flex:0 0 18px;
+    width:18px;
+    min-width:18px;
+    height:18px;
+    min-height:18px;
+    margin:2px 0 0;
+  }
+  .inquiry-form .consent-row {
+    flex-direction:column;
+    align-items:stretch;
+    gap:12px;
+    width:100%;
+    min-width:0;
+  }
+  .inquiry-form .consent-privacy-link { align-self:flex-start; max-width:100%; overflow-wrap:anywhere; }
+  .inquiry-form > button[type=submit],
+  .service-inquiry-form > button[type=submit],
+  .inquiry-form > .button,
+  .service-inquiry-form > .button {
+    display:flex;
+    width:100%;
+    min-width:0;
+    max-width:100%;
+    min-height:51px;
+    justify-content:center;
+    white-space:normal;
+    text-align:center;
+  }
+  .inquiry-form-heading,
+  .inquiry-form-heading h3,
+  .inquiry-form-heading p,
+  .form-note,
+  .form-date-hint,
+  .form-config-note,
+  .form-success,
+  .form-error { width:100%; max-width:100%; min-width:0; overflow-wrap:anywhere; }
+  .inquiry-form .turnstile-slot,
+  .service-inquiry-form .turnstile-slot { max-width:100%; min-width:0; overflow-x:auto; }
+  .service-form-section,
+  .service-page .service-form-section,
+  .vehicle-form-section {
+    grid-template-columns:minmax(0,1fr);
+    width:100%;
+    min-width:0;
+    padding-left:5%;
+    padding-right:5%;
+    gap:22px;
+  }
+}
+@media (max-width: 390px) {
+  .inquiry-form,
+  .inquiry-form.service-inquiry-form,
+  .service-inquiry-form { padding:15px 12px; border-radius:12px; }
+  .inquiry-form-heading h3 { font-size:20px; line-height:1.2; }
+  .form-grid,
+  .service-form-grid { gap:12px; }
+}
