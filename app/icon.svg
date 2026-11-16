@@ -1,20 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<defs>
- <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#214D43"/><stop offset="1" stop-color="#081F1B"/></linearGradient>
- <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F1DDAA"/><stop offset="1" stop-color="#B18B50"/></linearGradient>
-</defs>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#24483E"/><stop offset="1" stop-color="#081F1B"/></linearGradient><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F4DFA8"/><stop offset="1" stop-color="#A87939"/></linearGradient></defs>
 <rect width="64" height="64" rx="14" fill="url(#bg)"/>
-<!-- Compact racing-car mark with aerodynamic wing and speed lines -->
-<path d="M4 39 9 35 17 32 25 21Q29 17 35 17L42 17Q49 18 53 25L57 31 62 34 62 41Q62 45 58 45H54Q53 36 46 36T38 45H24Q23 36 16 36T8 45H6Q3 45 4 39Z" fill="#F7F3E9"/>
-<path d="M27 23Q30 19 35 19H41Q47 20 50 27L53 30H22Z" fill="#183B34"/>
-<path d="m34 17 11-2 4 3-13 2z" fill="url(#gold)"/>
-<path d="m51 29 8 2 4 4-10-1z" fill="#F7F3E9" stroke="url(#gold)" stroke-width="1"/>
-<path d="M5 36Q25 30 43 31H60" fill="none" stroke="url(#gold)" stroke-width="2.2" stroke-linecap="round"/>
-<path d="M3 25h13M6 29h9" stroke="url(#gold)" stroke-width="1.7" stroke-linecap="round"/>
-<path d="m10 33 7-2-3 4H8z" fill="url(#gold)"/>
-<path d="m37 34 9-1-3 5h-9z" fill="#102A25" stroke="#C9A96E" stroke-width="1"/>
-<circle cx="16" cy="45" r="5.5" fill="#102A25" stroke="url(#gold)" stroke-width="2"/>
-<circle cx="16" cy="45" r="1.8" fill="#F7F3E9"/>
-<circle cx="46" cy="45" r="5.5" fill="#102A25" stroke="url(#gold)" stroke-width="2"/>
-<circle cx="46" cy="45" r="1.8" fill="#F7F3E9"/>
+<circle cx="32" cy="32" r="26" fill="none" stroke="url(#g)" stroke-width="2.2"/><circle cx="32" cy="32" r="22" fill="none" stroke="url(#g)" stroke-width=".8"/>
+<path d="M32 10v44M10 32h44" stroke="url(#g)" stroke-width="1.3"/>
+<!-- sports car -->
+<path d="m17 22 4-2 3-5q2-3 6-3h6q5 1 7 5l4 3 2 2-1 3h-5q-1-4-5-4t-5 4H25q-1-4-5-4t-3 4h-2z" fill="url(#g)"/>
+<path d="M24 15q2-2 5-2h6q4 0 6 4H21z" fill="#173C36"/>
+<!-- stage -->
+<path d="M13 34h13v9H13zm2-3v3m9-3v3m-11 10h15" fill="none" stroke="url(#g)" stroke-width="1.6"/>
+<!-- compass -->
+<circle cx="43" cy="39" r="7" fill="none" stroke="url(#g)" stroke-width="1.5"/><path d="m43 32 2 7-2 7-2-7z" fill="url(#g)"/>
+<!-- gift -->
+<path d="M27 47h11v7H27zm-2-3h15v3H25zm7 0q-5-1-4-4 3-2 4 4 3-6 5-4 1 3-5 4z" fill="url(#g)"/>
 </svg>

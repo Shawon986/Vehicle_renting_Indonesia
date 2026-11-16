@@ -1,33 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 150" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 230" role="img" aria-labelledby="title desc">
 <title id="title">RentCarOcean</title>
-<desc id="desc">RentCarOcean racing-inspired wordmark with an aggressive track-focused sports car emblem.</desc>
-<g transform="translate(3 12)">
-  <!-- Racing-inspired low nose, swept cockpit and raised rear wing -->
-  <path d="M4 83 14 75 37 69 57 48Q66 38 83 35L119 31Q139 29 155 43L178 62 199 67 211 77 207 91Q205 97 197 97H187Q184 78 166 78T144 97H72Q69 78 51 78T29 97H17Q7 97 4 89Z" fill="#173C36"/>
-  <path d="M64 52 76 40Q82 36 94 35L119 33Q137 32 149 45L165 62H56Z" fill="#E9EDE5"/>
-  <path d="M63 55 77 41Q84 37 94 36L105 35 94 62H56Z" fill="#BFCFC5"/>
-  <path d="M109 35 120 34Q137 33 149 45L165 62H109Z" fill="#DCE5DD"/>
-  <!-- Roof air intake and rear aero blade -->
-  <path d="m112 31 22-2 8 5-25 2z" fill="#C9A96E"/>
-  <path d="m177 60 24 3 13 9-28-3z" fill="#173C36" stroke="#C9A96E" stroke-width="2"/>
-  <path d="M8 80Q55 67 111 68H197" fill="none" stroke="#C9A96E" stroke-width="3.5" stroke-linecap="round"/>
-  <path d="m11 75 18-7 12 1-12 8z" fill="#F1DDAA"/>
-  <path d="m193 70 14 5-2 5-16-4z" fill="#F1DDAA"/>
-  <!-- Racing side blade / intake -->
-  <path d="m112 70 31-1-10 12h-30z" fill="#0B2823" stroke="#C9A96E" stroke-width="1.8"/>
-  <path d="m145 70 12 0" stroke="#F4F0E6" stroke-width="2.2" stroke-linecap="round"/>
-  <!-- Wheels -->
-  <circle cx="51" cy="97" r="15.5" fill="#0A211D" stroke="#C9A96E" stroke-width="3.5"/>
-  <circle cx="51" cy="97" r="7.2" fill="none" stroke="#F4F0E6" stroke-width="2"/>
-  <path d="M51 90v14m-7-7h14m-12-5 10 10m0-10-10 10" stroke="#C9A96E" stroke-width="1.3"/>
-  <circle cx="166" cy="97" r="15.5" fill="#0A211D" stroke="#C9A96E" stroke-width="3.5"/>
-  <circle cx="166" cy="97" r="7.2" fill="none" stroke="#F4F0E6" stroke-width="2"/>
-  <path d="M166 90v14m-7-7h14m-12-5 10 10m0-10-10 10" stroke="#C9A96E" stroke-width="1.3"/>
-  <!-- Motion streaks -->
-  <path d="M1 58h26M8 64h20M187 49h22" stroke="#C9A96E" stroke-width="2" stroke-linecap="round" opacity=".9"/>
+<desc id="desc">Gold ornamental four-service crest with vehicle, event, travel and gift symbols, followed by the RentCarOcean name and Drive Your Journey slogan.</desc>
+<defs>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F4DFA8"/><stop offset=".48" stop-color="#C69A50"/><stop offset="1" stop-color="#9B7137"/></linearGradient>
+ <linearGradient id="ink" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#24483E"/><stop offset="1" stop-color="#102B25"/></linearGradient>
+</defs>
+<g transform="translate(7 7)" stroke="url(#gold)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+ <circle cx="108" cy="108" r="104" stroke-width="4"/><circle cx="108" cy="108" r="96" stroke-width="1.6"/>
+ <path d="M108 13V203M13 108H203" stroke-width="2.2"/>
+ <path d="M38 39Q108 -4 178 39M38 177Q108 220 178 177" stroke-width="2"/>
+ <path d="M23 63Q42 44 62 57M193 63Q174 44 154 57M23 153Q42 172 62 159M193 153Q174 172 154 159" stroke-width="2"/>
+ <path d="M8 108h13m174 0h13M108 8v13m0 174v13" stroke-width="3"/>
+ <!-- top: sports car and speedometer -->
+ <path d="M69 57 78 51 88 36Q94 29 105 29H126Q139 30 147 43L158 51 165 55 163 65H151Q148 54 137 54T123 65H88Q85 54 74 54T61 65H56L57 59Z" fill="url(#ink)" stroke-width="2.4"/>
+ <path d="M88 36Q94 30 105 30H124Q136 31 144 44H82Z" fill="#F4DFA8" stroke-width="1.2"/>
+ <path d="M73 49Q108 39 151 49" stroke-width="1.6"/>
+ <circle cx="74" cy="65" r="5.8" fill="#102B25" stroke-width="2"/><circle cx="137" cy="65" r="5.8" fill="#102B25" stroke-width="2"/>
+ <path d="M76 24A33 33 0 0 1 140 24M108 21v-8m-24 13 5 5m43-5-5 5" stroke-width="2"/>
+ <!-- left: event stage -->
+ <path d="M28 83h61M34 83v37m49-37v37M28 120h61M34 91h49M40 91v22m17-22v22m18-22v22" stroke-width="2"/>
+ <path d="M42 83l-5 8m28-8 5 8m-30 29 6-8m24 8-6-8" stroke-width="1.7"/>
+ <path d="M48 101h25v13H48z" fill="url(#ink)" stroke-width="1.8"/>
+ <path d="M59 93v-6m-4 0h8m-4 6-4 7h8z" stroke-width="1.5"/>
+ <!-- right: compass, mountains and plane -->
+ <path d="m127 105 15-19 10 12 9-12 17 19" stroke-width="2.2"/>
+ <path d="M131 110h47" stroke-width="1.5"/>
+ <circle cx="154" cy="127" r="19" stroke-width="2"/>
+ <path d="m154 109 5 18-5 18-5-18zM136 127l18-5 18 5-18 5z" fill="url(#gold)" stroke-width="1.2"/>
+ <path d="m168 91 17-10-7 15-4-3-6 4z" fill="url(#ink)" stroke-width="1.6"/>
+ <!-- bottom: gift and leaves -->
+ <path d="M79 151h58v35H79zM75 145h66v10H75zM108 145v41" stroke-width="2.2"/>
+ <path d="M108 145Q83 141 89 130Q97 122 108 145Q119 122 127 130Q133 141 108 145Z" fill="url(#ink)" stroke-width="1.8"/>
+ <path d="M68 184Q55 168 63 155m0 18q-9-8-13-4m14-3q-1-9 5-11M148 184q13-16 5-29m0 18q9-8 13-4m-14-3q1-9-5-11" stroke-width="1.8"/>
 </g>
-<text x="226" y="83" fill="#173C36" font-family="Georgia, 'Times New Roman', serif" font-size="57" font-weight="600" letter-spacing="-2.6">RentCar</text>
-<text x="414" y="83" fill="#B18B50" font-family="Georgia, 'Times New Roman', serif" font-size="57" font-weight="600" letter-spacing="-2.6">Ocean</text>
-<path d="M229 103H615" stroke="#B18B50" stroke-width="1.2" opacity=".7"/>
-<text x="230" y="126" fill="#6E7A72" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="3.1">PRIVATE MOBILITY · INDONESIA</text>
+<g>
+ <text x="250" y="111" fill="#173C36" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="600" letter-spacing="-3.2">RentCar<tspan fill="#B18B50">Ocean</tspan></text>
+ <path d="M254 137H810" stroke="#B18B50" stroke-width="1.5" opacity=".85"/>
+ <path d="M254 137h44m512 0h-44" stroke="#B18B50" stroke-width="3"/>
+ <text x="255" y="174" fill="#8D754F" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="7">DRIVE YOUR JOURNEY</text>
+ <text x="255" y="204" fill="#6E7A72" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="4">PT OCEAN ZENITH GROUP · INDONESIA</text>
+</g>
 </svg>
