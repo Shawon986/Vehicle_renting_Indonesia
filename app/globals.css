@@ -5396,3 +5396,31 @@ input[type="checkbox"]::before {width:11px;height:11px}
  .footer-brand h2{font-size:29px}
 }
 @media(prefers-reduced-motion:reduce){.about-fleet-card,.about-fleet-image img,.footer-whatsapp{transition:none}}
+
+/* Final RentCarOcean logo and footer consistency pass */
+.wordmark-image{width:clamp(190px,21vw,246px);height:auto;max-height:58px;filter:none;object-fit:contain}
+.footer-wordmark{display:inline-flex;align-items:center;max-width:100%}
+.footer-wordmark .footer-logo-image{width:clamp(205px,19vw,242px);height:auto;max-height:58px;filter:none;opacity:1}
+.site-footer{background:linear-gradient(128deg,#071f3b 0%,#0a3558 54%,#062c48 100%);color:#f7fafc;border-top:1px solid rgba(29,157,184,.32)}
+.site-footer:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 86% 0%,rgba(23,165,191,.18),transparent 38%),linear-gradient(90deg,transparent 0%,rgba(255,255,255,.018) 50%,transparent 100%);pointer-events:none}
+.site-footer:after{border-color:rgba(92,206,219,.1);box-shadow:0 0 0 24px rgba(92,206,219,.018),0 0 0 48px rgba(92,206,219,.012)}
+.footer-topline{position:relative;z-index:1;border-bottom-color:rgba(199,222,232,.16);color:#e9cf91}
+.footer-topline span:last-child{color:#9ed5df}
+.footer-main{position:relative;z-index:1}
+.footer-brand h2{color:#f7fafc}
+.footer-brand-copy{color:#c0d2dd}
+.footer-brand-eyebrow,.footer-column-label{color:#e5c77f}
+.footer-whatsapp{color:#f7fafc;border-color:rgba(229,199,127,.55);background:rgba(255,255,255,.035)}
+.footer-whatsapp:hover{color:#fff;background:rgba(20,160,187,.18);border-color:#64d1dc}
+.footer-navigation a,.footer-navigation .cookie-settings{color:#d2e0e8}
+.footer-navigation a:hover,.footer-navigation .cookie-settings:hover{color:#6bd6df}
+.footer-contact strong{color:#fff}
+.footer-contact>span:not(.footer-column-label){color:#b5cbd7}
+.footer-contact>a{color:#f0d38f;border-bottom-color:rgba(240,211,143,.45)}
+.footer-bottom{border-top-color:rgba(199,222,232,.16);color:#a9c0ce}
+.footer-bottom span:first-child{color:#f0d38f}
+.footer-bottom a{color:#70d6df}
+.about-hero-photo img{object-position:62% center;filter:saturate(.92) contrast(1.04)}
+.about-page .subpage-hero.about-hero{background:#071f3b}
+@media(max-width:760px){.wordmark-image{width:clamp(164px,46vw,208px);max-height:48px}.footer-wordmark .footer-logo-image{width:min(224px,72vw);max-height:54px}}
+@media(max-width:440px){.footer-wordmark .footer-logo-image{width:min(214px,76vw)}}
