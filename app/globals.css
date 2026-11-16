@@ -6072,3 +6072,247 @@ input[type="checkbox"]::before {width:11px;height:11px}
  .about-brand-contact .button{width:100%;justify-content:center}
 }
 @media(prefers-reduced-motion:reduce){.about-brand-service-card,.about-brand-service-image img{transition:none}}
+
+
+/* Mobile repair pass — preserve the full service experience and remove
+   checkbox spacing artifacts without changing the desktop design. */
+.footer-arrow-mark {
+  position:relative;
+  display:inline-block;
+  flex:0 0 16px;
+  width:16px;
+  height:16px;
+  margin-left:9px;
+  color:currentColor;
+  vertical-align:middle;
+}
+.footer-arrow-mark::before {
+  content:"";
+  position:absolute;
+  top:2px;
+  right:2px;
+  width:8px;
+  height:8px;
+  border-top:1.5px solid currentColor;
+  border-right:1.5px solid currentColor;
+}
+.footer-arrow-mark::after {
+  content:"";
+  position:absolute;
+  top:8px;
+  left:2px;
+  width:11px;
+  height:1.5px;
+  background:currentColor;
+  transform:rotate(-45deg);
+  transform-origin:center;
+}
+.footer-whatsapp .footer-arrow-mark {margin-left:0;margin-right:10px}
+.footer-contact a .footer-arrow-mark {margin-left:7px}
+
+.inquiry-form .consent-row {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:start;
+  justify-content:initial;
+  gap:8px 14px;
+  margin:14px 0 8px;
+}
+.inquiry-form .consent-row .consent-check {
+  min-width:0;
+  margin:0!important;
+  gap:10px;
+  line-height:1.5;
+}
+.inquiry-form .consent-row .consent-privacy-link {
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  min-width:0;
+  margin:0;
+  line-height:1.5;
+}
+.inquiry-form .marketing-consent {margin:8px 0 14px!important}
+
+@media(max-width:900px) {
+  .contact-page {
+    grid-template-columns:minmax(0,1fr);
+    align-items:start;
+    width:100%;
+    max-width:100%;
+  }
+  .contact-page>.form-page-intro,
+  .contact-page>.inquiry-form {grid-column:1;grid-row:auto;width:100%;max-width:100%;min-width:0}
+}
+@media(max-width:680px) {
+  .site-footer .footer-arrow-mark {
+    flex:0 0 16px;
+    width:16px;
+    height:16px;
+    margin-left:8px;
+  }
+  .inquiry-form .consent-row {
+    grid-template-columns:minmax(0,1fr);
+    align-items:start;
+    gap:7px;
+    margin:12px 0 7px;
+  }
+  .inquiry-form .consent-row .consent-check {
+    width:100%;
+    margin:0!important;
+    padding:0;
+    line-height:1.5;
+  }
+  .inquiry-form .consent-row .consent-privacy-link {
+    align-self:flex-start;
+    margin:0 0 0 28px;
+    padding:0;
+  }
+  .inquiry-form .marketing-consent {margin:8px 0 12px!important}
+
+  .contact-page {
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:20px!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    padding:48px 5% 58px!important;
+    overflow:clip!important;
+    background:linear-gradient(180deg,#e9e5db 0%,#e9e5db 42%,var(--cream) 42%,var(--cream) 100%);
+  }
+  .contact-page:before {display:none!important}
+  .contact-page .form-page-intro {
+    position:static!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    margin:0!important;
+    padding:clamp(18px,5vw,24px)!important;
+  }
+  .contact-page .form-page-intro h1 {
+    max-width:100%;
+    font-size:clamp(39px,10.5vw,56px);
+    line-height:1.02;
+    overflow-wrap:normal;
+    text-wrap:balance;
+  }
+  .contact-page .contact-steps {width:100%;max-width:100%;margin:22px 0 18px}
+  .contact-page .contact-editorial-card {width:100%;max-width:100%;margin:0 0 17px}
+  .contact-page .contact-editorial-image {width:100%;min-height:clamp(185px,58vw,250px)}
+  .contact-page .contact-editorial-caption {padding:20px 18px}
+  .contact-page .contact-editorial-caption h2 {font-size:clamp(25px,7vw,34px);line-height:1.12}
+  .contact-page .contact-disclaimer,
+  .contact-page .contact-channels {width:100%;max-width:100%;min-width:0}
+  .contact-page>.inquiry-form {
+    grid-column:1!important;
+    grid-row:auto!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    margin:0!important;
+  }
+
+  /* All service-page sections remain visible on touch devices. Use a single
+     readable column instead of shrinking desktop cards into narrow tiles. */
+  .service-page,
+  .service-page>section {width:100%;max-width:100%;min-width:0}
+  .service-page [data-reveal] {
+    opacity:1!important;
+    visibility:visible!important;
+    transform:none!important;
+  }
+  .service-page .service-hero {
+    min-height:700px;
+    height:auto;
+    padding:100px 6% 118px;
+    align-items:center;
+  }
+  .service-page .service-hero-copy {width:100%;max-width:560px}
+  .service-page .service-hero-copy h1 {
+    max-width:100%;
+    font-size:clamp(38px,10.5vw,56px);
+    line-height:1.03;
+  }
+  .service-page .service-hero-lead {max-width:100%;font-size:12px;line-height:1.8}
+  .service-page .service-intro,
+  .service-page .service-process,
+  .service-page .service-detail-band,
+  .service-page .service-cta-band,
+  .service-page .service-form-section {
+    display:grid;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    overflow:visible;
+    padding-left:6%;
+    padding-right:6%;
+  }
+  .service-page .service-intro {grid-template-columns:minmax(0,1fr);padding-top:58px;padding-bottom:62px}
+  .service-page .service-intro-grid {grid-template-columns:minmax(0,1fr);gap:20px}
+  .service-page .service-direction-grid {grid-template-columns:minmax(0,1fr)!important;gap:28px}
+  .service-page .service-direction-card {
+    display:flex!important;
+    width:100%;
+    min-width:0;
+    height:auto;
+    padding:0 0 12px;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+  .service-page .service-direction-art {
+    display:block;
+    width:100%;
+    aspect-ratio:16/10;
+    min-height:0;
+  }
+  .service-page .service-direction-card h3 {font-size:18px;line-height:1.35}
+  .service-page .service-direction-card p {font-size:12px;line-height:1.75}
+  .service-page .service-view-details {min-height:42px;margin-top:10px;font-size:9px}
+  .service-page .service-process {
+    grid-template-columns:minmax(0,1fr);
+    gap:22px;
+    padding-top:58px;
+    padding-bottom:58px;
+  }
+  .service-page .service-process-list {width:100%;min-width:0}
+  .service-page .service-process-step {grid-template-columns:28px minmax(0,1fr) 18px}
+  .service-page .service-detail-band {
+    grid-template-columns:minmax(0,1fr);
+    gap:20px;
+    padding-top:58px;
+    padding-bottom:58px;
+  }
+  .service-page .service-detail-symbol {
+    width:100%;
+    max-width:none;
+    height:auto;
+    min-height:0;
+    aspect-ratio:16/9;
+  }
+  .service-page .service-detail-photo {width:100%;height:100%;object-fit:cover}
+  .service-page .service-detail-band>div:last-child {min-width:0;width:100%}
+  .service-page .service-cta-band {
+    grid-template-columns:minmax(0,1fr);
+    gap:22px;
+    padding-top:58px;
+    padding-bottom:58px;
+  }
+  .service-page .service-form-section {
+    grid-template-columns:minmax(0,1fr);
+    gap:22px;
+    padding-top:58px;
+    padding-bottom:58px;
+  }
+  .service-page .service-form-copy,
+  .service-page .service-inquiry-form {width:100%;max-width:100%;min-width:0}
+}
+@media(max-width:390px) {
+  .contact-page {padding-left:4.5%!important;padding-right:4.5%!important}
+  .service-page .service-hero {min-height:720px;padding-left:5%;padding-right:5%}
+  .service-page .service-intro,
+  .service-page .service-process,
+  .service-page .service-detail-band,
+  .service-page .service-cta-band,
+  .service-page .service-form-section {padding-left:5%;padding-right:5%}
+}
