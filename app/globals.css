@@ -7825,3 +7825,102 @@ main .vehicle-filter label {
     line-height: 1.75;
   }
 }
+
+
+/* Chinese locale readability and vehicle collection parity.
+   The locale wrapper is authoritative because the root html lang remains static. */
+.locale-zh {display:contents}
+.locale-zh main p:not(.eyebrow):not(.service-gallery-caption),
+.locale-zh main li:not(.eyebrow),
+.locale-zh main td,
+.locale-zh main th,
+.locale-zh main label,
+.locale-zh main .vehicle-filter-control,
+.locale-zh main .vehicle-filter-control select,
+.locale-zh main .filter-reset,
+.locale-zh main .view-switch button,
+.locale-zh main .vehicle-card-facts,
+.locale-zh main .vehicle-category,
+.locale-zh main .vehicle-empty,
+.locale-zh main .vehicle-filter-note,
+.locale-zh main .form-date-hint,
+.locale-zh footer p,
+.locale-zh footer li,
+.locale-zh footer a {
+  font-size:max(14px,1em);
+  line-height:1.8;
+}
+.locale-zh main .section-heading .eyebrow,
+.locale-zh main .eyebrow,
+.locale-zh .announcement,
+.locale-zh .footer-note,
+.locale-zh .copyright {
+  font-size:inherit;
+}
+.locale-zh main .vehicle-collection-zh {display:contents}
+.locale-zh .vehicle-collection-zh .vehicle-filter-panel {width:100%;min-width:0;margin-top:0}
+.locale-zh .vehicle-collection-zh .vehicle-filter-heading {margin-bottom:18px}
+.locale-zh .vehicle-collection-zh .vehicle-filter-heading .eyebrow {font-size:13px;line-height:1.7;letter-spacing:.08em}
+.locale-zh .vehicle-collection-zh .vehicle-result-count {font-size:14px;line-height:1.5}
+.locale-zh .vehicle-collection-zh .vehicle-filters {display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;align-items:end;gap:14px;padding:18px 0}
+.locale-zh .vehicle-collection-zh .vehicle-filter-control {min-width:0;gap:9px;font-size:14px;line-height:1.5;letter-spacing:0;text-transform:none}
+.locale-zh .vehicle-collection-zh .vehicle-filter-control select {min-height:48px;height:48px;padding:0 36px 0 13px;font-size:14px;line-height:1.5}
+.locale-zh .vehicle-collection-zh .vehicle-filter-control select option {font-size:14px}
+.locale-zh .vehicle-collection-zh .vehicle-seat-filter legend {margin:0 0 9px;font-size:14px;line-height:1.5}
+.locale-zh .vehicle-collection-zh .vehicle-seat-options {gap:8px}
+.locale-zh .vehicle-collection-zh .vehicle-seat-options label {min-height:42px;padding:8px 12px;gap:8px;font-size:14px;line-height:1.4;white-space:nowrap}
+.locale-zh .vehicle-collection-zh .vehicle-seat-options input {width:15px;height:15px}
+.locale-zh .vehicle-collection-zh .vehicle-view-tools {min-height:48px;gap:12px}
+.locale-zh .vehicle-collection-zh .view-switch button,
+.locale-zh .vehicle-collection-zh .filter-reset {min-height:40px;padding:8px 13px;font-size:14px;line-height:1.4;white-space:nowrap}
+.locale-zh .vehicle-collection-zh .vehicle-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:46px 24px}
+.locale-zh .vehicle-collection-zh .vehicle-card {min-width:0}
+.locale-zh .vehicle-collection-zh .vehicle-info {align-items:flex-start;gap:14px}
+.locale-zh .vehicle-collection-zh .vehicle-category {font-size:13px;line-height:1.6;letter-spacing:.04em}
+.locale-zh .vehicle-collection-zh .vehicle-info h3 {margin-top:8px;font-size:clamp(21px,2vw,25px);line-height:1.45;letter-spacing:0;word-break:keep-all}
+.locale-zh .vehicle-collection-zh .vehicle-summary {margin-top:8px;font-size:14px;line-height:1.85}
+.locale-zh .vehicle-collection-zh .vehicle-card-facts {gap:8px 14px;margin-top:14px;font-size:13px;line-height:1.75}
+.locale-zh .vehicle-collection-zh .view-details-button,
+.locale-zh .vehicle-collection-zh .small-link {font-size:13px;line-height:1.6}
+.locale-zh .vehicle-collection-zh .vehicle-table {min-width:980px}
+.locale-zh .vehicle-collection-zh .vehicle-table th,
+.locale-zh .vehicle-collection-zh .vehicle-table td {padding:17px 14px;font-size:14px;line-height:1.7;white-space:normal}
+.locale-zh .vehicle-collection-zh .vehicle-table thead th {font-size:13px;line-height:1.6;letter-spacing:0;white-space:nowrap}
+.locale-zh .vehicle-collection-zh .vehicle-table tbody th strong {font-size:15px;line-height:1.6}
+.locale-zh .vehicle-collection-zh .vehicle-empty,
+.locale-zh .vehicle-collection-zh .vehicle-filter-note {font-size:14px;line-height:1.8}
+@media(max-width:1050px) {
+  .locale-zh .vehicle-collection-zh .vehicle-filters {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .locale-zh .vehicle-collection-zh .vehicle-view-tools {grid-column:1/-1;justify-content:space-between}
+}
+@media(max-width:680px) {
+  .locale-zh main p:not(.eyebrow):not(.service-gallery-caption),
+  .locale-zh main li:not(.eyebrow),
+  .locale-zh main td,
+  .locale-zh main th,
+  .locale-zh main label,
+  .locale-zh footer p,
+  .locale-zh footer li,
+  .locale-zh footer a {font-size:max(14px,1em);line-height:1.85}
+  .locale-zh .vehicle-collection-zh .vehicle-filter-panel {padding:17px 0}
+  .locale-zh .vehicle-collection-zh .vehicle-filters {grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 11px}
+  .locale-zh .vehicle-collection-zh .vehicle-filter-control {font-size:14px;line-height:1.5}
+  .locale-zh .vehicle-collection-zh .vehicle-filter-control select {min-height:48px;height:48px;font-size:14px}
+  .locale-zh .vehicle-collection-zh .vehicle-seat-options {gap:7px}
+  .locale-zh .vehicle-collection-zh .vehicle-seat-options label {min-width:0;min-height:42px;padding:8px 10px;font-size:14px}
+  .locale-zh .vehicle-collection-zh .vehicle-view-tools {grid-column:1/-1;flex-wrap:wrap;justify-content:space-between;gap:10px}
+  .locale-zh .vehicle-collection-zh .view-switch button,
+  .locale-zh .vehicle-collection-zh .filter-reset {min-height:42px;font-size:14px}
+  .locale-zh .vehicle-collection-zh .vehicle-grid {grid-template-columns:minmax(0,1fr);gap:34px}
+  .locale-zh .vehicle-collection-zh .vehicle-image-wrap {width:100%;height:clamp(230px,68vw,360px)}
+  .locale-zh .vehicle-collection-zh .vehicle-info {display:flex;flex-direction:column;gap:12px;padding-top:16px}
+  .locale-zh .vehicle-collection-zh .vehicle-info h3 {font-size:22px;line-height:1.5}
+  .locale-zh .vehicle-collection-zh .vehicle-summary {font-size:14px;line-height:1.85}
+  .locale-zh .vehicle-collection-zh .vehicle-card-facts {gap:8px 12px;font-size:13px;line-height:1.8}
+  .locale-zh .vehicle-collection-zh .view-details-button {align-self:flex-start;font-size:14px}
+  .locale-zh .vehicle-collection-zh .vehicle-table {min-width:980px}
+}
+@media(max-width:380px) {
+  .locale-zh .vehicle-collection-zh .vehicle-filters {grid-template-columns:minmax(0,1fr)}
+  .locale-zh .vehicle-collection-zh .vehicle-view-tools {grid-column:auto}
+}
