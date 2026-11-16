@@ -50,8 +50,9 @@ export function ServiceHeroGallery({serviceLine,hub=false,cases=false,locale}:{s
  const [active,setActive]=useState(0),[previous,setPrevious]=useState<number|null>(null);
  const goTo=(next:number)=>{setPrevious(active);setActive(next);window.setTimeout(()=>setPrevious(null),1400);};
  useEffect(()=>{
-  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
-  const timer=window.setInterval(()=>setActive(value=>{setPrevious(value);window.setTimeout(()=>setPrevious(null),1400);return(value+1)%images.length;}),6800);
+  const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const transitionDuration=reducedMotion?500:1400;
+  const timer=window.setInterval(()=>setActive(value=>{setPrevious(value);window.setTimeout(()=>setPrevious(null),transitionDuration);return(value+1)%images.length;}),4800);
   return()=>window.clearInterval(timer);
  },[images.length]);
  useEffect(()=>{const next=(active+1)%images.length;const preload=new window.Image();preload.decoding="async";preload.src=images[next];},[active,images]);
