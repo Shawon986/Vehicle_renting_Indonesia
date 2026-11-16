@@ -10,3 +10,6 @@ The fleet cards use real model-reference photography selected for a clean studio
 - **Alphard Gen 4** — [Klik Toyota Bekasi: Alphard product image](https://www.kliktoyotabekasi.com/file/nap-03.jpg).
 
 Image source pages and usage terms should be checked with the respective publishers before commercial publication. Replace these reference images with PT Ocean Zenith Group's own licensed vehicle photographs when available.
+
+- **Alphard Gen 4 fleet image** — Toyota Thailand official model colour image: https://www.toyota.co.th/media/product/series/colors/v/alphard/27/a60e2b909e696f0a308c327b5a6204df6e61bf6422bf48a858f6320436f399d4.webp.
+- **About page hero image** — Toyota Korea official Alphard studio hero image: https://www.toyota.co.kr/assets/img/home/alphard/home-hero-alphard.webp.
