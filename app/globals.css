@@ -7924,3 +7924,327 @@ main .vehicle-filter label {
   .locale-zh .vehicle-collection-zh .vehicle-filters {grid-template-columns:minmax(0,1fr)}
   .locale-zh .vehicle-collection-zh .vehicle-view-tools {grid-column:auto}
 }
+
+
+/* Final mobile service-page pass.
+   Keep every desktop content block and interaction; only reflow columns and
+   let the hero grow with its copy so contact details never get clipped. */
+@media (max-width: 680px) {
+  .service-page {
+    width:100%;
+    max-width:100%;
+    overflow:clip;
+  }
+  .service-page .service-hero {
+    position:relative!important;
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    padding:0 0 138px!important;
+    overflow:hidden!important;
+    isolation:isolate!important;
+  }
+  .service-page .service-hero-gallery,
+  .service-page .service-gallery-frame {
+    position:absolute!important;
+    inset:0!important;
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:100%!important;
+    max-height:none!important;
+    overflow:hidden!important;
+  }
+  .service-page .service-gallery-image {
+    position:absolute!important;
+    inset:0!important;
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    max-height:none!important;
+    object-fit:cover!important;
+    object-position:60% center!important;
+  }
+  .service-page .service-gallery-frame:after {
+    position:absolute!important;
+    inset:0!important;
+    z-index:3!important;
+    content:""!important;
+    pointer-events:none!important;
+    background:linear-gradient(90deg,rgba(7,17,13,.82),rgba(7,17,13,.42) 72%,rgba(7,17,13,.22)),linear-gradient(0deg,rgba(7,17,13,.68),transparent 60%,rgba(7,17,13,.2))!important;
+  }
+  .service-page .service-hero-copy {
+    position:relative!important;
+    top:auto!important;
+    left:auto!important;
+    right:auto!important;
+    z-index:7!important;
+    display:block!important;
+    width:86%!important;
+    max-width:560px!important;
+    min-width:0!important;
+    margin:0 auto!important;
+    padding:clamp(104px,15vh,132px) 0 0!important;
+    transform:none!important;
+    animation:serviceCopyIn .9s .12s both;
+  }
+  .service-page .service-hero-copy .eyebrow {
+    margin:0 0 18px!important;
+    font-size:9px!important;
+    line-height:1.8!important;
+    letter-spacing:.12em!important;
+  }
+  .service-page .service-hero-copy h1 {
+    max-width:100%!important;
+    margin:0!important;
+    font-size:clamp(38px,10vw,56px)!important;
+    line-height:1.2!important;
+    letter-spacing:-.04em!important;
+    word-break:keep-all!important;
+    overflow-wrap:anywhere!important;
+    text-wrap:balance!important;
+  }
+  .service-page .service-hero-lead {
+    max-width:100%!important;
+    margin:18px 0 22px!important;
+    font-size:14px!important;
+    line-height:1.85!important;
+    word-break:keep-all!important;
+  }
+  .service-page .service-hero-actions {
+    display:flex!important;
+    align-items:center!important;
+    flex-wrap:wrap!important;
+    gap:12px 18px!important;
+    margin:0 0 18px!important;
+  }
+  .service-page .service-hero-actions .button {
+    min-height:46px!important;
+    padding:0 16px!important;
+    font-size:12px!important;
+  }
+  .service-page .service-hero-text {font-size:12px!important;line-height:1.6!important}
+  .service-page .service-hero .contact-channels {
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    margin:14px 0 0!important;
+  }
+  .service-page .service-hero .wechat-contact,
+  .service-page .service-hero .contact-channel-button {
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+  }
+  .service-page .service-hero .wechat-contact {
+    display:flex!important;
+    align-items:center!important;
+    gap:12px!important;
+    padding:12px!important;
+  }
+  .service-page .service-hero .wechat-contact h3 {font-size:15px!important;line-height:1.45!important}
+  .service-page .service-hero .wechat-contact p {font-size:12px!important;line-height:1.7!important}
+  .service-page .service-hero .wechat-qr {
+    flex:0 0 76px!important;
+    width:76px!important;
+    height:76px!important;
+  }
+  .service-page .service-hero-index {
+    top:22px!important;
+    right:6%!important;
+    z-index:9!important;
+  }
+  .service-page .service-gallery-label {top:23px!important;left:6%!important;z-index:9!important}
+  .service-page .service-gallery-count {top:22px!important;right:6%!important;bottom:auto!important;z-index:9!important}
+  .service-page .service-gallery-caption {left:6%!important;bottom:59px!important;z-index:9!important}
+  .service-page .service-gallery-controls {
+    left:50%!important;
+    right:auto!important;
+    bottom:47px!important;
+    z-index:10!important;
+    transform:translateX(-50%)!important;
+    justify-content:center!important;
+  }
+  .service-page .service-hero-bottom {
+    left:6%!important;
+    right:6%!important;
+    bottom:12px!important;
+    z-index:9!important;
+    gap:8px!important;
+    font-size:7px!important;
+  }
+
+  .service-page .service-intro,
+  .service-page .service-process,
+  .service-page .service-detail-band,
+  .service-page .service-cta-band,
+  .service-page .service-form-section {
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    gap:24px!important;
+    padding:54px 6%!important;
+    box-sizing:border-box!important;
+  }
+  .service-page .service-intro-grid,
+  .service-page .service-direction-grid,
+  .service-page .service-process-list,
+  .service-page .service-inclusion-grid {
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    gap:24px!important;
+  }
+  .service-page .service-section-meta {
+    display:flex!important;
+    flex-wrap:wrap!important;
+    justify-content:space-between!important;
+    gap:8px 14px!important;
+    font-size:11px!important;
+    line-height:1.6!important;
+  }
+  .service-page .service-intro-grid {gap:18px!important}
+  .service-page .service-intro-grid> *,
+  .service-page .service-intro-copy,
+  .service-page .service-process-heading,
+  .service-page .service-process-list,
+  .service-page .service-detail-band>div,
+  .service-page .service-cta-band>div,
+  .service-page .service-form-copy,
+  .service-page .service-inquiry-form {
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    box-sizing:border-box!important;
+  }
+  .service-page .service-intro-grid h2,
+  .service-page .service-process-heading h2,
+  .service-page .service-detail-band h2,
+  .service-page .service-cta-band h2,
+  .service-page .service-form-copy h2 {
+    max-width:100%!important;
+    font-size:clamp(30px,8vw,42px)!important;
+    line-height:1.2!important;
+    overflow-wrap:anywhere!important;
+  }
+  .service-page .service-intro-copy p,
+  .service-page .service-direction-card p,
+  .service-page .service-process-heading>p,
+  .service-page .service-process-step p,
+  .service-page .service-detail-band p,
+  .service-page .service-cta-band p,
+  .service-page .service-form-copy p {
+    font-size:14px!important;
+    line-height:1.85!important;
+  }
+  .service-page .service-intro-mark {
+    width:clamp(145px,42vw,190px)!important;
+    height:auto!important;
+    max-width:100%!important;
+    margin-top:18px!important;
+  }
+  .service-page .service-direction-grid {margin-top:10px!important}
+  .service-page .service-direction-card {
+    display:flex!important;
+    flex-direction:column!important;
+    width:100%!important;
+    min-width:0!important;
+    height:auto!important;
+    min-height:0!important;
+    padding:0 0 18px!important;
+    border-bottom:1px solid rgba(23,36,31,.2)!important;
+    visibility:visible!important;
+    opacity:1!important;
+    transform:none!important;
+  }
+  .service-page .service-direction-art {
+    display:block!important;
+    position:relative!important;
+    flex:none!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:16/10!important;
+    overflow:hidden!important;
+  }
+  .service-page .service-direction-photo {
+    position:absolute!important;
+    inset:0!important;
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+  .service-page .service-direction-card h3 {
+    display:block!important;
+    margin:14px 0 6px!important;
+    font-size:18px!important;
+    line-height:1.5!important;
+    overflow-wrap:anywhere!important;
+  }
+  .service-page .service-view-details {
+    display:inline-flex!important;
+    align-self:flex-start!important;
+    justify-content:space-between!important;
+    width:auto!important;
+    min-width:150px!important;
+    min-height:42px!important;
+    margin-top:12px!important;
+    padding:0 12px!important;
+    font-size:12px!important;
+  }
+  .service-page .service-process-heading,
+  .service-page .service-process-list,
+  .service-page .service-form-copy {display:block!important}
+  .service-page .service-process-step {
+    display:grid!important;
+    grid-template-columns:36px minmax(0,1fr) auto!important;
+    align-items:start!important;
+    gap:12px!important;
+    width:100%!important;
+    min-width:0!important;
+    padding:17px 0!important;
+  }
+  .service-page .service-detail-symbol {
+    display:block!important;
+    width:100%!important;
+    max-width:none!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:16/9!important;
+    overflow:hidden!important;
+  }
+  .service-page .service-detail-photo {
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+  }
+  .service-page .service-inquiry-form {display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:14px!important}
+  .service-page .service-inquiry-form input,
+  .service-page .service-inquiry-form select,
+  .service-page .service-inquiry-form textarea {width:100%!important;min-width:0!important;max-width:100%!important}
+  .service-page [data-reveal] {
+    visibility:visible!important;
+    opacity:1!important;
+    transform:none!important;
+  }
+}
+@media(max-width:390px) {
+  .service-page .service-hero-copy {width:88%!important;padding-top:100px!important}
+  .service-page .service-hero-copy h1 {font-size:clamp(35px,9.8vw,42px)!important}
+  .service-page .service-hero .wechat-contact {align-items:flex-start!important}
+  .service-page .service-hero .wechat-qr {flex-basis:68px!important;width:68px!important;height:68px!important}
+  .service-page .service-process-step {grid-template-columns:30px minmax(0,1fr) auto!important;gap:9px!important}
+}
