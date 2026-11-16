@@ -5060,3 +5060,22 @@ input[type="checkbox"]::before {width:11px;height:11px}
     padding-right: 11px;
   }
 }
+
+/* Keep checkbox and consent rows horizontal while text wraps naturally on mobile. */
+@media (max-width: 680px) {
+  .form-grid > label.service-form-check,
+  .form-grid > label.consent-check,
+  .form-grid > label.marketing-consent,
+  .form-grid > .consent-row .consent-check {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .form-grid > label.service-form-check input[type="checkbox"],
+  .form-grid > label.consent-check input[type="checkbox"],
+  .form-grid > label.marketing-consent input[type="checkbox"] {
+    flex: 0 0 18px;
+    width: 18px;
+    min-width: 18px;
+  }
+}
