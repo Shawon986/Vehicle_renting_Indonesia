@@ -1,8 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#10b9ed"/><stop offset="1" stop-color="#062d61"/></linearGradient><linearGradient id="g"><stop stop-color="#ffe39a"/><stop offset="1" stop-color="#c18a29"/></linearGradient></defs>
-<rect width="64" height="64" rx="15" fill="#061f43"/>
-<path d="M13 43C5 32 12 15 27 12c12-3 23 6 23 17" fill="none" stroke="url(#b)" stroke-width="7" stroke-linecap="round"/>
-<path d="M11 42c12-8 28-8 42 2" fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
-<path d="M19 47h33" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-<path d="M28 44l5-7h9l7 7" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/>
+<defs><linearGradient id="sea" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#37D6F2"/><stop offset="1" stop-color="#0868B5"/></linearGradient><linearGradient id="gold"><stop stop-color="#FFF0B5"/><stop offset="1" stop-color="#C18A2E"/></linearGradient></defs>
+<rect width="64" height="64" rx="16" fill="#061F43"/>
+<path d="M11 39C6 25 17 11 31 11c10 0 18 6 21 15" fill="none" stroke="url(#sea)" stroke-width="6.5" stroke-linecap="round"/>
+<path d="M10 40c14-10 31-10 45 1" fill="none" stroke="url(#gold)" stroke-width="4.5" stroke-linecap="round"/>
+<path d="M16 48h34" stroke="#F8FBFF" stroke-width="4" stroke-linecap="round"/>
+<path d="M22 46l6-8h11l8 8" fill="none" stroke="#F8FBFF" stroke-width="2.8" stroke-linejoin="round"/>
+<circle cx="25" cy="49" r="2" fill="#E9BD63"/><circle cx="43" cy="49" r="2" fill="#E9BD63"/>
 </svg>
