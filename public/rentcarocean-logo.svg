@@ -1,26 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 150" role="img" aria-labelledby="title desc">
 <title id="title">RentCarOcean</title>
-<desc id="desc">RentCarOcean wordmark with a sleek, low-slung modern supercar silhouette.</desc>
-<g transform="translate(3 15)">
-  <!-- Low, wedge-shaped hypercar profile -->
-  <path d="M5 82 13 75 36 68 57 49Q67 38 85 36L121 33Q137 32 151 43L174 61 195 68Q205 71 209 81L207 91Q206 96 199 96H190Q187 78 169 78T147 96H72Q69 78 51 78T29 96H17Q8 96 5 89Z" fill="#173C36"/>
-  <path d="M69 49Q77 41 88 40L119 37Q133 37 144 46L160 62H56Z" fill="#F4F0E6"/>
-  <path d="M56 63 69 49Q77 41 88 40L99 39 88 63Z" fill="#D9E1D8"/>
-  <path d="M103 39 119 37Q133 37 144 46L160 62H103Z" fill="#D9E1D8"/>
-  <path d="M8 80Q47 68 100 68H190" fill="none" stroke="#C9A96E" stroke-width="3.2" stroke-linecap="round"/>
-  <path d="m17 89 17-1m151 0 22-2" fill="none" stroke="#C9A96E" stroke-width="3" stroke-linecap="round"/>
-  <path d="m11 77 17-7 9 1-9 7z" fill="#E5C98D"/>
-  <path d="m191 73 12 5-2 5-14-3z" fill="#E5C98D"/>
-  <!-- sculpted side intake -->
-  <path d="m113 70 26-1-9 10h-26z" fill="#0B2823" stroke="#B18B50" stroke-width="1.5"/>
-  <path d="m143 70 9 0" stroke="#F4F0E6" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="51" cy="96" r="15" fill="#102A25" stroke="#C9A96E" stroke-width="3.5"/>
-  <circle cx="51" cy="96" r="7" fill="none" stroke="#F4F0E6" stroke-width="1.8"/>
-  <path d="m51 89v14m-7-7h14m-12-5 10 10m0-10-10 10" stroke="#C9A96E" stroke-width="1.2"/>
-  <circle cx="169" cy="96" r="15" fill="#102A25" stroke="#C9A96E" stroke-width="3.5"/>
-  <circle cx="169" cy="96" r="7" fill="none" stroke="#F4F0E6" stroke-width="1.8"/>
-  <path d="m169 89v14m-7-7h14m-12-5 10 10m0-10-10 10" stroke="#C9A96E" stroke-width="1.2"/>
-  <path d="M7 91h20m165 0h15" stroke="#B18B50" stroke-width="2.2" stroke-linecap="round"/>
+<desc id="desc">RentCarOcean racing-inspired wordmark with an aggressive track-focused sports car emblem.</desc>
+<g transform="translate(3 12)">
+  <!-- Racing-inspired low nose, swept cockpit and raised rear wing -->
+  <path d="M4 83 14 75 37 69 57 48Q66 38 83 35L119 31Q139 29 155 43L178 62 199 67 211 77 207 91Q205 97 197 97H187Q184 78 166 78T144 97H72Q69 78 51 78T29 97H17Q7 97 4 89Z" fill="#173C36"/>
+  <path d="M64 52 76 40Q82 36 94 35L119 33Q137 32 149 45L165 62H56Z" fill="#E9EDE5"/>
+  <path d="M63 55 77 41Q84 37 94 36L105 35 94 62H56Z" fill="#BFCFC5"/>
+  <path d="M109 35 120 34Q137 33 149 45L165 62H109Z" fill="#DCE5DD"/>
+  <!-- Roof air intake and rear aero blade -->
+  <path d="m112 31 22-2 8 5-25 2z" fill="#C9A96E"/>
+  <path d="m177 60 24 3 13 9-28-3z" fill="#173C36" stroke="#C9A96E" stroke-width="2"/>
+  <path d="M8 80Q55 67 111 68H197" fill="none" stroke="#C9A96E" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="m11 75 18-7 12 1-12 8z" fill="#F1DDAA"/>
+  <path d="m193 70 14 5-2 5-16-4z" fill="#F1DDAA"/>
+  <!-- Racing side blade / intake -->
+  <path d="m112 70 31-1-10 12h-30z" fill="#0B2823" stroke="#C9A96E" stroke-width="1.8"/>
+  <path d="m145 70 12 0" stroke="#F4F0E6" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Wheels -->
+  <circle cx="51" cy="97" r="15.5" fill="#0A211D" stroke="#C9A96E" stroke-width="3.5"/>
+  <circle cx="51" cy="97" r="7.2" fill="none" stroke="#F4F0E6" stroke-width="2"/>
+  <path d="M51 90v14m-7-7h14m-12-5 10 10m0-10-10 10" stroke="#C9A96E" stroke-width="1.3"/>
+  <circle cx="166" cy="97" r="15.5" fill="#0A211D" stroke="#C9A96E" stroke-width="3.5"/>
+  <circle cx="166" cy="97" r="7.2" fill="none" stroke="#F4F0E6" stroke-width="2"/>
+  <path d="M166 90v14m-7-7h14m-12-5 10 10m0-10-10 10" stroke="#C9A96E" stroke-width="1.3"/>
+  <!-- Motion streaks -->
+  <path d="M1 58h26M8 64h20M187 49h22" stroke="#C9A96E" stroke-width="2" stroke-linecap="round" opacity=".9"/>
 </g>
 <text x="226" y="83" fill="#173C36" font-family="Georgia, 'Times New Roman', serif" font-size="57" font-weight="600" letter-spacing="-2.6">RentCar</text>
 <text x="414" y="83" fill="#B18B50" font-family="Georgia, 'Times New Roman', serif" font-size="57" font-weight="600" letter-spacing="-2.6">Ocean</text>
