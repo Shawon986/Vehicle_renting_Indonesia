@@ -7571,3 +7571,17 @@ html[lang="zh-CN"] .service-page .service-direction-card p {
     flex-basis:68px!important;width:68px!important;height:68px!important;
   }
 }
+
+
+/* Chinese fleet card titles: improve vehicle-name hierarchy without changing card layout. */
+html[lang="zh-CN"] .vehicle-card .vehicle-info h3 {
+  font-size:clamp(19px,1.8vw,23px);
+  line-height:1.4;
+  letter-spacing:0;
+}
+@media(max-width:680px) {
+  html[lang="zh-CN"] .vehicle-card .vehicle-info h3 {
+    font-size:20px;
+    line-height:1.45;
+  }
+}
