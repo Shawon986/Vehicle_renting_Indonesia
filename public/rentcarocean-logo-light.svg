@@ -1,11 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 120" role="img" aria-labelledby="title desc">
-<title id="title">RentCarOcean</title><desc id="desc">A light version of the RentCarOcean forest-green mobility monogram and coral-accented wordmark.</desc>
-<rect x="4" y="7" width="104" height="104" rx="28" fill="#F6F2E9"/>
-<path d="M32 83V38h24c15 0 23 7 23 19 0 11-8 18-22 18H32" fill="none" stroke="#173C36" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M58 74l22 19" fill="none" stroke="#173C36" stroke-width="8" stroke-linecap="round"/>
-<path d="M84 28c-9 7-14 16-14 27" fill="none" stroke="#E47755" stroke-width="6" stroke-linecap="round"/>
-<circle cx="70" cy="56" r="4" fill="#E47755"/>
-<text x="137" y="68" fill="#FFFFFF" font-family="Inter, Avenir Next, Montserrat, Arial, sans-serif" font-size="47" font-weight="650" letter-spacing="-1.7">RentCar</text>
-<text x="315" y="68" fill="#F08B69" font-family="Inter, Avenir Next, Montserrat, Arial, sans-serif" font-size="47" font-weight="650" letter-spacing="-1.7">Ocean</text>
-<text x="140" y="94" fill="#B7C9C1" font-family="Inter, Avenir Next, Montserrat, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="3.3">MOVE WITH CONFIDENCE</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 132" role="img" aria-labelledby="title desc">
+<title id="title">RentCarOcean</title><desc id="desc">Premium RentCarOcean wordmark in ivory and champagne gold for dark backgrounds.</desc>
+<g transform="translate(5 5)">
+<rect x="2" y="2" width="118" height="118" rx="31" fill="#F4F0E6"/>
+<path d="M31 88V35h27c15 0 24 8 24 21 0 12-9 20-24 20H31" fill="none" stroke="#173C36" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M59 76l25 19" fill="none" stroke="#173C36" stroke-width="6.5" stroke-linecap="round"/>
+<path d="M94 27c-13 9-21 22-23 39" fill="none" stroke="#B18B50" stroke-width="5" stroke-linecap="round"/>
+<path d="M68 66l-4 12" fill="none" stroke="#B18B50" stroke-width="3.5" stroke-linecap="round"/>
+</g>
+<text x="151" y="76" fill="#F4F0E6" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="600" letter-spacing="-2.2">RentCar</text>
+<text x="341" y="76" fill="#D2B77F" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="600" letter-spacing="-2.2">Ocean</text>
+<path d="M153 94H518" stroke="#D2B77F" stroke-width="1" opacity=".65"/>
+<text x="154" y="115" fill="#B7C1B9" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="4.2">PRIVATE MOBILITY · INDONESIA</text>
 </svg>
