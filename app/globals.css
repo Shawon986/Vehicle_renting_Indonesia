@@ -7585,3 +7585,171 @@ html[lang="zh-CN"] .vehicle-card .vehicle-info h3 {
     line-height:1.45;
   }
 }
+
+
+/* Locale-scoped Chinese service hero layout.
+   Use the page locale class rather than html[lang], which is currently static
+   in the root layout and therefore cannot reliably identify /zh routes. */
+.service-page-zh .service-hero {
+  min-height: 820px;
+  height: auto;
+  padding: 126px 10.4% 112px;
+  overflow: hidden;
+}
+.service-page-zh .service-hero-copy {
+  position: relative;
+  z-index: 5;
+  width: min(700px, 68%);
+  max-width: 700px;
+  min-width: 0;
+}
+.service-page-zh .service-hero-copy h1 {
+  max-width: 700px;
+  font-size: clamp(52px, 5.4vw, 76px);
+  line-height: 1.2;
+  letter-spacing: -.04em;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+.service-page-zh .service-hero-lead {
+  max-width: 520px;
+  font-size: 15px;
+  line-height: 1.95;
+  margin: 24px 0 26px;
+  word-break: keep-all;
+}
+.service-page-zh .service-hero-actions {flex-wrap:wrap;gap:16px 22px}
+.service-page-zh .service-hero .contact-channels {
+  width:100%;
+  max-width:480px;
+  min-width:0;
+  margin-top:10px;
+}
+.service-page-zh .service-hero .wechat-contact,
+.service-page-zh .service-hero .contact-channel-button {
+  max-width:100%;
+  min-width:0;
+}
+.service-page-zh .service-hero-bottom {
+  font-size:8px;
+  letter-spacing:.12em;
+}
+.service-page-zh .service-hero-index {right:5.2%}
+
+@media (max-width:1000px) and (min-width:681px) {
+  .service-page-zh .service-hero {min-height:790px;padding-left:7%;padding-right:8%}
+  .service-page-zh .service-hero-copy {width:78%}
+  .service-page-zh .service-hero-copy h1 {font-size:clamp(48px,6vw,66px)}
+}
+@media (max-width:680px) {
+  .service-page-zh .service-hero {
+    display:block!important;
+    position:relative!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    padding:0 0 142px!important;
+    overflow:hidden!important;
+    isolation:isolate!important;
+  }
+  .service-page-zh .service-hero-gallery,
+  .service-page-zh .service-gallery-frame {
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:100%!important;
+    max-height:none!important;
+  }
+  .service-page-zh .service-gallery-image {
+    object-fit:cover!important;
+    object-position:58% center!important;
+  }
+  .service-page-zh .service-hero-copy {
+    position:relative!important;
+    top:auto!important;
+    left:auto!important;
+    right:auto!important;
+    z-index:7!important;
+    display:block!important;
+    width:86%!important;
+    max-width:560px!important;
+    min-width:0!important;
+    margin:0 auto!important;
+    padding:112px 0 0!important;
+    transform:none!important;
+    animation:serviceCopyIn .9s .12s both;
+  }
+  .service-page-zh .service-hero-copy .eyebrow {
+    margin:0 0 20px!important;
+    font-size:9px!important;
+    line-height:1.8!important;
+    letter-spacing:.12em!important;
+  }
+  .service-page-zh .service-hero-copy h1 {
+    max-width:100%!important;
+    margin:0!important;
+    font-size:clamp(39px,10.2vw,56px)!important;
+    line-height:1.23!important;
+    letter-spacing:-.04em!important;
+    word-break:keep-all!important;
+    overflow-wrap:anywhere!important;
+    text-wrap:balance!important;
+  }
+  .service-page-zh .service-hero-lead {
+    max-width:100%!important;
+    margin:20px 0 22px!important;
+    font-size:13px!important;
+    line-height:1.9!important;
+    word-break:keep-all!important;
+  }
+  .service-page-zh .service-hero-actions {
+    display:flex!important;
+    flex-wrap:wrap!important;
+    gap:14px 18px!important;
+    margin-bottom:18px!important;
+  }
+  .service-page-zh .service-hero-actions .button {
+    min-height:46px!important;
+    padding:0 16px!important;
+    font-size:11px!important;
+  }
+  .service-page-zh .service-hero .contact-channels {
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    margin:12px 0 0!important;
+  }
+  .service-page-zh .service-hero .wechat-contact {
+    width:100%!important;
+    max-width:100%!important;
+    padding:11px 12px!important;
+    gap:9px!important;
+  }
+  .service-page-zh .service-hero .wechat-contact h3 {font-size:15px!important;line-height:1.4!important}
+  .service-page-zh .service-hero .wechat-contact p {font-size:10px!important;line-height:1.7!important}
+  .service-page-zh .service-hero .wechat-qr {flex:0 0 76px!important;width:76px!important;height:76px!important}
+  .service-page-zh .service-hero-index {top:24px!important;right:6%!important;z-index:8!important}
+  .service-page-zh .service-gallery-label {top:25px!important;left:6%!important;z-index:8!important}
+  .service-page-zh .service-gallery-count {top:23px!important;right:6%!important;bottom:auto!important;z-index:8!important}
+  .service-page-zh .service-gallery-caption {left:6%!important;bottom:60px!important;z-index:8!important}
+  .service-page-zh .service-gallery-controls {left:50%!important;right:auto!important;bottom:49px!important;transform:translateX(-50%)!important;z-index:9!important}
+  .service-page-zh .service-hero-bottom {left:6%!important;right:6%!important;bottom:13px!important;gap:8px!important;font-size:6px!important}
+}
+@media (max-width:390px) {
+  .service-page-zh .service-hero-copy {width:88%!important;padding-top:106px!important}
+  .service-page-zh .service-hero-copy h1 {font-size:clamp(36px,10vw,44px)!important}
+  .service-page-zh .service-hero .wechat-qr {flex-basis:68px!important;width:68px!important;height:68px!important}
+}
+
+/* Slightly stronger Chinese vehicle model titles in the collection cards. */
+.vehicle-card-zh .vehicle-info h3 {
+  font-size:clamp(20px,1.9vw,24px);
+  line-height:1.4;
+  letter-spacing:0;
+}
+@media(max-width:680px) {
+  .vehicle-card-zh .vehicle-info h3 {font-size:21px;line-height:1.45}
+}
