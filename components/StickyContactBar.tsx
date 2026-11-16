@@ -4,7 +4,7 @@ import {usePathname} from "next/navigation";
 import {Locale,getCopy,vehicles} from "@/lib/site-data";
 import {trackEvent} from "@/lib/analytics";
 export function StickyContactBar({locale}:{locale:Locale}){
- const t=getCopy(locale),path=usePathname(),number=(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"").replace(/[^0-9]/g,""),phone=(process.env.NEXT_PUBLIC_PHONE||"").replace(/[^+0-9]/g,""),wechatId=process.env.NEXT_PUBLIC_WECHAT_ID||"",wechatQr=process.env.NEXT_PUBLIC_WECHAT_QR_URL||"";
+ const t=getCopy(locale),path=usePathname(),number=(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"6287811887555").replace(/[^0-9]/g,""),phone=(process.env.NEXT_PUBLIC_PHONE||"").replace(/[^+0-9]/g,""),wechatId=process.env.NEXT_PUBLIC_WECHAT_ID||"",wechatQr=process.env.NEXT_PUBLIC_WECHAT_QR_URL||"";
  const serviceLine=path.includes("/services/tours-travel")?"tours-travel":path.includes("/services/event-design")?"event-design":path.includes("/services/gift-boxes")?"gift-boxes":path==="/"+locale+"/services"?"general":path==="/"+locale?"general":"vehicle-rental";
  const vehicleTitle=vehicles.find(vehicle=>path.endsWith("/"+vehicle.slug))?.title[locale];
  const serviceName=serviceLine==="tours-travel"?(locale==="zh"?"旅游与行程":locale==="id"?"Tur & perjalanan":"Tours & travel"):serviceLine==="event-design"?(locale==="zh"?"活动策划":locale==="id"?"Desain acara":"Event design"):serviceLine==="gift-boxes"?(locale==="zh"?"水果与鲜花礼盒":locale==="id"?"Kotak buah & bunga":"Fruit & flower gifts"):serviceLine==="general"?(locale==="zh"?"综合服务咨询":locale==="id"?"Pertanyaan layanan":"General service enquiry"):(locale==="zh"?"车辆租赁":locale==="id"?"Sewa kendaraan":"Vehicle rental");
