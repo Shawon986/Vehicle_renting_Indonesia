@@ -24,7 +24,7 @@ export function localeAlternates(locale:Locale,path=""){const base=process.env.N
 export function vehicleSupportsDriver(vehicle:Vehicle,mode:"self-drive"|"with-driver"){if(vehicle.driverModes?.length)return vehicle.driverModes.includes(mode);return vehicle.driver==="Self-drive or with driver"||(mode==="self-drive"&&vehicle.driver==="Self-drive")||(mode==="with-driver"&&vehicle.driver==="With driver");}
 export const vehicleInclusionKeys=["fuel","tolls","parking","driverMeals","overtime","extraKilometres","tax"] as const;
 export const vehicleAddOnKeys=["childSeat","coolerBox","wifi"] as const;
-export function categoryLabel(locale:Locale,category:string){const index=["All","Car","MPV","SUV","Van","Bus","Motorbike"].indexOf(category);return index<0?category:getCopy(locale).categories[index];}
+export function categoryLabel(locale:Locale,category:string){const index=["All","Car","MPV","SUV"].indexOf(category);return index<0?category:getCopy(locale).categories[index];}
 export function vehicleFact(locale:Locale,value:string){const labels:Record<Locale,Record<string,string>>={
 id:{"Confirm with team":"Konfirmasi dengan tim","Self-drive":"Mengemudi sendiri","With driver":"Dengan pengemudi","Self-drive or with driver":"Mengemudi sendiri atau dengan pengemudi"},
 en:{"Confirm with team":"Confirm with team","Self-drive":"Self-drive","With driver":"With a driver","Self-drive or with driver":"Self-drive or with a driver"},
