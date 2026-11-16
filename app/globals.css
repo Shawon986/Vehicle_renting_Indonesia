@@ -5845,3 +5845,96 @@ input[type="checkbox"]::before {width:11px;height:11px}
   .form-grid,
   .service-form-grid { gap:12px; }
 }
+
+
+/* Refined enquiry form typography — softer, cleaner label hierarchy */
+.inquiry-form,
+.service-inquiry-form {
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+}
+.inquiry-form .form-grid > label,
+.inquiry-form .form-grid > label > span,
+.inquiry-form .service-form-field,
+.service-inquiry-form .form-grid > label,
+.service-inquiry-form .service-form-grid > label,
+.service-inquiry-form .service-form-field {
+  color: var(--form-label-color, #34443f);
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  font-size: 12px;
+  font-weight: 550;
+  letter-spacing: .015em;
+  line-height: 1.5;
+}
+.inquiry-form .inquiry-form-heading h3,
+.service-inquiry-form .inquiry-form-heading h3 {
+  font-family: var(--font-display, Georgia, 'Times New Roman', serif);
+  font-size: clamp(23px, 2.2vw, 29px);
+  font-weight: 500;
+  letter-spacing: -.025em;
+  line-height: 1.16;
+}
+.inquiry-form .inquiry-form-heading p,
+.service-inquiry-form .inquiry-form-heading p,
+.inquiry-form .form-note,
+.inquiry-form .form-date-hint,
+.inquiry-form .form-config-note,
+.service-inquiry-form .form-note,
+.service-inquiry-form .form-date-hint,
+.service-inquiry-form .form-config-note {
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.65;
+}
+.inquiry-form fieldset legend,
+.service-inquiry-form fieldset legend {
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+.inquiry-form .form-addons > label,
+.inquiry-form .consent-check,
+.inquiry-form .marketing-consent,
+.service-inquiry-form .service-form-check,
+.service-inquiry-form .service-check-grid > label {
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.55;
+}
+.inquiry-form input:not([type=checkbox]):not([type=radio]),
+.inquiry-form select,
+.inquiry-form textarea,
+.service-inquiry-form input:not([type=checkbox]):not([type=radio]),
+.service-inquiry-form select,
+.service-inquiry-form textarea {
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.inquiry-form button[type=submit],
+.service-inquiry-form button[type=submit] {
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .045em;
+}
+@media (max-width: 680px) {
+  .inquiry-form .form-grid > label,
+  .inquiry-form .service-form-field,
+  .service-inquiry-form .form-grid > label,
+  .service-inquiry-form .service-form-grid > label,
+  .service-inquiry-form .service-form-field {
+    font-size: 12px;
+    font-weight: 550;
+  }
+  .inquiry-form .form-addons > label,
+  .inquiry-form .consent-check,
+  .inquiry-form .marketing-consent,
+  .service-inquiry-form .service-form-check,
+  .service-inquiry-form .service-check-grid > label { font-size: 12px; }
+}
