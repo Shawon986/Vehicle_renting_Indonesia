@@ -1,14 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 132" role="img" aria-labelledby="title desc">
-<title id="title">RentCarOcean</title><desc id="desc">Premium RentCarOcean wordmark in ivory and champagne gold for dark backgrounds.</desc>
-<g transform="translate(5 5)">
-<rect x="2" y="2" width="118" height="118" rx="31" fill="#F4F0E6"/>
-<path d="M31 88V35h27c15 0 24 8 24 21 0 12-9 20-24 20H31" fill="none" stroke="#173C36" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M59 76l25 19" fill="none" stroke="#173C36" stroke-width="6.5" stroke-linecap="round"/>
-<path d="M94 27c-13 9-21 22-23 39" fill="none" stroke="#B18B50" stroke-width="5" stroke-linecap="round"/>
-<path d="M68 66l-4 12" fill="none" stroke="#B18B50" stroke-width="3.5" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 150" role="img" aria-labelledby="title desc">
+<title id="title">RentCarOcean</title>
+<desc id="desc">RentCarOcean wordmark paired with an elegant supercar silhouette in ivory and champagne gold for dark backgrounds.</desc>
+<g transform="translate(5 12)">
+  <path d="M10 83c5-3 12-5 21-6l24-27c8-9 19-14 32-15l34-2c13 0 24 5 34 15l23 25c9 2 15 5 18 10l-2 13c-1 5-5 8-11 8h-8a22 22 0 0 0-43 0H73a22 22 0 0 0-43 0h-9c-7 0-11-4-12-10z" fill="#F4F0E6"/>
+  <path d="M66 51l-20 25h67V43l-27 2c-8 1-14 3-20 6z" fill="#173C36"/>
+  <path d="M122 43v33h61l-19-20c-8-8-17-12-28-13z" fill="#173C36"/>
+  <path d="M11 84c20-7 48-10 81-10h94" fill="none" stroke="#D2B77F" stroke-width="4" stroke-linecap="round"/>
+  <path d="M22 94h12m140 0h10" stroke="#D2B77F" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="51.5" cy="102" r="15.5" fill="#0A201C" stroke="#D2B77F" stroke-width="4"/>
+  <circle cx="51.5" cy="102" r="5.5" fill="#F4F0E6"/>
+  <circle cx="154.5" cy="102" r="15.5" fill="#0A201C" stroke="#D2B77F" stroke-width="4"/>
+  <circle cx="154.5" cy="102" r="5.5" fill="#F4F0E6"/>
+  <path d="M9 83l-5 8m190-7-4 8" fill="none" stroke="#D2B77F" stroke-width="3" stroke-linecap="round"/>
 </g>
-<text x="151" y="76" fill="#F4F0E6" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="600" letter-spacing="-2.2">RentCar</text>
-<text x="341" y="76" fill="#D2B77F" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="600" letter-spacing="-2.2">Ocean</text>
-<path d="M153 94H518" stroke="#D2B77F" stroke-width="1" opacity=".65"/>
-<text x="154" y="115" fill="#B7C1B9" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="4.2">PRIVATE MOBILITY · INDONESIA</text>
+<text x="226" y="83" fill="#F4F0E6" font-family="Georgia, 'Times New Roman', serif" font-size="57" font-weight="600" letter-spacing="-2.6">RentCar</text>
+<text x="414" y="83" fill="#D2B77F" font-family="Georgia, 'Times New Roman', serif" font-size="57" font-weight="600" letter-spacing="-2.6">Ocean</text>
+<path d="M229 103H615" stroke="#D2B77F" stroke-width="1.2" opacity=".7"/>
+<text x="230" y="126" fill="#B7C1B9" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="4.4">PRIVATE MOBILITY · INDONESIA</text>
 </svg>
