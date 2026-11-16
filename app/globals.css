@@ -4464,3 +4464,379 @@ input[type="checkbox"]:focus-visible {outline:2px solid #87994d;outline-offset:3
   .service-page .service-gallery-controls button {min-width:15px;min-height:12px}
   .service-page .service-hero-bottom {bottom:13px!important}
 }
+
+
+/* Authoritative responsive rules for the service pages.
+   These intentionally come last so earlier legacy mobile experiments cannot
+   hide the gallery, collapse the editorial cards, or clip page sections. */
+.service-page,
+.services-hub-page {width:100%;min-width:0;overflow-x:clip}
+.service-page *,
+.services-hub-page * {box-sizing:border-box}
+.service-page .service-hero {
+  position:relative;
+  isolation:isolate;
+  display:flex;
+  align-items:center;
+  min-height:610px;
+}
+.service-page .service-hero-gallery {
+  position:absolute;
+  z-index:0;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:none;
+  pointer-events:none;
+}
+.service-page .service-gallery-frame {
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:0;
+  max-height:none;
+  overflow:hidden;
+}
+.service-page .service-gallery-image {
+  position:absolute;
+  inset:-2%;
+  display:block;
+  width:104%;
+  height:104%;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center 52%;
+}
+.service-page .service-gallery-image.is-active {opacity:1;visibility:visible;z-index:1}
+.service-page .service-gallery-frame:after {z-index:2;pointer-events:none}
+.service-page .service-hero-copy {position:relative;z-index:5}
+.service-page .service-hero:after {z-index:3;pointer-events:none}
+.service-page .service-gallery-label,
+.service-page .service-gallery-caption,
+.service-page .service-gallery-count {z-index:4}
+.service-page .service-gallery-controls {z-index:6;pointer-events:auto}
+.service-page .service-direction-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  align-items:stretch;
+}
+.service-page .service-direction-card {
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  min-width:0;
+  height:100%;
+}
+.service-page .service-direction-art {
+  position:relative;
+  display:block;
+  width:100%;
+  overflow:hidden;
+  isolation:isolate;
+}
+.service-page .service-direction-art .service-direction-photo {
+  position:absolute;
+  z-index:0;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  opacity:1;
+  visibility:visible;
+  object-fit:cover;
+  object-position:center;
+}
+.service-page .service-direction-art:before,
+.service-page .service-direction-art:after {z-index:1;pointer-events:none}
+.service-page .service-direction-art>.service-symbol-mark,
+.service-page .service-direction-art>small {z-index:2}
+.service-page .service-view-details,
+.services-hub-page .service-view-details {
+  position:relative;
+  z-index:3;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  align-self:flex-start;
+  gap:13px;
+  width:max-content;
+  max-width:100%;
+  min-height:44px;
+  margin-top:17px;
+  padding:0 17px;
+  border:1px solid currentColor;
+  border-radius:2px;
+  background:transparent;
+  color:var(--forest);
+  font-size:9px;
+  font-weight:650;
+  line-height:1.2;
+  letter-spacing:.1em;
+  text-align:center;
+  text-decoration:none;
+  text-transform:uppercase;
+  transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s ease,box-shadow .25s ease;
+}
+.service-page .service-view-details .service-arrow-mark,
+.services-hub-page .service-view-details .service-arrow-mark {width:13px;height:13px}
+.service-page .service-direction-card:hover .service-view-details,
+.service-page .service-view-details:focus-visible,
+.services-hub-page .services-hub-card>a:hover .service-view-details,
+.services-hub-page .service-view-details:focus-visible {
+  border-color:var(--forest);
+  background:var(--forest);
+  color:var(--cream);
+  box-shadow:0 7px 18px rgba(23,36,31,.12);
+  transform:translateY(-2px);
+}
+.service-page .service-detail-band {scroll-margin-top:90px}
+.view-details-button,
+.small-link.view-details-button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:42px;
+  padding:0 15px!important;
+  border:1px solid var(--forest)!important;
+  border-radius:2px;
+  background:transparent;
+  color:var(--forest)!important;
+  font-size:9px;
+  font-weight:650;
+  line-height:1.2;
+  letter-spacing:.08em;
+  text-decoration:none!important;
+  text-transform:uppercase;
+  white-space:nowrap;
+  transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s ease,box-shadow .25s ease;
+}
+.view-details-button .ui-arrow,
+.small-link.view-details-button .ui-arrow {width:13px;height:13px;margin:0}
+.view-details-button:hover,
+.view-details-button:focus-visible,
+.small-link.view-details-button:hover,
+.small-link.view-details-button:focus-visible {
+  border-color:var(--forest)!important;
+  background:var(--forest);
+  color:var(--cream)!important;
+  box-shadow:0 7px 18px rgba(23,36,31,.12);
+  transform:translateY(-2px);
+}
+.vehicle-table .view-details-button {min-height:38px;padding:0 12px!important}
+@media(max-width:1000px) {
+  .service-page .service-direction-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:680px) {
+  .service-page .service-hero {
+    display:flex;
+    align-items:stretch;
+    justify-content:center;
+    width:100%;
+    min-height:720px;
+    height:auto;
+    padding:106px 7% 132px;
+    overflow:hidden;
+  }
+  .service-page .service-hero-gallery {
+    position:absolute;
+    inset:0;
+    z-index:0;
+    width:100%;
+    height:100%;
+    display:block;
+    visibility:visible;
+    opacity:1;
+  }
+  .service-page .service-gallery-frame {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    min-height:0;
+    aspect-ratio:auto;
+  }
+  .service-page .service-gallery-image {
+    inset:-2%;
+    width:104%;
+    height:104%;
+    background-position:58% center;
+    background-size:cover;
+  }
+  .service-page .service-gallery-frame:after {
+    background:
+      linear-gradient(90deg,rgba(8,19,15,.88) 0%,rgba(8,19,15,.68) 55%,rgba(8,19,15,.34) 100%),
+      linear-gradient(0deg,rgba(8,18,14,.68) 0%,transparent 52%,rgba(8,18,14,.2) 100%);
+  }
+  .service-page .service-hero-copy {
+    position:relative;
+    z-index:5;
+    width:100%;
+    max-width:590px;
+    margin:0 auto 0 0;
+    align-self:center;
+  }
+  .service-page .service-hero-copy h1 {
+    max-width:100%;
+    font-size:clamp(40px,10.2vw,58px);
+    line-height:1.01;
+    letter-spacing:-.065em;
+    overflow-wrap:normal;
+    word-break:normal;
+    text-wrap:balance;
+  }
+  .service-page .service-hero-lead {max-width:420px;font-size:11px;line-height:1.85}
+  .service-page .service-hero .contact-channels {max-width:100%}
+  .service-page .service-hero-index {display:none}
+  .service-page .service-hero-bottom {
+    position:absolute;
+    z-index:5;
+    left:7%;
+    right:7%;
+    bottom:15px!important;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:8px;
+    font-size:6px;
+    line-height:1.5;
+  }
+  .service-page .service-gallery-label {top:20px;left:7%;font-size:7px}
+  .service-page .service-gallery-caption {left:7%;bottom:69px!important;max-width:40%;font-size:6px}
+  .service-page .service-gallery-count {right:7%;bottom:69px!important;font-size:14px}
+  .service-page .service-gallery-controls {
+    position:absolute;
+    left:50%!important;
+    right:auto!important;
+    bottom:38px!important;
+    z-index:7;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    transform:translateX(-50%)!important;
+    pointer-events:auto;
+  }
+  .service-page .service-gallery-controls button {
+    display:block;
+    width:17px;
+    min-width:17px;
+    height:3px;
+    min-height:3px;
+    padding:0;
+    border:0;
+    border-radius:0;
+  }
+  .service-page .service-gallery-controls button.is-active {width:29px;min-width:29px}
+  .service-page .service-intro,
+  .service-page .service-process,
+  .service-page .service-detail-band,
+  .service-page .service-cta-band,
+  .service-page .service-form-section {
+    width:100%;
+    min-width:0;
+    overflow-x:clip;
+    padding-left:7%;
+    padding-right:7%;
+  }
+  .service-page .service-intro {padding-top:66px;padding-bottom:70px}
+  .service-page .service-intro-grid {grid-template-columns:minmax(0,1fr);gap:20px;padding:40px 0}
+  .service-page .service-intro-grid h2 {font-size:clamp(35px,9.3vw,50px);line-height:1.04}
+  .service-page .service-intro-copy {min-width:0;max-width:100%}
+  .service-page .service-direction-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 13px}
+  .service-page .service-direction-card {min-width:0;padding:0 0 5px}
+  .service-page .service-direction-art {width:100%;aspect-ratio:1/1;min-height:0}
+  .service-page .service-direction-art .service-direction-photo {object-position:center 48%}
+  .service-page .service-direction-card h3 {margin:12px 0 6px;font-size:clamp(13px,3.7vw,16px);line-height:1.35}
+  .service-page .service-direction-card p {font-size:9px;line-height:1.7}
+  .service-page .service-view-details {
+    align-self:stretch;
+    justify-content:space-between;
+    width:100%;
+    min-height:43px;
+    margin-top:auto;
+    padding:0 10px;
+    gap:7px;
+    font-size:8px;
+    letter-spacing:.06em;
+  }
+  .service-page .service-process {grid-template-columns:minmax(0,1fr);gap:26px;padding-top:65px;padding-bottom:65px}
+  .service-page .service-process-heading h2 {font-size:clamp(36px,9.5vw,50px)}
+  .service-page .service-process-step {grid-template-columns:28px minmax(0,1fr) 20px;gap:10px}
+  .service-page .service-detail-band {grid-template-columns:112px minmax(0,1fr);align-items:start;gap:18px;padding-top:62px;padding-bottom:62px}
+  .service-page .service-detail-symbol {width:112px;height:130px;min-height:130px}
+  .service-page .service-detail-band h2 {font-size:clamp(30px,8.2vw,40px)}
+  .service-page .service-cta-band {grid-template-columns:minmax(0,1fr);gap:22px;padding-top:64px;padding-bottom:64px}
+  .service-page .service-form-section {grid-template-columns:minmax(0,1fr);gap:22px;padding-top:64px;padding-bottom:64px}
+  .service-page .service-form-copy {position:static;min-width:0}
+  .service-page .service-form-editorial {min-height:390px}
+  .service-page .service-inquiry-form {min-width:0}
+  .services-hub-page .services-hub-hero {
+    position:relative;
+    display:block;
+    width:100%;
+    height:auto;
+    min-height:min(740px,calc(100svh - 68px));
+    padding:0;
+    overflow:hidden;
+  }
+  .services-hub-page .services-hub-hero>.service-hero-gallery {
+    position:absolute;
+    inset:0;
+    z-index:0;
+    display:block;
+    width:100%;
+    height:100%;
+    max-width:none;
+    pointer-events:none;
+  }
+  .services-hub-page .service-gallery-frame {position:absolute;inset:0;width:100%;height:100%;min-height:0}
+  .services-hub-page .service-gallery-image {inset:-2%;width:104%;height:104%;background-size:cover;background-position:58% center}
+  .services-hub-page .services-hub-copy {
+    position:absolute;
+    z-index:4;
+    top:46%;
+    left:7%;
+    width:86%;
+    max-width:590px;
+    transform:translateY(-50%);
+    pointer-events:none;
+  }
+  .services-hub-page .services-hub-copy h1 {font-size:clamp(40px,10.5vw,62px);line-height:1.01}
+  .services-hub-page .services-hub-copy p:not(.eyebrow) {max-width:100%;font-size:11px;line-height:1.8}
+  .services-hub-page .service-gallery-caption {left:7%;bottom:25px}
+  .services-hub-page .service-gallery-count {right:7%;bottom:65px}
+  .services-hub-page .service-gallery-controls {left:auto;right:7%;bottom:33px;z-index:7;pointer-events:auto}
+  .services-hub-page .services-hub-grid-section {padding:66px 7% 74px}
+  .services-hub-page .services-hub-grid {grid-template-columns:minmax(0,1fr);gap:17px;margin-top:30px}
+  .services-hub-page .services-hub-card-art {height:clamp(225px,67vw,330px)}
+  .services-hub-page .services-hub-card-copy {min-height:0;padding:21px 22px 24px}
+  .services-hub-page .services-hub-card-copy h2 {font-size:25px}
+  .services-hub-page .service-view-details {width:100%;min-height:45px;margin-top:17px}
+  .services-hub-page .services-fit-section,
+  .services-hub-page .services-hub-contact {min-width:0;padding-left:7%;padding-right:7%}
+  .view-details-button,
+  .small-link.view-details-button {
+    min-height:44px;
+    padding:0 13px!important;
+    font-size:8px;
+  }
+  .inner-section .small-link.view-details-button {align-self:flex-start}
+}
+@media(max-width:390px) {
+  .service-page .service-hero {min-height:700px;padding:100px 6% 130px}
+  .service-page .service-hero-copy h1 {font-size:clamp(36px,10.2vw,44px)}
+  .service-page .service-direction-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 9px}
+  .service-page .service-direction-art {aspect-ratio:1/1}
+  .service-page .service-view-details {padding:0 8px;font-size:7px;letter-spacing:.035em}
+  .service-page .service-detail-band {grid-template-columns:minmax(0,1fr);gap:18px}
+  .service-page .service-detail-symbol {width:100%;max-width:150px;height:150px}
+}
+@media(prefers-reduced-motion:reduce) {
+  .service-page .service-gallery-image,
+  .services-hub-page .service-gallery-image,
+  .service-page .service-view-details,
+  .view-details-button {transition:none!important;animation:none!important}
+}
