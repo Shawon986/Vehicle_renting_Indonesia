@@ -6019,3 +6019,53 @@ input[type="checkbox"]::before {width:11px;height:11px}
  .about-brand-intro-copy>p{font-size:14px;line-height:1.9}
  .about-brand-facts>div{min-height:116px}
 }
+
+
+/* Premium About page: stronger editorial composition and audience information */
+.about-brand-hero{min-height:760px;padding-top:145px;padding-bottom:125px}
+.about-brand-hero-image:after{background:linear-gradient(90deg,rgba(4,19,16,.96) 0%,rgba(5,25,21,.78) 52%,rgba(5,25,21,.18) 100%),linear-gradient(0deg,rgba(4,19,16,.7),transparent 58%)}
+.about-brand-hero-content{max-width:850px}
+.about-brand-hero-content h1{font-size:clamp(54px,7vw,100px);line-height:.98;max-width:850px}
+.about-brand-hero-content>p:not(.eyebrow){font-size:clamp(16px,1.45vw,19px);max-width:650px}
+.about-brand-intro{padding-top:145px;padding-bottom:145px}
+.about-brand-services{padding-top:130px;padding-bottom:140px}
+.about-brand-section-head{padding-bottom:65px}
+.about-brand-service-grid{gap:20px}
+.about-brand-service-card{background:rgba(255,255,255,.055);box-shadow:0 22px 55px rgba(0,0,0,.13)}
+.about-brand-service-image{height:clamp(205px,20vw,285px)}
+.about-brand-service-copy{padding:27px 23px 24px;min-height:270px}
+.about-brand-service-copy h3{font-size:clamp(21px,1.8vw,27px)}
+.about-brand-service-copy p{font-size:13px;line-height:1.95}
+.about-brand-approach{padding-top:140px;padding-bottom:140px}
+.about-brand-company{padding-top:125px;padding-bottom:130px}
+.about-brand-audience{padding-top:125px;padding-bottom:125px}
+.about-brand-audience-head{max-width:760px;margin-bottom:48px}
+.about-brand-audience-head h2{max-width:700px;margin:17px 0 16px;color:#173a32;font-family:var(--font-display,Georgia,serif);font-size:clamp(38px,4.8vw,64px);font-weight:500;line-height:1.04;letter-spacing:-.045em}
+.about-brand-audience-head>p:last-child{max-width:620px;color:#68766e;font-size:14px;line-height:1.9}
+.about-brand-audience-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(23,58,50,.2);border-bottom:1px solid rgba(23,58,50,.2)}
+.about-brand-audience-grid article{padding:30px 28px 34px 0}
+.about-brand-audience-grid article+article{padding-left:28px;border-left:1px solid rgba(23,58,50,.17)}
+.about-brand-audience-grid article>span{color:#a17e43;font-size:9px;font-weight:700;letter-spacing:.16em}
+.about-brand-audience-grid h3{margin:23px 0 10px;color:#173a32;font-family:var(--font-display,Georgia,serif);font-size:25px;font-weight:500}
+.about-brand-audience-grid p{max-width:320px;margin:0;color:#68766e;font-size:13px;line-height:1.9}
+.about-brand-contact{padding-top:110px;padding-bottom:115px}
+@media(max-width:700px){
+ .about-brand-hero{min-height:650px;padding:105px 7% 95px}
+ .about-brand-hero-content h1{font-size:clamp(43px,12vw,62px)}
+ .about-brand-intro{padding-top:78px;padding-bottom:82px}
+ .about-brand-services{padding-top:78px;padding-bottom:84px}
+ .about-brand-section-head{padding-bottom:34px}
+ .about-brand-service-grid{gap:16px}
+ .about-brand-service-image{height:250px}
+ .about-brand-service-copy{min-height:0;padding:23px 19px}
+ .about-brand-approach{padding-top:82px;padding-bottom:84px}
+ .about-brand-company{padding-top:80px;padding-bottom:84px}
+ .about-brand-audience{padding-top:82px;padding-bottom:84px}
+ .about-brand-audience-head{margin-bottom:30px}
+ .about-brand-audience-head h2{font-size:40px}
+ .about-brand-audience-grid{grid-template-columns:1fr}
+ .about-brand-audience-grid article,.about-brand-audience-grid article+article{padding:24px 0;border-left:0}
+ .about-brand-audience-grid article+article{border-top:1px solid rgba(23,58,50,.17)}
+ .about-brand-audience-grid h3{margin-top:14px;font-size:23px}
+ .about-brand-contact{padding-top:78px;padding-bottom:82px}
+}
