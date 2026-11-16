@@ -1,8 +1,13 @@
 "use client";
 import {useEffect,useState} from "react";
 
-type ServiceLine="tours-travel"|"event-design"|"gift-boxes";
+type ServiceLine="vehicle-rental"|"tours-travel"|"event-design"|"gift-boxes";
 const slides:Record<ServiceLine,string[]>={
+ "vehicle-rental":[
+  "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=70",
+  "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=70",
+  "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1200&q=70"
+ ],
  "tours-travel":[
   "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=70",
   "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=70",
