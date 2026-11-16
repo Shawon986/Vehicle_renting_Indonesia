@@ -34,10 +34,10 @@
  <path d="M68 184Q55 168 63 155m0 18q-9-8-13-4m14-3q-1-9 5-11M148 184q13-16 5-29m0 18q9-8 13-4m-14-3q1-9-5-11" stroke-width="1.8"/>
 </g>
 <g>
- <text x="250" y="111" fill="#173C36" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="600" letter-spacing="-3.2">RentCar<tspan fill="#B18B50">Ocean</tspan></text>
+ <text x="250" y="111" fill="#F7F2E7" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="600" letter-spacing="-3.2">RentCar<tspan fill="#D8B879">Ocean</tspan></text>
  <path d="M254 137H810" stroke="#B18B50" stroke-width="1.5" opacity=".85"/>
  <path d="M254 137h44m512 0h-44" stroke="#B18B50" stroke-width="3"/>
- <text x="255" y="174" fill="#8D754F" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="7">DRIVE YOUR JOURNEY</text>
- <text x="255" y="204" fill="#6E7A72" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="4">PT OCEAN ZENITH GROUP · INDONESIA</text>
+ <text x="255" y="174" fill="#E2C995" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="7">DRIVE YOUR JOURNEY</text>
+ <text x="255" y="204" fill="#C1C9BE" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="4">PT OCEAN ZENITH GROUP · INDONESIA</text>
 </g>
 </svg>
