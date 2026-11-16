@@ -7913,7 +7913,7 @@ main .vehicle-filter label {
   .locale-zh .vehicle-collection-zh .filter-reset {min-height:42px;font-size:14px}
   .locale-zh .vehicle-collection-zh .vehicle-grid {grid-template-columns:minmax(0,1fr);gap:34px}
   .locale-zh .vehicle-collection-zh .vehicle-image-wrap {width:100%;height:clamp(230px,68vw,360px)}
-  .locale-zh .vehicle-collection-zh .vehicle-info {display:flex;flex-direction:column;gap:12px;padding-top:16px}
+  .locale-zh .vehicle-collection-zh .vehicle-info {gap:12px}
   .locale-zh .vehicle-collection-zh .vehicle-info h3 {font-size:22px;line-height:1.5}
   .locale-zh .vehicle-collection-zh .vehicle-summary {font-size:14px;line-height:1.85}
   .locale-zh .vehicle-collection-zh .vehicle-card-facts {gap:8px 12px;font-size:13px;line-height:1.8}
