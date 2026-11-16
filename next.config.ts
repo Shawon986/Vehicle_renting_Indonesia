@@ -4,7 +4,7 @@ const securityPolicy=[
  "default-src 'self'",
  "script-src "+scriptSources,
  "style-src 'self' 'unsafe-inline'",
- "img-src 'self' data: blob: https://images.unsplash.com",
+ "img-src 'self' data: blob: https://images.unsplash.com https://commons.wikimedia.org https://upload.wikimedia.org",
  "font-src 'self' data:",
  "connect-src 'self' https://challenges.cloudflare.com https://www.google-analytics.com https://region1.google-analytics.com",
  "frame-src https://challenges.cloudflare.com",
@@ -16,7 +16,7 @@ const securityPolicy=[
 ].join("; ");
 const nextConfig:NextConfig={
  poweredByHeader:false,
- images:{remotePatterns:[{protocol:"https",hostname:"images.unsplash.com"}]},
+ images:{remotePatterns:[{protocol:"https",hostname:"images.unsplash.com"},{protocol:"https",hostname:"commons.wikimedia.org"},{protocol:"https",hostname:"upload.wikimedia.org"}]},
  async headers(){
   const headers=[
    {key:"X-Content-Type-Options",value:"nosniff"},
