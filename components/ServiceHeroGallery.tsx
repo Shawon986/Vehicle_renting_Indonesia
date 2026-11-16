@@ -60,7 +60,7 @@ export function ServiceHeroGallery({serviceLine,hub=false,cases=false,locale}:{s
  const activeHubSlide=hub?hubSlides[locale][active]:null;
  return <div className={"service-hero-gallery"+(hub?" service-hub-gallery":"")+(cases?" cases-hero-gallery":"")} aria-label={label}>
   <div className="service-gallery-frame">
-   {images.map((src,index)=><div key={src} className={"service-gallery-image"+(index===active?" is-active":index===previous?" is-previous":"")} style={{backgroundImage:index===active||index===previous?'linear-gradient(180deg,rgba(12,24,18,.02),rgba(12,24,18,.2)),url("'+src+'")':"none"}} aria-hidden="true"/>)}
+   {images.map((src,index)=><img key={src} className={"service-gallery-image"+(index===active?" is-active":index===previous?" is-previous":"")} src={src} alt="" aria-hidden="true" loading={index===0?"eager":"lazy"} decoding="async" fetchPriority={index===0?"high":"auto"}/>)}
    {hub&&activeHubSlide&&<div className="services-hub-copy" aria-live="off">
     <p className="eyebrow light-eyebrow"><span>00</span><span className="typing-copy">{locale==="zh"?"MOBILITY INDONESIA · 服务项目":locale==="id"?"MOBILITY INDONESIA · LAYANAN":"MOBILITY INDONESIA · OUR SERVICES"}</span></p>
     <div className="services-hub-slide-copy" key={active}>
