@@ -7329,3 +7329,9 @@ html[lang="zh-CN"] .vehicle-seat-filter legend {padding:0;margin:0 0 10px}
   .hero-zh .wechat-qr {flex-basis:76px;width:76px;height:76px}
   .hero-zh .wechat-contact {gap:8px}
 }
+
+.vehicle-seat-filter {display:flex;flex-direction:column;align-items:flex-start;width:100%;min-width:0}
+.vehicle-seat-filter legend {display:block;width:100%;font-size:14px;line-height:1.5;font-weight:650;margin:0 0 8px}
+.vehicle-seat-options {display:flex!important;flex-direction:row;align-items:center;flex-wrap:wrap;gap:10px;width:100%;min-width:0}
+.vehicle-seat-options label {display:inline-flex!important;visibility:visible!important;opacity:1!important;flex:0 0 auto}
+@media(max-width:760px){.vehicle-seat-filter{align-items:stretch}.vehicle-seat-options{gap:9px}.vehicle-seat-options label{min-width:62px;justify-content:center}}
