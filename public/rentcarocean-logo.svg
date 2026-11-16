@@ -25,5 +25,5 @@
 <text x="226" y="83" fill="#173C36" font-family="Georgia, 'Times New Roman', serif" font-size="57" font-weight="600" letter-spacing="-2.6">RentCar</text>
 <text x="414" y="83" fill="#B18B50" font-family="Georgia, 'Times New Roman', serif" font-size="57" font-weight="600" letter-spacing="-2.6">Ocean</text>
 <path d="M229 103H615" stroke="#B18B50" stroke-width="1.2" opacity=".7"/>
-<text x="230" y="126" fill="#6E7A72" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="4.4">PRIVATE MOBILITY · INDONESIA</text>
+<text x="230" y="126" fill="#6E7A72" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="3.1">PRIVATE MOBILITY · INDONESIA</text>
 </svg>
