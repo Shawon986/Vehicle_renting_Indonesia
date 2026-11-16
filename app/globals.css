@@ -5190,3 +5190,67 @@ input[type="checkbox"]::before {width:11px;height:11px}
 @media (prefers-reduced-motion:reduce) {
   .inquiry-form *, .service-inquiry-form * { scroll-behavior:auto; }
 }
+
+/* RentCarOcean refined brand colours */
+.wordmark-image{width:clamp(190px,21vw,252px);max-height:62px;filter:drop-shadow(0 5px 12px rgba(8,38,72,.08))}
+.footer-wordmark .wordmark-image{width:clamp(210px,23vw,260px);filter:drop-shadow(0 5px 16px rgba(0,0,0,.18))}
+.site-footer{display:block!important;background:radial-gradient(ellipse at 82% 0%,rgba(16,120,166,.24),transparent 38%),linear-gradient(128deg,#061a36 0%,#092d55 54%,#071a32 100%);color:#f5f7fa;padding:clamp(54px,7vw,88px) max(6%,calc((100vw - 1440px)/2)) 24px;position:relative;overflow:hidden}
+.site-footer:before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,#e7bd65 18%,#2dc2df 52%,#e7bd65 84%,transparent);opacity:.9}
+.footer-main{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(210px,.8fr) minmax(190px,.7fr);gap:clamp(32px,5vw,78px);align-items:start;position:relative}
+.footer-brand{max-width:540px}.footer-brand-eyebrow,.footer-column-label{display:block;color:#d6b36a;font-size:9px;letter-spacing:.2em;font-weight:700;margin:20px 0 14px}
+.footer-brand h2{font-size:clamp(26px,3.5vw,43px);line-height:1.12;letter-spacing:-.045em;white-space:pre-line;margin:0 0 16px;color:#fff}
+.footer-brand-copy{font-size:13px;line-height:1.8;color:#b9c9d8;max-width:440px;margin:0 0 22px}
+.footer-whatsapp{display:inline-flex;align-items:center;gap:11px;border:1px solid rgba(228,190,105,.6);border-radius:999px;padding:11px 17px;color:#fff;font-size:11px;letter-spacing:.04em;transition:background .25s,border-color .25s,transform .25s}
+.footer-whatsapp:hover{background:rgba(221,178,90,.13);border-color:#f0cb78;transform:translateY(-2px)}
+.footer-whatsapp-mark{display:grid;place-items:center;width:23px;height:23px;border-radius:50%;background:linear-gradient(135deg,#f1d38a,#bd852e);color:#09264a;font-size:14px}
+.footer-navigation{display:grid;grid-template-columns:1fr 1fr;gap:26px;padding-top:24px}
+.footer-navigation>div{display:flex;flex-direction:column;align-items:flex-start;gap:15px}
+.footer-navigation .footer-column-label,.footer-contact .footer-column-label{margin:0 0 6px;color:#d6b36a}
+.footer-navigation a,.footer-navigation .cookie-settings{color:#d4dfeb;font-size:12px;transition:color .2s;padding:0;border:0;background:none;text-align:left;cursor:pointer}
+.footer-navigation a:hover,.footer-navigation .cookie-settings:hover{color:#f4cf7c}
+.footer-contact{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding-top:24px}
+.footer-contact strong{font-size:clamp(20px,2vw,26px);letter-spacing:.02em;color:#fff}
+.footer-contact>span:not(.footer-column-label){font-size:10px;letter-spacing:.12em;color:#9db4c8}
+.footer-contact>a{margin-top:8px;color:#f0cc7a;font-size:11px;border-bottom:1px solid rgba(240,204,122,.5);padding-bottom:7px}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid rgba(215,229,242,.16);margin-top:clamp(40px,6vw,72px);padding-top:19px;color:#91a8bc;font-size:9px;letter-spacing:.08em}
+.footer-bottom span:first-child{color:#e8c477;font-weight:700;letter-spacing:.16em}
+.about-intro{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:clamp(36px,7vw,100px);align-items:start}
+.about-intro-copy h2{font-size:clamp(30px,4vw,54px);line-height:1.06;letter-spacing:-.05em;margin:14px 0 22px}
+.about-intro-copy>p:not(.eyebrow){max-width:660px;color:#64716f;font-size:14px;line-height:1.95}
+.about-company-lockup{display:flex;flex-direction:column;gap:6px;margin-top:30px;padding-top:18px;border-top:1px solid rgba(10,42,70,.18)}
+.about-company-lockup strong{font-size:11px;letter-spacing:.16em;color:#12385d}
+.about-company-lockup span{font-size:9px;letter-spacing:.2em;color:#a47b35}
+.about-values{border-top:1px solid rgba(10,42,70,.18)}
+.about-values article{display:grid;grid-template-columns:36px 1fr;gap:12px;padding:21px 0;border-bottom:1px solid rgba(10,42,70,.18)}
+.about-values article>span{font-size:10px;color:#b88a3a;letter-spacing:.12em}
+.about-values h3{margin:0 0 7px;font-size:18px;color:#143a5d}
+.about-values p{margin:0;color:#6e7b7e;font-size:12px;line-height:1.7}
+.about-fleet{background:#f0eee7}
+.about-section-heading{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:32px}
+.about-section-heading h2{font-size:clamp(28px,4vw,48px);line-height:1.08;letter-spacing:-.045em;margin:12px 0 0}
+.about-section-heading>p{max-width:360px;color:#6a7778;font-size:13px;line-height:1.8}
+.about-fleet-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.about-fleet-card{background:#fff;border:1px solid rgba(11,42,68,.08);overflow:hidden;transition:transform .3s,box-shadow .3s}
+.about-fleet-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(7,35,58,.12)}
+.about-fleet-image{height:clamp(150px,17vw,235px);position:relative;overflow:hidden;background:#dfe7e9}
+.about-fleet-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.about-fleet-card:hover .about-fleet-image img{transform:scale(1.035)}
+.about-fleet-image>span{position:absolute;left:14px;top:14px;color:#fff;background:rgba(6,28,52,.7);padding:6px 9px;font-size:9px;letter-spacing:.12em}
+.about-fleet-card>div:last-child{padding:17px 18px 19px}
+.about-fleet-card h3{margin:0 0 6px;color:#12375a;font-size:18px}
+.about-fleet-card p{margin:0 0 10px;color:#718080;font-size:11px}
+.about-fleet-card small{font-size:9px;color:#9a7a3c;letter-spacing:.04em}
+.about-services{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,7vw,100px);background:linear-gradient(130deg,#082447,#0b3963);color:#fff}
+.about-services h2{font-size:clamp(30px,4vw,48px);line-height:1.1;letter-spacing:-.04em;margin:12px 0 16px}
+.about-services>div>p:last-child{max-width:520px;color:#bdcbd8;font-size:13px;line-height:1.8}
+.about-services ul{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.2)}
+.about-services li{display:flex;align-items:center;gap:18px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.2);font-size:14px}
+.about-services li span{font-size:10px;color:#e3bd6a;letter-spacing:.15em}
+.about-contact{display:grid;grid-template-columns:1fr auto;align-items:center;gap:28px}
+.about-contact h2{font-size:clamp(28px,3.7vw,46px);line-height:1.1;letter-spacing:-.04em;margin:14px 0}
+.about-contact p:not(.eyebrow){font-size:13px;color:#718080}
+.about-contact>div:last-child{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.about-contact>div:last-child>strong{font-size:clamp(22px,3vw,32px);color:#12385d}
+.about-contact>div:last-child>span{font-size:10px;color:#9b793c;letter-spacing:.16em;margin-bottom:12px}
+@media(max-width:760px){.footer-main{grid-template-columns:1fr 1fr;gap:30px}.footer-brand{grid-column:1/-1}.footer-navigation{padding-top:0}.footer-contact{padding-top:0}.footer-bottom{flex-direction:column;align-items:flex-start;gap:9px}.about-intro{grid-template-columns:1fr}.about-fleet-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-services{grid-template-columns:1fr}.about-contact{grid-template-columns:1fr}.about-section-heading{align-items:flex-start;flex-direction:column}}
+@media(max-width:440px){.wordmark-image{width:clamp(164px,50vw,205px)}.site-footer{padding:48px 6% 22px}.footer-main{grid-template-columns:1fr;gap:27px}.footer-brand{grid-column:auto}.footer-brand h2{font-size:30px}.footer-navigation{grid-template-columns:1fr 1fr;gap:18px}.footer-contact{border-top:1px solid rgba(215,229,242,.16);padding-top:22px}.footer-bottom{margin-top:32px}.about-fleet-grid{grid-template-columns:1fr}.about-fleet-image{height:210px}.about-services li{font-size:12px}.about-contact>div:last-child{width:100%}.about-contact .button{width:100%;justify-content:center}}
