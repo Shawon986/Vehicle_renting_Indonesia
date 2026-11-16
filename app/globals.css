@@ -5079,3 +5079,114 @@ input[type="checkbox"]::before {width:11px;height:11px}
     min-width: 18px;
   }
 }
+/* RentCarOcean brand lockup */
+.wordmark { min-width: 0; }
+.wordmark-image { display:block; width:clamp(174px,19vw,232px); height:auto; max-height:58px; object-fit:contain; object-position:left center; }
+.footer-wordmark .wordmark-image { width:clamp(176px,18vw,220px); }
+.loader-wordmark { font-family:Arial,Helvetica,sans-serif; font-size:clamp(32px,7vw,54px); font-weight:800; letter-spacing:-.07em; }
+.loader-wordmark span { color:#d6a53e; }
+
+/* Authoritative responsive form layout: applies to every enquiry form and filter form. */
+.inquiry-form, .service-inquiry-form, .form-page, .form-page-intro,
+.service-form-section, .service-form-copy, .vehicle-filter-panel,
+.vehicle-filters, .vehicle-filter-control { min-width:0; }
+.inquiry-form, .service-inquiry-form { width:100%; max-width:100%; box-sizing:border-box; }
+.inquiry-form *, .service-inquiry-form * { box-sizing:border-box; }
+.inquiry-form input:not([type=checkbox]):not([type=radio]),
+.inquiry-form select, .inquiry-form textarea,
+.service-inquiry-form input:not([type=checkbox]):not([type=radio]),
+.service-inquiry-form select, .service-inquiry-form textarea {
+  width:100%; max-width:100%; min-width:0; font:inherit;
+}
+.inquiry-form input[type=date], .inquiry-form input[type=time],
+.service-inquiry-form input[type=date], .service-inquiry-form input[type=time] {
+  display:block; min-height:48px; -webkit-appearance:none; appearance:none;
+}
+.inquiry-form .turnstile-slot, .service-inquiry-form .turnstile-slot {
+  width:100%; max-width:100%; min-width:0; overflow-x:auto; overflow-y:hidden;
+}
+.inquiry-form .honeypot, .service-inquiry-form .honeypot { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+@media (max-width: 760px) {
+  .form-page { display:grid; grid-template-columns:minmax(0,1fr); gap:24px; width:100%; }
+  .form-page-intro, .contact-page .form-page-intro { width:100%; max-width:100%; min-width:0; position:static; }
+  .inquiry-form, .inquiry-form.service-inquiry-form, .service-inquiry-form,
+  .contact-page > .inquiry-form, .form-page > .inquiry-form {
+    display:block; width:100%; max-width:100%; min-width:0;
+    margin:0; padding:clamp(14px,4vw,22px);
+    border-radius:16px; overflow:visible;
+  }
+  .form-grid, .service-form-grid {
+    display:grid; grid-template-columns:minmax(0,1fr)!important;
+    width:100%; max-width:100%; min-width:0; gap:14px;
+  }
+  .form-grid > *, .service-form-grid > *,
+  .form-grid > label, .service-form-grid > label,
+  .form-grid > fieldset, .service-form-grid > fieldset,
+  .form-grid .full-field, .form-grid .service-form-wide {
+    grid-column:1/-1; width:100%; max-width:100%; min-width:0;
+  }
+  .form-grid > label, .service-form-grid > label,
+  .service-form-field {
+    display:flex; flex-direction:column; align-items:stretch;
+    gap:7px; width:100%; max-width:100%; min-width:0;
+  }
+  .inquiry-form input:not([type=checkbox]):not([type=radio]),
+  .inquiry-form select, .inquiry-form textarea,
+  .service-inquiry-form input:not([type=checkbox]):not([type=radio]),
+  .service-inquiry-form select, .service-inquiry-form textarea {
+    display:block; width:100%; max-width:100%; min-width:0;
+    min-height:48px; padding:12px; font-size:16px; line-height:1.4;
+  }
+  .inquiry-form textarea, .service-inquiry-form textarea { min-height:112px; resize:vertical; }
+  .inquiry-form fieldset, .service-inquiry-form fieldset {
+    display:block; width:100%; max-width:100%; min-width:0;
+    margin:0; padding:14px 12px;
+  }
+  .inquiry-form .form-addons, .service-inquiry-form .service-check-grid {
+    display:grid; grid-template-columns:minmax(0,1fr); gap:12px;
+  }
+  .inquiry-form .form-addons>label, .inquiry-form .consent-check,
+  .inquiry-form .marketing-consent, .service-inquiry-form .service-form-check,
+  .service-inquiry-form .service-check-grid>label {
+    display:flex; flex-direction:row; align-items:flex-start; gap:10px;
+    width:100%; max-width:100%; min-width:0; line-height:1.5;
+    white-space:normal; overflow-wrap:anywhere;
+  }
+  .inquiry-form input[type=checkbox], .service-inquiry-form input[type=checkbox] {
+    flex:0 0 18px; width:18px; min-width:18px; height:18px; min-height:18px; margin:2px 0 0;
+  }
+  .inquiry-form .consent-row {
+    display:flex; flex-direction:column; align-items:stretch; gap:12px;
+    width:100%; max-width:100%; min-width:0;
+  }
+  .inquiry-form .consent-privacy-link { align-self:flex-start; max-width:100%; overflow-wrap:anywhere; }
+  .inquiry-form > button[type=submit], .service-inquiry-form > button[type=submit],
+  .inquiry-form > .button, .service-inquiry-form > .button {
+    display:flex; align-items:center; justify-content:center;
+    width:100%; max-width:100%; min-width:0; min-height:50px;
+    white-space:normal; text-align:center;
+  }
+  .inquiry-form-heading, .inquiry-form-heading h3, .inquiry-form-heading p,
+  .form-note, .form-date-hint, .form-config-note, .form-success, .form-error {
+    width:100%; max-width:100%; min-width:0; overflow-wrap:anywhere;
+  }
+  .turnstile-slot { max-width:100%; min-width:0; overflow-x:auto; }
+  .vehicle-filters { display:grid; grid-template-columns:minmax(0,1fr); gap:12px; }
+  .vehicle-filter-control { width:100%; max-width:100%; }
+  .vehicle-view-tools { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+}
+@media (max-width: 420px) {
+  .inquiry-form, .inquiry-form.service-inquiry-form, .service-inquiry-form { padding:13px 11px; border-radius:13px; }
+  .inquiry-form-heading h3 { font-size:19px; line-height:1.2; }
+  .form-grid, .service-form-grid { gap:12px; }
+  .inquiry-form input:not([type=checkbox]):not([type=radio]),
+  .inquiry-form select, .inquiry-form textarea,
+  .service-inquiry-form input:not([type=checkbox]):not([type=radio]),
+  .service-inquiry-form select, .service-inquiry-form textarea { padding-left:10px; padding-right:10px; }
+  .inquiry-form .consent-check, .inquiry-form .marketing-consent,
+  .service-inquiry-form .service-form-check { font-size:11px; }
+  .inquiry-form .turnstile-slot iframe { max-width:100%; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .inquiry-form *, .service-inquiry-form * { scroll-behavior:auto; }
+}
