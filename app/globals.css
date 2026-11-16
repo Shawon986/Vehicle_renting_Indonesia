@@ -8536,3 +8536,28 @@ main .vehicle-filter label {
   .fleet-hero-zh .page-hero-copy h1 {font-size:clamp(36px,9.8vw,42px)!important}
   .fleet-hero-zh .page-hero-copy .wechat-qr {flex-basis:66px!important;width:66px!important;height:66px!important}
 }
+
+
+/* Keep the services overview composition intact on narrow touch screens. */
+@media(max-width:680px){
+ .services-hub-page .services-hub-grid-section{padding:62px 6% 70px!important}
+ .services-hub-page .services-hub-grid{grid-template-columns:minmax(0,1fr)!important;gap:22px!important}
+ .services-hub-page .services-hub-card>a{display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto auto!important;min-height:0!important}
+ .services-hub-page .services-hub-card-art{display:block!important;position:relative!important;width:100%!important;height:auto!important;min-height:0!important;aspect-ratio:16/10!important}
+ .services-hub-page .services-hub-card-art>img{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;opacity:1!important;visibility:visible!important}
+ .services-hub-page .services-hub-card-copy{display:flex!important;width:100%!important;min-width:0!important;box-sizing:border-box!important;padding:23px 22px 25px!important}
+ .services-hub-page .services-fit-section{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:28px!important;padding:65px 6%!important}
+ .services-hub-page .services-fit-table{width:100%!important;min-width:0!important}
+ .services-hub-page .services-fit-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:12px!important;padding:15px 0!important}
+ .services-hub-page .services-hub-contact{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:28px!important;padding:68px 6%!important}
+ .services-hub-page .services-hub-contact>div{width:100%!important;min-width:0!important}
+ .services-hub-page .services-hub-contact h2{font-size:clamp(38px,10vw,54px)!important;line-height:1.08!important}
+}
+@media(max-width:390px){.services-hub-page .services-hub-card-copy{padding:20px 18px 22px!important}.services-hub-page .services-fit-row{font-size:11px!important}}
+
+/* Vehicle rental now uses the identical shared photographic hero system,
+   including the same slide transitions, controls and mobile composition. */
+.vehicle-rental-service-hero .service-gallery-frame:after{background:linear-gradient(90deg,rgba(8,19,15,.86) 0%,rgba(8,19,15,.68) 34%,rgba(8,19,15,.25) 70%,rgba(8,19,15,.12) 100%),linear-gradient(0deg,rgba(8,18,14,.58) 0%,transparent 34%,rgba(8,18,14,.12) 100%)}
+.vehicle-rental-service-hero .service-hero-copy h1{max-width:760px}
+@media(max-width:680px){.vehicle-rental-service-hero{min-height:clamp(690px,100svh,820px)!important;padding:104px 6% 130px!important}.vehicle-rental-service-hero .service-hero-copy{width:100%!important;max-width:590px!important}.vehicle-rental-service-hero .service-hero-copy h1{font-size:clamp(40px,10.5vw,60px)!important;line-height:1.08!important;word-break:keep-all}.vehicle-rental-service-hero .service-hero-copy .service-hero-lead{font-size:13px!important;line-height:1.85!important}.vehicle-rental-service-hero .service-hero-copy .contact-channels{width:100%!important;max-width:100%!important}}
+@media(max-width:390px){.vehicle-rental-service-hero .service-hero-copy h1{font-size:clamp(36px,9.8vw,43px)!important}}
