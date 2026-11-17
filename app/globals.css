@@ -9887,3 +9887,27 @@ main .vehicle-filter label {
     top: -18%;
   }
 }
+
+
+/* Final override: hero eyebrow typewriter must loop forever on every viewport. */
+.typing-copy{
+ display:inline-block!important;
+ overflow:hidden!important;
+ white-space:nowrap!important;
+ vertical-align:bottom!important;
+ max-width:0!important;
+ animation:rentcarOceanTyping 5.2s steps(38,end) .15s infinite!important;
+}
+@keyframes rentcarOceanTyping{
+ 0%,5%{max-width:0}
+ 48%,61%{max-width:560px}
+ 96%,100%{max-width:0}
+}
+/* Keep this specific brand animation looping even when reduced-motion is enabled. */
+@media(prefers-reduced-motion:reduce){
+ .typing-copy{
+  animation:rentcarOceanTyping 5.2s steps(38,end) .15s infinite!important;
+  animation-iteration-count:infinite!important;
+  animation-duration:5.2s!important;
+ }
+}
