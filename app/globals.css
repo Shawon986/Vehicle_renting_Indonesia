@@ -9176,3 +9176,13 @@ main .vehicle-filter label {
   .services-hub-page .services-hub-copy h1 {font-size:clamp(36px,10vw,43px)!important}
   .services-hub-page .services-hub-card-copy {padding:20px 18px 22px!important}
 }
+
+
+/* Services is a navigation group, not a standalone landing page */
+.nav-services-label{display:inline-flex;align-items:center;gap:7px;font-size:11px;color:#536058;cursor:default}
+@media(max-width:680px){
+ .main-nav.nav-open .nav-services{display:block;width:100%}
+ .main-nav.nav-open .nav-services-label{display:flex;align-items:center;justify-content:space-between;padding:14px 2px;border-bottom:1px solid rgba(23,36,31,.08);font-size:12px}
+ .main-nav.nav-open .nav-services-menu{position:static;display:grid;visibility:visible;opacity:1;transform:none;width:100%;margin:0;padding:4px 8px;box-shadow:none;background:#ebe9df}
+ .main-nav.nav-open .nav-services-menu a{font-size:11px;padding:11px;border-bottom:1px solid rgba(23,36,31,.08)}
+}
