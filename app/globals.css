@@ -8555,3 +8555,376 @@ main .vehicle-filter label {
  .services-hub-page .services-hub-contact h2{font-size:clamp(38px,10vw,54px)!important;line-height:1.08!important}
 }
 @media(max-width:390px){.services-hub-page .services-hub-card-copy{padding:20px 18px 22px!important}.services-hub-page .services-fit-row{font-size:11px!important}}
+
+
+/* Responsive parity recovery — preserve the complete desktop service experience
+   while reflowing it cleanly for phones. Keep this final so legacy overrides
+   above cannot hide sections, imagery, or the mobile slideshow. */
+@media (max-width: 680px) {
+  .service-page,
+  .services-hub-page {
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    overflow-x:clip!important;
+    box-sizing:border-box!important;
+  }
+
+  /* Individual service landing pages */
+  .service-page .service-hero {
+    display:block!important;
+    position:relative!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:max(760px,100svh)!important;
+    max-height:none!important;
+    padding:0 0 132px!important;
+    overflow:hidden!important;
+    isolation:isolate!important;
+  }
+  .service-page .service-hero-gallery,
+  .service-page .service-gallery-frame {
+    position:absolute!important;
+    inset:0!important;
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:100%!important;
+    max-height:none!important;
+    opacity:1!important;
+    visibility:visible!important;
+    overflow:hidden!important;
+  }
+  .service-page .service-gallery-image {
+    position:absolute!important;
+    inset:-2%!important;
+    display:block!important;
+    width:104%!important;
+    height:104%!important;
+    max-width:none!important;
+    max-height:none!important;
+    object-fit:cover!important;
+    object-position:center 52%!important;
+    backface-visibility:hidden!important;
+    transition:opacity 1.1s ease,transform 7s cubic-bezier(.2,.7,.2,1),visibility 1.1s!important;
+  }
+  .service-page .service-gallery-image.is-active {
+    opacity:1!important;
+    visibility:visible!important;
+    z-index:2!important;
+    transform:scale(1.015)!important;
+  }
+  .service-page .service-gallery-image.is-previous {
+    opacity:0!important;
+    visibility:visible!important;
+    z-index:1!important;
+  }
+  .service-page .service-gallery-frame:after {
+    position:absolute!important;
+    inset:0!important;
+    z-index:3!important;
+    content:""!important;
+    pointer-events:none!important;
+    background:linear-gradient(90deg,rgba(7,17,13,.82),rgba(7,17,13,.42) 72%,rgba(7,17,13,.22)),linear-gradient(0deg,rgba(7,17,13,.68),transparent 60%,rgba(7,17,13,.2))!important;
+  }
+  .service-page .service-hero-copy {
+    position:relative!important;
+    inset:auto!important;
+    z-index:7!important;
+    display:block!important;
+    width:88%!important;
+    max-width:560px!important;
+    min-width:0!important;
+    margin:0 auto!important;
+    padding:clamp(112px,15vh,136px) 0 0!important;
+    transform:none!important;
+    box-sizing:border-box!important;
+  }
+  .service-page .service-hero-copy h1 {
+    max-width:100%!important;
+    font-size:clamp(38px,10vw,56px)!important;
+    line-height:1.18!important;
+    overflow-wrap:anywhere!important;
+    text-wrap:balance!important;
+  }
+  .service-page .service-hero-lead {
+    max-width:100%!important;
+    font-size:14px!important;
+    line-height:1.85!important;
+  }
+  .service-page .service-hero-actions {
+    display:flex!important;
+    flex-wrap:wrap!important;
+    align-items:center!important;
+    gap:12px 18px!important;
+  }
+  .service-page .service-hero .contact-channels {
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+  }
+  .service-page .service-hero .wechat-contact,
+  .service-page .service-hero .contact-channel-button {
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+  }
+  .service-page .service-hero-index,
+  .service-page .service-gallery-label,
+  .service-page .service-gallery-count,
+  .service-page .service-gallery-caption,
+  .service-page .service-gallery-controls,
+  .service-page .service-hero-bottom {z-index:9!important}
+  .service-page .service-gallery-controls {
+    position:absolute!important;
+    left:50%!important;
+    right:auto!important;
+    bottom:47px!important;
+    display:flex!important;
+    transform:translateX(-50%)!important;
+    pointer-events:auto!important;
+  }
+
+  .service-page .service-intro,
+  .service-page .service-process,
+  .service-page .service-detail-band,
+  .service-page .service-cta-band,
+  .service-page .service-form-section {
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    gap:26px!important;
+    padding:58px 6%!important;
+    box-sizing:border-box!important;
+  }
+  .service-page .service-intro-grid,
+  .service-page .service-direction-grid,
+  .service-page .service-process-list,
+  .service-page .service-inclusion-grid {
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    gap:24px!important;
+  }
+  .service-page .service-intro-grid>*,
+  .service-page .service-intro-copy,
+  .service-page .service-process-heading,
+  .service-page .service-process-list,
+  .service-page .service-detail-band>div,
+  .service-page .service-cta-band>div,
+  .service-page .service-form-copy,
+  .service-page .service-inquiry-form {
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    box-sizing:border-box!important;
+  }
+  .service-page .service-direction-card {
+    display:flex!important;
+    flex-direction:column!important;
+    width:100%!important;
+    min-width:0!important;
+    height:auto!important;
+    padding:0 0 18px!important;
+    opacity:1!important;
+    visibility:visible!important;
+    transform:none!important;
+  }
+  .service-page .service-direction-art {
+    position:relative!important;
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:16/10!important;
+    overflow:hidden!important;
+  }
+  .service-page .service-direction-art .service-direction-photo {
+    position:absolute!important;
+    inset:0!important;
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+  .service-page .service-detail-symbol {
+    position:relative!important;
+    display:block!important;
+    width:100%!important;
+    max-width:none!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:16/9!important;
+    overflow:hidden!important;
+  }
+  .service-page .service-detail-photo {
+    position:absolute!important;
+    inset:0!important;
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+  }
+  .service-page .service-process-step {
+    display:grid!important;
+    grid-template-columns:34px minmax(0,1fr) 18px!important;
+    gap:12px!important;
+    width:100%!important;
+    min-width:0!important;
+    align-items:start!important;
+  }
+  .service-page .service-inquiry-form {
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:14px!important;
+  }
+  .service-page .service-inquiry-form input,
+  .service-page .service-inquiry-form select,
+  .service-page .service-inquiry-form textarea {
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    box-sizing:border-box!important;
+  }
+  .service-page [data-reveal] {
+    visibility:visible!important;
+    opacity:1!important;
+    transform:none!important;
+  }
+
+  /* Services overview page */
+  .services-hub-page .services-hub-hero {
+    position:relative!important;
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:max(700px,100svh)!important;
+    padding:0!important;
+    overflow:hidden!important;
+    isolation:isolate!important;
+  }
+  .services-hub-page .services-hub-gallery,
+  .services-hub-page .service-gallery-frame {
+    position:absolute!important;
+    inset:0!important;
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:100%!important;
+    overflow:hidden!important;
+  }
+  .services-hub-page .service-gallery-image {
+    position:absolute!important;
+    inset:-2%!important;
+    display:block!important;
+    width:104%!important;
+    height:104%!important;
+    object-fit:cover!important;
+    object-position:58% center!important;
+  }
+  .services-hub-page .service-gallery-image.is-active {opacity:1!important;visibility:visible!important;z-index:2!important}
+  .services-hub-page .services-hub-copy {
+    position:absolute!important;
+    left:6%!important;
+    top:48%!important;
+    width:88%!important;
+    max-width:560px!important;
+    z-index:6!important;
+    transform:translateY(-50%)!important;
+  }
+  .services-hub-page .services-hub-copy h1 {
+    font-size:clamp(38px,10vw,56px)!important;
+    line-height:1.12!important;
+    text-wrap:balance!important;
+  }
+  .services-hub-page .services-hub-copy p:not(.eyebrow) {
+    max-width:100%!important;
+    font-size:13px!important;
+    line-height:1.8!important;
+  }
+  .services-hub-page .service-gallery-controls {
+    z-index:8!important;
+    pointer-events:auto!important;
+  }
+  .services-hub-page .services-hub-grid-section,
+  .services-hub-page .services-fit-section,
+  .services-hub-page .services-hub-contact {
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    box-sizing:border-box!important;
+  }
+  .services-hub-page .services-hub-grid {
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:24px!important;
+  }
+  .services-hub-page .services-hub-card,
+  .services-hub-page .services-hub-card>a {
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    width:100%!important;
+    min-width:0!important;
+  }
+  .services-hub-page .services-hub-card-art {
+    position:relative!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:16/10!important;
+    overflow:hidden!important;
+  }
+  .services-hub-page .services-hub-card-art>img {
+    position:absolute!important;
+    inset:0!important;
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+  .services-hub-page .services-hub-card-copy {
+    display:flex!important;
+    width:100%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+  }
+  .services-hub-page .services-fit-section {
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:28px!important;
+  }
+  .services-hub-page .services-fit-table {width:100%!important;min-width:0!important}
+  .services-hub-page .services-fit-row {
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    gap:12px!important;
+  }
+  .services-hub-page .services-hub-contact {
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:28px!important;
+  }
+  .services-hub-page [data-reveal] {
+    visibility:visible!important;
+    opacity:1!important;
+    transform:none!important;
+  }
+}
+@media (max-width:390px) {
+  .service-page .service-hero-copy {width:88%!important;padding-top:104px!important}
+  .service-page .service-hero-copy h1 {font-size:clamp(35px,9.8vw,43px)!important}
+  .service-page .service-process-step {grid-template-columns:30px minmax(0,1fr) 16px!important;gap:9px!important}
+  .services-hub-page .services-hub-copy {top:47%!important}
+  .services-hub-page .services-hub-copy h1 {font-size:clamp(36px,10vw,44px)!important}
+  .services-hub-page .services-fit-row {font-size:11px!important}
+}
