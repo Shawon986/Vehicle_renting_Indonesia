@@ -26,7 +26,8 @@ export function GeneralEnquiryForm({locale,enabled=true}:{locale:Locale;enabled?
  const channelOptions=[...(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?["whatsapp"]:[]),...(process.env.NEXT_PUBLIC_PHONE?["phone"]:[]),...(locale==="zh"&&process.env.NEXT_PUBLIC_WECHAT_ID?["wechat"]:[]),"email"];
  return <form className="inquiry-form service-inquiry-form general-enquiry-form" onSubmit={submit} onFocusCapture={begin}>
  <div className="inquiry-form-heading"><span className="inquiry-form-index">01 / 02 · RENTCAROCEAN</span><h3>{locale==="zh"?"让我们了解您的计划":locale==="id"?"Ceritakan rencana Anda":"Tell us what you have in mind"}</h3><p>{t.hint}</p></div>
- {!enabled?<p className="service-form-disabled" role="status">{t.disabled}</p>:null}\n <div className="form-grid service-form-grid">
+ {!enabled?<p className="service-form-disabled" role="status">{t.disabled}</p>:null}
+ <div className="form-grid service-form-grid">
  <label className="service-form-field">{t.name}<input name="name" autoComplete="name" required maxLength={100}/></label>
  <label className="service-form-field">{t.email}<input name="email" type="email" autoComplete="email" required maxLength={160}/></label>
  <label className="service-form-field">{t.phone}<input name="phone" type="tel" autoComplete="tel" required maxLength={40}/></label>
