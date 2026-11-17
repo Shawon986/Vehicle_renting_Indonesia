@@ -9537,3 +9537,37 @@ main .vehicle-filter label {
     opacity: 1 !important;
   }
 }
+
+
+/* Services overview mobile: keep the hero geometry stable while the browser
+   address bar expands/collapses, and remove the slideshow's scale pulse. */
+@media (max-width: 680px) {
+  main.services-hub-page > section.services-hub-hero {
+    height: max(690px, 100vh) !important;
+    min-height: max(690px, 100vh) !important;
+    max-height: none !important;
+    flex: 0 0 auto !important;
+  }
+  main.services-hub-page .service-gallery-frame,
+  main.services-hub-page .service-hero-gallery {
+    height: 100% !important;
+    min-height: 100% !important;
+  }
+  main.services-hub-page .service-gallery-image,
+  main.services-hub-page .service-gallery-image.is-active,
+  main.services-hub-page .service-gallery-image.is-previous {
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+    transition: opacity 1s ease, visibility 1s !important;
+  }
+}
+@supports (height: 100lvh) {
+  @media (max-width: 680px) {
+    main.services-hub-page > section.services-hub-hero {
+      height: max(690px, 100lvh) !important;
+      min-height: max(690px, 100lvh) !important;
+    }
+  }
+}
