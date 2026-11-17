@@ -9186,3 +9186,191 @@ main .vehicle-filter label {
  .main-nav.nav-open .nav-services-menu{position:static;display:grid;visibility:visible;opacity:1;transform:none;width:100%;margin:0;padding:4px 8px;box-shadow:none;background:#ebe9df}
  .main-nav.nav-open .nav-services-menu a{font-size:11px;padding:11px;border-bottom:1px solid rgba(23,36,31,.08)}
 }
+
+
+/* Final mobile pass for the Services overview: preserve the desktop story,
+   but make every section and the hero slideshow fit touch screens cleanly. */
+@media (max-width: 680px) {
+  .services-hub-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+  .services-hub-page .services-hub-hero {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    height: min(820px, 100svh) !important;
+    min-height: 680px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+  .services-hub-page .services-hub-gallery {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none !important;
+  }
+  .services-hub-page .service-gallery-frame {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+  }
+  .services-hub-page .service-gallery-image {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 58% center !important;
+  }
+  .services-hub-page .service-gallery-image:not(.is-active):not(.is-previous) {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  .services-hub-page .service-gallery-image.is-active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 2 !important;
+  }
+  .services-hub-page .services-hub-copy {
+    position: absolute !important;
+    top: 49% !important;
+    left: 6% !important;
+    right: 6% !important;
+    width: auto !important;
+    max-width: 560px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateY(-50%) !important;
+    z-index: 4 !important;
+  }
+  .services-hub-page .services-hub-copy h1 {
+    max-width: 100% !important;
+    font-size: clamp(38px, 10vw, 54px) !important;
+    line-height: 1.06 !important;
+    letter-spacing: -.055em !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+  .services-hub-page .services-hub-copy p:not(.eyebrow) {
+    max-width: 100% !important;
+    font-size: 13px !important;
+    line-height: 1.8 !important;
+  }
+  .services-hub-page .service-gallery-controls {
+    position: absolute !important;
+    left: auto !important;
+    right: 6% !important;
+    bottom: 28px !important;
+    z-index: 10 !important;
+    display: flex !important;
+    gap: 8px !important;
+    pointer-events: auto !important;
+  }
+  .services-hub-page .service-gallery-controls button {
+    width: 24px !important;
+    min-width: 24px !important;
+    height: 8px !important;
+    min-height: 8px !important;
+    padding: 2px 0 !important;
+    touch-action: manipulation;
+  }
+  .services-hub-page .service-gallery-controls button.is-active {
+    width: 40px !important;
+  }
+  .services-hub-page .services-hub-grid-section,
+  .services-hub-page .services-fit-section,
+  .services-hub-page .services-hub-contact {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    padding-left: 6% !important;
+    padding-right: 6% !important;
+  }
+  .services-hub-page .services-hub-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 18px !important;
+    width: 100% !important;
+  }
+  .services-hub-page .services-hub-card,
+  .services-hub-page .services-hub-card > a {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+  }
+  .services-hub-page .services-hub-card > a {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: auto auto !important;
+  }
+  .services-hub-page .services-hub-card-art {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 16 / 10 !important;
+  }
+  .services-hub-page .services-hub-card-art > img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  .services-hub-page .services-hub-card-copy {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    padding: 22px 20px 24px !important;
+  }
+  .services-hub-page .services-hub-card-copy h2 {
+    font-size: clamp(23px, 6vw, 28px) !important;
+    line-height: 1.16 !important;
+  }
+  .services-hub-page .services-hub-card-copy p {
+    font-size: 12px !important;
+    line-height: 1.8 !important;
+  }
+  .services-hub-page .services-fit-section {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px !important;
+  }
+  .services-hub-page .services-fit-table,
+  .services-hub-page .services-fit-row {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  .services-hub-page .services-fit-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 10px !important;
+    font-size: 11px !important;
+    overflow-wrap: anywhere;
+  }
+  .services-hub-page .services-hub-contact {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px !important;
+  }
+  .services-hub-page .services-hub-contact > div,
+  .services-hub-page .services-hub-contact .contact-channels {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}
+@media (max-width: 390px) {
+  .services-hub-page .services-hub-hero {
+    height: max(690px, 100svh) !important;
+  }
+  .services-hub-page .services-hub-copy {
+    left: 6% !important;
+    right: 6% !important;
+  }
+  .services-hub-page .services-hub-card-copy {
+    padding: 20px 18px 22px !important;
+  }
+}
