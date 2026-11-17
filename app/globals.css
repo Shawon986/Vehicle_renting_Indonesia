@@ -9615,3 +9615,18 @@ main .vehicle-filter label {
     transition: opacity 1s ease, visibility 1s !important;
   }
 }
+
+
+/* Mobile only: slim down hero slide progress bars on every page except
+   the individual service detail pages. Preserve their width, spacing,
+   active state, placement, and all desktop styling. */
+@media (max-width: 680px) {
+  main:not(.service-page) .service-gallery-controls button {
+    height: 2px !important;
+    min-height: 2px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    border-top-width: 0 !important;
+    border-bottom-width: 0 !important;
+  }
+}
