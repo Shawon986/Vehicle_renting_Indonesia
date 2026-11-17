@@ -9911,3 +9911,31 @@ main .vehicle-filter label {
   animation-duration:5.2s!important;
  }
 }
+
+
+/* Reliable typewriter reveal: animate clipping, not max-width (max-width was
+   locked by an !important rule and prevented the keyframes from ever running). */
+.typing-copy{
+ display:inline-block!important;
+ overflow:visible!important;
+ white-space:nowrap!important;
+ vertical-align:bottom!important;
+ max-width:none!important;
+ clip-path:inset(0 100% 0 0);
+ animation:rentcarOceanTypewriter 5.6s steps(34,end) .2s infinite!important;
+ will-change:clip-path;
+}
+@keyframes rentcarOceanTypewriter{
+ 0%,5%{clip-path:inset(0 100% 0 0)}
+ 48%,63%{clip-path:inset(0 0 0 0)}
+ 96%,100%{clip-path:inset(0 100% 0 0)}
+}
+@media(max-width:680px){
+ .typing-copy{animation-duration:5.6s!important;animation-timing-function:steps(34,end)!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .typing-copy{
+  animation:rentcarOceanTypewriter 5.6s steps(34,end) .2s infinite!important;
+  clip-path:inset(0 100% 0 0);
+ }
+}
