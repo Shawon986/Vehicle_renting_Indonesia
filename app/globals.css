@@ -9819,3 +9819,71 @@ main .vehicle-filter label {
   }
   .about-brand-fact-brand-lockup img { width: min(100%, 176px); height: 38px; }
 }
+
+
+/* Revised company panel: warm architectural paper, soft mineral gradients
+   and restrained contour detailing. */
+.about-brand-company {
+  background:
+    radial-gradient(ellipse at 92% 8%, rgba(197,169,119,.24) 0%, rgba(197,169,119,.08) 25%, transparent 52%),
+    radial-gradient(ellipse at 8% 96%, rgba(177,196,188,.42) 0%, rgba(177,196,188,.12) 30%, transparent 58%),
+    linear-gradient(128deg, #f5f1e8 0%, #eceee8 48%, #e7ece8 100%) !important;
+  color: #203a32 !important;
+  border-top: 1px solid rgba(32,58,50,.08);
+  border-bottom: 1px solid rgba(32,58,50,.08);
+}
+.about-brand-company::before {
+  width: min(72vw, 900px);
+  right: -17%;
+  top: -63%;
+  border: 1px solid rgba(72,103,89,.16);
+  box-shadow:
+    0 0 0 38px rgba(72,103,89,.045),
+    0 0 0 82px rgba(72,103,89,.035),
+    0 0 0 132px rgba(72,103,89,.025),
+    0 0 0 190px rgba(72,103,89,.018);
+}
+.about-brand-company::after {
+  opacity: .25;
+  background-image:
+    linear-gradient(135deg, transparent 49.8%, rgba(91,119,105,.12) 50%, transparent 50.2%),
+    radial-gradient(rgba(91,119,105,.35) .55px, transparent .75px);
+  background-size: 100% 100%, 17px 17px;
+  mask-image: linear-gradient(115deg, transparent 8%, #000 100%);
+}
+.about-brand-company .eyebrow { color: #65796e !important; }
+.about-brand-company .eyebrow > span { color: #a17d48 !important; }
+.about-brand-company h2 { color: #203a32 !important; }
+.about-brand-company > div:first-child > p:last-child {
+  color: #586a61 !important;
+}
+.about-brand-company-pillars article {
+  border-color: rgba(32,58,50,.14);
+  background: rgba(255,255,255,.48);
+  box-shadow: 0 10px 30px rgba(39,61,51,.035);
+  backdrop-filter: blur(8px);
+}
+.about-brand-company-pillars article > span { color: #a17d48; }
+.about-brand-company-pillars h3 { color: #203a32; }
+.about-brand-company-pillars p { color: #65746c; }
+.about-brand-facts {
+  border-color: rgba(63,86,74,.24);
+}
+.about-brand-facts > div {
+  border-color: rgba(63,86,74,.24);
+  background: rgba(255,255,255,.22);
+}
+.about-brand-facts > div > span { color: #a17d48; }
+.about-brand-facts small { color: #69796f; }
+.about-brand-facts strong { color: #203a32; }
+.about-brand-fact-brand-lockup span { color: #203a32; }
+.about-brand-company .about-brand-facts > .about-brand-fact-brand {
+  background: rgba(255,255,255,.58);
+}
+@media (max-width: 680px) {
+  .about-brand-company::before {
+    width: 118vw;
+    right: -60%;
+    top: -18%;
+  }
+}
