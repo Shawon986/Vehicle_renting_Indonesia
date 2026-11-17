@@ -9571,3 +9571,47 @@ main .vehicle-filter label {
     }
   }
 }
+
+
+/* Services overview: lock mobile hero to a fixed layout height.
+   Viewport units (svh/vh/lvh) can change as mobile browser chrome collapses,
+   which was resizing the hero during scroll. */
+@media (max-width: 680px) {
+  html body main.services-hub-page > section.services-hub-hero {
+    display: block !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    height: 760px !important;
+    min-height: 760px !important;
+    max-height: 760px !important;
+    block-size: 760px !important;
+    min-block-size: 760px !important;
+    max-block-size: 760px !important;
+    flex: 0 0 760px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    contain: size layout !important;
+    overflow-anchor: none !important;
+  }
+  html body main.services-hub-page > section.services-hub-hero > .service-hero-gallery,
+  html body main.services-hub-page > section.services-hub-hero .service-gallery-frame {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+  html body main.services-hub-page > section.services-hub-hero .service-gallery-image,
+  html body main.services-hub-page > section.services-hub-hero .service-gallery-image.is-active,
+  html body main.services-hub-page > section.services-hub-hero .service-gallery-image.is-previous {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+    animation: none !important;
+    transition: opacity 1s ease, visibility 1s !important;
+  }
+}
