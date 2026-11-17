@@ -286,9 +286,9 @@
 .loader-mark{font-family:var(--font-display);font-size:58px;font-weight:800;letter-spacing:-.12em}.loader-mark span{color:var(--lime)}
 .loader-track{width:110px;height:1px;background:rgba(243,240,232,.2);overflow:hidden}.loader-track span{display:block;width:100%;height:100%;background:var(--lime);transform:scaleX(0);transform-origin:left;animation:loaderProgress .7s cubic-bezier(.7,0,.2,1) forwards}
 .preloader small{font-size:7px;letter-spacing:.22em;color:#aab5a9}
-.typing-copy{display:inline-block!important;overflow:hidden;white-space:nowrap;vertical-align:bottom;max-width:0;margin:0!important;color:inherit!important;animation:typingReveal 1.45s steps(27,end) .45s forwards}
+.typing-copy{display:inline-block!important;flex:0 1 auto;overflow:hidden;white-space:nowrap;vertical-align:bottom;max-width:0;margin:0!important;color:inherit!important;animation:typingLoop 5.8s steps(34,end) .35s infinite}
 @keyframes loaderProgress{to{transform:scaleX(1)}}
-@keyframes typingReveal{to{max-width:260px}}
+@keyframes typingLoop{0%,8%{max-width:0}46%,62%{max-width:420px}98%,100%{max-width:0}}
 @media(prefers-reduced-motion:reduce){.typing-copy{max-width:none;animation:none}.preloader{display:none}}
 
 /* Vehicle module detail pages and support layouts */
