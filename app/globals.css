@@ -8562,3 +8562,39 @@ main .vehicle-filter label {
 .vehicle-rental-service-hero .service-hero-copy h1{max-width:760px}
 @media(max-width:680px){.vehicle-rental-service-hero{min-height:clamp(690px,100svh,820px)!important;padding:104px 6% 130px!important}.vehicle-rental-service-hero .service-hero-copy{width:100%!important;max-width:590px!important}.vehicle-rental-service-hero .service-hero-copy h1{font-size:clamp(40px,10.5vw,60px)!important;line-height:1.08!important;word-break:keep-all}.vehicle-rental-service-hero .service-hero-copy .service-hero-lead{font-size:13px!important;line-height:1.85!important}.vehicle-rental-service-hero .service-hero-copy .contact-channels{width:100%!important;max-width:100%!important}}
 @media(max-width:390px){.vehicle-rental-service-hero .service-hero-copy h1{font-size:clamp(36px,9.8vw,43px)!important}}
+
+
+/* Dedicated Chinese vehicle-rental hero composition */
+.vehicle-rental-service-hero-zh{min-height:clamp(760px,92svh,900px)!important;padding:116px 8% 126px!important;align-items:center!important}
+.vehicle-rental-service-hero-zh .service-hero-copy{width:min(58%,720px)!important;max-width:720px!important;position:relative!important;z-index:6!important;margin-right:auto!important}
+.vehicle-rental-service-hero-zh .service-hero-copy>.eyebrow{font-size:10px!important;line-height:1.8!important;letter-spacing:.16em!important;margin-bottom:30px!important}
+.vehicle-rental-service-hero-zh .service-hero-copy h1{max-width:690px!important;font-size:clamp(54px,6.1vw,82px)!important;line-height:1.18!important;letter-spacing:-.045em!important;word-break:keep-all!important;text-wrap:balance}
+.vehicle-rental-service-hero-zh .service-hero-lead{max-width:520px!important;font-size:15px!important;line-height:1.95!important;margin:26px 0 30px!important;word-break:keep-all}
+.vehicle-rental-service-hero-zh .service-hero-actions{gap:22px!important;align-items:center!important;flex-wrap:wrap!important}
+.vehicle-rental-service-hero-zh .service-hero .contact-channels{max-width:540px!important;width:100%!important}
+.vehicle-rental-service-hero-zh .service-hero-index{right:4.5%!important;top:48%!important}
+.vehicle-rental-service-hero-zh .service-hero-bottom{left:6%!important;right:6%!important;bottom:24px!important}
+@media(max-width:900px){
+ .vehicle-rental-service-hero-zh{min-height:clamp(740px,94svh,880px)!important;padding:112px 6% 132px!important}
+ .vehicle-rental-service-hero-zh .service-hero-copy{width:min(70%,650px)!important}
+ .vehicle-rental-service-hero-zh .service-hero-copy h1{font-size:clamp(48px,7.5vw,68px)!important}
+ .vehicle-rental-service-hero-zh .service-hero-lead{font-size:14px!important}
+}
+@media(max-width:680px){
+ .vehicle-rental-service-hero-zh{min-height:clamp(760px,calc(100svh - 56px),940px)!important;padding:104px 6% 144px!important;align-items:flex-start!important}
+ .vehicle-rental-service-hero-zh .service-hero-copy{width:100%!important;max-width:100%!important;margin:0!important;padding-top:28px!important}
+ .vehicle-rental-service-hero-zh .service-hero-copy>.eyebrow{font-size:8px!important;line-height:1.7!important;letter-spacing:.12em!important;margin-bottom:24px!important}
+ .vehicle-rental-service-hero-zh .service-hero-copy h1{max-width:100%!important;font-size:clamp(39px,10.2vw,52px)!important;line-height:1.24!important;letter-spacing:-.035em!important;word-break:keep-all!important;text-wrap:pretty}
+ .vehicle-rental-service-hero-zh .service-hero-lead{max-width:100%!important;font-size:13px!important;line-height:1.9!important;margin:20px 0 22px!important}
+ .vehicle-rental-service-hero-zh .service-hero-actions{display:flex!important;align-items:flex-start!important;flex-direction:column!important;gap:15px!important;margin-bottom:20px!important}
+ .vehicle-rental-service-hero-zh .service-hero-actions .button{min-height:46px!important;padding:14px 18px!important}
+ .vehicle-rental-service-hero-zh .service-hero .contact-channels{width:100%!important;max-width:100%!important}
+ .vehicle-rental-service-hero-zh .service-hero-index{display:none!important}
+ .vehicle-rental-service-hero-zh .service-hero-bottom{left:6%!important;right:6%!important;bottom:14px!important;gap:8px!important;font-size:6px!important;letter-spacing:.08em!important}
+ .vehicle-rental-service-hero-zh .service-hero-bottom span{max-width:47%!important}
+}
+@media(max-width:390px){
+ .vehicle-rental-service-hero-zh{padding-left:5%!important;padding-right:5%!important}
+ .vehicle-rental-service-hero-zh .service-hero-copy h1{font-size:clamp(36px,9.8vw,41px)!important}
+ .vehicle-rental-service-hero-zh .service-hero-lead{font-size:12px!important}
+}
