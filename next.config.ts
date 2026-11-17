@@ -4,7 +4,7 @@ const securityPolicy=[
  "default-src 'self'",
  "script-src "+scriptSources,
  "style-src 'self' 'unsafe-inline'",
- "img-src 'self' data: blob: https://images.unsplash.com https://commons.wikimedia.org https://upload.wikimedia.org https://img.autofun.co.id https://astradigitaldigiroomprd.blob.core.windows.net https://astradigitaldigiroomuat.blob.core.windows.net https://karyapratamatravelindo.com https://photo.znews.vn https://www.static-src.com https://media.auto5.vn https://www.kliktoyotabekasi.com https://www.toyota.co.kr https://www.toyota.co.th",
+ "img-src 'self' data: blob: https://images.unsplash.com https://commons.wikimedia.org https://upload.wikimedia.org https://img.autofun.co.id https://astradigitaldigiroomprd.blob.core.windows.net https://astradigitaldigiroomuat.blob.core.windows.net https://karyapratamatravelindo.com https://www.toyotaintercom.com https://photo.znews.vn https://www.static-src.com https://media.auto5.vn https://www.kliktoyotabekasi.com https://www.toyota.co.kr https://www.toyota.co.th",
  "font-src 'self' data:",
  "connect-src 'self' https://challenges.cloudflare.com https://www.google-analytics.com https://region1.google-analytics.com",
  "frame-src https://challenges.cloudflare.com",
@@ -16,7 +16,7 @@ const securityPolicy=[
 ].join("; ");
 const nextConfig:NextConfig={
  poweredByHeader:false,
- images:{remotePatterns:[{protocol:"https",hostname:"images.unsplash.com"},{protocol:"https",hostname:"commons.wikimedia.org"},{protocol:"https",hostname:"upload.wikimedia.org"},{protocol:"https",hostname:"img.autofun.co.id"},{protocol:"https",hostname:"astradigitaldigiroomprd.blob.core.windows.net"},{protocol:"https",hostname:"astradigitaldigiroomuat.blob.core.windows.net"},{protocol:"https",hostname:"karyapratamatravelindo.com"},{protocol:"https",hostname:"photo.znews.vn"},{protocol:"https",hostname:"www.static-src.com"},{protocol:"https",hostname:"media.auto5.vn"},{protocol:"https",hostname:"www.kliktoyotabekasi.com"},{protocol:"https",hostname:"www.toyota.co.kr"},{protocol:"https",hostname:"www.toyota.co.th"}]},
+ images:{remotePatterns:[{protocol:"https",hostname:"images.unsplash.com"},{protocol:"https",hostname:"commons.wikimedia.org"},{protocol:"https",hostname:"upload.wikimedia.org"},{protocol:"https",hostname:"img.autofun.co.id"},{protocol:"https",hostname:"astradigitaldigiroomprd.blob.core.windows.net"},{protocol:"https",hostname:"astradigitaldigiroomuat.blob.core.windows.net"},{protocol:"https",hostname:"karyapratamatravelindo.com"},{protocol:"https",hostname:"www.toyotaintercom.com"},{protocol:"https",hostname:"photo.znews.vn"},{protocol:"https",hostname:"www.static-src.com"},{protocol:"https",hostname:"media.auto5.vn"},{protocol:"https",hostname:"www.kliktoyotabekasi.com"},{protocol:"https",hostname:"www.toyota.co.kr"},{protocol:"https",hostname:"www.toyota.co.th"}]},
  async headers(){
   const headers=[
    {key:"X-Content-Type-Options",value:"nosniff"},
