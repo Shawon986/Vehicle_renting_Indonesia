@@ -10114,7 +10114,7 @@ main .vehicle-filter label {
   overflow: hidden;
   background-image:
     linear-gradient(90deg, rgba(18, 31, 25, .88) 0%, rgba(18, 31, 25, .66) 48%, rgba(18, 31, 25, .38) 100%),
-    url("https://images.pexels.com/photos/28386069/pexels-photo-28386069.jpeg?auto=compress&cs=tinysrgb&w=2000");
+    url("https://upload.wikimedia.org/wikipedia/commons/e/ea/Mount_Bromo_After_Sunrise.jpg");
   background-size: cover;
   background-position: center 48%;
 }
@@ -10127,6 +10127,6 @@ main .vehicle-filter label {
     background-position: center;
     background-image:
       linear-gradient(90deg, rgba(18, 31, 25, .82), rgba(18, 31, 25, .58)),
-      url("https://images.pexels.com/photos/28386069/pexels-photo-28386069.jpeg?auto=compress&cs=tinysrgb&w=1200");
+      url("https://upload.wikimedia.org/wikipedia/commons/e/ea/Mount_Bromo_After_Sunrise.jpg");
   }
 }
