@@ -33,7 +33,7 @@ export function GeneralEnquiryForm({locale,enabled=true}:{locale:Locale;enabled?
  <label className="service-form-field">{t.phone}<input name="phone" type="tel" autoComplete="tel" required maxLength={40}/></label>
  <label className="service-form-field">{t.company}<input name="company" autoComplete="organization" maxLength={160}/></label>
  <label className="service-form-field">{t.channel}<select name="preferredChannel" defaultValue={channelOptions[0]}>{channelOptions.map(x=><option key={x} value={x}>{x==="wechat"?"WeChat / 微信":x==="whatsapp"?"WhatsApp":x==="phone"?(locale==="zh"?"电话":locale==="id"?"Telepon":"Phone"):"Email"}</option>)}</select></label>
- <label className="service-form-field">{t.service}<select name="serviceInterest" defaultValue="vehicle-rental" required><option value="vehicle-rental">{t.vehicle}</option><option value="tours-travel">{t.travel}</option><option value="event-design">{t.events}</option><option value="gift-boxes">{t.gifts}</option><option value="multiple">{t.multiple}</option></select></label>
+ <label className="service-form-field">{t.service}<select className="service-interest-select" name="serviceInterest" defaultValue="vehicle-rental" required><option value="vehicle-rental">{t.vehicle}</option><option value="tours-travel">{t.travel}</option><option value="event-design">{t.events}</option><option value="gift-boxes">{t.gifts}</option><option value="multiple">{t.multiple}</option></select></label>
  <label className="service-form-field">{t.date}<input name="preferredDate" type="date"/></label>
  <label className="service-form-field">{t.location}<input name="location" maxLength={180}/></label>
  <label className="service-form-field">{t.people}<input name="peopleCount" type="number" min="1" max="10000"/></label>
