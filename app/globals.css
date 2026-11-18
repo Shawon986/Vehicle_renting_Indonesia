@@ -11674,3 +11674,32 @@ main .vehicle-filter label {
     font-size: 10px !important;
   }
 }
+
+
+/* Service enquiry forms: align checkbox boxes with the first line of their labels. */
+.service-inquiry-form .consent-check,
+.service-inquiry-form .marketing-consent,
+.service-inquiry-form .service-form-check,
+.service-inquiry-form .service-check-grid > label {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 9px !important;
+  line-height: 1.55 !important;
+  text-align: left;
+}
+.service-inquiry-form .consent-check > input[type="checkbox"],
+.service-inquiry-form .marketing-consent > input[type="checkbox"],
+.service-inquiry-form .service-form-check > input[type="checkbox"],
+.service-inquiry-form .service-check-grid > label > input[type="checkbox"] {
+  display: inline-grid !important;
+  flex: 0 0 16px !important;
+  align-self: flex-start !important;
+  width: 16px !important;
+  min-width: 16px !important;
+  max-width: 16px !important;
+  height: 16px !important;
+  min-height: 16px !important;
+  max-height: 16px !important;
+  margin: 2px 0 0 !important;
+}
