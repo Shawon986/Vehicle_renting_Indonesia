@@ -11644,17 +11644,20 @@ main .vehicle-filter label {
 }
 
 
-/* Keep optional service-updates text the same size as the required privacy-consent text. */
-.inquiry-form .marketing-consent,
+/* Service enquiry pages: keep optional updates text regular-weight and matching consent size.
+   Vehicle-rental form styling is intentionally excluded. */
 .service-inquiry-form .marketing-consent {
   font-size: 10px !important;
-  font-weight: 450;
+  font-weight: 400 !important;
   line-height: 1.55;
 }
+.service-inquiry-form .marketing-consent span {
+  font-weight: 400 !important;
+}
 @media (max-width: 680px) {
-  .inquiry-form .marketing-consent,
   .service-inquiry-form .marketing-consent {
     font-size: 10px !important;
+    font-weight: 400 !important;
     line-height: 1.55;
   }
 }
