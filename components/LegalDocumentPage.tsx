@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import type {Locale} from "@/lib/site-data";
 import {privacyPolicy,cookiePolicy} from "@/lib/legal-data";
