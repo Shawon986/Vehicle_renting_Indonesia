@@ -11353,3 +11353,80 @@ main .vehicle-filter label {
     transition: none;
   }
 }
+
+
+/* Required markers sit beside field titles; controls share consistent grid alignment. */
+.inquiry-form .form-grid,
+.service-inquiry-form .form-grid,
+.service-inquiry-form .service-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  justify-items: stretch;
+  column-gap: 18px;
+  row-gap: 18px;
+}
+.inquiry-form .form-grid > label:has(> input:required, > select:required, > textarea:required):not(.service-form-check):not(.consent-check):not(.marketing-consent),
+.service-inquiry-form .form-grid > label.service-form-field:has(> input:required, > select:required, > textarea:required) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: minmax(16px, auto) auto;
+  align-content: start;
+  align-items: center;
+  justify-content: stretch;
+  gap: 7px 8px;
+  min-width: 0;
+  width: 100%;
+}
+.inquiry-form .form-grid > label:has(> input:required, > select:required, > textarea:required):not(.service-form-check):not(.consent-check):not(.marketing-consent)::before,
+.service-inquiry-form .form-grid > label.service-form-field:has(> input:required, > select:required, > textarea:required)::before {
+  content: none !important;
+  display: none !important;
+}
+.inquiry-form .form-grid > label:has(> input:required, > select:required, > textarea:required):not(.service-form-check):not(.consent-check):not(.marketing-consent)::after,
+.service-inquiry-form .form-grid > label.service-form-field:has(> input:required, > select:required, > textarea:required)::after {
+  content: "*";
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+  color: #b64b3d;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+}
+.inquiry-form .form-grid > label:has(> input:required, > select:required, > textarea:required) > input,
+.inquiry-form .form-grid > label:has(> input:required, > select:required, > textarea:required) > select,
+.inquiry-form .form-grid > label:has(> input:required, > select:required, > textarea:required) > textarea,
+.service-inquiry-form .form-grid > label.service-form-field:has(> input:required, > select:required, > textarea:required) > input,
+.service-inquiry-form .form-grid > label.service-form-field:has(> input:required, > select:required, > textarea:required) > select,
+.service-inquiry-form .form-grid > label.service-form-field:has(> input:required, > select:required, > textarea:required) > textarea {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.inquiry-form .form-grid > label:not(.service-form-check):not(.consent-check):not(.marketing-consent),
+.service-inquiry-form .form-grid > label.service-form-field {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.inquiry-form .form-grid > label > input:not([type="checkbox"]):not([type="radio"]),
+.inquiry-form .form-grid > label > select,
+.service-inquiry-form .form-grid > label.service-form-field > input:not([type="checkbox"]):not([type="radio"]),
+.service-inquiry-form .form-grid > label.service-form-field > select {
+  height: 47px;
+  min-height: 47px;
+  box-sizing: border-box;
+}
+@media (max-width: 680px) {
+  .inquiry-form .form-grid,
+  .service-inquiry-form .form-grid,
+  .service-inquiry-form .service-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: 0;
+    row-gap: 15px;
+  }
+}
