@@ -13120,3 +13120,33 @@ main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-prem
   }
   main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-premium-note-inner::after{border-radius:22px !important}
 }
+
+
+/* SECTION 05A — lightweight crystal-glass treatment (no expensive backdrop filters) */
+main.inner-page.how-page.how-premium-page > section.how-premium-note{
+  background:linear-gradient(125deg,#a9c0b5 0%,#d9e5dc 48%,#a4beb2 100%) !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note::before,
+main.inner-page.how-page.how-premium-page > section.how-premium-note::after{
+  filter:none !important;
+  opacity:.42 !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-premium-note-inner{
+  background:linear-gradient(135deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,.18) 48%,rgba(222,247,239,.28) 100%) !important;
+  border:1px solid rgba(255,255,255,.82) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.92),inset 1px 0 0 rgba(255,255,255,.42),inset 0 -1px 0 rgba(255,255,255,.52),0 12px 28px rgba(34,67,54,.12) !important;
+  -webkit-backdrop-filter:none !important;
+  backdrop-filter:none !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-premium-note-inner::before{
+  background:linear-gradient(116deg,rgba(255,255,255,.48) 0%,rgba(255,255,255,.12) 18%,transparent 38%,transparent 72%,rgba(255,255,255,.20) 100%) !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-premium-note-inner::after{
+  box-shadow:inset 0 0 20px rgba(255,255,255,.12),inset 0 12px 20px rgba(255,255,255,.08) !important;
+}
+@media(max-width:640px){
+  main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-premium-note-inner{
+    -webkit-backdrop-filter:none !important;
+    backdrop-filter:none !important;
+  }
+}
