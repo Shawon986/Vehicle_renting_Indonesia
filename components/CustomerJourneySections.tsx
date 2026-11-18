@@ -39,3 +39,77 @@ export function HowItWorksPreview({locale}:{locale:Locale}){
  }[locale];
  return <div className="home-process-preview"><section className="how-intro editorial-content"><div><p className="eyebrow dark-eyebrow"><span>03</span> {copy.eyebrow}</p><h2>{copy.title}</h2></div><p>{copy.intro}</p></section><section className="how-steps editorial-content"><div className="how-step-grid">{copy.steps.map(([number,title,body])=><article className="how-step-card" key={number}><span className="how-step-number">{number}</span><span className="how-step-rule"/><h2>{title}</h2><p>{body}</p></article>)}</div><Link className="text-link dark-link" href={"/"+locale+"/how-it-works"}>{copy.cta}<span className="arrow-up" aria-hidden="true"/></Link></section></div>;
 }
+
+
+const guestReviews = {
+ en: {
+  eyebrow: "GUEST EXPERIENCES",
+  title: "The journey, through their eyes.",
+  intro: "Illustrative sample testimonials showing the kind of service experience we aim to deliver.",
+  notice: "Sample testimonials for design preview only. These are not verified customer reviews.",
+  label: "SAMPLE REVIEW",
+  items: [
+   ["Alex M.","Family journey","Toyota Innova","A comfortable, practical choice for travelling together. The spacious cabin makes longer days on the road feel easier.","Comfort & space"],
+   ["Sophie L.","Group travel","Toyota Hiace","When everyone travels together, space matters. The Hiace is a useful option for keeping a group in one vehicle.","Group comfort"],
+   ["Daniel R.","City travel","Toyota Avanza","A sensible vehicle for getting around the city and moving between stops during a busy day.","Everyday convenience"],
+   ["Maya K.","Modern mobility","BYD M6","A contemporary electric vehicle option for travellers who appreciate a modern cabin and a quieter ride.","Modern experience"],
+   ["Oliver T.","Family holiday","Toyota Innova","Room for the family and the essentials made this feel like a good fit for a relaxed holiday itinerary.","Family-friendly"],
+   ["Isabella C.","Private group","Toyota Hiace Premio","A spacious people-mover is ideal when the trip includes several passengers and luggage.","Space for everyone"],
+   ["Ethan W.","Flexible itinerary","Vehicle with driver","Having the journey arranged around our planned stops is exactly the kind of convenience travellers look for.","Personalised planning"],
+   ["Grace N.","Indonesia visit","Private transport","A clear enquiry process and a vehicle suited to the trip make planning transport feel more straightforward.","Easy planning"]
+  ]
+ },
+ id: {
+  eyebrow: "PENGALAMAN TAMU",
+  title: "Cerita perjalanan dari sudut pandang mereka.",
+  intro: "Contoh testimoni ilustratif yang menggambarkan pengalaman layanan yang ingin kami hadirkan.",
+  notice: "Testimoni contoh hanya untuk pratinjau desain. Ini bukan ulasan pelanggan terverifikasi.",
+  label: "ULASAN CONTOH",
+  items: [
+   ["Alex M.","Perjalanan keluarga","Toyota Innova","Pilihan yang nyaman dan praktis untuk bepergian bersama keluarga. Kabin yang lega membuat perjalanan jauh terasa lebih santai.","Kenyamanan & ruang"],
+   ["Sophie L.","Perjalanan grup","Toyota Hiace","Saat bepergian bersama rombongan, ruang menjadi penting. Hiace cocok untuk membawa grup dalam satu kendaraan.","Kenyamanan grup"],
+   ["Daniel R.","Perjalanan kota","Toyota Avanza","Kendaraan yang praktis untuk berkeliling kota dan berpindah lokasi selama hari yang padat.","Praktis sehari-hari"],
+   ["Maya K.","Mobilitas modern","BYD M6","Pilihan kendaraan listrik modern bagi wisatawan yang menyukai kabin kontemporer dan perjalanan lebih senyap.","Pengalaman modern"],
+   ["Oliver T.","Liburan keluarga","Toyota Innova","Ruang untuk keluarga dan barang bawaan menjadikannya pilihan yang sesuai untuk rencana liburan santai.","Ramah keluarga"],
+   ["Isabella C.","Perjalanan privat","Toyota Hiace Premio","Kendaraan penumpang yang lega ideal untuk perjalanan dengan beberapa penumpang dan bagasi.","Ruang untuk semua"],
+   ["Ethan W.","Rencana fleksibel","Kendaraan dengan pengemudi","Pengaturan perjalanan yang mengikuti titik pemberhentian kami adalah kemudahan yang dicari wisatawan.","Rencana personal"],
+   ["Grace N.","Kunjungan ke Indonesia","Transportasi privat","Proses pertanyaan yang jelas dan kendaraan yang sesuai membuat perencanaan transportasi terasa lebih mudah.","Perencanaan mudah"]
+  ]
+ },
+ zh: {
+  eyebrow: "宾客体验",
+  title: "从旅客的视角，感受每一段旅程。",
+  intro: "以下为示意性评价文案，用于展示我们希望提供的服务体验。",
+  notice: "以下内容仅为设计示例，并非经核实的真实客户评价。",
+  label: "示例评价",
+  items: [
+   ["Alex M.","家庭出行","Toyota Innova","适合全家同行的舒适实用之选。宽敞的车厢让较长时间的旅途更加轻松。","舒适与空间"],
+   ["Sophie L.","团队出行","Toyota Hiace","多人同行时，空间非常重要。Hiace 适合让团队乘坐同一辆车出行。","团队舒适度"],
+   ["Daniel R.","城市出行","Toyota Avanza","适合城市内出行，也方便在忙碌的一天中往返多个地点。","日常便利"],
+   ["Maya K.","现代出行","BYD M6","适合喜欢现代化内饰和更安静驾乘体验的旅客的电动车选择。","现代体验"],
+   ["Oliver T.","家庭假期","Toyota Innova","充足的乘坐与行李空间，让它成为轻松家庭行程的合适选择。","适合家庭"],
+   ["Isabella C.","私人团体","Toyota Hiace Premio","如果同行人数较多且携带行李，宽敞的多人座车辆会更加合适。","宽敞空间"],
+   ["Ethan W.","灵活行程","带司机车辆","根据计划中的停靠地点安排旅程，是旅行者期待的便利体验。","个性化安排"],
+   ["Grace N.","印尼之旅","私人交通","清晰的咨询流程，加上适合行程的车辆，让交通规划更加简单。","轻松规划"]
+  ]
+ }
+} as const;
+
+export function GuestExperiences({locale}:{locale:Locale}){
+ const copy=guestReviews[locale];
+ return <section className="guest-experiences" aria-labelledby="guest-experiences-title">
+  <div className="guest-experiences-heading">
+   <div><p className="eyebrow dark-eyebrow"><span>04</span> {copy.eyebrow}</p><h2 id="guest-experiences-title">{copy.title}</h2><p className="guest-experiences-intro">{copy.intro}</p></div>
+   <span className="guest-experiences-count">08 / EXPERIENCES</span>
+  </div>
+  <div className="guest-review-track" aria-label={copy.eyebrow}>
+   {copy.items.map(([name,trip,vehicle,review,tag],index)=><article className="guest-review-card" key={name}>
+    <div className="guest-review-top"><span className="guest-review-index">0{index+1}</span><span className="guest-review-sample">{copy.label}</span></div>
+    <div className="guest-review-stars" aria-label="Illustrative five-star rating">★★★★★</div>
+    <blockquote>“{review}”</blockquote>
+    <div className="guest-review-bottom"><div><strong>{name}</strong><span>{trip} · {vehicle}</span></div><small>{tag}</small></div>
+   </article>)}
+  </div>
+  <p className="guest-review-disclaimer">{copy.notice}</p>
+ </section>;
+}
