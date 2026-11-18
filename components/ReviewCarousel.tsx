@@ -5,11 +5,9 @@ import {Children, useEffect, useState, type ReactNode} from "react";
 type ReviewCarouselProps = {
   children: ReactNode;
   className?: string;
-  previousLabel: string;
-  nextLabel: string;
 };
 
-export function ReviewCarousel({children,className="",previousLabel,nextLabel}:ReviewCarouselProps) {
+export function ReviewCarousel({children,className=""}:ReviewCarouselProps) {
   const slides=Children.toArray(children);
   const [active,setActive]=useState(0);
   const [paused,setPaused]=useState(false);
@@ -20,19 +18,15 @@ export function ReviewCarousel({children,className="",previousLabel,nextLabel}:R
     return ()=>window.clearInterval(timer);
   },[slides.length,paused]);
 
-  const goTo=(index:number)=>setActive((index+slides.length)%slides.length);
-
-  return <div className={`review-carousel ${className}`} onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)} onFocusCapture={()=>setPaused(true)} onBlurCapture={()=>setPaused(false)}>
-    <div className="review-carousel-stage" aria-live="polite" aria-atomic="true">{slides[active]}</div>
-    {slides.length>1?<div className="review-carousel-controls">
+  return <div className={`review-carousel ${className}`} onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)}>
+    <div className="review-carousel-viewport" aria-live="polite" aria-atomic="true">
+      <div className="review-carousel-track" style={{transform:`translate3d(-${active*100}%,0,0)`}}>
+        {slides.map((slide,index)=><div className="review-carousel-slide" key={index} aria-hidden={index!==active}>{slide}</div>)}
+      </div>
+    </div>
+    {slides.length>1?<div className="review-carousel-controls" aria-hidden="true">
       <span className="review-carousel-position">{String(active+1).padStart(2,"0")} <i/> {String(slides.length).padStart(2,"0")}</span>
-      <div className="review-carousel-dots" role="group" aria-label="Choose a review">
-        {slides.map((_,index)=><button key={index} type="button" className={index===active?"is-active":""} aria-label={`Review ${index+1}`} aria-current={index===active?"true":undefined} onClick={()=>goTo(index)}/>)}
-      </div>
-      <div className="review-carousel-arrows">
-        <button type="button" aria-label={previousLabel} onClick={()=>goTo(active-1)}>←</button>
-        <button type="button" aria-label={nextLabel} onClick={()=>goTo(active+1)}>→</button>
-      </div>
+      <div className="review-carousel-progress"><span style={{width:`${((active+1)/slides.length)*100}%`}}/></div>
     </div>:null}
   </div>;
 }
