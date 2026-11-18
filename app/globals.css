@@ -11430,3 +11430,52 @@ main .vehicle-filter label {
     row-gap: 15px;
   }
 }
+
+
+/* Required privacy consent: keep the checkbox compact and policy link clear. */
+.inquiry-form .privacy-consent,
+.service-inquiry-form .privacy-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  padding: 2px 0;
+  color: #59665d;
+  font-size: 10px;
+  line-height: 1.65;
+}
+.inquiry-form .privacy-consent > input[type="checkbox"],
+.service-inquiry-form .privacy-consent > input[type="checkbox"] {
+  flex: 0 0 16px;
+  width: 16px !important;
+  height: 16px !important;
+  min-height: 16px;
+  margin: 2px 0 0;
+}
+.inquiry-form .privacy-consent-copy,
+.service-inquiry-form .privacy-consent-copy {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.inquiry-form .privacy-consent-copy a,
+.service-inquiry-form .privacy-consent-copy a {
+  color: #314d3c;
+  text-decoration: underline;
+  text-decoration-color: #9ba88c;
+  text-underline-offset: 3px;
+  font-weight: 700;
+}
+.inquiry-form .privacy-consent-copy a:hover,
+.service-inquiry-form .privacy-consent-copy a:hover {
+  color: #9a573e;
+}
+.inquiry-form .privacy-consent .required-field-mark,
+.service-inquiry-form .privacy-consent .required-field-mark {
+  flex: 0 0 auto;
+  margin-left: auto;
+  color: #b64b3d;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.2;
+}
