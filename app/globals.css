@@ -10429,3 +10429,109 @@ main .vehicle-filter label {
 @media(prefers-reduced-motion:reduce){
  .review-carousel-track,.review-carousel-progress>span{transition:none}
 }
+
+/* Review-card footer alignment for the current horizontal carousel markup. */
+.review-carousel-slide .guest-review-bottom {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.25rem;
+  width:100%;
+  min-width:0;
+  margin-top:auto;
+  padding-top:1.15rem;
+}
+.review-carousel-slide .guest-review-author {
+  display:flex;
+  align-items:center;
+  flex:1 1 auto;
+  min-width:0;
+  gap:.85rem;
+}
+.review-carousel-slide .guest-review-avatar {
+  display:grid;
+  place-items:center;
+  flex:0 0 44px;
+  width:44px;
+  height:44px;
+  border:1px solid rgba(169,139,83,.34);
+  border-radius:50%;
+  background:linear-gradient(145deg,#f3eee2,#e4dfd1);
+  color:#75613e;
+  font-family:Georgia,serif;
+  font-size:.85rem;
+  letter-spacing:.04em;
+}
+.review-carousel-slide .guest-review-author>div {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:.25rem;
+  min-width:0;
+}
+.review-carousel-slide .guest-review-bottom strong {
+  display:block;
+  color:#26352c;
+  font-size:.88rem;
+  font-weight:650;
+  line-height:1.3;
+  overflow-wrap:anywhere;
+}
+.review-carousel-slide .guest-review-author span:not(.guest-review-avatar) {
+  display:block;
+  color:#758077;
+  font-size:.7rem;
+  line-height:1.45;
+  overflow-wrap:anywhere;
+}
+.review-carousel-slide .guest-review-bottom small {
+  flex:0 1 155px;
+  max-width:155px;
+  margin-left:auto;
+  color:#806b42;
+  font-size:.66rem;
+  line-height:1.45;
+  text-align:right;
+  overflow-wrap:anywhere;
+}
+@media(max-width:680px) {
+  .review-carousel-slide .guest-review-bottom {
+    align-items:flex-start;
+    gap:.75rem;
+    padding-top:1rem;
+  }
+  .review-carousel-slide .guest-review-author {
+    gap:.65rem;
+  }
+  .review-carousel-slide .guest-review-avatar {
+    flex-basis:38px;
+    width:38px;
+    height:38px;
+    font-size:.76rem;
+  }
+  .review-carousel-slide .guest-review-bottom strong {
+    font-size:.8rem;
+  }
+  .review-carousel-slide .guest-review-author span:not(.guest-review-avatar) {
+    font-size:.64rem;
+  }
+  .review-carousel-slide .guest-review-bottom small {
+    flex-basis:105px;
+    max-width:105px;
+    font-size:.6rem;
+  }
+}
+@media(max-width:390px) {
+  .review-carousel-slide .guest-review-bottom {
+    flex-direction:column;
+    align-items:flex-start;
+    gap:.65rem;
+  }
+  .review-carousel-slide .guest-review-bottom small {
+    flex:0 1 auto;
+    max-width:none;
+    margin-left:calc(38px + .65rem);
+    text-align:left;
+  }
+}
+
