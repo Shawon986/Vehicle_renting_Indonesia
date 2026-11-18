@@ -12625,3 +12625,27 @@ main.inner-page.how-page.how-premium-page > section.how-premium-note .button-lig
   .journey-image{--journey-parallax-y:0px !important}
   .contact-section{--contact-parallax-y:0px !important}
 }
+
+
+/* 05A PERFORMANCE RESET — keep this section static and inexpensive to paint. */
+main.inner-page.how-page.how-premium-page > section.how-premium-note,
+main.inner-page.how-page.how-premium-page > section.how-premium-note *,
+main.inner-page.how-page.how-premium-page > section.how-premium-note *::before,
+main.inner-page.how-page.how-premium-page > section.how-premium-note *::after{
+  animation:none !important;
+  transition:none !important;
+  transform:none !important;
+  filter:none !important;
+  -webkit-filter:none !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+  will-change:auto !important;
+  scroll-behavior:auto !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note{
+  contain:layout paint style;
+  content-visibility:visible;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-premium-note-inner{
+  contain:layout paint style;
+}
