@@ -12241,3 +12241,72 @@ main .vehicle-filter label {
   }
   .how-premium-page section.how-premium-note .button-light{width:100%}
 }
+
+
+/* How It Works: section 06 sits transparently over the section 05 backdrop. */
+.how-premium-page .how-premium-note{
+  padding-bottom:0!important;
+}
+.how-premium-page .how-premium-note > .how-premium-cta{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:clamp(28px,5vw,72px)!important;
+  width:min(100% - 48px,1450px)!important;
+  margin:0 auto!important;
+  padding:clamp(58px,7vw,94px) 0 clamp(72px,8vw,108px)!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+.how-premium-page .how-premium-note > .how-premium-cta > div{
+  max-width:760px!important;
+}
+.how-premium-page .how-premium-note > .how-premium-cta .eyebrow,
+.how-premium-page .how-premium-note > .how-premium-cta h2,
+.how-premium-page .how-premium-note > .how-premium-cta > div > p:last-child{
+  color:#f4efe4!important;
+  -webkit-text-fill-color:#f4efe4!important;
+}
+.how-premium-page .how-premium-note > .how-premium-cta .eyebrow{
+  opacity:.82!important;
+  letter-spacing:.14em!important;
+}
+.how-premium-page .how-premium-note > .how-premium-cta h2{
+  max-width:700px!important;
+  margin-top:18px!important;
+  font-size:clamp(36px,4.5vw,58px)!important;
+  line-height:1.1!important;
+}
+.how-premium-page .how-premium-note > .how-premium-cta > div > p:last-child{
+  max-width:590px!important;
+  margin-top:16px!important;
+  font-size:14px!important;
+  line-height:1.9!important;
+  opacity:.88!important;
+}
+.how-premium-page .how-premium-note > .how-premium-cta > .button{
+  flex:0 0 auto!important;
+  color:#20382b!important;
+  background:#f0e8d7!important;
+  border-color:#f0e8d7!important;
+}
+@media(max-width:640px){
+  .how-premium-page .how-premium-note > .how-premium-cta{
+    width:100%!important;
+    align-items:flex-start!important;
+    flex-direction:column!important;
+    gap:24px!important;
+    padding:52px 22px 64px!important;
+  }
+  .how-premium-page .how-premium-note > .how-premium-cta h2{
+    font-size:clamp(35px,9vw,45px)!important;
+  }
+  .how-premium-page .how-premium-note > .how-premium-cta > div > p:last-child{
+    font-size:13px!important;
+  }
+  .how-premium-page .how-premium-note > .how-premium-cta > .button{
+    width:100%!important;
+  }
+}
