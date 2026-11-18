@@ -11661,3 +11661,16 @@ main .vehicle-filter label {
     line-height: 1.55;
   }
 }
+
+
+/* Vehicle-rental form only: keep the optional updates line at the same 10px size as its required consent line. */
+.inquiry-form:not(.service-inquiry-form) .marketing-consent,
+.inquiry-form:not(.service-inquiry-form) .marketing-consent > span {
+  font-size: 10px !important;
+}
+@media (max-width: 680px) {
+  .inquiry-form:not(.service-inquiry-form) .marketing-consent,
+  .inquiry-form:not(.service-inquiry-form) .marketing-consent > span {
+    font-size: 10px !important;
+  }
+}
