@@ -6,7 +6,7 @@ import {useEffect,useRef} from "react";
 import {Locale} from "@/lib/site-data";
 import {trackEvent} from "@/lib/analytics";
 
-export function ContactChannels({locale,itemTitle,serviceLine="vehicle-rental"}:{locale:Locale;itemTitle?:string;serviceLine?:string}){
+export function ContactChannels({locale,itemTitle,serviceLine="vehicle-rental"}:{locale:Locale;itemTitle?:string;serviceLine?:string;primaryOnly?:boolean}){
  const path=usePathname();
  const wechatRef=useRef<HTMLDivElement>(null);
  const number=(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"6287811887555").replace(/[^0-9]/g,"");
@@ -31,6 +31,7 @@ export function ContactChannels({locale,itemTitle,serviceLine="vehicle-rental"}:
  const phoneLink=phone?<a className="contact-channel-link" href={"tel:"+phone} onClick={()=>trackEvent("phone_click",{page:path,locale})}>{labels.phone}<span className="ui-arrow" aria-hidden="true" /></a>:null;
  const emailLink=email?<a className="contact-channel-link" href={"mailto:"+email} onClick={()=>trackEvent("email_click",{page:path,locale})}>{labels.email}<span className="ui-arrow" aria-hidden="true" /></a>:null;
  const wechat=<div ref={wechatRef} className="wechat-contact"><div className="contact-channel-copy"><span className="eyebrow dark-eyebrow">WECHAT · 微信</span><h3>{labels.wechat}</h3><p>{wechatInstruction}</p>{wechatId?<div className="wechat-id-row"><strong>{wechatId}</strong><button type="button" onClick={()=>copy(wechatId)}>{labels.copy}</button><button type="button" onClick={()=>copy(message,"wechat_message_copied")}>{locale==="zh"?"复制咨询内容":locale==="id"?"Salin pesan pertanyaan":"Copy enquiry message"}</button></div>:null}</div>{qr?<a className="wechat-qr" href={qr} target="_blank" rel="noreferrer" onClick={()=>trackEvent("wechat_qr_saved",{page:path,item_ref:itemTitle||"vehicle-rental"})} aria-label={labels.qr}><Image src={qr} alt={labels.qr} width={144} height={144} unoptimized/></a>:null}</div>;
+ if(primaryOnly)return <div className="contact-channels contact-channels-primary">{whatsapp}{form}</div>;
  return <div className={"contact-channels contact-channels-"+locale}>
   {locale==="zh"?<>{wechat}{form}{phoneLink}{whatsapp}{emailLink}</>:locale==="id"?<>{whatsapp}{phoneLink}{form}{emailLink}</>:<>{whatsapp}{form}{emailLink}{phoneLink}</>}
  </div>;
