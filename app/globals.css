@@ -13228,3 +13228,9 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
     background:rgba(231,235,227,.88)!important;
   }
 }
+
+
+/* Footer WeChat label and instruction spacing */
+.footer-wechat-copy{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:10px;row-gap:5px;min-width:0}
+.footer-wechat-copy>strong{font-size:12px;line-height:1.5;letter-spacing:.04em}
+.footer-wechat-copy>span{font-size:10px;line-height:1.6;color:#9db8c9}
