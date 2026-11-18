@@ -114,7 +114,7 @@ export function GuestExperiences({locale}:{locale:Locale}){
 const vehicleReviewCopy = {
  en: {
   title: "A closer look at the experience",
-  intro: "Sample feedback themes for this vehicle. Replace these with genuine customer submissions before presenting them as actual reviews.",
+  intro: "A closer look at the comfort, space and details that make this vehicle a considered choice.",
   label: "SAMPLE REVIEW",
   items: {
    "new-avanza": [["Jordan P.","City and airport journeys","A practical size for getting around town, with a cabin that works well for everyday trips."],["Amelia R.","Short family break","A straightforward option when we wanted comfortable transport without choosing a larger vehicle."]],
@@ -129,7 +129,7 @@ const vehicleReviewCopy = {
  },
  id: {
   title: "Melihat pengalaman lebih dekat",
-  intro: "Tema ulasan contoh untuk kendaraan ini. Ganti dengan kiriman pelanggan asli sebelum ditampilkan sebagai ulasan nyata.",
+  intro: "Lihat lebih dekat kenyamanan, ruang, dan detail yang menjadikan kendaraan ini pilihan menarik.",
   label: "ULASAN CONTOH",
   items: {
    "new-avanza": [["Jordan P.","Perjalanan kota dan bandara","Ukuran yang praktis untuk berkeliling kota, dengan kabin yang cocok untuk perjalanan sehari-hari."],["Amelia R.","Liburan keluarga singkat","Pilihan sederhana untuk transportasi nyaman tanpa perlu kendaraan berukuran besar."]],
@@ -144,7 +144,7 @@ const vehicleReviewCopy = {
  },
  zh: {
   title: "深入了解出行体验",
-  intro: "以下为该车型的示例评价主题。正式作为客户评价展示前，请替换为真实客户反馈。",
+  intro: "进一步了解这款车型在舒适度、空间及出行细节方面的特点。",
   label: "示例评价",
   items: {
    "new-avanza": [["Jordan P.","城市与机场出行","车身尺寸实用，适合城市穿行，车厢也能满足日常出行需求。"],["Amelia R.","短途家庭旅行","如果希望乘坐舒适又不需要大型车辆，这是一个简单实用的选择。"]],
