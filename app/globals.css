@@ -13201,3 +13201,30 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
     background:rgba(255,255,255,.78)!important;
   }
 }
+
+
+/* ABOUT / SECTION 05 — muted off-white backdrop */
+.about-brand-company.about-brand-company-premium{
+  background:
+    radial-gradient(ellipse at 82% 12%,rgba(255,255,255,.52),transparent 38%),
+    radial-gradient(ellipse at 8% 92%,rgba(193,202,190,.34),transparent 36%),
+    linear-gradient(130deg,#d9ded7 0%,#e4e6df 52%,#d5dbd3 100%)!important;
+}
+.about-brand-company.about-brand-company-premium .about-company-shell{
+  background:rgba(247,248,243,.78)!important;
+  border-color:rgba(255,255,255,.9)!important;
+  box-shadow:0 22px 58px rgba(49,61,52,.12),inset 0 1px 0 rgba(255,255,255,.96)!important;
+}
+.about-brand-company.about-brand-company-premium .about-company-identity{
+  background:rgba(231,235,227,.82)!important;
+  border-color:rgba(255,255,255,.92)!important;
+  box-shadow:0 12px 30px rgba(49,61,52,.09),inset 0 1px 0 rgba(255,255,255,.95)!important;
+}
+@media(max-width:680px){
+  .about-brand-company.about-brand-company-premium .about-company-shell{
+    background:rgba(247,248,243,.84)!important;
+  }
+  .about-brand-company.about-brand-company-premium .about-company-identity{
+    background:rgba(231,235,227,.88)!important;
+  }
+}
