@@ -10711,3 +10711,10 @@ main .vehicle-filter label {
   .vehicle-guidance>div:not(.vehicle-coverage) {grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
+/* Consistent required-field indicator across every enquiry form. */
+.inquiry-form label:has(:required)::before {
+  content: "* ";
+  color: #b64b3d;
+  font-size: 1.05em;
+  font-weight: 800;
+}
