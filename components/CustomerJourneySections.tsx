@@ -153,7 +153,7 @@ export function VehicleGuestReviews({locale,vehicleSlug}:{locale:Locale;vehicleS
  if(!items.length)return null;
  return <section className="vehicle-guest-reviews" aria-labelledby="vehicle-guest-reviews-title">
   <div className="vehicle-guest-reviews-heading">
-   <div><p className="eyebrow dark-eyebrow"><span>03</span> {locale==="zh"?"宾客体验":locale==="id"?"PENGALAMAN TAMU":"GUEST EXPERIENCES"}</p><h2 id="vehicle-guest-reviews-title">{copy.title}</h2><p>{copy.intro}</p></div>
+   <div><p className="eyebrow dark-eyebrow"><span>01</span> {locale==="zh"?"宾客体验":locale==="id"?"PENGALAMAN TAMU":"GUEST EXPERIENCES"}</p><h2 id="vehicle-guest-reviews-title">{copy.title}</h2><p>{copy.intro}</p></div>
    <span className="guest-experiences-count">VARIED / EXPERIENCES</span>
   </div>
   <ReviewCarousel className="vehicle-review-carousel">
