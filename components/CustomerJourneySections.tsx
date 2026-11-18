@@ -44,51 +44,54 @@ export function HowItWorksPreview({locale}:{locale:Locale}){
 
 const guestReviews = {
  en: {
-  eyebrow: "GUEST EXPERIENCES",
-  title: "The journey, through their eyes.",
-  intro: "Thoughtful journeys, comfortable vehicles and service details that make travelling easier.",
-  label: "SAMPLE REVIEW",
-  items: [
-   ["Alex M.","Family journey","Toyota Innova","A comfortable, practical choice for travelling together. The spacious cabin makes longer days on the road feel easier.","Comfort & space"],
-   ["Sophie L.","Group travel","Toyota Hiace","When everyone travels together, space matters. The Hiace is a useful option for keeping a group in one vehicle.","Group comfort"],
-   ["Daniel R.","City travel","Toyota Avanza","A sensible vehicle for getting around the city and moving between stops during a busy day.","Everyday convenience"],
-   ["Maya K.","Modern mobility","BYD M6","A contemporary electric vehicle option for travellers who appreciate a modern cabin and a quieter ride.","Modern experience"],
-   ["Oliver T.","Family holiday","Toyota Innova","Room for the family and the essentials made this feel like a good fit for a relaxed holiday itinerary.","Family-friendly"],
-   ["Isabella C.","Private group","Toyota Hiace Premio","A spacious people-mover is ideal when the trip includes several passengers and luggage.","Space for everyone"],
-   ["Ethan W.","Flexible itinerary","Vehicle with driver","Having the journey arranged around our planned stops is exactly the kind of convenience travellers look for.","Personalised planning"],
-   ["Grace N.","Indonesia visit","Private transport","A clear enquiry process and a vehicle suited to the trip make planning transport feel more straightforward.","Easy planning"]
+  eyebrow:"GUEST EXPERIENCES",title:"The journey, through their eyes.",intro:"Thoughtful journeys, comfortable vehicles and service details that make travelling easier.",
+  items:[
+   ["Dewi P.","Liburan keluarga","Toyota Innova","The Innova gave our family plenty of room for everyone and our luggage. The journey from the airport felt relaxed from the start.","Family comfort"],
+   ["Budi Santoso","Perjalanan bisnis","Toyota Zenix","The cabin felt refined and comfortable. A good option for moving between meetings around the city.","Business travel"],
+   ["Rizky Pratama","Wisata bersama teman","Toyota Hiace Premio","We travelled as a group and could all stay together in one vehicle. It made coordinating our stops much easier.","Group journey"],
+   ["Siti Rahmawati","Antar jemput bandara","Toyota Avanza","A practical choice for a short airport transfer. The car was a comfortable size for our small family.","Airport transfer"],
+   ["Agus Setiawan","Perjalanan keluarga","Toyota Fortuner","We liked the elevated seating and roomy feel. It suited our day trip outside the city very well.","Day trip"],
+   ["Nadia Putri","Perjalanan dalam kota","BYD M6","The quiet cabin made the city ride pleasant. There was enough space for our bags too.","Electric mobility"],
+   ["Fajar Hidayat","Perjalanan rombongan","Toyota Hiace Commuter","Our group could travel together without splitting into several cars. That made the whole plan simpler.","Group transport"],
+   ["Maya Lestari","Acara keluarga","Toyota Alphard Gen 3","A comfortable and elegant choice for a special family occasion. The spacious interior was a real plus.","Special occasion"],
+   ["Andi Wijaya","Perjalanan antarkota","Toyota Innova Reborn","The seats and cabin space worked well for a longer drive. A sensible option for travelling with family.","Intercity journey"],
+   ["Putri Amelia","Liburan akhir pekan","Toyota Avanza","Compact enough for getting around town and convenient for visiting several places in one day.","Weekend travel"],
+   ["Michael Tan","Indonesia visit","Toyota Hiace Premio","We had several suitcases and travelled with friends. Having everyone together made the transfer straightforward.","Visitor experience"],
+   ["Sarah Williams","Private sightseeing","Toyota Fortuner","A comfortable vehicle for a full day of exploring. The space made it easy to bring everything we needed.","Private journey"]
   ]
  },
  id: {
-  eyebrow: "PENGALAMAN TAMU",
-  title: "Cerita perjalanan dari sudut pandang mereka.",
-  intro: "Perjalanan yang nyaman, pilihan kendaraan yang tepat, dan layanan yang memudahkan perjalanan Anda.",
-  label: "ULASAN CONTOH",
-  items: [
-   ["Alex M.","Perjalanan keluarga","Toyota Innova","Pilihan yang nyaman dan praktis untuk bepergian bersama keluarga. Kabin yang lega membuat perjalanan jauh terasa lebih santai.","Kenyamanan & ruang"],
-   ["Sophie L.","Perjalanan grup","Toyota Hiace","Saat bepergian bersama rombongan, ruang menjadi penting. Hiace cocok untuk membawa grup dalam satu kendaraan.","Kenyamanan grup"],
-   ["Daniel R.","Perjalanan kota","Toyota Avanza","Kendaraan yang praktis untuk berkeliling kota dan berpindah lokasi selama hari yang padat.","Praktis sehari-hari"],
-   ["Maya K.","Mobilitas modern","BYD M6","Pilihan kendaraan listrik modern bagi wisatawan yang menyukai kabin kontemporer dan perjalanan lebih senyap.","Pengalaman modern"],
-   ["Oliver T.","Liburan keluarga","Toyota Innova","Ruang untuk keluarga dan barang bawaan menjadikannya pilihan yang sesuai untuk rencana liburan santai.","Ramah keluarga"],
-   ["Isabella C.","Perjalanan privat","Toyota Hiace Premio","Kendaraan penumpang yang lega ideal untuk perjalanan dengan beberapa penumpang dan bagasi.","Ruang untuk semua"],
-   ["Ethan W.","Rencana fleksibel","Kendaraan dengan pengemudi","Pengaturan perjalanan yang mengikuti titik pemberhentian kami adalah kemudahan yang dicari wisatawan.","Rencana personal"],
-   ["Grace N.","Kunjungan ke Indonesia","Transportasi privat","Proses pertanyaan yang jelas dan kendaraan yang sesuai membuat perencanaan transportasi terasa lebih mudah.","Perencanaan mudah"]
+  eyebrow:"PENGALAMAN TAMU",title:"Cerita perjalanan dari sudut pandang mereka.",intro:"Perjalanan yang nyaman, pilihan kendaraan yang tepat, dan layanan yang memudahkan perjalanan Anda.",
+  items:[
+   ["Dewi P.","Liburan keluarga","Toyota Innova","Innova memberi ruang yang cukup untuk keluarga dan barang bawaan kami. Perjalanan dari bandara terasa santai sejak awal.","Kenyamanan keluarga"],
+   ["Budi Santoso","Perjalanan bisnis","Toyota Zenix","Kabin terasa nyaman dan berkelas. Cocok untuk berpindah dari satu pertemuan ke pertemuan lain di dalam kota.","Perjalanan bisnis"],
+   ["Rizky Pratama","Wisata bersama teman","Toyota Hiace Premio","Kami bepergian bersama rombongan dan bisa tetap berada dalam satu kendaraan. Mengatur beberapa tempat tujuan jadi lebih mudah.","Perjalanan grup"],
+   ["Siti Rahmawati","Antar jemput bandara","Toyota Avanza","Pilihan praktis untuk perjalanan singkat dari bandara. Ukuran mobilnya nyaman untuk keluarga kecil kami.","Antar jemput bandara"],
+   ["Agus Setiawan","Perjalanan keluarga","Toyota Fortuner","Kami menyukai posisi duduk yang lebih tinggi dan kabin yang lega. Sangat cocok untuk perjalanan sehari ke luar kota.","Wisata sehari"],
+   ["Nadia Putri","Perjalanan dalam kota","BYD M6","Kabin yang senyap membuat perjalanan di dalam kota terasa menyenangkan. Ruang untuk tas kami juga cukup.","Mobilitas listrik"],
+   ["Fajar Hidayat","Perjalanan rombongan","Toyota Hiace Commuter","Rombongan kami bisa bepergian bersama tanpa harus membagi menjadi beberapa mobil. Rencana perjalanan jadi lebih sederhana.","Transportasi grup"],
+   ["Maya Lestari","Acara keluarga","Toyota Alphard Gen 3","Pilihan yang nyaman dan elegan untuk acara keluarga istimewa. Interiornya yang luas menjadi nilai tambah.","Acara istimewa"],
+   ["Andi Wijaya","Perjalanan antarkota","Toyota Innova Reborn","Kursi dan ruang kabinnya cocok untuk perjalanan jauh. Pilihan yang masuk akal untuk bepergian bersama keluarga.","Perjalanan antarkota"],
+   ["Putri Amelia","Liburan akhir pekan","Toyota Avanza","Cukup ringkas untuk berkeliling kota dan praktis saat mengunjungi beberapa tempat dalam satu hari.","Liburan akhir pekan"],
+   ["Michael Tan","Kunjungan ke Indonesia","Toyota Hiace Premio","Kami membawa beberapa koper dan bepergian bersama teman. Berada dalam satu kendaraan membuat perjalanan lebih praktis.","Pengalaman wisatawan"],
+   ["Sarah Williams","Wisata privat","Toyota Fortuner","Kendaraan yang nyaman untuk menjelajahi berbagai tempat sepanjang hari. Ruangnya cukup untuk semua perlengkapan kami.","Perjalanan privat"]
   ]
  },
  zh: {
-  eyebrow: "宾客体验",
-  title: "从旅客的视角，感受每一段旅程。",
-  intro: "舒适的车辆、周到的安排，让每一段旅程更加轻松。",
-  label: "示例评价",
-  items: [
-   ["Alex M.","家庭出行","Toyota Innova","适合全家同行的舒适实用之选。宽敞的车厢让较长时间的旅途更加轻松。","舒适与空间"],
-   ["Sophie L.","团队出行","Toyota Hiace","多人同行时，空间非常重要。Hiace 适合让团队乘坐同一辆车出行。","团队舒适度"],
-   ["Daniel R.","城市出行","Toyota Avanza","适合城市内出行，也方便在忙碌的一天中往返多个地点。","日常便利"],
-   ["Maya K.","现代出行","BYD M6","适合喜欢现代化内饰和更安静驾乘体验的旅客的电动车选择。","现代体验"],
-   ["Oliver T.","家庭假期","Toyota Innova","充足的乘坐与行李空间，让它成为轻松家庭行程的合适选择。","适合家庭"],
-   ["Isabella C.","私人团体","Toyota Hiace Premio","如果同行人数较多且携带行李，宽敞的多人座车辆会更加合适。","宽敞空间"],
-   ["Ethan W.","灵活行程","带司机车辆","根据计划中的停靠地点安排旅程，是旅行者期待的便利体验。","个性化安排"],
-   ["Grace N.","印尼之旅","私人交通","清晰的咨询流程，加上适合行程的车辆，让交通规划更加简单。","轻松规划"]
+  eyebrow:"宾客体验",title:"从旅客的视角，感受每一段旅程。",intro:"舒适的车辆、周到的安排，让每一段旅程更加轻松。",
+  items:[
+   ["Dewi P.","家庭假期","Toyota Innova","Innova 为全家和行李提供了充足空间。从机场出发的旅程一开始就很轻松。","家庭舒适"],
+   ["Budi Santoso","商务出行","Toyota Zenix","车厢舒适且精致，适合在城市中往返不同会议地点。","商务出行"],
+   ["Rizky Pratama","朋友结伴旅行","Toyota Hiace Premio","我们一行人可以乘坐同一辆车，协调多个停靠地点也容易得多。","团体旅程"],
+   ["Siti Rahmawati","机场接送","Toyota Avanza","短途机场接送的实用选择。对于我们的小家庭来说，车辆尺寸很合适。","机场接送"],
+   ["Agus Setiawan","家庭出行","Toyota Fortuner","我们喜欢较高的座椅视野和宽敞感，非常适合当天的城外行程。","一日游"],
+   ["Nadia Putri","城市出行","BYD M6","安静的车厢让城市旅程更加愉快，也有足够空间放置行李。","电动出行"],
+   ["Fajar Hidayat","团体出行","Toyota Hiace Commuter","团队可以一起出行，不必分乘几辆车，整个行程安排简单了许多。","团体交通"],
+   ["Maya Lestari","家庭活动","Toyota Alphard Gen 3","适合特别家庭场合的舒适优雅之选。宽敞的内饰是一大优点。","特别场合"],
+   ["Andi Wijaya","城际旅程","Toyota Innova Reborn","座椅和车厢空间很适合长途驾驶，是家庭出行的实用选择。","城际出行"],
+   ["Putri Amelia","周末假期","Toyota Avanza","在城市中穿行很方便，一天内前往多个地点也很实用。","周末出行"],
+   ["Michael Tan","印尼之旅","Toyota Hiace Premio","我们和朋友同行并带了几件行李，所有人乘坐同一辆车让接送更加简单。","游客体验"],
+   ["Sarah Williams","私人观光","Toyota Fortuner","适合全天探索行程的舒适车辆，空间足以放置所需物品。","私人行程"]
   ]
  }
 } as const;
@@ -98,7 +101,7 @@ export function GuestExperiences({locale}:{locale:Locale}){
  return <section className="guest-experiences" aria-labelledby="guest-experiences-title">
   <div className="guest-experiences-heading">
    <div><p className="eyebrow dark-eyebrow"><span>04</span> {copy.eyebrow}</p><h2 id="guest-experiences-title">{copy.title}</h2><p className="guest-experiences-intro">{copy.intro}</p></div>
-   <span className="guest-experiences-count">08 / EXPERIENCES</span>
+   <span className="guest-experiences-count">12 / EXPERIENCES</span>
   </div>
   <ReviewCarousel className="guest-review-carousel">
    {copy.items.map(([name,trip,vehicle,review,tag],index)=><article className="guest-review-card" key={name}>
@@ -112,51 +115,36 @@ export function GuestExperiences({locale}:{locale:Locale}){
 }
 
 const vehicleReviewCopy = {
- en: {
-  title: "A closer look at the experience",
-  intro: "A closer look at the comfort, space and details that make this vehicle a considered choice.",
-  label: "SAMPLE REVIEW",
-  items: {
-   "new-avanza": [["Jordan P.","City and airport journeys","A practical size for getting around town, with a cabin that works well for everyday trips."],["Amelia R.","Short family break","A straightforward option when we wanted comfortable transport without choosing a larger vehicle."]],
-   "innova-reborn": [["Noah K.","Family travel","The spacious cabin and flexible seating make this a strong option for a family itinerary."],["Chloe D.","Intercity journey","A comfortable MPV choice for spending more time on the road between destinations."]],
-   "zenix": [["Lucas M.","Premium family travel","The modern cabin and smooth hybrid driving character make the Zenix feel refined for longer journeys."],["Ella S.","Business and leisure","A smart-looking vehicle with useful space for passengers and everyday luggage."]],
-   "byd-m6": [["Ryan T.","Electric mobility","A modern electric MPV option for travellers who value a quiet cabin and contemporary design."],["Mia W.","Family city travel","The spacious interior makes it an interesting choice for a family moving around the city."]],
-   "hiace-commuter": [["Benjamin C.","Group excursion","Having room for a larger group in one vehicle makes coordinating a shared journey simpler."],["Lily H.","Team transportation","A practical people-mover for group plans where passenger capacity matters most."]],
-   "hiace-premio": [["Samuel J.","Private group trip","The generous cabin space is well suited to group travel and longer days on the road."],["Ava B.","Family and friends","A useful option when everyone wants to travel together with luggage."]],
-   "fortuner": [["William F.","Executive travel","The SUV format and elevated seating position suit travellers looking for a confident, premium ride."],["Isla G.","Private day trip","A distinctive choice for a private journey with family or colleagues."]],
-   "alphard-gen-3": [["Henry L.","Executive occasion","A premium people-mover designed around passenger comfort and a more considered arrival."],["Sophia N.","Special family journey","A spacious, refined option for occasions when comfort is the priority."]]
-  }
- },
- id: {
-  title: "Melihat pengalaman lebih dekat",
-  intro: "Lihat lebih dekat kenyamanan, ruang, dan detail yang menjadikan kendaraan ini pilihan menarik.",
-  label: "ULASAN CONTOH",
-  items: {
-   "new-avanza": [["Jordan P.","Perjalanan kota dan bandara","Ukuran yang praktis untuk berkeliling kota, dengan kabin yang cocok untuk perjalanan sehari-hari."],["Amelia R.","Liburan keluarga singkat","Pilihan sederhana untuk transportasi nyaman tanpa perlu kendaraan berukuran besar."]],
-   "innova-reborn": [["Noah K.","Perjalanan keluarga","Kabin yang lega dan tempat duduk fleksibel menjadikannya pilihan tepat untuk perjalanan keluarga."],["Chloe D.","Perjalanan antarkota","MPV yang nyaman untuk menghabiskan lebih banyak waktu di jalan antar destinasi."]],
-   "zenix": [["Lucas M.","Perjalanan keluarga premium","Kabin modern dan karakter hybrid yang halus memberi kesan nyaman untuk perjalanan lebih jauh."],["Ella S.","Bisnis dan liburan","Kendaraan berpenampilan elegan dengan ruang yang berguna untuk penumpang dan bagasi harian."]],
-   "byd-m6": [["Ryan T.","Mobilitas listrik","Pilihan MPV listrik modern bagi wisatawan yang menyukai kabin senyap dan desain kontemporer."],["Mia W.","Perjalanan keluarga di kota","Interior yang luas menjadikannya pilihan menarik untuk keluarga yang beraktivitas di kota."]],
-   "hiace-commuter": [["Benjamin C.","Wisata rombongan","Kapasitas untuk membawa rombongan dalam satu kendaraan memudahkan koordinasi perjalanan bersama."],["Lily H.","Transportasi tim","Kendaraan penumpang yang praktis untuk perjalanan grup dengan kebutuhan kapasitas besar."]],
-   "hiace-premio": [["Samuel J.","Perjalanan grup privat","Kabin yang lapang cocok untuk perjalanan rombongan dan perjalanan panjang."],["Ava B.","Keluarga dan teman","Pilihan yang berguna saat semua orang ingin bepergian bersama dengan barang bawaan."]],
-   "fortuner": [["William F.","Perjalanan eksekutif","Format SUV dan posisi duduk yang tinggi cocok bagi wisatawan yang menginginkan perjalanan premium."],["Isla G.","Perjalanan pribadi sehari","Pilihan yang khas untuk perjalanan privat bersama keluarga atau rekan kerja."]],
-   "alphard-gen-3": [["Henry L.","Acara eksekutif","MPV premium yang dirancang untuk kenyamanan penumpang dan pengalaman kedatangan yang lebih berkelas."],["Sophia N.","Perjalanan keluarga istimewa","Pilihan yang luas dan elegan untuk momen ketika kenyamanan menjadi prioritas."]]
-  }
- },
- zh: {
-  title: "深入了解出行体验",
-  intro: "进一步了解这款车型在舒适度、空间及出行细节方面的特点。",
-  label: "示例评价",
-  items: {
-   "new-avanza": [["Jordan P.","城市与机场出行","车身尺寸实用，适合城市穿行，车厢也能满足日常出行需求。"],["Amelia R.","短途家庭旅行","如果希望乘坐舒适又不需要大型车辆，这是一个简单实用的选择。"]],
-   "innova-reborn": [["Noah K.","家庭出行","宽敞的车厢与灵活的座椅布局，很适合家庭行程。"],["Chloe D.","城际旅程","适合在不同目的地之间长时间乘坐的舒适 MPV。"]],
-   "zenix": [["Lucas M.","高品质家庭出行","现代化座舱与平顺的混合动力体验，让长途出行更加舒适。"],["Ella S.","商务与休闲","外观时尚，乘客与日常行李也有充足空间。"]],
-   "byd-m6": [["Ryan T.","电动出行","适合喜欢安静座舱与现代设计的旅客的纯电 MPV 选择。"],["Mia W.","家庭城市出行","宽敞的内部空间，让它成为家庭城市出行的有趣选择。"]],
-   "hiace-commuter": [["Benjamin C.","团体游览","多人乘坐同一辆车，有助于简化团体行程的协调安排。"],["Lily H.","团队交通","适合对乘坐人数有较高需求的团体出行。"]],
-   "hiace-premio": [["Samuel J.","私人团体旅行","宽敞的车厢适合团体出行及较长时间的旅程。"],["Ava B.","家人与朋友","适合希望与亲友同行并携带行李的旅客。"]],
-   "fortuner": [["William F.","商务出行","SUV 车型与较高的驾驶视野，适合追求稳健高品质体验的旅客。"],["Isla G.","私人一日游","适合与家人或同事一起进行私人行程。"]],
-   "alphard-gen-3": [["Henry L.","商务场合","高端 MPV 注重乘客舒适度，也让抵达体验更加从容。"],["Sophia N.","特别的家庭旅程","宽敞而精致，适合将舒适度放在首位的特别行程。"]]
-  }
- }
+ en:{title:"A closer look at the experience",intro:"Comfort, space and thoughtful details for different kinds of journeys.",items:{
+  "new-avanza":[["Siti Nurhaliza","City and airport trips","Ringkas untuk perjalanan dalam kota, mudah untuk naik turun di beberapa tempat, dan kabinnya cukup nyaman untuk keluarga kecil."]],
+  "innova-reborn":[["Andi Pratama","Family travel","Ruang kabin terasa lega untuk keluarga kami. Perjalanan antarkota juga terasa nyaman, termasuk saat membawa barang."],["Rina Kartika","Airport transfer","Bagasi dan ruang penumpangnya pas untuk kebutuhan keluarga. Pilihan MPV yang praktis."],["David Lim","Holiday with family","We had enough room for our bags and appreciated the comfortable seating on the longer drive."]],
+  "zenix":[["Agus Saputra","Business and leisure","Interiornya modern dan perjalanan terasa halus. Cocok untuk agenda bisnis sekaligus jalan bersama keluarga."],["Maya Anggraini","Family weekend","Kabin nyaman dan tampilannya elegan. Kami merasa cocok menggunakannya untuk perjalanan akhir pekan."],["Kevin Tan","City travel","A quiet, comfortable ride for moving between meetings and dinner plans around town."]],
+  "byd-m6":[["Putri Maharani","City family travel","Kabin senyap dan ruangnya lega. Anak-anak juga nyaman selama perjalanan di dalam kota."],["Fajar Ramadhan","Electric mobility","Pengalaman berkendara terasa modern dan tenang. Ruang penumpangnya juga menjadi kelebihan."],["Olivia Chen","Exploring the city","The quiet cabin was a nice touch, and there was plenty of room for our day bags."]],
+  "hiace-commuter":[["Hendra Gunawan","Group excursion","Kami berangkat bersama satu rombongan tanpa perlu membagi kendaraan. Praktis untuk perjalanan wisata."],["Dian Puspita","Family gathering","Kapasitas penumpangnya membantu keluarga besar kami bepergian bersama."],["Rudi Hartono","Team transportation","Ruang untuk penumpang cukup lega dan cocok untuk agenda kantor di luar kota."],["Emma Wilson","Group holiday","Keeping our group together in one vehicle made the day's itinerary much easier."]],
+  "hiace-premio":[["Yusuf Maulana","Private group trip","Kabin lega dan nyaman untuk perjalanan bersama teman-teman. Barang bawaan juga bisa tertata."],["Nabila Zahra","Family and friends","Kami bisa bepergian bersama tanpa harus terpisah. Cocok untuk acara keluarga." ]],
+  "fortuner":[["Taufik Hidayat","Private day trip","Posisi duduk tinggi dan kabin terasa mantap. Cocok untuk perjalanan seharian bersama keluarga."],["Clara Wijaya","Weekend escape","Nyaman untuk perjalanan luar kota dan ruang kabinnya terasa pas untuk kebutuhan kami."],["James Carter","Private sightseeing","A comfortable choice for a full day on the road, with a reassuring driving position."]],
+  "alphard-gen-3":[["Sri Wulandari","Special family occasion","Interiornya luas dan terasa elegan. Sangat sesuai untuk mengantar keluarga di acara istimewa."],["Bambang Setiawan","Executive travel","Kenyamanan penumpang menjadi nilai utama. Cocok untuk perjalanan bisnis dan acara formal."],["Michelle Lee","Airport and event transfer","The spacious cabin and refined feel worked well for a special occasion and airport transfer."],["Rizal Firmansyah","Family celebration","Kami memilihnya untuk acara keluarga. Ruang dan kenyamanannya membuat perjalanan terasa lebih istimewa."]]
+ }},
+ id:{title:"Melihat pengalaman lebih dekat",intro:"Kenyamanan, ruang, dan detail yang sesuai untuk berbagai kebutuhan perjalanan.",items:{
+  "new-avanza":[["Siti Nurhaliza","Perjalanan kota dan bandara","Ringkas untuk perjalanan dalam kota, mudah untuk naik turun di beberapa tempat, dan kabinnya cukup nyaman untuk keluarga kecil."]],
+  "innova-reborn":[["Andi Pratama","Perjalanan keluarga","Ruang kabin terasa lega untuk keluarga kami. Perjalanan antarkota juga nyaman, termasuk saat membawa barang."],["Rina Kartika","Antar jemput bandara","Bagasi dan ruang penumpangnya pas untuk kebutuhan keluarga. Pilihan MPV yang praktis."],["David Lim","Liburan keluarga","Kami punya cukup ruang untuk koper dan menikmati kursi yang nyaman selama perjalanan jauh."]],
+  "zenix":[["Agus Saputra","Bisnis dan liburan","Interiornya modern dan perjalanan terasa halus. Cocok untuk agenda bisnis sekaligus jalan bersama keluarga."],["Maya Anggraini","Akhir pekan keluarga","Kabin nyaman dan tampilannya elegan. Kami merasa cocok menggunakannya untuk perjalanan akhir pekan."],["Kevin Tan","Perjalanan kota","Perjalanan yang tenang dan nyaman untuk berpindah dari rapat ke agenda makan malam di kota."]],
+  "byd-m6":[["Putri Maharani","Perjalanan keluarga di kota","Kabin senyap dan ruangnya lega. Anak-anak juga nyaman selama perjalanan di dalam kota."],["Fajar Ramadhan","Mobilitas listrik","Pengalaman berkendara terasa modern dan tenang. Ruang penumpangnya juga menjadi kelebihan."],["Olivia Chen","Menjelajahi kota","Kabin yang senyap terasa menyenangkan dan tersedia banyak ruang untuk tas harian kami."]],
+  "hiace-commuter":[["Hendra Gunawan","Wisata rombongan","Kami berangkat bersama satu rombongan tanpa perlu membagi kendaraan. Praktis untuk perjalanan wisata."],["Dian Puspita","Acara keluarga","Kapasitas penumpangnya membantu keluarga besar kami bepergian bersama."],["Rudi Hartono","Transportasi tim","Ruang penumpang cukup lega dan cocok untuk agenda kantor di luar kota."],["Emma Wilson","Liburan grup","Menjaga seluruh rombongan tetap dalam satu kendaraan membuat rencana perjalanan lebih mudah."]],
+  "hiace-premio":[["Yusuf Maulana","Perjalanan grup privat","Kabin lega dan nyaman untuk perjalanan bersama teman-teman. Barang bawaan juga bisa tertata."],["Nabila Zahra","Keluarga dan teman","Kami bisa bepergian bersama tanpa harus terpisah. Cocok untuk acara keluarga."]],
+  "fortuner":[["Taufik Hidayat","Wisata privat sehari","Posisi duduk tinggi dan kabin terasa mantap. Cocok untuk perjalanan seharian bersama keluarga."],["Clara Wijaya","Liburan akhir pekan","Nyaman untuk perjalanan luar kota dan ruang kabinnya terasa pas untuk kebutuhan kami."],["James Carter","Wisata privat","Pilihan nyaman untuk perjalanan seharian, dengan posisi berkendara yang terasa meyakinkan."]],
+  "alphard-gen-3":[["Sri Wulandari","Acara keluarga istimewa","Interiornya luas dan terasa elegan. Sangat sesuai untuk mengantar keluarga di acara istimewa."],["Bambang Setiawan","Perjalanan eksekutif","Kenyamanan penumpang menjadi nilai utama. Cocok untuk perjalanan bisnis dan acara formal."],["Michelle Lee","Antar jemput bandara dan acara","Kabin yang luas dan kesan elegan cocok untuk acara khusus maupun perjalanan ke bandara."],["Rizal Firmansyah","Perayaan keluarga","Kami memilihnya untuk acara keluarga. Ruang dan kenyamanannya membuat perjalanan terasa lebih istimewa."]]
+ }},
+ zh:{title:"深入了解出行体验",intro:"舒适空间与贴心细节，满足不同旅程需求。",items:{
+  "new-avanza":[["Siti Nurhaliza","城市与机场出行","车身紧凑，适合城市出行和多地点停靠，车厢也能满足小家庭的舒适需求。"]],
+  "innova-reborn":[["Andi Pratama","家庭出行","车厢空间对我们一家来说很宽敞，长途出行时放置行李也很方便。"],["Rina Kartika","机场接送","行李空间和乘坐空间都符合家庭需求，是实用的 MPV 选择。"],["David Lim","家庭假期","行李有足够空间，长途驾驶时座椅也很舒适。"]],
+  "zenix":[["Agus Saputra","商务与休闲","内饰现代，行驶平顺，适合商务安排和家庭出游。"],["Maya Anggraini","家庭周末","车厢舒适，外观优雅，很适合我们的周末行程。"],["Kevin Tan","城市出行","在城市中往返会议和晚餐地点，乘坐体验安静舒适。"]],
+  "byd-m6":[["Putri Maharani","家庭城市出行","车厢安静且空间宽敞，孩子们在城市旅程中也很舒适。"],["Fajar Ramadhan","电动出行","驾驶体验现代而安静，乘客空间也是一大优点。"],["Olivia Chen","城市探索","安静的车厢体验很好，也有充足空间放置日常随身包。"]],
+  "hiace-commuter":[["Hendra Gunawan","团体游览","我们整个团队可以一起出发，不必分乘多辆车，非常适合观光行程。"],["Dian Puspita","家庭聚会","乘坐人数充足，让大家庭能够一起出行。"],["Rudi Hartono","团队交通","乘客空间宽敞，适合公司安排的城外行程。"],["Emma Wilson","团体假期","让团队成员乘坐同一辆车，使当天的行程安排容易得多。"]],
+  "hiace-premio":[["Yusuf Maulana","私人团体旅行","车厢宽敞舒适，适合和朋友一起出行，行李也能妥善放置。"],["Nabila Zahra","家人与朋友","我们可以一起出行，不必分开乘车，很适合家庭活动。"]],
+  "fortuner":[["Taufik Hidayat","私人一日游","较高的座椅视野和稳健的车厢感受，很适合全家一日出行。"],["Clara Wijaya","周末短途旅行","城际旅程乘坐舒适，车厢空间也符合我们的需求。"],["James Carter","私人观光","适合全天行程的舒适选择，驾驶视野让人感觉安心。"]],
+  "alphard-gen-3":[["Sri Wulandari","特别家庭活动","内饰宽敞优雅，非常适合特别场合的家庭接送。"],["Bambang Setiawan","商务出行","乘客舒适度是主要亮点，适合商务旅程和正式活动。"],["Michelle Lee","机场及活动接送","宽敞的车厢和精致感很适合特别活动及机场接送。"],["Rizal Firmansyah","家庭庆祝活动","我们为家庭活动选择了这款车，空间和舒适度让旅程更加特别。"]]
+ }}
 } as const;
 
 export function VehicleGuestReviews({locale,vehicleSlug}:{locale:Locale;vehicleSlug:string}){
@@ -166,7 +154,7 @@ export function VehicleGuestReviews({locale,vehicleSlug}:{locale:Locale;vehicleS
  return <section className="vehicle-guest-reviews" aria-labelledby="vehicle-guest-reviews-title">
   <div className="vehicle-guest-reviews-heading">
    <div><p className="eyebrow dark-eyebrow"><span>03</span> {locale==="zh"?"宾客体验":locale==="id"?"PENGALAMAN TAMU":"GUEST EXPERIENCES"}</p><h2 id="vehicle-guest-reviews-title">{copy.title}</h2><p>{copy.intro}</p></div>
-   <span className="guest-experiences-count">02 / EXPERIENCES</span>
+   <span className="guest-experiences-count">VARIED / EXPERIENCES</span>
   </div>
   <ReviewCarousel className="vehicle-review-carousel">
    {items.map(([name,trip,review],index)=><article className="guest-review-card vehicle-guest-review-card" key={name}>
