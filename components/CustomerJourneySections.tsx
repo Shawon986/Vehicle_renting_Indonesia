@@ -45,8 +45,7 @@ const guestReviews = {
  en: {
   eyebrow: "GUEST EXPERIENCES",
   title: "The journey, through their eyes.",
-  intro: "Illustrative sample testimonials showing the kind of service experience we aim to deliver.",
-  notice: "Sample testimonials for design preview only. These are not verified customer reviews.",
+  intro: "Thoughtful journeys, comfortable vehicles and service details that make travelling easier.",
   label: "SAMPLE REVIEW",
   items: [
    ["Alex M.","Family journey","Toyota Innova","A comfortable, practical choice for travelling together. The spacious cabin makes longer days on the road feel easier.","Comfort & space"],
@@ -62,8 +61,7 @@ const guestReviews = {
  id: {
   eyebrow: "PENGALAMAN TAMU",
   title: "Cerita perjalanan dari sudut pandang mereka.",
-  intro: "Contoh testimoni ilustratif yang menggambarkan pengalaman layanan yang ingin kami hadirkan.",
-  notice: "Testimoni contoh hanya untuk pratinjau desain. Ini bukan ulasan pelanggan terverifikasi.",
+  intro: "Perjalanan yang nyaman, pilihan kendaraan yang tepat, dan layanan yang memudahkan perjalanan Anda.",
   label: "ULASAN CONTOH",
   items: [
    ["Alex M.","Perjalanan keluarga","Toyota Innova","Pilihan yang nyaman dan praktis untuk bepergian bersama keluarga. Kabin yang lega membuat perjalanan jauh terasa lebih santai.","Kenyamanan & ruang"],
@@ -79,8 +77,7 @@ const guestReviews = {
  zh: {
   eyebrow: "宾客体验",
   title: "从旅客的视角，感受每一段旅程。",
-  intro: "以下为示意性评价文案，用于展示我们希望提供的服务体验。",
-  notice: "以下内容仅为设计示例，并非经核实的真实客户评价。",
+  intro: "舒适的车辆、周到的安排，让每一段旅程更加轻松。",
   label: "示例评价",
   items: [
    ["Alex M.","家庭出行","Toyota Innova","适合全家同行的舒适实用之选。宽敞的车厢让较长时间的旅途更加轻松。","舒适与空间"],
@@ -110,6 +107,73 @@ export function GuestExperiences({locale}:{locale:Locale}){
     <div className="guest-review-bottom"><div><strong>{name}</strong><span>{trip} · {vehicle}</span></div><small>{tag}</small></div>
    </article>)}
   </div>
-  <p className="guest-review-disclaimer">{copy.notice}</p>
+ </section>;
+}
+
+const vehicleReviewCopy = {
+ en: {
+  title: "A closer look at the experience",
+  intro: "Sample feedback themes for this vehicle. Replace these with genuine customer submissions before presenting them as actual reviews.",
+  label: "SAMPLE REVIEW",
+  items: {
+   "new-avanza": [["Jordan P.","City and airport journeys","A practical size for getting around town, with a cabin that works well for everyday trips."],["Amelia R.","Short family break","A straightforward option when we wanted comfortable transport without choosing a larger vehicle."]],
+   "innova-reborn": [["Noah K.","Family travel","The spacious cabin and flexible seating make this a strong option for a family itinerary."],["Chloe D.","Intercity journey","A comfortable MPV choice for spending more time on the road between destinations."]],
+   "zenix": [["Lucas M.","Premium family travel","The modern cabin and smooth hybrid driving character make the Zenix feel refined for longer journeys."],["Ella S.","Business and leisure","A smart-looking vehicle with useful space for passengers and everyday luggage."]],
+   "byd-m6": [["Ryan T.","Electric mobility","A modern electric MPV option for travellers who value a quiet cabin and contemporary design."],["Mia W.","Family city travel","The spacious interior makes it an interesting choice for a family moving around the city."]],
+   "hiace-commuter": [["Benjamin C.","Group excursion","Having room for a larger group in one vehicle makes coordinating a shared journey simpler."],["Lily H.","Team transportation","A practical people-mover for group plans where passenger capacity matters most."]],
+   "hiace-premio": [["Samuel J.","Private group trip","The generous cabin space is well suited to group travel and longer days on the road."],["Ava B.","Family and friends","A useful option when everyone wants to travel together with luggage."]],
+   "fortuner": [["William F.","Executive travel","The SUV format and elevated seating position suit travellers looking for a confident, premium ride."],["Isla G.","Private day trip","A distinctive choice for a private journey with family or colleagues."]],
+   "alphard-gen-3": [["Henry L.","Executive occasion","A premium people-mover designed around passenger comfort and a more considered arrival."],["Sophia N.","Special family journey","A spacious, refined option for occasions when comfort is the priority."]]
+  }
+ },
+ id: {
+  title: "Melihat pengalaman lebih dekat",
+  intro: "Tema ulasan contoh untuk kendaraan ini. Ganti dengan kiriman pelanggan asli sebelum ditampilkan sebagai ulasan nyata.",
+  label: "ULASAN CONTOH",
+  items: {
+   "new-avanza": [["Jordan P.","Perjalanan kota dan bandara","Ukuran yang praktis untuk berkeliling kota, dengan kabin yang cocok untuk perjalanan sehari-hari."],["Amelia R.","Liburan keluarga singkat","Pilihan sederhana untuk transportasi nyaman tanpa perlu kendaraan berukuran besar."]],
+   "innova-reborn": [["Noah K.","Perjalanan keluarga","Kabin yang lega dan tempat duduk fleksibel menjadikannya pilihan tepat untuk perjalanan keluarga."],["Chloe D.","Perjalanan antarkota","MPV yang nyaman untuk menghabiskan lebih banyak waktu di jalan antar destinasi."]],
+   "zenix": [["Lucas M.","Perjalanan keluarga premium","Kabin modern dan karakter hybrid yang halus memberi kesan nyaman untuk perjalanan lebih jauh."],["Ella S.","Bisnis dan liburan","Kendaraan berpenampilan elegan dengan ruang yang berguna untuk penumpang dan bagasi harian."]],
+   "byd-m6": [["Ryan T.","Mobilitas listrik","Pilihan MPV listrik modern bagi wisatawan yang menyukai kabin senyap dan desain kontemporer."],["Mia W.","Perjalanan keluarga di kota","Interior yang luas menjadikannya pilihan menarik untuk keluarga yang beraktivitas di kota."]],
+   "hiace-commuter": [["Benjamin C.","Wisata rombongan","Kapasitas untuk membawa rombongan dalam satu kendaraan memudahkan koordinasi perjalanan bersama."],["Lily H.","Transportasi tim","Kendaraan penumpang yang praktis untuk perjalanan grup dengan kebutuhan kapasitas besar."]],
+   "hiace-premio": [["Samuel J.","Perjalanan grup privat","Kabin yang lapang cocok untuk perjalanan rombongan dan perjalanan panjang."],["Ava B.","Keluarga dan teman","Pilihan yang berguna saat semua orang ingin bepergian bersama dengan barang bawaan."]],
+   "fortuner": [["William F.","Perjalanan eksekutif","Format SUV dan posisi duduk yang tinggi cocok bagi wisatawan yang menginginkan perjalanan premium."],["Isla G.","Perjalanan pribadi sehari","Pilihan yang khas untuk perjalanan privat bersama keluarga atau rekan kerja."]],
+   "alphard-gen-3": [["Henry L.","Acara eksekutif","MPV premium yang dirancang untuk kenyamanan penumpang dan pengalaman kedatangan yang lebih berkelas."],["Sophia N.","Perjalanan keluarga istimewa","Pilihan yang luas dan elegan untuk momen ketika kenyamanan menjadi prioritas."]]
+  }
+ },
+ zh: {
+  title: "深入了解出行体验",
+  intro: "以下为该车型的示例评价主题。正式作为客户评价展示前，请替换为真实客户反馈。",
+  label: "示例评价",
+  items: {
+   "new-avanza": [["Jordan P.","城市与机场出行","车身尺寸实用，适合城市穿行，车厢也能满足日常出行需求。"],["Amelia R.","短途家庭旅行","如果希望乘坐舒适又不需要大型车辆，这是一个简单实用的选择。"]],
+   "innova-reborn": [["Noah K.","家庭出行","宽敞的车厢与灵活的座椅布局，很适合家庭行程。"],["Chloe D.","城际旅程","适合在不同目的地之间长时间乘坐的舒适 MPV。"]],
+   "zenix": [["Lucas M.","高品质家庭出行","现代化座舱与平顺的混合动力体验，让长途出行更加舒适。"],["Ella S.","商务与休闲","外观时尚，乘客与日常行李也有充足空间。"]],
+   "byd-m6": [["Ryan T.","电动出行","适合喜欢安静座舱与现代设计的旅客的纯电 MPV 选择。"],["Mia W.","家庭城市出行","宽敞的内部空间，让它成为家庭城市出行的有趣选择。"]],
+   "hiace-commuter": [["Benjamin C.","团体游览","多人乘坐同一辆车，有助于简化团体行程的协调安排。"],["Lily H.","团队交通","适合对乘坐人数有较高需求的团体出行。"]],
+   "hiace-premio": [["Samuel J.","私人团体旅行","宽敞的车厢适合团体出行及较长时间的旅程。"],["Ava B.","家人与朋友","适合希望与亲友同行并携带行李的旅客。"]],
+   "fortuner": [["William F.","商务出行","SUV 车型与较高的驾驶视野，适合追求稳健高品质体验的旅客。"],["Isla G.","私人一日游","适合与家人或同事一起进行私人行程。"]],
+   "alphard-gen-3": [["Henry L.","商务场合","高端 MPV 注重乘客舒适度，也让抵达体验更加从容。"],["Sophia N.","特别的家庭旅程","宽敞而精致，适合将舒适度放在首位的特别行程。"]]
+  }
+ }
+} as const;
+
+export function VehicleGuestReviews({locale,vehicleSlug}:{locale:Locale;vehicleSlug:string}){
+ const copy=vehicleReviewCopy[locale];
+ const items=copy.items[vehicleSlug as keyof typeof copy.items] ?? [];
+ if(!items.length)return null;
+ return <section className="vehicle-guest-reviews" aria-labelledby="vehicle-guest-reviews-title">
+  <div className="vehicle-guest-reviews-heading">
+   <div><p className="eyebrow dark-eyebrow"><span>03</span> {locale==="zh"?"宾客体验":locale==="id"?"PENGALAMAN TAMU":"GUEST EXPERIENCES"}</p><h2 id="vehicle-guest-reviews-title">{copy.title}</h2><p>{copy.intro}</p></div>
+   <span className="guest-experiences-count">02 / EXPERIENCES</span>
+  </div>
+  <div className="vehicle-guest-review-grid">
+   {items.map(([name,trip,review],index)=><article className="guest-review-card vehicle-guest-review-card" key={name}>
+    <div className="guest-review-top"><span className="guest-review-index">0{index+1}</span><span className="guest-review-sample">{copy.label}</span></div>
+    <div className="guest-review-stars" aria-hidden="true">★★★★★</div>
+    <blockquote>“{review}”</blockquote>
+    <div className="guest-review-bottom"><div><strong>{name}</strong><span>{trip}</span></div><small>{locale==="zh"?"车型体验":locale==="id"?"Pengalaman kendaraan":"Vehicle experience"}</small></div>
+   </article>)}
+  </div>
  </section>;
 }
