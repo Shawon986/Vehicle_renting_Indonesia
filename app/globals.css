@@ -10788,3 +10788,326 @@ main .vehicle-filter label {
     grid-column: 1 / -1;
   }
 }
+
+/* Final form-system correction: consistent field sizing, checkbox geometry,
+   consent alignment and responsive spacing across every enquiry form. */
+.inquiry-form,
+.service-inquiry-form {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+.inquiry-form *,
+.service-inquiry-form * {
+  box-sizing: border-box;
+}
+.inquiry-form .form-grid,
+.service-inquiry-form .form-grid,
+.service-inquiry-form .service-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 18px 16px;
+  width: 100%;
+  min-width: 0;
+}
+.inquiry-form .form-grid > label:not(.service-form-check):not(.consent-check):not(.marketing-consent),
+.service-inquiry-form .form-grid > label.service-form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  color: #435247;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: .015em;
+}
+.inquiry-form .form-grid > label > input:not([type="checkbox"]):not([type="radio"]),
+.inquiry-form .form-grid > label > select,
+.inquiry-form .form-grid > label > textarea,
+.service-inquiry-form .form-grid > label.service-form-field > input:not([type="checkbox"]):not([type="radio"]),
+.service-inquiry-form .form-grid > label.service-form-field > select,
+.service-inquiry-form .form-grid > label.service-form-field > textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 49px;
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid #cfd5ca;
+  border-radius: 4px;
+  background-color: #fffefa;
+  color: #26372e;
+  font: 400 13px/1.45 var(--font-sans);
+  box-shadow: none;
+}
+.inquiry-form .form-grid > label > textarea,
+.service-inquiry-form .form-grid > label.service-form-field > textarea {
+  min-height: 118px;
+  resize: vertical;
+}
+.inquiry-form .form-grid > label > input:focus,
+.inquiry-form .form-grid > label > select:focus,
+.inquiry-form .form-grid > label > textarea:focus,
+.service-inquiry-form .form-grid > label.service-form-field > input:focus,
+.service-inquiry-form .form-grid > label.service-form-field > select:focus,
+.service-inquiry-form .form-grid > label.service-form-field > textarea:focus {
+  border-color: #87994d;
+  outline: 2px solid rgba(135,153,77,.18);
+  outline-offset: 1px;
+  box-shadow: 0 0 0 3px rgba(135,153,77,.09);
+}
+.inquiry-form .form-grid select,
+.service-inquiry-form .form-grid select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 44px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='m3.5 5.75 4.5 4.5 4.5-4.5' stroke='%2337473D' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px 16px;
+  cursor: pointer;
+}
+.inquiry-form .form-grid select:hover,
+.inquiry-form .form-grid select:focus,
+.inquiry-form .form-grid select:focus-visible,
+.service-inquiry-form .form-grid select:hover,
+.service-inquiry-form .form-grid select:focus,
+.service-inquiry-form .form-grid select:focus-visible {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='m3.5 5.75 4.5 4.5 4.5-4.5' stroke='%2337473D' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px 16px;
+}
+.inquiry-form .form-grid > .full-field,
+.service-inquiry-form .form-grid > .service-form-wide {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+.inquiry-form .form-grid > fieldset.form-addons,
+.service-inquiry-form .form-grid > fieldset.form-addons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 22px;
+  min-width: 0;
+  margin: 0;
+  padding: 17px 18px;
+  border: 1px solid #d4d9ce;
+  border-radius: 4px;
+  background: #f3f2eb;
+}
+.inquiry-form .form-grid > fieldset.form-addons legend {
+  padding: 0 7px;
+  color: #435247;
+  font-size: 10px;
+  font-weight: 650;
+}
+.inquiry-form .form-addons > label,
+.service-inquiry-form .service-check-grid > label {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+  color: #526056;
+  font-size: 11px;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.inquiry-form .service-form-check,
+.inquiry-form .consent-check,
+.inquiry-form .marketing-consent,
+.service-inquiry-form .service-form-check {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 11px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(42,55,46,.12);
+  border-radius: 4px;
+  background: rgba(243,242,235,.72);
+  color: #526056;
+  font-size: 11px;
+  font-weight: 450;
+  line-height: 1.6;
+  letter-spacing: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.inquiry-form .consent-check,
+.inquiry-form .marketing-consent,
+.service-inquiry-form .service-form-check {
+  align-items: flex-start;
+}
+.inquiry-form .form-grid label.service-form-check::before,
+.inquiry-form .form-grid label.consent-check::before,
+.inquiry-form .form-grid label.marketing-consent::before,
+.service-inquiry-form .form-grid label.service-form-check::before {
+  content: none !important;
+  display: none !important;
+}
+.inquiry-form input[type="checkbox"],
+.service-inquiry-form input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-grid;
+  place-content: center;
+  flex: 0 0 20px;
+  width: 20px;
+  min-width: 20px;
+  max-width: 20px;
+  height: 20px;
+  min-height: 20px;
+  max-height: 20px;
+  margin: 1px 0 0;
+  padding: 0;
+  border: 1px solid #879487;
+  border-radius: 4px;
+  background: #fffefa;
+  color: #263d30;
+  box-shadow: none;
+  cursor: pointer;
+}
+.inquiry-form input[type="checkbox"]::before,
+.service-inquiry-form input[type="checkbox"]::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  transform: scale(0);
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m2.5 8.5 3.4 3.2 7.6-7.4' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m2.5 8.5 3.4 3.2 7.6-7.4' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+.inquiry-form input[type="checkbox"]:checked,
+.service-inquiry-form input[type="checkbox"]:checked {
+  border-color: #31483a;
+  background: #d9e1c2;
+}
+.inquiry-form input[type="checkbox"]:checked::before,
+.service-inquiry-form input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+.inquiry-form input[type="checkbox"]:focus-visible,
+.service-inquiry-form input[type="checkbox"]:focus-visible {
+  outline: 2px solid #87994d;
+  outline-offset: 3px;
+}
+.inquiry-form .consent-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  width: 100%;
+  min-width: 0;
+  margin: 18px 0 12px;
+}
+.inquiry-form .consent-row .consent-check {
+  flex: 1 1 280px;
+  margin: 0;
+}
+.inquiry-form .consent-privacy-link {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  margin: 12px 0 0;
+}
+.inquiry-form .turnstile-slot,
+.service-inquiry-form .turnstile-slot {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.inquiry-form > button[type="submit"],
+.service-inquiry-form > button[type="submit"],
+.inquiry-form > .button,
+.service-inquiry-form > .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: min(220px, 100%);
+  min-height: 52px;
+  margin-top: 12px;
+  white-space: normal;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .inquiry-form,
+  .service-inquiry-form { padding: 24px 22px; }
+  .inquiry-form .form-grid,
+  .service-inquiry-form .form-grid { gap: 16px 14px; }
+}
+@media (max-width: 680px) {
+  .inquiry-form,
+  .service-inquiry-form { padding: 20px 16px; }
+  .inquiry-form .form-grid,
+  .service-inquiry-form .form-grid,
+  .service-inquiry-form .service-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+  .inquiry-form .form-grid > .full-field,
+  .service-inquiry-form .form-grid > .service-form-wide {
+    grid-column: 1 / -1;
+  }
+  .inquiry-form .form-grid > fieldset.form-addons {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 15px 13px;
+  }
+  .inquiry-form .form-addons > label,
+  .service-inquiry-form .service-check-grid > label {
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .inquiry-form .service-form-check,
+  .inquiry-form .consent-check,
+  .inquiry-form .marketing-consent,
+  .service-inquiry-form .service-form-check {
+    padding: 12px;
+    gap: 10px;
+    font-size: 11px;
+  }
+  .inquiry-form > button[type="submit"],
+  .service-inquiry-form > button[type="submit"],
+  .inquiry-form > .button,
+  .service-inquiry-form > .button {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+@media (max-width: 390px) {
+  .inquiry-form,
+  .service-inquiry-form { padding: 17px 12px; }
+  .inquiry-form .form-grid,
+  .service-inquiry-form .form-grid { gap: 14px; }
+  .inquiry-form .form-grid > label > input,
+  .inquiry-form .form-grid > label > select,
+  .service-inquiry-form .form-grid > label.service-form-field > input,
+  .service-inquiry-form .form-grid > label.service-form-field > select {
+    min-height: 47px;
+    padding-left: 11px;
+    padding-right: 40px;
+    font-size: 12px;
+  }
+}
