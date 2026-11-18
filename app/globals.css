@@ -12698,3 +12698,109 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
 @media(prefers-reduced-motion:reduce){
   .about-brand-company.about-brand-company-premium *{animation:none!important;transition:none!important}
 }
+
+
+/* ABOUT SECTION 05 — restore the original premium composition, without costly blur */
+.about-brand-company.about-brand-company-premium .about-company-shell{
+  display:grid;
+  position:relative;
+  grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);
+  align-items:center;
+  gap:clamp(30px,5vw,72px);
+  padding:clamp(28px,4.5vw,64px);
+  border:1px solid rgba(255,255,255,.78);
+  border-radius:30px;
+  background:rgba(255,255,255,.10);
+  box-shadow:0 22px 60px rgba(35,49,41,.07),inset 0 1px 0 rgba(255,255,255,.9),inset 0 -1px 0 rgba(255,255,255,.32);
+  -webkit-backdrop-filter:none;
+  backdrop-filter:none;
+}
+.about-brand-company.about-brand-company-premium .about-company-main{min-width:0}
+.about-brand-company.about-brand-company-premium .about-company-heading .eyebrow,
+.about-brand-company.about-brand-company-premium .about-company-heading .eyebrow *{
+  color:#52665a!important;-webkit-text-fill-color:#52665a!important;opacity:1!important;
+}
+.about-brand-company.about-brand-company-premium .about-company-heading .eyebrow>span{
+  color:#263d31!important;-webkit-text-fill-color:#263d31!important;
+}
+.about-brand-company.about-brand-company-premium .about-company-overline{
+  color:#687d70!important;-webkit-text-fill-color:#687d70!important;
+}
+.about-brand-company.about-brand-company-premium .about-company-heading h2{
+  margin:20px 0 17px;color:#1d3026!important;-webkit-text-fill-color:#1d3026!important;
+  font-family:var(--font-display,Georgia,serif);font-size:clamp(38px,4.5vw,60px);
+  font-weight:500;line-height:1.04;letter-spacing:-.045em;text-shadow:none!important;
+}
+.about-brand-company.about-brand-company-premium .about-company-description{
+  max-width:560px;margin:0;color:#43564a!important;-webkit-text-fill-color:#43564a!important;
+  font-size:14px;line-height:1.95;
+}
+.about-brand-company.about-brand-company-premium .about-brand-company-pillars{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;
+  margin-top:clamp(34px,4vw,56px);
+  border-top:1px solid rgba(64,87,72,.2);border-bottom:1px solid rgba(64,87,72,.2);
+}
+.about-brand-company.about-brand-company-premium .about-brand-company-pillars article{
+  min-width:0;padding:22px 18px 22px 0;border:0;background:transparent;
+}
+.about-brand-company.about-brand-company-premium .about-brand-company-pillars article+article{
+  padding-left:18px;border-left:1px solid rgba(64,87,72,.16);
+}
+.about-brand-company.about-brand-company-premium .about-brand-company-pillars article>span{
+  display:block;margin-bottom:20px;color:#718779!important;-webkit-text-fill-color:#718779!important;
+  font-size:8px;letter-spacing:.14em;
+}
+.about-brand-company.about-brand-company-premium .about-brand-company-pillars h3{
+  margin:0 0 9px;color:#263b30!important;-webkit-text-fill-color:#263b30!important;
+  font-family:var(--font-display,Georgia,serif);font-size:clamp(16px,1.45vw,20px);
+  font-weight:500;line-height:1.3;
+}
+.about-brand-company.about-brand-company-premium .about-brand-company-pillars p{
+  margin:0;color:#53675b!important;-webkit-text-fill-color:#53675b!important;font-size:11px;line-height:1.8;
+}
+.about-brand-company.about-brand-company-premium .about-company-identity{
+  position:relative;min-width:0;min-height:0;padding:28px 26px;
+  border:1px solid rgba(255,255,255,.82)!important;border-radius:22px;
+  background:rgba(255,255,255,.095)!important;
+  box-shadow:0 14px 36px rgba(35,49,41,.055),inset 0 1px 0 rgba(255,255,255,.9)!important;
+}
+.about-brand-company.about-brand-company-premium .about-company-identity::before{
+  border-color:rgba(255,255,255,.48)!important;
+  box-shadow:0 0 0 26px rgba(255,255,255,.07),0 0 0 54px rgba(255,255,255,.045)!important;
+}
+.about-brand-company.about-brand-company-premium .about-company-orbit{
+  display:flex!important;color:#73877a!important;border-color:rgba(91,119,101,.3)!important;
+}
+.about-brand-company.about-brand-company-premium .about-company-identity-top,
+.about-brand-company.about-brand-company-premium .about-company-identity-foot,
+.about-brand-company.about-brand-company-premium .about-company-logo>span{
+  color:#63796b!important;-webkit-text-fill-color:#63796b!important;
+}
+.about-brand-company.about-brand-company-premium .about-company-logo img{filter:none!important;max-width:100%;height:auto}
+.about-brand-company.about-brand-company-premium .about-company-identity-rule{
+  background:linear-gradient(90deg,rgba(91,119,101,.38),rgba(91,119,101,.06))!important;
+}
+.about-brand-company.about-brand-company-premium .about-company-facts>div{border-bottom-color:rgba(91,119,101,.16)!important}
+.about-brand-company.about-brand-company-premium .about-company-facts>div:nth-child(2n){border-left-color:rgba(91,119,101,.16)!important}
+.about-brand-company.about-brand-company-premium .about-company-facts>div>span{color:#829589!important;-webkit-text-fill-color:#829589!important}
+.about-brand-company.about-brand-company-premium .about-company-facts small{color:#718478!important;-webkit-text-fill-color:#718478!important}
+.about-brand-company.about-brand-company-premium .about-company-facts strong{color:#263a2f!important;-webkit-text-fill-color:#263a2f!important}
+.about-brand-company.about-brand-company-premium .about-company-identity-foot i{background:#9aab9f!important}
+@media(max-width:980px){
+  .about-brand-company.about-brand-company-premium .about-company-shell{padding:clamp(26px,4vw,42px);gap:30px}
+}
+@media(max-width:800px){
+  .about-brand-company.about-brand-company-premium .about-company-shell{grid-template-columns:1fr}
+  .about-brand-company.about-brand-company-premium .about-brand-company-pillars{grid-template-columns:1fr}
+  .about-brand-company.about-brand-company-premium .about-brand-company-pillars article,
+  .about-brand-company.about-brand-company-premium .about-brand-company-pillars article+article{padding:19px 0;border-left:0}
+  .about-brand-company.about-brand-company-premium .about-brand-company-pillars article+article{border-top:1px solid rgba(64,87,72,.16)}
+}
+@media(max-width:680px){
+  .about-brand-company.about-brand-company-premium{padding:48px 14px 58px}
+  .about-brand-company.about-brand-company-premium .about-company-shell{gap:30px;padding:25px 19px;border-radius:22px}
+  .about-brand-company.about-brand-company-premium .about-company-heading h2{font-size:clamp(36px,10vw,52px)!important}
+  .about-brand-company.about-brand-company-premium .about-company-description{font-size:13px!important}
+  .about-brand-company.about-brand-company-premium .about-company-identity{padding:22px 18px;border-radius:18px}
+  .about-brand-company.about-brand-company-premium .about-company-orbit{right:18px;top:58px;width:68px;font-size:23px}
+}
