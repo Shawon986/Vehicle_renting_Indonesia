@@ -11642,3 +11642,19 @@ main .vehicle-filter label {
     height:14px!important;
   }
 }
+
+
+/* Keep optional service-updates text the same size as the required privacy-consent text. */
+.inquiry-form .marketing-consent,
+.service-inquiry-form .marketing-consent {
+  font-size: 10px !important;
+  font-weight: 450;
+  line-height: 1.55;
+}
+@media (max-width: 680px) {
+  .inquiry-form .marketing-consent,
+  .service-inquiry-form .marketing-consent {
+    font-size: 10px !important;
+    line-height: 1.55;
+  }
+}
