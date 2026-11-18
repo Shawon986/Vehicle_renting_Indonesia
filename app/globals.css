@@ -13172,3 +13172,28 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
     transition:none!important;
   }
 }
+
+
+/* ABOUT / SECTION 05 — subtle photographic backdrop */
+.about-brand-company.about-brand-company-premium::before{
+  content:""!important;
+  display:block!important;
+  position:absolute;
+  z-index:-1;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(110deg,rgba(245,248,245,.76) 0%,rgba(245,248,245,.58) 48%,rgba(245,248,245,.72) 100%),
+    url("https://raw.githubusercontent.com/Shawon986/Vehicle_renting_indonesia/feat/vehicle-rental-foundation/Kemewahan%20Perjalanan%20Bersama%20Armada%20Premium.png") center 48% / cover no-repeat;
+  opacity:.82;
+}
+.about-brand-company.about-brand-company-premium .about-company-shell{
+  background:rgba(255,255,255,.10)!important;
+}
+@media(max-width:680px){
+  .about-brand-company.about-brand-company-premium::before{
+    background:
+      linear-gradient(180deg,rgba(245,248,245,.82),rgba(245,248,245,.72)),
+      url("https://raw.githubusercontent.com/Shawon986/Vehicle_renting_indonesia/feat/vehicle-rental-foundation/Kemewahan%20Perjalanan%20Bersama%20Armada%20Premium.png") center / cover no-repeat;
+  }
+}
