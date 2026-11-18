@@ -10718,3 +10718,73 @@ main .vehicle-filter label {
   font-size: 1.05em;
   font-weight: 800;
 }
+
+/* Final enquiry-form control polish: preserve select arrows and align every field. */
+.inquiry-form .form-grid,
+.service-inquiry-form .service-form-grid {
+  align-items: start;
+  grid-auto-rows: minmax(0, auto);
+}
+.inquiry-form .form-grid > label,
+.service-inquiry-form .service-form-grid > .service-form-field {
+  min-width: 0;
+  align-self: stretch;
+  justify-content: flex-start;
+  line-height: 1.45;
+}
+.inquiry-form .form-grid > label > input,
+.inquiry-form .form-grid > label > select,
+.inquiry-form .form-grid > label > textarea,
+.service-inquiry-form .service-form-grid > .service-form-field > input,
+.service-inquiry-form .service-form-grid > .service-form-field > select,
+.service-inquiry-form .service-form-grid > .service-form-field > textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  margin: 0;
+}
+.inquiry-form .form-grid select,
+.service-inquiry-form .service-form-grid select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 44px;
+  background-color: #fffefa;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='m3.5 5.75 4.5 4.5 4.5-4.5' stroke='%2337473D' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 16px 16px;
+  cursor: pointer;
+}
+.inquiry-form .form-grid select:hover,
+.inquiry-form .form-grid select:focus,
+.inquiry-form .form-grid select:focus-visible,
+.service-inquiry-form .service-form-grid select:hover,
+.service-inquiry-form .service-form-grid select:focus,
+.service-inquiry-form .service-form-grid select:focus-visible {
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='m3.5 5.75 4.5 4.5 4.5-4.5' stroke='%2337473D' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 16px 16px;
+}
+.inquiry-form .form-grid > label:has(> input:required),
+.inquiry-form .form-grid > label:has(> select:required),
+.inquiry-form .form-grid > label:has(> textarea:required),
+.service-inquiry-form .service-form-grid > .service-form-field:has(> input:required),
+.service-inquiry-form .service-form-grid > .service-form-field:has(> select:required),
+.service-inquiry-form .service-form-grid > .service-form-field:has(> textarea:required) {
+  position: relative;
+}
+@media (max-width: 680px) {
+  .inquiry-form .form-grid,
+  .service-inquiry-form .service-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .inquiry-form .form-grid > .full-field,
+  .service-inquiry-form .service-form-grid > .service-form-wide {
+    grid-column: 1 / -1;
+  }
+}
