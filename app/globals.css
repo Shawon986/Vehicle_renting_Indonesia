@@ -12716,14 +12716,14 @@ main.inner-page.how-page.how-premium-page > section.how-premium-note .how-premiu
 }
 
 
-/* SECTION 05 — single crystal-water glass panel (override previous stacked treatments) */
+
+/* SECTION 05 — translucent liquid-water surface */
 main.inner-page.how-page.how-premium-page > section.how-premium-note{
   position:relative !important;
   isolation:auto !important;
   overflow:visible !important;
   padding:clamp(42px,6vw,82px) max(5vw,calc((100vw - 1320px)/2)) !important;
   background:transparent !important;
-  background-color:transparent !important;
   background-image:none !important;
   border:0 !important;
   box-shadow:none !important;
@@ -12731,11 +12731,11 @@ main.inner-page.how-page.how-premium-page > section.how-premium-note{
   backdrop-filter:none !important;
 }
 main.inner-page.how-page.how-premium-page > section.how-premium-note::before,
-main.inner-page.how-page.how-premium-page > section.how-premium-note::after{
-  content:none !important;
-  display:none !important;
-}
+main.inner-page.how-page.how-premium-page > section.how-premium-note::after{content:none !important;display:none !important}
 main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-premium-note-inner{
+  position:relative !important;
+  isolation:isolate !important;
+  overflow:hidden !important;
   box-sizing:border-box !important;
   width:100% !important;
   max-width:1320px !important;
@@ -12745,16 +12745,40 @@ main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-prem
   grid-template-columns:minmax(0,1.08fr) minmax(280px,.72fr) !important;
   align-items:center !important;
   gap:clamp(28px,6vw,88px) !important;
-  position:relative !important;
-  z-index:1 !important;
   border:1px solid rgba(255,255,255,.78) !important;
-  border-radius:26px !important;
-  background:linear-gradient(135deg,rgba(255,255,255,.105) 0%,rgba(255,255,255,.035) 48%,rgba(255,255,255,.075) 100%) !important;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.82),inset 0 -1px 0 rgba(255,255,255,.28),0 18px 55px rgba(38,57,44,.055) !important;
-  -webkit-backdrop-filter:blur(9px) saturate(115%) !important;
-  backdrop-filter:blur(9px) saturate(115%) !important;
+  border-radius:28px !important;
+  background:
+    radial-gradient(ellipse at 12% 0%,rgba(255,255,255,.48) 0%,rgba(255,255,255,0) 38%),
+    radial-gradient(ellipse at 92% 100%,rgba(119,190,183,.17) 0%,rgba(119,190,183,0) 44%),
+    linear-gradient(125deg,rgba(224,248,245,.23) 0%,rgba(199,232,227,.105) 42%,rgba(255,255,255,.16) 72%,rgba(183,222,216,.12) 100%) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.92),inset 0 -1px 0 rgba(255,255,255,.42),0 18px 55px rgba(38,87,78,.075) !important;
+  -webkit-backdrop-filter:blur(5px) saturate(125%) !important;
+  backdrop-filter:blur(5px) saturate(125%) !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-premium-note-inner::before{
+  content:"" !important;
+  position:absolute !important;
+  z-index:-1 !important;
+  inset:0 !important;
+  pointer-events:none !important;
+  opacity:.55 !important;
+  background:
+    linear-gradient(112deg,transparent 10%,rgba(255,255,255,.38) 24%,transparent 37%),
+    radial-gradient(ellipse at 72% 12%,rgba(255,255,255,.32),transparent 32%),
+    repeating-linear-gradient(168deg,transparent 0 42px,rgba(255,255,255,.10) 43px,transparent 45px 86px) !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-premium-note-inner::after{
+  content:"" !important;
+  position:absolute !important;
+  z-index:-1 !important;
+  inset:1px !important;
+  border-radius:27px !important;
+  pointer-events:none !important;
+  box-shadow:inset 0 0 42px rgba(255,255,255,.12) !important;
 }
 main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-premium-note-inner > div{
+  position:relative !important;
+  z-index:1 !important;
   min-width:0 !important;
   padding:0 !important;
   border:0 !important;
@@ -12767,53 +12791,44 @@ main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-prem
 }
 main.inner-page.how-page.how-premium-page > section.how-premium-note .eyebrow,
 main.inner-page.how-page.how-premium-page > section.how-premium-note .eyebrow span{
-  color:#80683d !important;
-  -webkit-text-fill-color:#80683d !important;
+  color:#80643b !important;
+  -webkit-text-fill-color:#80643b !important;
   opacity:1 !important;
-  text-shadow:0 1px 0 rgba(255,255,255,.8) !important;
+  text-shadow:0 1px 0 rgba(255,255,255,.78) !important;
 }
 main.inner-page.how-page.how-premium-page > section.how-premium-note h2{
-  color:#183528 !important;
-  -webkit-text-fill-color:#183528 !important;
+  color:#173b2d !important;
+  -webkit-text-fill-color:#173b2d !important;
   opacity:1 !important;
   text-shadow:0 1px 0 rgba(255,255,255,.72) !important;
 }
 main.inner-page.how-page.how-premium-page > section.how-premium-note .how-premium-note-inner > div:last-child > p{
-  color:#263d32 !important;
-  -webkit-text-fill-color:#263d32 !important;
+  color:#263f35 !important;
+  -webkit-text-fill-color:#263f35 !important;
   opacity:1 !important;
   font-size:clamp(14px,1.1vw,16px) !important;
   line-height:1.9 !important;
-  text-shadow:0 1px 0 rgba(255,255,255,.78) !important;
+  text-shadow:0 1px 0 rgba(255,255,255,.72) !important;
 }
 main.inner-page.how-page.how-premium-page > section.how-premium-note .button-light{
   color:#fff !important;
   -webkit-text-fill-color:#fff !important;
-  background:#203c2e !important;
-  border:1px solid rgba(255,255,255,.7) !important;
+  background:#1d4937 !important;
+  border:1px solid rgba(255,255,255,.72) !important;
   border-radius:3px !important;
-  box-shadow:0 8px 22px rgba(24,53,39,.16) !important;
+  box-shadow:0 8px 22px rgba(24,65,51,.16) !important;
 }
 @media(max-width:900px){
-  main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-premium-note-inner{
-    grid-template-columns:1fr !important;
-    gap:24px !important;
-  }
+  main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-premium-note-inner{grid-template-columns:1fr !important;gap:24px !important}
 }
 @media(max-width:640px){
-  main.inner-page.how-page.how-premium-page > section.how-premium-note{
-    padding:38px 18px !important;
-  }
+  main.inner-page.how-page.how-premium-page > section.how-premium-note{padding:38px 18px !important}
   main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-premium-note-inner{
     padding:27px 22px !important;
-    border-radius:20px !important;
+    border-radius:21px !important;
     gap:22px !important;
-    background:rgba(255,255,255,.075) !important;
-    -webkit-backdrop-filter:blur(7px) saturate(110%) !important;
-    backdrop-filter:blur(7px) saturate(110%) !important;
+    -webkit-backdrop-filter:blur(4px) saturate(120%) !important;
+    backdrop-filter:blur(4px) saturate(120%) !important;
   }
-  main.inner-page.how-page.how-premium-page > section.how-premium-note h2{
-    font-size:clamp(36px,9vw,48px) !important;
-    line-height:1.12 !important;
-  }
+  main.inner-page.how-page.how-premium-page > section.how-premium-note h2{font-size:clamp(36px,9vw,48px) !important;line-height:1.12 !important}
 }
