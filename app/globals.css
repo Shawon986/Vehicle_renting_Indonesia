@@ -12676,3 +12676,41 @@ main.inner-page.how-page.how-premium-page > section.how-premium-note a{
   main.inner-page.how-page.how-premium-page > section.how-premium-note h2{line-height:1.12 !important;}
   main.inner-page.how-page.how-premium-page > section.how-premium-note .how-premium-note-inner > div:last-child > p{line-height:1.7 !important;}
 }
+
+
+/* SECTION 05 FINAL — colourless, crystal-clear water glass (not blue/green tinted) */
+main.inner-page.how-page.how-premium-page > section.how-premium-note{
+  background:rgba(255,255,255,.045) !important;
+  background-color:rgba(255,255,255,.045) !important;
+  background-image:linear-gradient(115deg,rgba(255,255,255,.13) 0%,rgba(255,255,255,.025) 42%,rgba(255,255,255,.075) 100%) !important;
+  -webkit-backdrop-filter:blur(10px) saturate(125%) !important;
+  backdrop-filter:blur(10px) saturate(125%) !important;
+  border-top:1px solid rgba(255,255,255,.72) !important;
+  border-bottom:1px solid rgba(255,255,255,.58) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.52),inset 0 -1px 0 rgba(255,255,255,.24),0 12px 32px rgba(30,48,37,.035) !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-premium-note-inner .eyebrow,
+main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-premium-note-inner .eyebrow span{
+  color:#78613b !important;
+  -webkit-text-fill-color:#78613b !important;
+  text-shadow:0 1px 1px rgba(255,255,255,.72) !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note h2{
+  color:#183b2c !important;
+  -webkit-text-fill-color:#183b2c !important;
+  text-shadow:0 1px 1px rgba(255,255,255,.78) !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note .how-premium-note-inner > div:last-child{
+  background:rgba(255,255,255,.055) !important;
+  background-image:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.025) 58%,rgba(255,255,255,.09)) !important;
+  border:1px solid rgba(255,255,255,.70) !important;
+  border-top:1px solid rgba(255,255,255,.88) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.62),0 10px 28px rgba(30,48,37,.035) !important;
+  -webkit-backdrop-filter:blur(12px) saturate(125%) !important;
+  backdrop-filter:blur(12px) saturate(125%) !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note .how-premium-note-inner > div:last-child > p{
+  color:#263d32 !important;
+  -webkit-text-fill-color:#263d32 !important;
+  text-shadow:0 1px 1px rgba(255,255,255,.78) !important;
+}
