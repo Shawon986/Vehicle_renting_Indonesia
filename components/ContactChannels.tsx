@@ -6,7 +6,7 @@ import {useEffect,useRef} from "react";
 import {Locale} from "@/lib/site-data";
 import {trackEvent} from "@/lib/analytics";
 
-export function ContactChannels({locale,itemTitle,serviceLine="vehicle-rental"}:{locale:Locale;itemTitle?:string;serviceLine?:string;primaryOnly?:boolean}){
+export function ContactChannels({locale,itemTitle,serviceLine="vehicle-rental",primaryOnly=false}:{locale:Locale;itemTitle?:string;serviceLine?:string;primaryOnly?:boolean}){
  const path=usePathname();
  const wechatRef=useRef<HTMLDivElement>(null);
  const number=(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"6287811887555").replace(/[^0-9]/g,"");
