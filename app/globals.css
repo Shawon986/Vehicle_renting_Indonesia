@@ -11712,3 +11712,16 @@ main .vehicle-filter label {
 .service-cta-actions .contact-channel-button{min-width:250px}
 .service-cta-actions .contact-channel-link{display:inline-flex;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid rgba(23,36,31,.35);font-size:11px}
 @media(max-width:680px){.service-cta-actions .contact-channels-primary{align-items:stretch;gap:12px}.service-cta-actions .contact-channel-button{width:100%;min-width:0}.service-cta-actions .contact-channel-link{align-self:flex-start}}
+
+
+/* Contact page: make the required privacy-consent sentence easier to read. */
+.general-enquiry-form .consent-row .consent-check {
+  font-size: 12px !important;
+  line-height: 1.6 !important;
+}
+@media (max-width: 680px) {
+  .general-enquiry-form .consent-row .consent-check {
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+  }
+}
