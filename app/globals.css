@@ -13172,3 +13172,32 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
     transition:none!important;
   }
 }
+
+
+/* ABOUT / SECTION 05 — stronger separation from the page background */
+.about-brand-company.about-brand-company-premium{
+  background:
+    radial-gradient(ellipse at 84% 10%,rgba(184,205,177,.19),transparent 36%),
+    radial-gradient(ellipse at 8% 92%,rgba(190,157,104,.13),transparent 34%),
+    linear-gradient(130deg,#102820 0%,#1b3a30 52%,#10271f 100%)!important;
+}
+.about-brand-company.about-brand-company-premium .about-company-shell{
+  background:rgba(247,249,244,.91)!important;
+  border:1px solid rgba(255,255,255,.88)!important;
+  box-shadow:0 26px 70px rgba(3,17,12,.22),inset 0 1px 0 rgba(255,255,255,.96)!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
+.about-brand-company.about-brand-company-premium .about-company-identity{
+  background:rgba(255,255,255,.72)!important;
+  border-color:rgba(255,255,255,.96)!important;
+  box-shadow:0 12px 30px rgba(35,49,41,.09),inset 0 1px 0 rgba(255,255,255,.98)!important;
+}
+@media(max-width:680px){
+  .about-brand-company.about-brand-company-premium .about-company-shell{
+    background:rgba(247,249,244,.94)!important;
+  }
+  .about-brand-company.about-brand-company-premium .about-company-identity{
+    background:rgba(255,255,255,.78)!important;
+  }
+}
