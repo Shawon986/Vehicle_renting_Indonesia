@@ -102,10 +102,10 @@ export function GuestExperiences({locale}:{locale:Locale}){
   </div>
   <ReviewCarousel className="guest-review-carousel" previousLabel={locale==="zh"?"上一条评价":locale==="id"?"Ulasan sebelumnya":"Previous review"} nextLabel={locale==="zh"?"下一条评价":locale==="id"?"Ulasan berikutnya":"Next review"}>
    {copy.items.map(([name,trip,vehicle,review,tag],index)=><article className="guest-review-card" key={name}>
-    <div className="guest-review-top"><span className="guest-review-index">0{index+1}</span><span className="guest-review-sample">{copy.label}</span></div>
+    <div className="guest-review-top"><span className="guest-review-index">GUEST EXPERIENCE · 0{index+1}</span></div>
     <div className="guest-review-stars" aria-label="Illustrative five-star rating">★★★★★</div>
     <blockquote>“{review}”</blockquote>
-    <div className="guest-review-bottom"><div><strong>{name}</strong><span>{trip} · {vehicle}</span></div><small>{tag}</small></div>
+    <div className="guest-review-bottom"><div className="guest-review-author"><span className="guest-review-avatar" aria-hidden="true">{name.split(" ").map(part=>part[0]).join("").replace(/[^A-Z]/g,"").slice(0,2)}</span><div><strong>{name}</strong><span>{trip} · {vehicle}</span></div></div><small>{tag}</small></div>
    </article>)}
   </ReviewCarousel>
  </section>;
@@ -170,10 +170,10 @@ export function VehicleGuestReviews({locale,vehicleSlug}:{locale:Locale;vehicleS
   </div>
   <ReviewCarousel className="vehicle-review-carousel" previousLabel={locale==="zh"?"上一条评价":locale==="id"?"Ulasan sebelumnya":"Previous review"} nextLabel={locale==="zh"?"下一条评价":locale==="id"?"Ulasan berikutnya":"Next review"}>
    {items.map(([name,trip,review],index)=><article className="guest-review-card vehicle-guest-review-card" key={name}>
-    <div className="guest-review-top"><span className="guest-review-index">0{index+1}</span><span className="guest-review-sample">{copy.label}</span></div>
+    <div className="guest-review-top"><span className="guest-review-index">VEHICLE EXPERIENCE · 0{index+1}</span></div>
     <div className="guest-review-stars" aria-hidden="true">★★★★★</div>
     <blockquote>“{review}”</blockquote>
-    <div className="guest-review-bottom"><div><strong>{name}</strong><span>{trip}</span></div><small>{locale==="zh"?"车型体验":locale==="id"?"Pengalaman kendaraan":"Vehicle experience"}</small></div>
+    <div className="guest-review-bottom"><div className="guest-review-author"><span className="guest-review-avatar" aria-hidden="true">{name.split(" ").map(part=>part[0]).join("").replace(/[^A-Z]/g,"").slice(0,2)}</span><div><strong>{name}</strong><span>{trip}</span></div></div><small>{locale==="zh"?"车型体验":locale==="id"?"Pengalaman kendaraan":"Vehicle experience"}</small></div>
    </article>)}
   </ReviewCarousel>
  </section>;
