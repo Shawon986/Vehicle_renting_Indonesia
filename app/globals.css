@@ -13032,9 +13032,9 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
   padding:clamp(28px,4.5vw,64px);
   border:1px solid rgba(255,255,255,.78);
   border-radius:30px;
-  background:rgba(255,255,255,.19);
+  background:rgba(255,255,255,.075);
   box-shadow:0 22px 60px rgba(35,49,41,.07),inset 0 1px 0 rgba(255,255,255,.9),inset 0 -1px 0 rgba(255,255,255,.32);
-  -webkit-backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(2px);
   backdrop-filter:blur(4px);
 }
 .about-brand-company.about-brand-company-premium .about-company-heading .eyebrow,
@@ -13083,7 +13083,7 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
   min-height:0;
   border:1px solid rgba(255,255,255,.82)!important;
   border-radius:22px;
-  background:rgba(255,255,255,.24)!important;
+  background:rgba(255,255,255,.095)!important;
   box-shadow:0 14px 36px rgba(35,49,41,.055),inset 0 1px 0 rgba(255,255,255,.9)!important;
 }
 .about-brand-company.about-brand-company-premium .about-company-identity::before{
@@ -13140,8 +13140,8 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
     gap:30px;
     padding:25px 19px;
     border-radius:22px;
-    background:rgba(255,255,255,.23);
-    -webkit-backdrop-filter:blur(3px);
+    background:rgba(255,255,255,.085);
+    -webkit-backdrop-filter:blur(1px);
     backdrop-filter:blur(3px);
   }
   .about-brand-company.about-brand-company-premium .about-company-heading h2{
@@ -13155,7 +13155,7 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
   .about-brand-company.about-brand-company-premium .about-company-identity{
     padding:22px 18px;
     border-radius:18px;
-    background:rgba(255,255,255,.3)!important;
+    background:rgba(255,255,255,.11)!important;
   }
   .about-brand-company.about-brand-company-premium .about-company-orbit{
     right:18px;
