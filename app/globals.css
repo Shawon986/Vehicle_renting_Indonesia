@@ -10339,3 +10339,71 @@ main .vehicle-filter label {
  .review-carousel-stage>.guest-review-card{animation:none}
  .review-carousel-dots button,.review-carousel-arrows button{transition:none}
 }
+
+
+/* Review cards: clean author identity, no sample-review stamp, and a more
+   recognisable customer-review layout across desktop and mobile. */
+.review-carousel-stage .guest-review-top {
+  justify-content:flex-start;
+  align-items:center;
+  min-height:18px;
+}
+.review-carousel-stage .guest-review-index {
+  font-size:.62rem;
+  letter-spacing:.16em;
+  color:#8a7650;
+}
+.review-carousel-stage .guest-review-bottom {
+  align-items:center;
+}
+.review-carousel-stage .guest-review-author {
+  display:flex;
+  align-items:center;
+  gap:13px;
+}
+.review-carousel-stage .guest-review-author>div {
+  display:grid;
+  gap:5px;
+}
+.review-carousel-stage .guest-review-avatar {
+  display:grid;
+  place-items:center;
+  flex:0 0 44px;
+  width:44px;
+  height:44px;
+  border:1px solid rgba(169,139,83,.34);
+  border-radius:50%;
+  background:linear-gradient(145deg,#f3eee2,#e4dfd1);
+  color:#75613e;
+  font-family:Georgia,serif;
+  font-size:.85rem;
+  letter-spacing:.04em;
+}
+.review-carousel-stage .guest-review-bottom small {
+  max-width:150px;
+}
+.review-carousel-stage>.guest-review-card {
+  border-radius:8px;
+}
+.review-carousel-stage>.guest-review-card:focus-within {
+  outline:2px solid rgba(169,139,83,.65);
+  outline-offset:3px;
+}
+@media(max-width:680px) {
+  .review-carousel-stage .guest-review-bottom {
+    align-items:flex-start;
+    gap:10px;
+  }
+  .review-carousel-stage .guest-review-author {
+    gap:10px;
+  }
+  .review-carousel-stage .guest-review-avatar {
+    flex-basis:39px;
+    width:39px;
+    height:39px;
+  }
+  .review-carousel-stage .guest-review-bottom small {
+    max-width:100px;
+    text-align:right;
+  }
+}
