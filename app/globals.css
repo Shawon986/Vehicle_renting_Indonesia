@@ -12041,3 +12041,73 @@ main .vehicle-filter label {
 @media(prefers-reduced-motion:reduce){
   .how-premium-page .how-premium-note .button-light{transition:none}
 }
+
+
+/* How it works — section 05: enforce readable text and premium panel layering */
+.how-premium-page .how-premium-note{
+  color:#fffdf7;
+  isolation:isolate;
+  position:relative;
+  background-color:#1b3528;
+}
+.how-premium-page .how-premium-note::before,
+.how-premium-page .how-premium-note::after{
+  z-index:0;
+}
+.how-premium-page .how-premium-note-inner{
+  position:relative;
+  z-index:2;
+}
+.how-premium-page .how-premium-note-inner > div{
+  position:relative;
+  z-index:2;
+  min-width:0;
+  opacity:1;
+  visibility:visible;
+}
+.how-premium-page .how-premium-note .eyebrow,
+.how-premium-page .how-premium-note .eyebrow span{
+  color:#f0dfb9 !important;
+  -webkit-text-fill-color:#f0dfb9;
+  opacity:1;
+  visibility:visible;
+}
+.how-premium-page .how-premium-note h2{
+  display:block;
+  color:#fffdf7 !important;
+  -webkit-text-fill-color:#fffdf7;
+  background:none;
+  opacity:1;
+  visibility:visible;
+  text-shadow:0 2px 22px rgba(0,0,0,.16);
+}
+.how-premium-page .how-premium-note-inner > div:last-child > p{
+  display:block;
+  color:#fffdf7 !important;
+  -webkit-text-fill-color:#fffdf7;
+  opacity:1;
+  visibility:visible;
+}
+.how-premium-page .how-premium-note .button-light{
+  position:relative;
+  z-index:3;
+  color:#1b3528 !important;
+  -webkit-text-fill-color:#1b3528;
+  opacity:1;
+  visibility:visible;
+}
+@media(max-width:640px){
+  .how-premium-page .how-premium-note-inner > div{
+    width:100%;
+  }
+  .how-premium-page .how-premium-note h2{
+    max-width:100%;
+    font-size:clamp(36px,9.5vw,48px);
+    line-height:1.12;
+    overflow-wrap:anywhere;
+  }
+  .how-premium-page .how-premium-note-inner > div:last-child > p{
+    font-size:14px;
+    line-height:1.9;
+  }
+}
