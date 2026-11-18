@@ -12557,3 +12557,66 @@ main.inner-page.how-page.how-premium-page > section.how-premium-note .how-premiu
   -webkit-backdrop-filter:blur(24px) saturate(170%) !important;
   backdrop-filter:blur(24px) saturate(170%) !important;
 }
+
+
+/* CLEAN RESET — section 05 is one clear glass body, with no artwork or white panel */
+main.inner-page.how-page.how-premium-page > section.how-premium-note{
+  position:relative !important;
+  isolation:isolate !important;
+  overflow:visible !important;
+  background:rgba(27,53,40,.22) !important;
+  background-color:rgba(27,53,40,.22) !important;
+  background-image:none !important;
+  -webkit-backdrop-filter:blur(24px) saturate(155%) !important;
+  backdrop-filter:blur(24px) saturate(155%) !important;
+  border:0 !important;
+  border-top:1px solid rgba(255,255,255,.32) !important;
+  border-bottom:1px solid rgba(255,255,255,.24) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 -1px 0 rgba(255,255,255,.08) !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note::before,
+main.inner-page.how-page.how-premium-page > section.how-premium-note::after{
+  content:none !important;
+  display:none !important;
+  background:none !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note > .how-premium-note-inner{
+  position:relative !important;
+  z-index:1 !important;
+  background:transparent !important;
+  background-image:none !important;
+  border:0 !important;
+  box-shadow:none !important;
+  -webkit-backdrop-filter:none !important;
+  backdrop-filter:none !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note .how-premium-note-inner > div:last-child{
+  background:rgba(255,255,255,.055) !important;
+  background-image:none !important;
+  border:1px solid rgba(255,255,255,.25) !important;
+  border-top:1px solid rgba(255,255,255,.38) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 14px 38px rgba(10,25,16,.08) !important;
+  -webkit-backdrop-filter:blur(18px) saturate(145%) !important;
+  backdrop-filter:blur(18px) saturate(145%) !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note .how-premium-note-inner > div:last-child > p{
+  color:rgba(255,253,247,.94) !important;
+  -webkit-text-fill-color:rgba(255,253,247,.94) !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note h2{
+  color:#fffdf7 !important;
+  -webkit-text-fill-color:#fffdf7 !important;
+}
+main.inner-page.how-page.how-premium-page > section.how-premium-note .eyebrow,
+main.inner-page.how-page.how-premium-page > section.how-premium-note .eyebrow span{
+  color:#ead8ae !important;
+  -webkit-text-fill-color:#ead8ae !important;
+}
+@media(max-width:640px){
+  main.inner-page.how-page.how-premium-page > section.how-premium-note{
+    -webkit-backdrop-filter:blur(18px) saturate(145%) !important;
+    backdrop-filter:blur(18px) saturate(145%) !important;
+  }
+}
