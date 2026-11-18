@@ -12363,3 +12363,34 @@ main .vehicle-filter label {
     backdrop-filter:blur(10px) saturate(120%);
   }
 }
+
+
+/* How It Works — premium page canvas revealed through transparent section 05 */
+.how-premium-page{
+  background-color:#e8e9df !important;
+  background-image:
+    radial-gradient(ellipse at 12% 42%,rgba(198,169,111,.32) 0%,rgba(198,169,111,0) 32%),
+    radial-gradient(ellipse at 88% 56%,rgba(94,126,99,.28) 0%,rgba(94,126,99,0) 38%),
+    radial-gradient(ellipse at 52% 100%,rgba(255,255,255,.78) 0%,rgba(255,255,255,0) 44%),
+    linear-gradient(135deg,#f5f1e7 0%,#e5e9df 48%,#dce4d9 100%) !important;
+}
+.how-premium-page section.how-premium-note{
+  background:transparent !important;
+  background-color:transparent !important;
+  background-image:none !important;
+  -webkit-backdrop-filter:none !important;
+  backdrop-filter:none !important;
+  border-top:1px solid rgba(255,255,255,.56) !important;
+  border-bottom:1px solid rgba(255,255,255,.48) !important;
+}
+.how-premium-page section.how-premium-note::before{
+  color:rgba(32,57,45,.075) !important;
+}
+.how-premium-page section.how-premium-note .how-premium-note-inner > div:last-child{
+  background:rgba(255,255,250,.48) !important;
+  border:1px solid rgba(255,255,255,.78) !important;
+  border-top:2px solid rgba(180,154,101,.88) !important;
+  box-shadow:0 24px 70px rgba(29,48,34,.10),inset 0 1px 0 rgba(255,255,255,.72) !important;
+  -webkit-backdrop-filter:blur(14px) saturate(135%) !important;
+  backdrop-filter:blur(14px) saturate(135%) !important;
+}
