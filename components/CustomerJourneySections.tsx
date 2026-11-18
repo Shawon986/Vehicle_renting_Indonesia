@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type {Locale} from "@/lib/site-data";
+import {ReviewCarousel} from "@/components/ReviewCarousel";
 
 export function TrustPrinciples({locale}:{locale:Locale}){
  const copy={
@@ -99,14 +100,14 @@ export function GuestExperiences({locale}:{locale:Locale}){
    <div><p className="eyebrow dark-eyebrow"><span>04</span> {copy.eyebrow}</p><h2 id="guest-experiences-title">{copy.title}</h2><p className="guest-experiences-intro">{copy.intro}</p></div>
    <span className="guest-experiences-count">08 / EXPERIENCES</span>
   </div>
-  <div className="guest-review-track" aria-label={copy.eyebrow}>
+  <ReviewCarousel className="guest-review-carousel" previousLabel={locale==="zh"?"上一条评价":locale==="id"?"Ulasan sebelumnya":"Previous review"} nextLabel={locale==="zh"?"下一条评价":locale==="id"?"Ulasan berikutnya":"Next review"}>
    {copy.items.map(([name,trip,vehicle,review,tag],index)=><article className="guest-review-card" key={name}>
     <div className="guest-review-top"><span className="guest-review-index">0{index+1}</span><span className="guest-review-sample">{copy.label}</span></div>
     <div className="guest-review-stars" aria-label="Illustrative five-star rating">★★★★★</div>
     <blockquote>“{review}”</blockquote>
     <div className="guest-review-bottom"><div><strong>{name}</strong><span>{trip} · {vehicle}</span></div><small>{tag}</small></div>
    </article>)}
-  </div>
+  </ReviewCarousel>
  </section>;
 }
 
@@ -167,13 +168,13 @@ export function VehicleGuestReviews({locale,vehicleSlug}:{locale:Locale;vehicleS
    <div><p className="eyebrow dark-eyebrow"><span>03</span> {locale==="zh"?"宾客体验":locale==="id"?"PENGALAMAN TAMU":"GUEST EXPERIENCES"}</p><h2 id="vehicle-guest-reviews-title">{copy.title}</h2><p>{copy.intro}</p></div>
    <span className="guest-experiences-count">02 / EXPERIENCES</span>
   </div>
-  <div className="vehicle-guest-review-grid">
+  <ReviewCarousel className="vehicle-review-carousel" previousLabel={locale==="zh"?"上一条评价":locale==="id"?"Ulasan sebelumnya":"Previous review"} nextLabel={locale==="zh"?"下一条评价":locale==="id"?"Ulasan berikutnya":"Next review"}>
    {items.map(([name,trip,review],index)=><article className="guest-review-card vehicle-guest-review-card" key={name}>
     <div className="guest-review-top"><span className="guest-review-index">0{index+1}</span><span className="guest-review-sample">{copy.label}</span></div>
     <div className="guest-review-stars" aria-hidden="true">★★★★★</div>
     <blockquote>“{review}”</blockquote>
     <div className="guest-review-bottom"><div><strong>{name}</strong><span>{trip}</span></div><small>{locale==="zh"?"车型体验":locale==="id"?"Pengalaman kendaraan":"Vehicle experience"}</small></div>
    </article>)}
-  </div>
+  </ReviewCarousel>
  </section>;
 }
