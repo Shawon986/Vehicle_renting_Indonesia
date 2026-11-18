@@ -11552,3 +11552,93 @@ main .vehicle-filter label {
     height: 14px !important;
   }
 }
+
+
+/* Shared consent layout: match the vehicle-rental form on all enquiry forms. */
+.inquiry-form .consent-row {
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:8px 16px;
+  width:100%;
+  min-width:0;
+}
+.inquiry-form .consent-row .consent-check {
+  display:inline-flex;
+  flex:1 1 220px;
+  align-items:flex-start;
+  min-width:0;
+  margin:0;
+  gap:9px;
+}
+.inquiry-form .consent-row .consent-check input[type="checkbox"],
+.inquiry-form .marketing-consent input[type="checkbox"] {
+  flex:0 0 16px;
+  width:16px;
+  min-width:16px;
+  height:16px;
+  margin:2px 0 0;
+}
+.inquiry-form .consent-row .required-field-mark {
+  flex:0 0 auto;
+  margin-left:2px;
+  color:#b64b3d;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.2;
+}
+.inquiry-form .consent-row .consent-privacy-link {
+  display:inline-flex;
+  flex:0 0 auto;
+  align-items:center;
+  justify-content:flex-end;
+  gap:7px;
+  min-width:0;
+  margin:0 0 0 auto;
+  padding:0;
+  white-space:nowrap;
+  line-height:1.5;
+}
+.inquiry-form .consent-row .consent-privacy-link .ui-arrow {
+  display:inline-block;
+  flex:0 0 14px;
+  width:14px!important;
+  min-width:14px!important;
+  height:14px!important;
+  margin:0;
+}
+.inquiry-form .marketing-consent {
+  display:flex;
+  align-items:flex-start;
+  gap:9px;
+  width:100%;
+  margin:8px 0 14px!important;
+  font-size:inherit;
+  line-height:1.5;
+}
+@media(max-width:680px) {
+  .inquiry-form .consent-row {
+    flex-direction:row;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:8px 12px;
+  }
+  .inquiry-form .consent-row .consent-check {
+    flex:1 1 190px;
+    min-width:0;
+  }
+  .inquiry-form .consent-row .consent-privacy-link {
+    align-self:flex-start;
+    flex:0 0 auto;
+    margin:0 0 0 auto;
+    white-space:nowrap;
+  }
+  .inquiry-form .consent-row .consent-privacy-link .ui-arrow {
+    flex-basis:14px;
+    width:14px!important;
+    min-width:14px!important;
+    height:14px!important;
+  }
+}
