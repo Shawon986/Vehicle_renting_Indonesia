@@ -13234,3 +13234,47 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
 .footer-wechat-copy{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:10px;row-gap:5px;min-width:0}
 .footer-wechat-copy>strong{font-size:12px;line-height:1.5;letter-spacing:.04em}
 .footer-wechat-copy>span{font-size:10px;line-height:1.6;color:#9db8c9}
+
+
+/* How it works — normalize service-card arrows across desktop and mobile */
+.how-premium-page .how-premium-service-image>i,
+.how-premium-page .how-premium-service-copy>span>b{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Arial,sans-serif!important;
+  font-size:0!important;
+  font-style:normal!important;
+  font-weight:400!important;
+  line-height:0!important;
+}
+.how-premium-page .how-premium-service-image>i::before,
+.how-premium-page .how-premium-service-copy>span>b::before{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:8px;
+  height:8px;
+  border-top:1.5px solid currentColor;
+  border-right:1.5px solid currentColor;
+  transform:translate(-65%,-45%);
+}
+.how-premium-page .how-premium-service-image>i::after,
+.how-premium-page .how-premium-service-copy>span>b::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:13px;
+  height:1.5px;
+  background:currentColor;
+  transform:translate(-52%,-5%) rotate(-45deg);
+  transform-origin:center;
+}
+.how-premium-page .how-premium-service-copy>span>b{
+  width:16px;
+  height:16px;
+  flex:0 0 16px;
+}
