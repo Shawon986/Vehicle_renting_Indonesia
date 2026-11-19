@@ -13382,3 +13382,95 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
   .footer-instagram{align-items:center;gap:12px;padding:10px}
   .footer-instagram-qr{flex-basis:92px;width:92px;height:92px}
 }
+
+
+/* Footer layout refinement: remove the oversized dead zone between brand,
+   navigation and contact details by giving each column a deliberate track. */
+@media(min-width:761px){
+  .site-footer .footer-main{
+    grid-template-columns:minmax(0,1.2fr) minmax(125px,.52fr) minmax(145px,.62fr) minmax(245px,1fr);
+    gap:clamp(22px,3vw,46px);
+    align-items:start;
+  }
+  .site-footer .footer-navigation{display:contents}
+  .site-footer .footer-navigation>div{
+    min-width:0;
+    padding-top:24px;
+    gap:14px;
+  }
+  .site-footer .footer-contact{
+    min-width:0;
+    padding-top:24px;
+  }
+  .site-footer .footer-brand{max-width:480px}
+}
+@media(max-width:760px){
+  .site-footer .footer-main{grid-template-columns:1fr 1fr;gap:26px}
+  .site-footer .footer-brand{grid-column:1/-1}
+  .site-footer .footer-navigation{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .site-footer .footer-navigation>div{gap:12px}
+  .site-footer .footer-contact{min-width:0}
+}
+@media(max-width:440px){
+  .site-footer .footer-main{grid-template-columns:1fr;gap:25px}
+  .site-footer .footer-brand{grid-column:auto}
+  .site-footer .footer-navigation{grid-template-columns:1fr 1fr;gap:16px}
+}
+
+/* How It Works mobile scroll stability:
+   reserve image geometry before lazy images decode and avoid costly composited
+   glass/hover effects while the user scrolls on touch devices. */
+@media(max-width:760px){
+  .how-premium-page,
+  .how-premium-page>section{overflow-anchor:none}
+  .how-premium-page .how-premium-service-image{
+    position:relative;
+    display:block;
+    aspect-ratio:1.05;
+    height:auto;
+    min-height:0;
+    contain:layout paint;
+  }
+  .how-premium-page .how-premium-service-image img{
+    position:absolute;
+    inset:0;
+    display:block;
+    width:100%;
+    height:100%;
+    min-height:0;
+    object-fit:cover;
+    transform:none!important;
+    transition:none!important;
+  }
+  .how-premium-page .how-premium-service-card,
+  .how-premium-page .how-premium-service-card:hover,
+  .how-premium-page .how-premium-service-card:active{
+    transform:none!important;
+    transition:none!important;
+    box-shadow:0 6px 18px rgba(32,47,37,.045);
+  }
+  .how-premium-page .how-premium-service-image>span{
+    -webkit-backdrop-filter:none!important;
+    backdrop-filter:none!important;
+  }
+  .how-premium-page .how-premium-glass-panel{
+    -webkit-backdrop-filter:none!important;
+    backdrop-filter:none!important;
+    transform:none!important;
+    will-change:auto!important;
+  }
+  .how-premium-page .how-premium-glass-panel::before,
+  .how-premium-page .how-premium-glass-note::before{
+    transform:none!important;
+    animation:none!important;
+  }
+  .how-premium-page .how-premium-glass-note,
+  .how-premium-page .how-premium-glass-panel{
+    contain:layout paint;
+    content-visibility:visible;
+  }
+  .how-premium-page img{scroll-margin:0}
+}
+@media(max-width:420px){
+  .how-premium-page .how-premium-service-image{aspect-ratio:1.65}
+}
