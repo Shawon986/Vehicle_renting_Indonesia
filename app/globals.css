@@ -13474,3 +13474,203 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
 @media(max-width:420px){
   .how-premium-page .how-premium-service-image{aspect-ratio:1.65}
 }
+
+
+/* FINAL MOBILE STABILITY PASS — How It Works
+   Keep every section in normal document flow. Remove scroll-linked visual
+   effects and reserve fixed media geometry so nothing grows after image decode. */
+@media (max-width: 760px) {
+  html:has(.how-premium-page), body:has(.how-premium-page) {
+    scroll-behavior: auto !important;
+    overflow-anchor: none !important;
+  }
+  .how-premium-page,
+  .how-premium-page *,
+  .how-premium-page *::before,
+  .how-premium-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+    background-attachment: scroll !important;
+  }
+  .how-premium-page,
+  .how-premium-page > section,
+  .how-premium-page .editorial-content,
+  .how-premium-page .how-premium-service-grid,
+  .how-premium-page .how-premium-service-card {
+    position: relative !important;
+    inset: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    transform: none !important;
+    translate: none !important;
+    scale: none !important;
+    contain: none !important;
+    content-visibility: visible !important;
+    overflow-anchor: none !important;
+  }
+  .how-premium-page .how-premium-hero {
+    min-height: 680px !important;
+    height: 86svh !important;
+    max-height: 820px !important;
+    overflow: hidden !important;
+  }
+  .how-premium-page .how-premium-hero-image,
+  .how-premium-page .how-premium-hero-shade {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+  }
+  .how-premium-page .how-premium-service-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) !important;
+    gap: 18px !important;
+  }
+  .how-premium-page .how-premium-service-card {
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) !important;
+    align-self: stretch !important;
+    width: 100% !important;
+  }
+  .how-premium-page .how-premium-service-image {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1.48 / 1 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: hidden !important;
+  }
+  .how-premium-page .how-premium-service-image img {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    transform: none !important;
+  }
+  .how-premium-page .how-premium-glass-note,
+  .how-premium-page .how-premium-glass-panel {
+    position: relative !important;
+    transform: none !important;
+    translate: none !important;
+    contain: none !important;
+    content-visibility: visible !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  .how-premium-page .how-premium-glass-note::before,
+  .how-premium-page .how-premium-glass-note::after,
+  .how-premium-page .how-premium-glass-panel::before,
+  .how-premium-page .how-premium-glass-panel::after {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Footer redesign — balanced editorial columns with a dedicated contact card. */
+.site-footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 48px max(6%,calc((100vw - 1440px)/2)) 24px !important;
+  background:
+    radial-gradient(ellipse at 88% 8%,rgba(65,153,157,.19),transparent 34%),
+    radial-gradient(ellipse at 4% 100%,rgba(43,91,111,.25),transparent 38%),
+    linear-gradient(125deg,#071b2b 0%,#0b2b40 52%,#071b2b 100%) !important;
+}
+.site-footer::after {
+  right: -100px !important;
+  bottom: 10px !important;
+  width: 360px !important;
+  height: 220px !important;
+  border-color: rgba(126,190,190,.12) !important;
+}
+.site-footer .footer-topline {
+  align-items: center;
+  padding-bottom: 22px;
+  border-color: rgba(255,255,255,.14);
+}
+.site-footer .footer-main {
+  display: grid !important;
+  grid-template-columns: minmax(0,1.15fr) minmax(0,.9fr) minmax(280px,.95fr) !important;
+  gap: clamp(28px,4vw,64px) !important;
+  align-items: start !important;
+  padding: 42px 0 38px !important;
+}
+.site-footer .footer-brand {max-width: 430px;min-width:0}
+.site-footer .footer-brand-eyebrow {margin-top:24px}
+.site-footer .footer-brand h2 {max-width:390px;font-size:clamp(29px,3vw,40px);line-height:1.12}
+.site-footer .footer-brand-copy {max-width:390px;font-size:13px;line-height:1.85}
+.site-footer .footer-navigation {
+  display: grid !important;
+  grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+  gap: 24px !important;
+  padding: 8px 0 0 !important;
+}
+.site-footer .footer-navigation>div {gap:14px;min-width:0}
+.site-footer .footer-navigation .footer-column-label,
+.site-footer .footer-contact .footer-column-label {margin:0 0 8px;font-size:9px;letter-spacing:.18em}
+.site-footer .footer-navigation a,
+.site-footer .footer-navigation .cookie-settings {font-size:12px;line-height:1.55}
+.site-footer .footer-contact {
+  display:flex;
+  min-width:0;
+  padding:22px !important;
+  gap:12px !important;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:18px;
+  background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025));
+  box-shadow:0 16px 40px rgba(0,0,0,.12);
+}
+.site-footer .footer-contact .footer-email {
+  max-width:100%;
+  overflow-wrap:anywhere;
+  font-size:12px;
+}
+.site-footer .footer-contact .footer-wechat,
+.site-footer .footer-contact .footer-instagram {
+  width:100%;
+  margin:6px 0 0;
+  padding:12px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:12px;
+  background:rgba(2,16,27,.22);
+}
+.site-footer .footer-contact .footer-wechat-qr {flex:0 0 76px;width:76px;height:76px}
+.site-footer .footer-contact .footer-instagram-qr {flex:0 0 76px;width:76px;height:76px}
+.site-footer .footer-contact .footer-instagram-copy>span {display:none}
+.site-footer .footer-contact .footer-wechat-copy {gap:5px}
+.site-footer .footer-contact>a:not(.footer-email) {margin-top:4px}
+.site-footer .footer-bottom {margin-top:0;padding-top:20px}
+@media(max-width:1000px) {
+  .site-footer .footer-main {grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;gap:30px !important}
+  .site-footer .footer-brand {max-width:100%}
+  .site-footer .footer-navigation {padding-top:10px !important}
+  .site-footer .footer-contact {grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center}
+  .site-footer .footer-contact>.footer-column-label,
+  .site-footer .footer-contact>small {grid-column:1/-1}
+  .site-footer .footer-contact .footer-wechat,
+  .site-footer .footer-contact .footer-instagram {margin:0}
+}
+@media(max-width:600px) {
+  .site-footer {padding:38px 6% 22px !important}
+  .site-footer .footer-topline {align-items:flex-start;flex-direction:column;gap:8px}
+  .site-footer .footer-main {grid-template-columns:minmax(0,1fr) !important;gap:26px !important;padding:28px 0 30px !important}
+  .site-footer .footer-brand {grid-column:auto}
+  .site-footer .footer-brand h2 {font-size:32px}
+  .site-footer .footer-navigation {grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:18px !important;padding:0 !important}
+  .site-footer .footer-contact {grid-column:auto;grid-template-columns:minmax(0,1fr) !important;padding:18px !important}
+  .site-footer .footer-contact>.footer-column-label,
+  .site-footer .footer-contact>small {grid-column:auto}
+  .site-footer .footer-contact .footer-wechat,
+  .site-footer .footer-contact .footer-instagram {margin-top:4px}
+  .site-footer .footer-bottom {align-items:flex-start;flex-direction:column;gap:9px;margin:0;padding-top:18px}
+}
