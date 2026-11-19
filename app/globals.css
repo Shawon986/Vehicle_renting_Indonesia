@@ -13286,7 +13286,6 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
     position:relative!important;
     isolation:auto!important;
     overflow:clip!important;
-    contain:layout paint!important;
     content-visibility:visible!important;
     scroll-margin-top:0!important;
     transform:none!important;
@@ -13319,7 +13318,6 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
   main.inner-page.how-page.how-premium-page .how-premium-glass-copy{
     animation:none!important;
     transition:none!important;
-    transform:none!important;
     scroll-behavior:auto!important;
     will-change:auto!important;
   }
