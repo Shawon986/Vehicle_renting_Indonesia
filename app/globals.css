@@ -13278,3 +13278,109 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
   height:16px;
   flex:0 0 16px;
 }
+
+
+/* Mobile scroll stability: keep the Clear Expectation glass panel in normal flow */
+@media(max-width:760px){
+  main.inner-page.how-page.how-premium-page > .how-premium-glass-note{
+    position:relative!important;
+    isolation:auto!important;
+    overflow:clip!important;
+    contain:layout paint!important;
+    content-visibility:visible!important;
+    scroll-margin-top:0!important;
+    transform:none!important;
+    animation:none!important;
+    transition:none!important;
+  }
+  main.inner-page.how-page.how-premium-page > .how-premium-glass-note::before{
+    content:none!important;
+    display:none!important;
+  }
+  main.inner-page.how-page.how-premium-page .how-premium-glass-panel{
+    position:relative!important;
+    transform:none!important;
+    animation:none!important;
+    transition:none!important;
+    -webkit-backdrop-filter:none!important;
+    backdrop-filter:none!important;
+    background:rgba(255,255,255,.72)!important;
+    box-shadow:0 12px 30px rgba(37,57,44,.07),inset 0 1px 0 rgba(255,255,255,.9)!important;
+    will-change:auto!important;
+    backface-visibility:visible!important;
+  }
+  main.inner-page.how-page.how-premium-page .how-premium-glass-panel::before{
+    transform:none!important;
+    animation:none!important;
+    transition:none!important;
+  }
+  main.inner-page.how-page.how-premium-page .how-premium-glass-panel *,
+  main.inner-page.how-page.how-premium-page .how-premium-glass-heading,
+  main.inner-page.how-page.how-premium-page .how-premium-glass-copy{
+    animation:none!important;
+    transition:none!important;
+    transform:none!important;
+    scroll-behavior:auto!important;
+    will-change:auto!important;
+  }
+}
+
+/* Footer email and Instagram contact details */
+.footer-email{
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+.footer-instagram{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  width:100%;
+  margin:12px 0 8px;
+  padding:12px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:14px;
+  background:rgba(255,255,255,.045);
+}
+.footer-instagram-qr{
+  display:block;
+  flex:0 0 104px;
+  width:104px;
+  height:104px;
+  padding:5px;
+  border-radius:10px;
+  background:#fff;
+}
+.footer-instagram-qr img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+.footer-instagram-copy{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:5px;
+  min-width:0;
+}
+.footer-instagram-copy strong{
+  color:#fff;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.footer-instagram-copy>a{
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+  overflow-wrap:anywhere;
+}
+.footer-instagram-copy>span{
+  color:#9db8c9;
+  font-size:10px;
+  line-height:1.55;
+}
+@media(max-width:760px){
+  .footer-instagram{align-items:center;gap:12px;padding:10px}
+  .footer-instagram-qr{flex-basis:92px;width:92px;height:92px}
+}
