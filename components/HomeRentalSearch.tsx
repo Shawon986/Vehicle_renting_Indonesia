@@ -7,7 +7,7 @@ import {VehicleInquiryForm} from "@/components/site";
 
 type EnquiryValues=Record<string,string>;
 
-export function HomeRentalSearch({locale,enabled=false}:{locale:Locale;enabled?:boolean}){
+export function HomeRentalSearch({locale,enabled=true}:{locale:Locale;enabled?:boolean}){
  const copy=locale==="zh"?{
   eyebrow:"RENTCAROCEAN · 行程咨询",title:"从您的旅程开始。",location:"上车地点",destination:"目的地",pickup:"上车日期",returnDate:"返程日期",category:"车辆类别",passengers:"乘客人数",oneWay:"单程行程",more:"更多行程选项",less:"收起选项",pickupTime:"上车时间",returnTime:"返程时间",age:"驾驶员年龄",license:"驾照签发国家 / 地区",choose:"请选择",search:"继续填写咨询",note:"提交后，我们的团队将确认车辆安排、可用情况及报价。",locationPlaceholder:"机场、城市、酒店或地址",invalid:"请检查地点及行程日期。",close:"关闭咨询表单",modal:"完成您的车辆咨询",summary:"行程概览",stops:"沿途停靠点",addStop:"添加停靠点",removeStop:"移除停靠点",purpose:"行程目的",purposeOptions:["机场接送","商务出行","家庭旅行","观光游览","其他"],luggage:"行李数量",specialRequests:"特殊要求"
  } : locale==="id"?{
