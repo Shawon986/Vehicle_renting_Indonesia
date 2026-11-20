@@ -52,4 +52,257 @@
   letter-spacing: .1em;
 }
 .vehicle-grid .vehicle-open {
-  position: ab¶»§q«^
+  position: absolute;
+  z-index: 2;
+  right: 16px;
+  bottom: 16px;
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border: 1px solid rgba(255,255,255,.65);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(27,48,38,.78);
+  backdrop-filter: blur(12px);
+}
+.vehicle-grid .vehicle-info {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 26px 24px;
+  gap: 12px;
+  background: #f7f5ee;
+}
+.vehicle-grid .vehicle-category {
+  color: #8a7955;
+  font-size: 9px;
+  letter-spacing: .19em;
+  text-transform: uppercase;
+}
+.vehicle-grid .vehicle-info h3 {
+  margin: 0;
+  color: #20362a;
+  font: 500 clamp(24px, 2.2vw, 32px)/1.1 var(--font-display);
+  letter-spacing: -.025em;
+}
+.vehicle-grid .vehicle-summary {
+  max-width: 54ch;
+  color: #68736a;
+  font-size: 12px;
+  line-height: 1.85;
+}
+.vehicle-grid .vehicle-card-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 3px;
+}
+.vehicle-grid .vehicle-card-facts > * {
+  padding: 7px 10px;
+  border: 1px solid rgba(36,54,43,.13);
+  border-radius: 2px;
+  color: #536258;
+  background: #efede5;
+  font-size: 9px;
+  letter-spacing: .035em;
+}
+.vehicle-grid .vehicle-card-pricing {
+  margin-top: 7px;
+  border-color: rgba(36,54,43,.15);
+  background: #eeece3;
+}
+.vehicle-grid .vehicle-card-pricing > div { padding: 12px 13px; }
+.vehicle-grid .vehicle-card-pricing > div strong { color: #263c30; font-size: 12px; }
+.vehicle-grid .view-details-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+  margin-top: 7px;
+  padding: 15px 0 2px;
+  border-top: 1px solid rgba(36,54,43,.18);
+  color: #263c30;
+  font-size: 10px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.vehicle-grid .view-details-button .ui-arrow { transition: transform .25s ease; }
+.vehicle-grid .view-details-button:hover .ui-arrow { transform: translateX(5px); }
+
+/* Vehicle-specific service details: editorial, structured and consistent across every vehicle page */
+.vehicle-service-details {
+  position: relative;
+  overflow: hidden;
+  padding-top: clamp(64px, 8vw, 112px);
+  padding-bottom: clamp(64px, 8vw, 112px);
+  background: #e9e6dc;
+}
+.vehicle-service-details::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 10.4%;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(transparent, rgba(139,121,85,.3), transparent);
+  pointer-events: none;
+}
+.vehicle-service-details > .eyebrow { color: #8a7955; letter-spacing: .2em; }
+.vehicle-service-details > h2 {
+  max-width: 760px;
+  color: #20362a;
+  font: 500 clamp(38px, 5vw, 68px)/1.02 var(--font-display);
+  letter-spacing: -.035em;
+}
+.vehicle-service-details > p:not(.eyebrow) {
+  max-width: 620px;
+  color: #647066;
+  font-size: 13px;
+  line-height: 1.9;
+}
+.vehicle-inclusion-table-wrap {
+  position: relative;
+  border: 1px solid rgba(35,54,43,.16);
+  background: rgba(248,247,241,.74);
+  box-shadow: 0 18px 44px rgba(34,48,39,.055);
+}
+.vehicle-inclusion-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.vehicle-inclusion-table th {
+  padding: 17px 21px;
+  color: #f3f0e8;
+  background: #263b30;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.vehicle-inclusion-table td {
+  padding: 17px 21px;
+  border-bottom: 1px solid rgba(35,54,43,.11);
+  color: #45554a;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.vehicle-inclusion-table tr:last-child td { border-bottom: 0; }
+.vehicle-inclusion-table tbody tr:nth-child(even) { background: rgba(231,229,219,.45); }
+.vehicle-detail-lower {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 24px;
+}
+.vehicle-detail-lower > section,
+.vehicle-detail-lower > div {
+  padding: 27px 29px;
+  border: 1px solid rgba(35,54,43,.14);
+  background: rgba(248,247,241,.58);
+}
+.vehicle-detail-lower h3 {
+  margin: 0 0 12px;
+  color: #263b30;
+  font: 500 25px/1.15 var(--font-display);
+}
+.vehicle-detail-lower p,
+.vehicle-detail-lower li {
+  color: #657166;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+/* Search is compact on mobile until the visitor interacts with it; 16px inputs prevent iOS focus zoom. */
+@media (max-width: 680px) {
+  .hero-with-search {
+    min-height: min(760px, 100svh);
+    max-height: none;
+    height: auto;
+    padding-bottom: 34px;
+  }
+  .hero-with-search .hero-content {
+    top: 50%;
+    left: 6%;
+    right: 6%;
+    width: 88%;
+    transform: translateY(-50%);
+  }
+  .hero-with-search .home-rental-search {
+    margin: 0 0 23px;
+    padding: 0;
+  }
+  .hero-with-search .home-rental-search-heading { display: none; }
+  .hero-with-search .home-rental-search-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 7px;
+    padding: 7px;
+    border: 1px solid rgba(255,255,255,.68);
+    border-radius: 5px;
+    background: rgba(248,247,241,.97);
+    box-shadow: 0 12px 30px rgba(0,0,0,.18);
+  }
+  .hero-with-search .home-rental-search-main {
+    display: contents;
+  }
+  .hero-with-search .home-rental-search-main > .rental-search-field:not(.rental-search-location) {
+    display: none;
+  }
+  .hero-with-search .rental-search-location {
+    min-height: 48px;
+    padding: 7px 10px;
+    border: 0;
+    background: transparent;
+  }
+  .hero-with-search .rental-search-location > span {
+    font-size: 8px;
+    letter-spacing: .13em;
+  }
+  .hero-with-search .rental-search-field input,
+  .hero-with-search .rental-search-field select {
+    min-height: 27px;
+    font-size: 16px !important;
+    line-height: 1.3;
+  }
+  .hero-with-search .rental-search-submit {
+    min-height: 48px;
+    align-self: stretch;
+    padding: 0 14px;
+    white-space: nowrap;
+    font-size: 9px;
+  }
+  .hero-with-search .home-rental-search-form:focus-within {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero-with-search .home-rental-search-form:focus-within .home-rental-search-main {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+  .hero-with-search .home-rental-search-form:focus-within .home-rental-search-main > .rental-search-field {
+    display: flex;
+  }
+  .hero-with-search .home-rental-search-form:focus-within .rental-search-location {
+    grid-column: 1 / -1;
+  }
+  .hero-with-search .home-rental-search-form:focus-within .rental-search-submit {
+    width: 100%;
+  }
+  .hero-with-search .home-rental-search-form:focus-within .rental-search-field input,
+  .hero-with-search .home-rental-search-form:focus-within .rental-search-field select {
+    font-size: 16px !important;
+  }
+  .vehicle-grid { grid-template-columns: 1fr; gap: 16px; }
+  .vehicle-grid .vehicle-image-wrap { min-height: 0; aspect-ratio: 1.48 / 1; }
+  .vehicle-grid .vehicle-info { padding: 21px 19px 20px; gap: 10px; }
+  .vehicle-grid .vehicle-info h3 { font-size: 28px; }
+  .vehicle-grid .vehicle-summary { font-size: 12px; }
+  .vehicle-service-details::before { display: none; }
+  .vehicle-inclusion-table th,
+  .vehicle-inclusion-table td { padding: 13px 11px; font-size: 10px; }
+  .vehicle-detail-lower { grid-template-columns: 1fr; gap: 12px; }
+  .vehicle-detail-lower > section,
+  .vehicle-detail-lower > div { padding: 21px 19px; }
+}
