@@ -33,7 +33,7 @@ body{background:var(--cream);color:var(--ink)}
 .vehicle-card:hover{transform:translateY(-5px);box-shadow:0 22px 45px rgba(23,42,40,.12)}
 .vehicle-card .vehicle-image-wrap{border-radius:13px}
 .vehicle-info{padding:18px 8px 8px}
-.vehicle-card-facts{background:#edf4f2;border-radius:12px;padding:12px}
+.vehicle-card-facts{background:#ECEFE3;border-radius:12px;padding:12px}
 .view-details-button{border-radius:999px;background:#ECEFE3;padding:12px 16px;color:#173C36}
 .vehicle-card-pricing{border-top-color:rgba(23,60,54,.13)}
 .trust-principles{background:linear-gradient(135deg,#E6EBDD,#F6F2E9)}
@@ -52,7 +52,7 @@ body{background:var(--cream);color:var(--ink)}
 .service-form-section{background:linear-gradient(135deg,#E9E5DB,#F6F2E9)}
 .service-form-editorial{border-radius:18px;overflow:hidden}
 .service-form-field input,.service-form-field select,.service-form-field textarea{border-radius:10px}
-.site-footer{background:#102f3a}
+.site-footer{background:#102B25}
 .footer-whatsapp{border-radius:999px}
 .journey-purpose-section{padding:108px 10.4%;background:linear-gradient(145deg,#E6EBDD 0%,#E9E5DB 55%,#F2E9D9 100%);position:relative;overflow:hidden}
 .journey-purpose-heading{display:grid;grid-template-columns:1.1fr .7fr;gap:8%;align-items:end;margin-bottom:44px}
@@ -74,18 +74,18 @@ body{background:var(--cream);color:var(--ink)}
 .rental-guide-heading>p:last-child{font-size:13px;line-height:1.9;color:#6B7974;max-width:330px;margin-top:20px}
 .rental-guide-list{border-top:1px solid rgba(23,42,40,.17)}
 .rental-guide-item{border-bottom:1px solid rgba(23,42,40,.17);padding:0}
-.rental-guide-item summary{display:grid;grid-template-columns:42px minmax(0,1fr) 24px;gap:14px;align-items:center;list-style:none;cursor:pointer;padding:22px 0;font-size:15px;font-weight:650;color:#163743}
+.rental-guide-item summary{display:grid;grid-template-columns:42px minmax(0,1fr) 24px;gap:14px;align-items:center;list-style:none;cursor:pointer;padding:22px 0;font-size:15px;font-weight:650;color:#172A28}
 .rental-guide-item summary::-webkit-details-marker{display:none}
 .rental-guide-index{font-size:9px;letter-spacing:.12em;color:#A17B3D}
 .rental-guide-item summary i{width:20px;height:20px;border:1px solid rgba(23,60,54,.3);border-radius:50%;position:relative}
 .rental-guide-item summary i:before,.rental-guide-item summary i:after{content:"";position:absolute;background:#A17B3D;left:5px;right:5px;top:9px;height:1px}
 .rental-guide-item summary i:after{transform:rotate(90deg);transition:transform .2s}
 .rental-guide-item[open] summary i:after{transform:rotate(0)}
-.rental-guide-item>p{margin:0 38px 22px 56px;color:#607178;font-size:12px;line-height:1.9;max-width:620px}
+.rental-guide-item>p{margin:0 38px 22px 56px;color:#6B7974;font-size:12px;line-height:1.9;max-width:620px}
 .rental-guide-section>.text-link{grid-column:2;justify-self:start;margin-top:8px}
-.related-vehicle-section{padding:92px 10.4%;background:#edf2ee}
+.related-vehicle-section{padding:92px 10.4%;background:#E6EBDD}
 .related-vehicle-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:34px}
-.related-vehicle-heading>span{font-size:8px;letter-spacing:.18em;color:#718287}
+.related-vehicle-heading>span{font-size:8px;letter-spacing:.18em;color:#6B7974}
 .related-vehicle-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .related-vehicle-card{border:1px solid rgba(23,60,54,.1);border-radius:17px;background:#fff;padding:10px;box-shadow:0 12px 30px rgba(23,42,40,.06)}
 .related-vehicle-image{height:190px;display:block;position:relative;overflow:hidden;border-radius:11px;background:#E9E5DB}
@@ -93,7 +93,7 @@ body{background:var(--cream);color:var(--ink)}
 .related-vehicle-card:hover .related-vehicle-image img{transform:scale(1.05)}
 .related-vehicle-image>span{position:absolute;top:12px;left:12px;color:#fff;background:rgba(16,43,37,.72);border-radius:30px;padding:6px 9px;font-size:9px}
 .related-vehicle-copy{padding:15px 8px 9px}
-.related-vehicle-copy>p{font-size:9px;letter-spacing:.1em;color:#718287;text-transform:uppercase;margin:0 0 7px}
+.related-vehicle-copy>p{font-size:9px;letter-spacing:.1em;color:#6B7974;text-transform:uppercase;margin:0 0 7px}
 .related-vehicle-copy h3{font-size:20px;letter-spacing:-.04em;margin:0 0 15px;color:#172A28}
 .related-vehicle-copy>a{display:inline-flex;align-items:center;gap:9px;color:#8D713C;font-size:10px;font-weight:700}
 @media(max-width:900px){
