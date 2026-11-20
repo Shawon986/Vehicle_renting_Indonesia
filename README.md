@@ -16,7 +16,7 @@ Next.js App Router, React 19 and TypeScript. The public site is display + contac
 - Vehicle detail service-inclusion matrix, add-on options, verified-only use-case guidance, non-numeric price-on-request slots, multi-image gallery support with keyboard-operable lightbox and breadcrumbs.
 - Locale-aware WhatsApp / WeChat / phone / email / enquiry contact components and mobile sticky contact actions (only verified channels appear when configured).
 - Vehicle enquiry form with pickup/return dates and times (Asia/Jakarta), pickup point and optional destination/drop-off point, passengers, luggage, vehicle model or category, travel style, add-ons, WeChat ID on Chinese pages and configured contact-channel preference.
-- Inquiry API with strict same-origin checks, bounded fields, date/time/category/add-on validation, vehicle/driver compatibility checks, honeypot, Cloudflare Turnstile, Upstash rate limiting, localized sales email and localized acknowledgement.
+- Inquiry APIs with strict same-origin checks, bounded fields, service-specific validation, vehicle/driver compatibility checks, honeypot protection and a shared Formspree inbox for vehicle, tour, event, gift and general enquiries.
 - About, Contact, FAQ, Services hub and legal placeholder routes, with all service pages included in the localized sitemap.
 - Locale-preserving language switcher with persisted preference, per-locale metadata, WebSite / Service / FAQ / Breadcrumb structured data, robots and sitemap foundations, plus locale-aware IDR formatting (no public rates).
 - Consent-first cookie banner with reopenable preferences and GA4 loading only after analytics consent.
@@ -29,13 +29,13 @@ Set `CONTENT_APPROVED=true` only after Indonesian, English and Simplified Chines
 ## Required before production
 - Replace provisional brand mark, sample vehicle entries and illustrative photography with approved brand and fleet content.
 - Confirm company legal name, NIB, licences, office address, operating cities and real contact channels.
-- Configure every variable in `.env.example` locally and in hosting. The API deliberately rejects submissions until all security and delivery services are configured.
+- Confirm the shared Formspree form is active and its notification/target email is configured. The public enquiry APIs retain same-origin checks, server-side validation, a honeypot and the content/legal approval gate.
 - Legal must provide and approve all legal pages in all three locales. The privacy policy must be complete before accepting personal data.
 - Confirm service inclusions, actual vehicle specifications, response-time promise and sales handoff recipient. Do not publish a response-time promise until the company confirms it can be met.
 - Self-host approved fonts and images for mainland China delivery.
 - Select and connect a CMS with editorial translation approval workflow (provider/project not yet selected). Vehicle records currently use typed seed data; WeChat QR/ID and coverage text are environment/static content, not yet CMS-editable.
 - Add verified fleet specifications, real multi-angle photos per vehicle, per-vehicle inclusion statuses, operating areas, driver/insurance/cancellation policy and named content owners. Capacity/transmission filters remain selectable but only verified options can be filtered; use-case labels and gallery images remain unpublished until verified assets/data are supplied.
-- Configure verified WhatsApp / WeChat ID + QR / phone / email, the generic and optional per-service sales inboxes, Turnstile, Resend, Upstash, Google Sheets webhook and GA4 in the hosting environment.
+- Configure verified WhatsApp / WeChat ID + QR / phone / email, optional Google Sheets webhook and GA4 in the hosting environment. All public website enquiry submissions are forwarded to the shared Formspree form configured in `lib/formspree.ts`.
 - Replace third-party Unsplash imagery with approved self-hosted fleet photography for mainland China delivery.
 - Obtain legal-approved privacy/cookie/terms content and confirm the response-time promise before setting `CONTENT_APPROVED=true`. The inquiry API and form remain disabled until this gate is deliberately enabled.
 
@@ -43,7 +43,7 @@ No live availability, inventory quantities, public prices, customer holds, onlin
 
 ## Public enquiry handoff
 
-The enquiry APIs route each validated enquiry to its service-line sales inbox (`INQUIRY_TO_EMAIL_VEHICLE_RENTAL`, `INQUIRY_TO_EMAIL_TOURS`, `INQUIRY_TO_EMAIL_EVENTS`, or `INQUIRY_TO_EMAIL_GIFTS`, with `INQUIRY_TO_EMAIL` as the fallback). If configured, they then make a best-effort authenticated copy to a Google Sheet for searchable lead history and CSV export. The sheet handoff supports vehicle, tour, event and gift enquiries; service-specific fields are retained in a `Service details JSON` column. A spreadsheet outage does not cause a customer to resubmit an enquiry already delivered to sales. This is a one-way handoff only; the public site does not connect to the internal operations portal.
+The enquiry APIs forward validated vehicle, tour, event, gift and general enquiries to the shared Formspree form configured in `lib/formspree.ts`. Set the notification/target email in the Formspree dashboard. If configured, the APIs also make a best-effort authenticated copy to a Google Sheet for searchable lead history and CSV export. The sheet handoff supports vehicle, tour, event and gift enquiries; service-specific fields are retained in a `Service details JSON` column. A spreadsheet outage does not cause a customer to resubmit an enquiry already delivered to sales. This is a one-way handoff only; the public site does not connect to the internal operations portal.
 
 1. Create a dedicated Google Spreadsheet for public website enquiries.
 2. Open **Extensions → Apps Script** and paste `integrations/google-sheets/Code.gs`.
