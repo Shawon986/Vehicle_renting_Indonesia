@@ -1,6 +1,7 @@
 import {NextRequest,NextResponse} from "next/server";
 import {randomUUID} from "node:crypto";
 import {vehicles,vehicleSupportsDriver} from "@/lib/site-data";
+import {createAdminClient} from "@/lib/supabase/server";
 export const runtime="nodejs";
 const escapeHtml=(value:string)=>value.replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]??char));
 const validDate=(value:string)=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(value))return false;const date=new Date(value+"T00:00:00Z");return Number.isFinite(date.getTime())&&date.toISOString().slice(0,10)===value};
@@ -23,7 +24,7 @@ export async function POST(request:NextRequest){
  let body:Record<string,unknown>;try{const parsed=await request.json();if(!parsed||typeof parsed!=="object"||Array.isArray(parsed))throw new Error();body=parsed as Record<string,unknown>}catch{return NextResponse.json({error:"Invalid request"},{status:400})}
  const value=(key:string,max=2000)=>typeof body[key]==="string"?(body[key] as string).trim().slice(0,max):"";
  const leadId=randomUUID();
- if(value("website",200))return NextResponse.json({ok:true,leadId,notificationStatus:emailDelivered?"sent":"pending"});
+ if(value("website",200))return NextResponse.json({ok:true,leadId});
  const locale=value("locale",4);if(!["id","en","zh"].includes(locale))return NextResponse.json({error:"Invalid locale"},{status:400});
  const name=value("name",100),email=value("email",160),phone=value("phone",40),pickupDate=value("pickupDate",10),returnDate=value("returnDate",10),pickupTime=value("pickupTime",5),returnTime=value("returnTime",5),pickupLocation=value("pickupLocation",180),dropoffLocation=value("dropoffLocation",180),passengers=Number(value("passengers",3)),oneWay=value("oneWay",4)==="yes";const journeyStops=value("journeyStops",1000),tripPurpose=value("tripPurpose",100),specialRequests=value("specialRequests",1000);
  if(!name||!email||!phone||!pickupDate||(!oneWay&&!returnDate)||!pickupTime||(!oneWay&&!returnTime)||!pickupLocation||!value("consent",10))return NextResponse.json({error:"Missing required fields"},{status:400});
