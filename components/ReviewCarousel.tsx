@@ -11,7 +11,8 @@ export function ReviewCarousel({children,className=""}:ReviewCarouselProps){
   const node=viewport.current;
   if(!node)return;
   const card=node.querySelector<HTMLElement>(".guest-review-card");
-  const gap=16;
+  const track=node.querySelector<HTMLElement>(".review-carousel-track");
+  const gap=track?Number.parseFloat(getComputedStyle(track).columnGap||getComputedStyle(track).gap)||16:16;
   const amount=card?card.getBoundingClientRect().width+gap:node.clientWidth;
   node.scrollBy({left:amount*direction,behavior:"smooth"});
  }
@@ -22,8 +23,8 @@ export function ReviewCarousel({children,className=""}:ReviewCarouselProps){
   <div className="review-carousel-controls">
    <span className="review-carousel-position">{String(slides.length).padStart(2,"0")} <i/> {slides.length} {className.includes("guest-review")?"EXAMPLES":"REVIEWS"}</span>
    <div className="review-carousel-arrows">
-    <button type="button" onClick={()=>move(-1)} aria-label="Previous reviews">‹</button>
-    <button type="button" onClick={()=>move(1)} aria-label="Next reviews">›</button>
+    <button type="button" onClick={()=>move(-1)} aria-label="Previous reviews"><span className="review-arrow-icon review-arrow-previous" aria-hidden="true"/></button>
+    <button type="button" onClick={()=>move(1)} aria-label="Next reviews"><span className="review-arrow-icon review-arrow-next" aria-hidden="true"/></button>
    </div>
   </div>
  </div>;
