@@ -13756,3 +13756,25 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
  .gift-benefits{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 10px;margin-top:22px}
  .gift-benefits>span{font-size:10px}
 }
+
+
+/* Premium fruit & flower occasion feature */
+.gift-occasion-feature{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);gap:clamp(28px,5vw,72px);align-items:stretch;margin:clamp(34px,5vw,68px) auto 0;max-width:1280px}
+.gift-occasion-image{position:relative;min-height:590px;overflow:hidden;border-radius:5px;background:#d9d1bd;box-shadow:0 28px 70px rgba(34,43,32,.14)}
+.gift-occasion-image:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(0deg,rgba(20,31,23,.62),transparent)}
+.gift-occasion-image img{display:block;width:100%;height:100%;min-height:590px;object-fit:cover;object-position:center}
+.gift-occasion-image>span{position:absolute;z-index:1;left:26px;bottom:25px;color:#fff;font-size:9px;letter-spacing:.2em}
+.gift-occasion-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(10px,2vw,28px) 0;color:#25372a}
+.gift-occasion-kicker{font-size:9px;letter-spacing:.2em;color:#87906c;margin:0 0 22px}
+.gift-occasion-copy h3{max-width:490px;font-family:var(--font-serif);font-weight:500;font-size:clamp(34px,4vw,55px);letter-spacing:-.045em;line-height:1.08;margin:0 0 19px;color:#25372a}
+.gift-occasion-copy>p:not(.gift-occasion-kicker){max-width:440px;font-size:13px;line-height:1.85;color:#687267;margin:0 0 28px}
+.gift-occasion-tiers{border-top:1px solid rgba(44,60,43,.2)}
+.gift-occasion-tiers>div{display:grid;grid-template-columns:32px minmax(0,1fr) auto;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid rgba(44,60,43,.16)}
+.gift-occasion-tiers>div>span{font-size:9px;letter-spacing:.12em;color:#8c956f}
+.gift-occasion-tiers strong{font-family:var(--font-serif);font-size:18px;font-weight:500;color:#293b2d}
+.gift-occasion-tiers b{font-family:var(--font-serif);font-size:16px;font-weight:600;color:#354b34;white-space:nowrap}
+.gift-occasion-link{display:inline-flex;align-items:center;gap:14px;align-self:flex-start;margin-top:28px;padding:13px 0;border-bottom:1px solid #74805d;color:#354b34;font-size:9px;letter-spacing:.16em;text-decoration:none}
+.gift-occasion-link span{font-size:17px;transition:transform .2s ease}
+.gift-occasion-link:hover span{transform:translate(3px,-3px)}
+@media(max-width:900px){.gift-occasion-feature{grid-template-columns:1fr;gap:28px}.gift-occasion-image,.gift-occasion-image img{min-height:clamp(360px,78vw,560px)}.gift-occasion-copy{padding:4px 0}}
+@media(max-width:600px){.gift-occasion-feature{margin-top:28px;gap:24px}.gift-occasion-image,.gift-occasion-image img{min-height:390px}.gift-occasion-image{border-radius:4px}.gift-occasion-image>span{left:17px;bottom:17px;font-size:8px}.gift-occasion-copy h3{font-size:36px}.gift-occasion-tiers>div{grid-template-columns:25px minmax(0,1fr) auto;gap:8px;padding:14px 0}.gift-occasion-tiers strong{font-size:16px}.gift-occasion-tiers b{font-size:14px}}
