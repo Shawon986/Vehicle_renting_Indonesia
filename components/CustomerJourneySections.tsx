@@ -123,43 +123,7 @@ export function GuestExperiences({locale}:{locale:Locale}){
  </section>;
 }
 
-const vehicleReviewCopy = {
- en:{title:"A closer look at the experience",intro:"Comfort, space and thoughtful details for different kinds of journeys.",items:{
-  "new-avanza":[["Siti Nurhaliza","City and airport trips","Compact for city trips and convenient for multiple stops, with a cabin that feels comfortable for a small family."]],
-  "innova-reborn":[["Andi Pratama","Family travel","The cabin felt spacious for our family. The ride was comfortable on an intercity journey, even with our luggage."],["Rina Kartika","Airport transfer","The luggage and passenger space suited our family's needs. A practical MPV choice."],["David Lim","Holiday with family","We had enough room for our bags and appreciated the comfortable seating on the longer drive."]],
-  "zenix":[["Agus Saputra","Business and leisure","The interior feels modern and the ride is smooth. It works well for business plans as well as family outings."],["Maya Anggraini","Family weekend","The cabin is comfortable and the styling is elegant. It felt like a great fit for our weekend trip."],["Kevin Tan","City travel","A quiet, comfortable ride for moving between meetings and dinner plans around town."]],
-  "byd-m6":[["Putri Maharani","City family travel","The quiet cabin and generous space made our city trip comfortable, including for the children."],["Fajar Ramadhan","Electric mobility","The driving experience felt modern and quiet. The passenger space was another advantage."],["Olivia Chen","Exploring the city","The quiet cabin was a nice touch, and there was plenty of room for our day bags."]],
-  "hiace-commuter":[["Hendra Gunawan","Group excursion","Our whole group could travel together without splitting into separate vehicles. It was practical for our sightseeing trip."],["Dian Puspita","Family gathering","The passenger capacity made it easy for our extended family to travel together."],["Rudi Hartono","Team transportation","There was plenty of passenger room, making it suitable for our company's out-of-town plans."],["Emma Wilson","Group holiday","Keeping our group together in one vehicle made the day's itinerary much easier."]],
-  "hiace-premio":[["Yusuf Maulana","Private group trip","The cabin was spacious and comfortable for travelling with friends, and our luggage was easy to organize."],["Nabila Zahra","Family and friends","We could all travel together instead of splitting up. It was a good fit for our family occasion."]],
-  "fortuner":[["Taufik Hidayat","Private day trip","The elevated seating position and solid-feeling cabin suited a full day out with the family."],["Clara Wijaya","Weekend escape","It was comfortable for an out-of-town journey, and the cabin space suited our needs."],["James Carter","Private sightseeing","A comfortable choice for a full day on the road, with a reassuring driving position."]],
-  "alphard-gen-3":[["Sri Wulandari","Special family occasion","The interior is spacious and elegant, making it a lovely choice for taking the family to a special occasion."],["Bambang Setiawan","Executive travel","Passenger comfort is the main highlight. It is well suited to business travel and formal occasions."],["Michelle Lee","Airport and event transfer","The spacious cabin and refined feel worked well for a special occasion and airport transfer."],["Rizal Firmansyah","Family celebration","We chose it for a family celebration. The space and comfort made the journey feel more special."]]
- }},
- id:{title:"Melihat pengalaman lebih dekat",intro:"Kenyamanan, ruang, dan detail yang sesuai untuk berbagai kebutuhan perjalanan.",items:{
-  "new-avanza":[["Siti Nurhaliza","Perjalanan kota dan bandara","Ringkas untuk perjalanan dalam kota, mudah untuk naik turun di beberapa tempat, dan kabinnya cukup nyaman untuk keluarga kecil."]],
-  "innova-reborn":[["Andi Pratama","Perjalanan keluarga","Ruang kabin terasa lega untuk keluarga kami. Perjalanan antarkota juga nyaman, termasuk saat membawa barang."],["Rina Kartika","Antar jemput bandara","Bagasi dan ruang penumpangnya pas untuk kebutuhan keluarga. Pilihan MPV yang praktis."],["David Lim","Liburan keluarga","Kami punya cukup ruang untuk koper dan menikmati kursi yang nyaman selama perjalanan jauh."]],
-  "zenix":[["Agus Saputra","Bisnis dan liburan","Interiornya modern dan perjalanan terasa halus. Cocok untuk agenda bisnis sekaligus jalan bersama keluarga."],["Maya Anggraini","Akhir pekan keluarga","Kabin nyaman dan tampilannya elegan. Kami merasa cocok menggunakannya untuk perjalanan akhir pekan."],["Kevin Tan","Perjalanan kota","Perjalanan yang tenang dan nyaman untuk berpindah dari rapat ke agenda makan malam di kota."]],
-  "byd-m6":[["Putri Maharani","Perjalanan keluarga di kota","Kabin senyap dan ruangnya lega. Anak-anak juga nyaman selama perjalanan di dalam kota."],["Fajar Ramadhan","Mobilitas listrik","Pengalaman berkendara terasa modern dan tenang. Ruang penumpangnya juga menjadi kelebihan."],["Olivia Chen","Menjelajahi kota","Kabin yang senyap terasa menyenangkan dan tersedia banyak ruang untuk tas harian kami."]],
-  "hiace-commuter":[["Hendra Gunawan","Wisata rombongan","Kami berangkat bersama satu rombongan tanpa perlu membagi kendaraan. Praktis untuk perjalanan wisata."],["Dian Puspita","Acara keluarga","Kapasitas penumpangnya membantu keluarga besar kami bepergian bersama."],["Rudi Hartono","Transportasi tim","Ruang penumpang cukup lega dan cocok untuk agenda kantor di luar kota."],["Emma Wilson","Liburan grup","Menjaga seluruh rombongan tetap dalam satu kendaraan membuat rencana perjalanan lebih mudah."]],
-  "hiace-premio":[["Yusuf Maulana","Perjalanan grup privat","Kabin lega dan nyaman untuk perjalanan bersama teman-teman. Barang bawaan juga bisa tertata."],["Nabila Zahra","Keluarga dan teman","Kami bisa bepergian bersama tanpa harus terpisah. Cocok untuk acara keluarga."]],
-  "fortuner":[["Taufik Hidayat","Wisata privat sehari","Posisi duduk tinggi dan kabin terasa mantap. Cocok untuk perjalanan seharian bersama keluarga."],["Clara Wijaya","Liburan akhir pekan","Nyaman untuk perjalanan luar kota dan ruang kabinnya terasa pas untuk kebutuhan kami."],["James Carter","Wisata privat","Pilihan nyaman untuk perjalanan seharian, dengan posisi berkendara yang terasa meyakinkan."]],
-  "alphard-gen-3":[["Sri Wulandari","Acara keluarga istimewa","Interiornya luas dan terasa elegan. Sangat sesuai untuk mengantar keluarga di acara istimewa."],["Bambang Setiawan","Perjalanan eksekutif","Kenyamanan penumpang menjadi nilai utama. Cocok untuk perjalanan bisnis dan acara formal."],["Michelle Lee","Antar jemput bandara dan acara","Kabin yang luas dan kesan elegan cocok untuk acara khusus maupun perjalanan ke bandara."],["Rizal Firmansyah","Perayaan keluarga","Kami memilihnya untuk acara keluarga. Ruang dan kenyamanannya membuat perjalanan terasa lebih istimewa."]]
- }},
- zh:{title:"深入了解出行体验",intro:"舒适空间与贴心细节，满足不同旅程需求。",items:{
-  "new-avanza":[["Siti Nurhaliza","城市与机场出行","车身紧凑，适合城市出行和多地点停靠，车厢也能满足小家庭的舒适需求。"]],
-  "innova-reborn":[["Andi Pratama","家庭出行","车厢空间对我们一家来说很宽敞，长途出行时放置行李也很方便。"],["Rina Kartika","机场接送","行李空间和乘坐空间都符合家庭需求，是实用的 MPV 选择。"],["David Lim","家庭假期","行李有足够空间，长途驾驶时座椅也很舒适。"]],
-  "zenix":[["Agus Saputra","商务与休闲","内饰现代，行驶平顺，适合商务安排和家庭出游。"],["Maya Anggraini","家庭周末","车厢舒适，外观优雅，很适合我们的周末行程。"],["Kevin Tan","城市出行","在城市中往返会议和晚餐地点，乘坐体验安静舒适。"]],
-  "byd-m6":[["Putri Maharani","家庭城市出行","车厢安静且空间宽敞，孩子们在城市旅程中也很舒适。"],["Fajar Ramadhan","电动出行","驾驶体验现代而安静，乘客空间也是一大优点。"],["Olivia Chen","城市探索","安静的车厢体验很好，也有充足空间放置日常随身包。"]],
-  "hiace-commuter":[["Hendra Gunawan","团体游览","我们整个团队可以一起出发，不必分乘多辆车，非常适合观光行程。"],["Dian Puspita","家庭聚会","乘坐人数充足，让大家庭能够一起出行。"],["Rudi Hartono","团队交通","乘客空间宽敞，适合公司安排的城外行程。"],["Emma Wilson","团体假期","让团队成员乘坐同一辆车，使当天的行程安排容易得多。"]],
-  "hiace-premio":[["Yusuf Maulana","私人团体旅行","车厢宽敞舒适，适合和朋友一起出行，行李也能妥善放置。"],["Nabila Zahra","家人与朋友","我们可以一起出行，不必分开乘车，很适合家庭活动。"]],
-  "fortuner":[["Taufik Hidayat","私人一日游","较高的座椅视野和稳健的车厢感受，很适合全家一日出行。"],["Clara Wijaya","周末短途旅行","城际旅程乘坐舒适，车厢空间也符合我们的需求。"],["James Carter","私人观光","适合全天行程的舒适选择，驾驶视野让人感觉安心。"]],
-  "alphard-gen-3":[["Sri Wulandari","特别家庭活动","内饰宽敞优雅，非常适合特别场合的家庭接送。"],["Bambang Setiawan","商务出行","乘客舒适度是主要亮点，适合商务旅程和正式活动。"],["Michelle Lee","机场及活动接送","宽敞的车厢和精致感很适合特别活动及机场接送。"],["Rizal Firmansyah","家庭庆祝活动","我们为家庭活动选择了这款车，空间和舒适度让旅程更加特别。"]]
- }}
-} as const;
-
 export function VehicleGuestReviews({locale,vehicleSlug}:{locale:Locale;vehicleSlug:string}){
- const copy=vehicleReviewCopy[locale];
- const items=copy.items[vehicleSlug as keyof typeof copy.items] ?? [];
- if(!items.length)return null;
  const vehicleNames:Record<string,string>={
   "new-avanza":"Toyota Avanza",
   "innova-reborn":"Toyota Innova Reborn",
@@ -170,11 +134,20 @@ export function VehicleGuestReviews({locale,vehicleSlug}:{locale:Locale;vehicleS
   "fortuner":"Toyota Fortuner",
   "alphard-gen-3":"Toyota Alphard Gen 3"
  };
- const labels={
-  en:{experience:"Vehicle experience",illustrative:"Illustrative example",count:"EXPERIENCE EXAMPLES",disclaimer:"These are illustrative examples for layout purposes, not verified customer reviews."},
-  id:{experience:"Pengalaman kendaraan",illustrative:"Contoh ilustratif",count:"CONTOH PENGALAMAN",disclaimer:"Konten ini merupakan contoh tampilan, bukan ulasan pelanggan yang telah diverifikasi."},
-  zh:{experience:"车型体验",illustrative:"示例内容",count:"体验示例",disclaimer:"展示内容为版式示例，并非经核实的客户评价。"}
+ const vehicleName=vehicleNames[vehicleSlug];
+ if(!vehicleName)return null;
+
+ // Vehicle pages use the exact same localized review records as the homepage.
+ // Filtering the shared source keeps names, journey labels, copy and tags in sync.
+ const items=guestReviews[locale].items.filter(([, , vehicle])=>vehicle===vehicleName);
+ if(!items.length)return null;
+
+ const copy={
+  en:{title:"A closer look at the experience",intro:"Comfort, space and thoughtful details for different kinds of journeys.",experience:"Vehicle experience",illustrative:"Illustrative example",count:"EXPERIENCE EXAMPLES",disclaimer:"These are illustrative examples for layout purposes, not verified customer reviews."},
+  id:{title:"Melihat pengalaman lebih dekat",intro:"Kenyamanan, ruang, dan detail yang sesuai untuk berbagai kebutuhan perjalanan.",experience:"Pengalaman kendaraan",illustrative:"Contoh ilustratif",count:"CONTOH PENGALAMAN",disclaimer:"Konten ini merupakan contoh tampilan, bukan ulasan pelanggan yang telah diverifikasi."},
+  zh:{title:"深入了解出行体验",intro:"舒适空间与贴心细节，满足不同类型的出行需求。",experience:"车型体验",illustrative:"示例内容",count:"体验示例",disclaimer:"展示内容为版式示例，并非经核实的客户评价。"}
  }[locale];
+
  return <section className="guest-experiences vehicle-guest-reviews" aria-labelledby="vehicle-guest-reviews-title">
   <div className="guest-experiences-heading">
    <div>
@@ -182,19 +155,19 @@ export function VehicleGuestReviews({locale,vehicleSlug}:{locale:Locale;vehicleS
     <h2 id="vehicle-guest-reviews-title">{copy.title}</h2>
     <p className="guest-experiences-intro">{copy.intro}</p>
    </div>
-   <span className="guest-experiences-count">{String(items.length).padStart(2,"0")} / {labels.count}</span>
+   <span className="guest-experiences-count">{String(items.length).padStart(2,"0")} / {copy.count}</span>
   </div>
   <ReviewCarousel className="guest-review-carousel">
-   {items.map(([name,trip,review])=><article className="guest-review-card" key={name}>
+   {items.map(([name,trip,vehicle,review,tag])=><article className="guest-review-card" key={name}>
     <div className="guest-review-author-row">
      <span className="guest-review-avatar" aria-hidden="true">{name.split(" ").map(part=>part[0]).join("").slice(0,2).toUpperCase()}</span>
      <div className="guest-review-identity"><strong>{name}</strong><span className="guest-review-rating">5.0 / 5.0</span></div>
     </div>
-    <div className="guest-review-meta"><span>{trip}</span><i/><span>{vehicleNames[vehicleSlug] ?? vehicleSlug}</span></div>
+    <div className="guest-review-meta"><span>{trip}</span><i/> <span>{vehicle}</span></div>
     <blockquote>{review}</blockquote>
-    <div className="guest-review-card-footer"><span>{labels.experience}</span><span>{labels.illustrative}</span></div>
+    <div className="guest-review-card-footer"><span>{tag}</span><span>{locale==="zh"?"示例内容":locale==="id"?"Contoh":"Illustrative example"}</span></div>
    </article>)}
   </ReviewCarousel>
-  <p className="guest-review-disclaimer">{labels.disclaimer}</p>
+  <p className="guest-review-disclaimer">{copy.disclaimer}</p>
  </section>;
 }
