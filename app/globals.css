@@ -14730,3 +14730,89 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
  .staff-member-list{grid-column:auto}
 }
 @media(prefers-reduced-motion:reduce){.vehicle-compare-toggle{transition:none}}
+
+
+/* Homepage hero search: lead with the compact journey bar, then the hero message. */
+.hero-with-search .hero-content{
+ display:flex;
+ flex-direction:column;
+ align-items:flex-start;
+}
+.hero-with-search .home-rental-search{
+ order:0;
+ width:100%;
+ margin:0 0 22px;
+}
+.hero-with-search .home-rental-search-heading,
+.hero-with-search .home-rental-search-note{display:none!important}
+.hero-with-search .hero-eyebrow{order:1;margin:0 0 16px}
+.hero-with-search h1{order:2}
+.hero-with-search .hero-description{order:3}
+.hero-with-search .hero-actions{order:4}
+.hero-with-search .contact-channels{order:5}
+.hero-with-search.hero-zh .hero-content{
+ width:88%;
+ max-width:1240px;
+}
+.hero-with-search.hero-zh h1{
+ max-width:900px;
+ font-size:clamp(54px,6vw,84px);
+ line-height:1.14;
+ letter-spacing:-.045em;
+}
+.hero-with-search.hero-zh .hero-description{max-width:560px}
+.hero-with-search .home-rental-search-form{padding:8px}
+.hero-with-search .home-rental-search-main{gap:5px}
+.hero-with-search .rental-search-field{min-height:56px;padding:7px 8px}
+.hero-with-search .rental-search-submit{min-height:56px}
+@media(max-width:1120px){
+ .hero-with-search .home-rental-search{margin-bottom:20px}
+ .hero-with-search .home-rental-search-main{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .hero-with-search .rental-search-submit{grid-column:1/-1;min-height:44px}
+}
+@media(max-width:680px){
+ .hero-with-search{min-height:1040px!important}
+ .hero-with-search .hero-content{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  padding:78px 0 145px;
+ }
+ .hero-with-search .home-rental-search{margin:0 0 23px}
+ .hero-with-search .home-rental-search-form{padding:8px;border-radius:8px}
+ .hero-with-search .home-rental-search-main{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .hero-with-search .rental-search-field{min-height:52px;padding:6px 7px;gap:3px}
+ .hero-with-search .rental-search-field>span{font-size:8px;line-height:1.2}
+ .hero-with-search .rental-search-field input,
+ .hero-with-search .rental-search-field select{font-size:10px;line-height:1.25}
+ .hero-with-search .rental-search-submit{grid-column:1/-1;min-height:42px;padding:0 10px;font-size:9px}
+ .hero-with-search .home-rental-search-options{gap:12px;padding:7px 2px 0}
+ .hero-with-search .rental-search-checkbox,
+ .hero-with-search .rental-search-more{font-size:9px}
+ .hero-with-search .hero-eyebrow{margin:0 0 13px}
+ .hero-with-search.hero-zh .hero-content{
+  width:90%!important;
+  padding:76px 0 145px!important;
+ }
+ .hero-with-search.hero-zh h1{
+  max-width:100%;
+  font-size:clamp(40px,10.5vw,56px)!important;
+  line-height:1.16;
+  letter-spacing:-.04em;
+  overflow-wrap:anywhere;
+ }
+ .hero-with-search.hero-zh .hero-description{
+  max-width:100%;
+  margin:13px 0 12px;
+  font-size:11px;
+  line-height:1.7;
+ }
+}
+@media(max-width:390px){
+ .hero-with-search .home-rental-search{margin-bottom:19px}
+ .hero-with-search .home-rental-search-form{padding:7px}
+ .hero-with-search .rental-search-field{min-height:49px;padding:5px 6px}
+ .hero-with-search .rental-search-field input,
+ .hero-with-search .rental-search-field select{font-size:9px}
+ .hero-with-search.hero-zh h1{font-size:clamp(38px,10.2vw,48px)!important}
+}
