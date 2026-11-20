@@ -75,9 +75,9 @@ export function HomeRentalSearch({locale,enabled=false}:{locale:Locale;enabled?:
       <label className="rental-search-field rental-search-location"><span>{copy.location}</span><input name="pickupLocation" placeholder={copy.locationPlaceholder} required maxLength={180}/></label>
       <label className="rental-search-field"><span>{copy.destination}</span><input name="destination" placeholder={copy.locationPlaceholder} maxLength={180}/></label>
       <label className="rental-search-field"><span>{copy.pickup}</span><input name="pickupDate" type="date" required/></label>
+      <label className="rental-search-field"><span>{copy.pickupTime}</span><input name="pickupTime" type="time" defaultValue="10:00" required/></label>
       <label className="rental-search-field rental-return-field"><span>{copy.returnDate}</span><input name="returnDate" type="date" required/></label>
-      <label className="rental-search-field"><span>{copy.category}</span><select name="vehicleCategory" defaultValue=""><option value="">{copy.choose}</option>{categories.map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></label>
-      <label className="rental-search-field"><span>{copy.passengers}</span><input name="passengers" type="number" min="1" max="100" defaultValue="2" required/></label>
+      <label className="rental-search-field rental-return-field"><span>{copy.returnTime}</span><input name="returnTime" type="time" defaultValue="10:00" required/></label>
       <button className="rental-search-submit" type="submit"><span aria-hidden="true">⌕</span>{copy.search}</button>
      </div>
      <div className="home-rental-search-options">
