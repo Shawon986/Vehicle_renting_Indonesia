@@ -103,7 +103,7 @@ export function ServiceLandingPage({locale,service,enabled=false}:{locale:Locale
  {giftCatalog?<section className="gift-package-section" aria-labelledby="gift-package-title">
   <div className="gift-package-heading"><p className="eyebrow dark-eyebrow"><span>04</span>{locale==="zh"?"礼盒系列":locale==="id"?"PILIHAN HAMPERS":"GIFT COLLECTION"}</p><h2 id="gift-package-title">{giftCatalog.heading}</h2><p>{giftCatalog.intro}</p></div>
   <div className="gift-package-grid">{giftCatalog.packages.map((item,i)=><article className="gift-package-card" key={item.name}><span className="gift-package-number">0{i+1} / {locale==="zh"?"类别":locale==="id"?"KATEGORI":"CATEGORY"}</span><h3>{item.name}</h3><p className="gift-package-size">{item.size}</p><p className="gift-package-description">{item.description}</p><div className="gift-package-price"><small>{giftCatalog.from}</small><strong>{item.price}</strong></div></article>)}</div>
-  <div className="gift-fruit-selection"><h3>{giftCatalog.fruitHeading}</h3><ul>{giftCatalog.fruits.map((fruit,i)=><li key={fruit}><span className={"gift-fruit-icon gift-fruit-icon-"+i} aria-hidden="true">●</span><span>{fruit}</span></li>)}</ul></div>
+  <div className="gift-fruit-selection"><h3>{giftCatalog.fruitHeading}</h3><ul>{giftCatalog.fruits.map((fruit,i)=><li key={fruit}><span className={"gift-fruit-icon gift-fruit-icon-"+i} aria-hidden="true">{["🍎","🍊","🍇","🍇","🍐","🥝","🍓","🫐","🍊"][i]}</span><span>{fruit}</span></li>)}</ul></div>
   <div className="gift-benefits">{giftCatalog.benefits.map((benefit,i)=><span key={benefit}><i aria-hidden="true">{["◇","✧","✿","♡"][i]}</i>{benefit}</span>)}</div>
   <p className="gift-package-disclaimer">{giftCatalog.disclaimer}</p>
  </section>:null}
