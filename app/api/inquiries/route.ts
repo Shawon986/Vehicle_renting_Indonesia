@@ -23,7 +23,7 @@ export async function POST(request:NextRequest){
  let body:Record<string,unknown>;try{const parsed=await request.json();if(!parsed||typeof parsed!=="object"||Array.isArray(parsed))throw new Error();body=parsed as Record<string,unknown>}catch{return NextResponse.json({error:"Invalid request"},{status:400})}
  const value=(key:string,max=2000)=>typeof body[key]==="string"?(body[key] as string).trim().slice(0,max):"";
  const leadId=randomUUID();
- if(value("website",200))return NextResponse.json({ok:true,leadId});
+ if(value("website",200))return NextResponse.json({ok:true,leadId,notificationStatus:emailDelivered?"sent":"pending"});
  const locale=value("locale",4);if(!["id","en","zh"].includes(locale))return NextResponse.json({error:"Invalid locale"},{status:400});
  const name=value("name",100),email=value("email",160),phone=value("phone",40),pickupDate=value("pickupDate",10),returnDate=value("returnDate",10),pickupTime=value("pickupTime",5),returnTime=value("returnTime",5),pickupLocation=value("pickupLocation",180),dropoffLocation=value("dropoffLocation",180),passengers=Number(value("passengers",3)),oneWay=value("oneWay",4)==="yes";
  if(!name||!email||!phone||!pickupDate||(!oneWay&&!returnDate)||!pickupTime||(!oneWay&&!returnTime)||!pickupLocation||!value("consent",10))return NextResponse.json({error:"Missing required fields"},{status:400});
@@ -46,11 +46,31 @@ export async function POST(request:NextRequest){
   const verdict=await verify.json() as {success:boolean;hostname?:string;action?:string};const expectedHost=new URL("https://"+host).hostname;if(!verdict.success||verdict.hostname!==expectedHost||verdict.action!=="vehicle_rental_enquiry")return NextResponse.json({error:"Security verification failed"},{status:400});
  }catch{return NextResponse.json({error:"Security verification is temporarily unavailable"},{status:503})}
  const record={leadId,serviceLine:"vehicle-rental",locale,timeZone:"Asia/Jakarta",name,email,phone,company:value("company",160),wechatId:value("wechatId",100),preferredChannel:value("preferredChannel",30),oneWay,pickupDate,pickupTime,returnDate:oneWay?"":returnDate,returnTime:oneWay?"":returnTime,pickupLocation,dropoffLocation,passengers,luggage,vehicle,vehicleCategory:selectedVehicle?.category||vehicleCategory,travelStyle,addOns:addOnValues,message:value("message",2000),marketingConsent:value("marketingConsent",10)==="yes",consentAt:new Date().toISOString(),sourcePath:value("pagePath",300),receivedAt:new Date().toISOString()};
+ const dashboardEnabled=process.env.STAFF_DASHBOARD_ENABLED==="true";
+ if(dashboardEnabled){
+  try{
+   const admin=createAdminClient(),localeKey=locale as "id"|"en"|"zh";
+   const {error}=await admin.from("vehicle_enquiries").insert({
+    lead_id:leadId,service_line:"vehicle-rental",locale,
+    customer_name:name,customer_email:email,customer_phone:phone,
+    company:record.company,wechat_id:record.wechatId,preferred_channel:record.preferredChannel,
+    journey:{oneWay,pickupLocation,dropoffLocation,pickupDate,pickupTime,returnDate:record.returnDate,returnTime:record.returnTime,passengers,luggage},
+    vehicle:{slug:vehicle,title:selectedVehicle?.title?.[localeKey]||"",category:record.vehicleCategory,travelStyle,addOns:addOnValues},
+    message:record.message,marketing_consent:record.marketingConsent,consent_at:record.consentAt,
+    source_path:record.sourcePath,received_at:record.receivedAt,status:"New",notification_status:"pending"
+   });
+   if(error)throw error;
+  }catch(error){
+   console.error("Enquiry dashboard persistence failed",error instanceof Error?error.message:"unknown");
+   return NextResponse.json({error:"We could not safely save your enquiry. Please try again shortly."},{status:503});
+  }
+ }
+
 
  const labels=fieldNames[locale as keyof typeof fieldNames];const rows:Record<string,string>={[labels.lead]:leadId,[labels.service]:"Vehicle rental",[labels.locale]:locale,[labels.timeZone]:record.timeZone,[labels.name]:name,[labels.email]:email,[labels.phone]:phone,[labels.company]:record.company,[labels.wechat]:record.wechatId,[labels.preferred]:record.preferredChannel,[labels.oneWay]:oneWay?"yes":"no",[labels.pickupDate]:pickupDate,[labels.pickupTime]:pickupTime,[labels.returnDate]:returnDate,[labels.returnTime]:returnTime,[labels.pickupLocation]:pickupLocation,[labels.dropoffLocation]:dropoffLocation,[labels.passengers]:String(passengers),[labels.luggage]:record.luggage,[labels.vehicle]:vehicle,[labels.vehicleCategory]:record.vehicleCategory,[labels.travelStyle]:travelStyle,[labels.addons]:addOnValues.join(", "),[labels.message]:record.message,[labels.marketing]:record.marketingConsent?"yes":"no",[labels.consentAt]:record.consentAt,[labels.source]:record.sourcePath};
  const html=Object.entries(rows).map(([key,val])=>"<p><strong>"+escapeHtml(key)+":</strong> "+escapeHtml(val||"—")+"</p>").join("");
  const safeName=name.replace(/[\r\n]/g," ").slice(0,100),mailTo=process.env.INQUIRY_TO_EMAIL_VEHICLE_RENTAL||process.env.INQUIRY_TO_EMAIL!,copy=localeText[locale as keyof typeof localeText];
- try{const sent=await fetch("https://api.resend.com/emails",{method:"POST",headers:{authorization:"Bearer "+process.env.RESEND_API_KEY,"content-type":"application/json"},body:JSON.stringify({from:process.env.INQUIRY_FROM_EMAIL,to:[mailTo],reply_to:email,subject:copy.subject+" — "+safeName,html}),signal:AbortSignal.timeout(10000)});if(!sent.ok)return NextResponse.json({error:"Email delivery failed"},{status:502})}catch{return NextResponse.json({error:"Email delivery failed"},{status:502})}
+ let emailDelivered=false;try{const sent=await fetch("https://api.resend.com/emails",{method:"POST",headers:{authorization:"Bearer "+process.env.RESEND_API_KEY,"content-type":"application/json"},body:JSON.stringify({from:process.env.INQUIRY_FROM_EMAIL,to:[mailTo],reply_to:email,subject:copy.subject+" — "+safeName,html}),signal:AbortSignal.timeout(10000)});emailDelivered=sent.ok}catch{emailDelivered=false}if(!emailDelivered&&!dashboardEnabled)return NextResponse.json({error:"Email delivery failed"},{status:502});if(dashboardEnabled){try{const admin=createAdminClient();await admin.from("vehicle_enquiries").update({notification_status:emailDelivered?"sent":"failed",updated_at:new Date().toISOString()}).eq("lead_id",leadId)}catch(error){console.error("Enquiry notification status update failed",error instanceof Error?error.message:"unknown")}}
  if(process.env.INQUIRY_SHEETS_WEBHOOK_URL&&process.env.INQUIRY_SHEETS_SHARED_SECRET){try{const sheet=await fetch(process.env.INQUIRY_SHEETS_WEBHOOK_URL,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({...record,authToken:process.env.INQUIRY_SHEETS_SHARED_SECRET}),signal:AbortSignal.timeout(8000)});if(!sheet.ok)throw new Error("Spreadsheet HTTP failure");const sheetResult=await sheet.json() as {ok?:boolean};if(sheetResult.ok!==true)throw new Error("Spreadsheet rejected the lead")}catch{console.error("Inquiry spreadsheet handoff failed",{leadId})}}else if(process.env.INQUIRY_SHEETS_WEBHOOK_URL){console.error("Inquiry spreadsheet handoff skipped: shared secret is missing",{leadId})}
  await fetch("https://api.resend.com/emails",{method:"POST",headers:{authorization:"Bearer "+process.env.RESEND_API_KEY,"content-type":"application/json"},body:JSON.stringify({from:process.env.INQUIRY_FROM_EMAIL,to:[email],subject:copy.received,text:copy.ack}),signal:AbortSignal.timeout(8000)}).catch(()=>null);
  return NextResponse.json({ok:true,leadId});
