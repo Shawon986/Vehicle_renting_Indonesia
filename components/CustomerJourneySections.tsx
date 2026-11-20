@@ -103,19 +103,16 @@ const guestReviews = {
 
 export function GuestExperiences({locale}:{locale:Locale}){
  const copy=guestReviews[locale];
+ const items=copy.items.map(([name,trip,vehicle,review,tag],index)=>({
+  id:`${name}-${index}`,name,trip,vehicle,review,tag
+ }));
  return <section className="guest-experiences" aria-labelledby="guest-experiences-title">
   <div className="guest-experiences-heading">
    <div><p className="eyebrow dark-eyebrow"><span>04</span> {copy.eyebrow}</p><h2 id="guest-experiences-title">{copy.title}</h2><p className="guest-experiences-intro">{copy.intro}</p></div>
-   <span className="guest-experiences-count">12 / EXPERIENCES</span>
+   <span className="guest-experiences-count">{locale==="zh"?"体验示例 · 12":locale==="id"?"12 / CONTOH PENGALAMAN":"12 / EXPERIENCE EXAMPLES"}</span>
   </div>
-  <ReviewCarousel className="guest-review-carousel">
-   {copy.items.map(([name,trip,vehicle,review,tag],index)=><article className="guest-review-card" key={name}>
-    <div className="guest-review-top"><span className="guest-review-index">GUEST EXPERIENCE · 0{index+1}</span></div>
-    <div className="guest-review-stars" aria-label="Illustrative five-star rating">★★★★★</div>
-    <blockquote>“{review}”</blockquote>
-    <div className="guest-review-bottom"><div className="guest-review-author"><span className="guest-review-avatar" aria-hidden="true">{name.split(" ").map(part=>part[0]).join("").replace(/[^A-Z]/g,"").slice(0,2)}</span><div><strong>{name}</strong><span>{trip} · {vehicle}</span></div></div><small>{tag}</small></div>
-   </article>)}
-  </ReviewCarousel>
+  <ReviewCarousel className="guest-review-carousel" items={items} locale={locale}/>
+  <p className="guest-review-disclaimer">{locale==="zh"?"展示内容为版式示例，并非经核实的客户评价。":locale==="id"?"Konten ini merupakan contoh tampilan, bukan ulasan pelanggan yang telah diverifikasi.":"These are illustrative examples for layout purposes, not verified customer reviews."}</p>
  </section>;
 }
 
