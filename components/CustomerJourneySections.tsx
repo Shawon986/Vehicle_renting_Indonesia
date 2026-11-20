@@ -103,15 +103,22 @@ const guestReviews = {
 
 export function GuestExperiences({locale}:{locale:Locale}){
  const copy=guestReviews[locale];
- const items=copy.items.map(([name,trip,vehicle,review,tag],index)=>({
-  id:`${name}-${index}`,name,trip,vehicle,review,tag
- }));
  return <section className="guest-experiences" aria-labelledby="guest-experiences-title">
   <div className="guest-experiences-heading">
    <div><p className="eyebrow dark-eyebrow"><span>04</span> {copy.eyebrow}</p><h2 id="guest-experiences-title">{copy.title}</h2><p className="guest-experiences-intro">{copy.intro}</p></div>
    <span className="guest-experiences-count">{locale==="zh"?"体验示例 · 12":locale==="id"?"12 / CONTOH PENGALAMAN":"12 / EXPERIENCE EXAMPLES"}</span>
   </div>
-  <ReviewCarousel className="guest-review-carousel" items={items} locale={locale}/>
+  <ReviewCarousel className="guest-review-carousel">
+   {copy.items.map(([name,trip,vehicle,review,tag],index)=><article className="guest-review-card" key={name}>
+    <div className="guest-review-author-row">
+     <span className="guest-review-avatar" aria-hidden="true">{name.split(" ").map(part=>part[0]).join("").slice(0,2).toUpperCase()}</span>
+     <div className="guest-review-identity"><strong>{name}</strong><span className="guest-review-rating">5.0 / 5.0</span></div>
+    </div>
+    <div className="guest-review-meta"><span>{trip}</span><i/> <span>{vehicle}</span></div>
+    <blockquote>{review}</blockquote>
+    <div className="guest-review-card-footer"><span>{tag}</span><span>{locale==="zh"?"示例内容":locale==="id"?"Contoh":"Illustrative example"}</span></div>
+   </article>)}
+  </ReviewCarousel>
   <p className="guest-review-disclaimer">{locale==="zh"?"展示内容为版式示例，并非经核实的客户评价。":locale==="id"?"Konten ini merupakan contoh tampilan, bukan ulasan pelanggan yang telah diverifikasi.":"These are illustrative examples for layout purposes, not verified customer reviews."}</p>
  </section>;
 }
