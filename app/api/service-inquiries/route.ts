@@ -17,7 +17,7 @@ const fieldLabels={
 };
 export async function POST(request:NextRequest){
  const origin=request.headers.get("origin"),host=request.headers.get("host");if(!origin||!host)return NextResponse.json({error:"Origin verification required"},{status:403});try{if(new URL(origin).host!==host)return NextResponse.json({error:"Invalid origin"},{status:403})}catch{return NextResponse.json({error:"Invalid origin"},{status:403})}
- const length=Number(request.headers.get("content-length")||0);if(length>32768)return NextResponse.json({error:"Request too large"},{status:413});if(process.env.CONTENT_APPROVED!=="true")return NextResponse.json({error:"Enquiries are disabled until content and legal approval is complete"},{status:503});
+ const length=Number(request.headers.get("content-length")||0);if(length>32768)return NextResponse.json({error:"Request too large"},{status:413});
  let body:Record<string,unknown>;try{const parsed=await request.json();if(!parsed||typeof parsed!=="object"||Array.isArray(parsed))throw new Error();body=parsed as Record<string,unknown>}catch{return NextResponse.json({error:"Invalid request"},{status:400})}
  const value=(k:string,max=1000)=>typeof body[k]==="string"?(body[k] as string).trim().slice(0,max):"";
  const leadId=randomUUID();if(value("website",200))return NextResponse.json({ok:true,leadId});
