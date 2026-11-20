@@ -58,10 +58,9 @@ export function PageLoader(){const [visible,setVisible]=useState(true);useEffect
 export function SitePromotion({locale}:{locale:Locale}){
  const [visible,setVisible]=useState(false);
  useEffect(()=>{
-  let timer:number|undefined;
   try{if(window.sessionStorage.getItem("rentcarocean-promo-dismissed")==="1")return;}catch{}
-  timer=window.setTimeout(()=>{setVisible(true);try{window.sessionStorage.setItem("rentcarocean-promo-dismissed","1")}catch{}},16000);
-  return()=>{if(timer!==undefined)window.clearTimeout(timer)};
+  const timer=window.setTimeout(()=>{setVisible(true);try{window.sessionStorage.setItem("rentcarocean-promo-dismissed","1")}catch{}},16000);
+  return()=>window.clearTimeout(timer);
  },[]);
  if(!visible)return null;
  const copy=locale==="zh"?{label:"RENTCAROCEAN · 专属安排",title:"让下一段计划，从一次简单沟通开始。",body:"无论是私人旅程、活动策划，还是用心礼赠，我们的团队都可以与您一起梳理细节。",cta:"联系团队",close:"关闭推广",chips:[["私人旅程","/services/tours-travel"],["活动策划","/services/event-design"],["礼赠系列","/services/gift-boxes"]]}:locale==="id"?{label:"RENTCAROCEAN · DIRANCANG UNTUK ANDA",title:"Mulai rencana berikutnya dengan percakapan sederhana.",body:"Untuk perjalanan pribadi, acara, atau hadiah penuh perhatian, tim kami siap membahas detail bersama Anda.",cta:"Hubungi tim",close:"Tutup promosi",chips:[["Tur & perjalanan","/services/tours-travel"],["Desain acara","/services/event-design"],["Kotak hadiah","/services/gift-boxes"]]}:{label:"A NOTE FROM RENTCAROCEAN",title:"A better plan starts with a conversation.",body:"From private journeys to thoughtfully arranged events and gifts, our team is ready to talk through the details with you.",cta:"Talk to our team",close:"Close promotion",chips:[["Private journeys","/services/tours-travel"],["Event design","/services/event-design"],["Thoughtful gifts","/services/gift-boxes"]]};
