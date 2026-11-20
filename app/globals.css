@@ -14215,3 +14215,13 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
     letter-spacing:.08em;
   }
 }
+
+/* Homepage pickup planning cards with editorial image headers. */
+.pickup-guide-card{padding:0;min-height:0;overflow:hidden}
+.pickup-guide-card-image{position:relative;aspect-ratio:16/10;overflow:hidden;background:#d5d7d0}
+.pickup-guide-card-image img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.pickup-guide-card-image>span{position:absolute;left:1rem;top:1rem;display:grid;place-items:center;width:2.35rem;height:2.35rem;border:1px solid rgba(255,255,255,.7);border-radius:50%;background:rgba(24,35,29,.42);color:#fff;font-size:.68rem;letter-spacing:.08em;backdrop-filter:blur(8px)}
+.pickup-guide-card-copy{padding:clamp(1.25rem,2.5vw,2rem)}
+.pickup-guide-card-copy h3{margin:0 0 .8rem}
+.pickup-guide-card-copy p{margin:0}
+@media(hover:hover) and (pointer:fine){.pickup-guide-card:hover .pickup-guide-card-image img{transform:scale(1.045)}}
