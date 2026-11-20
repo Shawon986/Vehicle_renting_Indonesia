@@ -14485,3 +14485,6 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
 @media(max-width:680px){
  .guest-experiences.vehicle-guest-reviews{padding:3.5rem 5% 3.75rem}
 }
+
+@media(min-width:1121px){.vehicle-filters{grid-template-columns:minmax(170px,1.2fr) repeat(4,minmax(115px,1fr)) auto}}
+@media(min-width:681px) and (max-width:1120px){.vehicle-filters{grid-template-columns:repeat(3,minmax(0,1fr))}.vehicle-view-tools{justify-content:flex-start}}
