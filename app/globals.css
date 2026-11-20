@@ -14816,3 +14816,152 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
  .hero-with-search .rental-search-field select{font-size:9px}
  .hero-with-search.hero-zh h1{font-size:clamp(38px,10.2vw,48px)!important}
 }
+
+
+/* Final compact hero search: keep the visible bar to its core fields only. */
+.hero-with-search .home-rental-search{
+ margin:0 0 22px;
+ padding:0;
+}
+.hero-with-search .home-rental-search-heading,
+.hero-with-search .home-rental-search-options,
+.hero-with-search .home-rental-search-note{
+ display:none!important;
+}
+.hero-with-search .home-rental-search-form{
+ padding:7px;
+ border-radius:8px;
+}
+.hero-with-search .home-rental-search-main{
+ grid-template-columns:minmax(0,1.3fr) minmax(0,1.15fr) repeat(4,minmax(0,.82fr)) auto;
+ gap:5px;
+}
+.hero-with-search .rental-search-field{
+ min-height:52px;
+ padding:6px 8px;
+ gap:3px;
+}
+.hero-with-search .rental-search-field>span{
+ font-size:8px;
+ line-height:1.2;
+ white-space:nowrap;
+}
+.hero-with-search .rental-search-field input,
+.hero-with-search .rental-search-field select{
+ font-size:10px;
+ line-height:1.2;
+}
+.hero-with-search .rental-search-submit{
+ min-width:132px;
+ min-height:52px;
+ padding:0 10px;
+ font-size:9px;
+ line-height:1.25;
+}
+.hero-with-search .hero-content{
+ top:50%;
+ transform:translateY(-48%);
+}
+.hero-with-search .hero-eyebrow{margin-bottom:14px}
+.hero-with-search .hero-description{margin-top:15px}
+.hero-with-search.hero-id h1{
+ max-width:760px;
+ font-size:clamp(56px,6.2vw,82px);
+ line-height:1.02;
+}
+.hero-with-search.hero-zh h1{
+ max-width:820px;
+ font-size:clamp(52px,5.8vw,78px);
+ line-height:1.16;
+ letter-spacing:-.045em;
+}
+.hero-with-search.hero-zh .hero-description{max-width:560px}
+@media(max-width:1120px){
+ .hero-with-search .home-rental-search-main{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:5px;
+ }
+ .hero-with-search .rental-search-submit{
+  grid-column:1/-1;
+  min-height:42px;
+ }
+}
+@media(max-width:680px){
+ .hero-with-search{
+  min-height:900px!important;
+ }
+ .hero-with-search .hero-content{
+  padding:76px 0 132px!important;
+  gap:0;
+ }
+ .hero-with-search .home-rental-search{
+  margin:0 0 20px;
+ }
+ .hero-with-search .home-rental-search-form{
+  padding:7px;
+  border-radius:8px;
+ }
+ .hero-with-search .home-rental-search-main{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:5px;
+ }
+ .hero-with-search .rental-search-field{
+  min-height:48px;
+  padding:5px 6px;
+ }
+ .hero-with-search .rental-search-field>span{font-size:8px}
+ .hero-with-search .rental-search-field input,
+ .hero-with-search .rental-search-field select{font-size:9px}
+ .hero-with-search .rental-search-submit{
+  grid-column:1/-1;
+  min-height:40px;
+  font-size:9px;
+ }
+ .hero-with-search .hero-eyebrow{margin:0 0 12px}
+ .hero-with-search h1{
+  font-size:clamp(43px,11vw,64px);
+  line-height:1.02;
+ }
+ .hero-with-search .hero-description{
+  max-width:100%;
+  margin:13px 0 12px;
+  font-size:11px;
+  line-height:1.7;
+ }
+ .hero-with-search .hero-actions{
+  flex-direction:row;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+ }
+ .hero-with-search.hero-id h1{
+  font-size:clamp(42px,10vw,58px);
+  line-height:1.06;
+ }
+ .hero-with-search.hero-zh .hero-content{
+  width:90%!important;
+  padding:72px 0 132px!important;
+ }
+ .hero-with-search.hero-zh h1{
+  max-width:100%;
+  font-size:clamp(38px,9.8vw,54px)!important;
+  line-height:1.18;
+  letter-spacing:-.035em;
+  overflow-wrap:normal;
+ }
+ .hero-with-search.hero-zh .hero-description{
+  margin:12px 0;
+  font-size:11px;
+  line-height:1.75;
+ }
+}
+@media(max-width:390px){
+ .hero-with-search{min-height:860px!important}
+ .hero-with-search .home-rental-search{margin-bottom:17px}
+ .hero-with-search .rental-search-field{min-height:45px;padding:4px 5px}
+ .hero-with-search .rental-search-field>span{font-size:7px}
+ .hero-with-search .rental-search-field input,
+ .hero-with-search .rental-search-field select{font-size:9px}
+ .hero-with-search .hero-content{padding-top:68px!important}
+ .hero-with-search.hero-zh .hero-content{padding-top:66px!important}
+}
