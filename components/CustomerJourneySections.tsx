@@ -2,16 +2,16 @@ import Link from "next/link";
 import type {Locale} from "@/lib/site-data";
 import {ReviewCarousel} from "@/components/ReviewCarousel";
 
-export function TrustPrinciples({locale}:{locale:Locale}){
+export function TrustPrinciples({locale,sectionNumber="04"}:{locale:Locale;sectionNumber?:string}){
  const copy={
   en:{eyebrow:"THE WAY WE WORK",title:"A clear process, across every service.",items:[["One connected service brand","Vehicle rental, tours and travel, event design, and fruit and flower gifts under PT Ocean Zenith Group."],["A person confirms the details","Our team reviews each enquiry and discusses dates, service scope and availability directly with you."],["Clarity before you agree","The relevant service details and quotation are explained directly. This website does not take online bookings or payments."]],link:"Meet the company"},
   id:{eyebrow:"CARA KAMI BEKERJA",title:"Proses yang jelas untuk setiap layanan.",items:[["Satu brand dengan beragam layanan","Sewa kendaraan, tur dan perjalanan, desain acara, serta hadiah buah dan bunga di bawah PT Ocean Zenith Group."],["Detail dikonfirmasi oleh tim","Tim kami meninjau setiap pertanyaan dan membahas tanggal, cakupan layanan, serta ketersediaan secara langsung."],["Kejelasan sebelum Anda menyetujui","Detail layanan dan penawaran dijelaskan langsung. Situs ini tidak menerima pemesanan atau pembayaran online."]],link:"Kenali perusahaan"},
   zh:{eyebrow:"我们的服务方式",title:"清晰沟通，贯穿每一项服务。",items:[["一个品牌，连接多种服务","PT Ocean Zenith Group 旗下涵盖车辆租赁、旅游与行程、活动策划，以及水果与鲜花礼盒。"],["由工作人员直接确认","团队会审核每一项咨询，并与您直接沟通日期、服务范围及可用情况。"],["确认前，先了解清楚","相关服务内容与报价由团队直接说明。本网站不提供在线预订或付款。"]],link:"了解公司"}
  }[locale];
- return <section className="trust-principles" aria-labelledby="trust-principles-title"><div className="trust-principles-heading"><p className="eyebrow dark-eyebrow"><span>05</span> {copy.eyebrow}</p><h2 id="trust-principles-title">{copy.title}</h2></div><div className="trust-principles-grid">{copy.items.map(([title,body],i)=><article className="trust-principle" key={title}><span className="trust-principle-number">0{i+1}</span><h3>{title}</h3><p>{body}</p></article>)}</div><Link className="text-link dark-link" href={"/"+locale+"/about"}>{copy.link}<span className="arrow-up" aria-hidden="true"/></Link></section>;
+ return <section className="trust-principles" aria-labelledby="trust-principles-title"><div className="trust-principles-heading"><p className="eyebrow dark-eyebrow"><span>{sectionNumber}</span> {copy.eyebrow}</p><h2 id="trust-principles-title">{copy.title}</h2></div><div className="trust-principles-grid">{copy.items.map(([title,body],i)=><article className="trust-principle" key={title}><span className="trust-principle-number">0{i+1}</span><h3>{title}</h3><p>{body}</p></article>)}</div><Link className="text-link dark-link" href={"/"+locale+"/about"}>{copy.link}<span className="arrow-up" aria-hidden="true"/></Link></section>;
 }
 
-export function PickupGuide({locale}:{locale:Locale}){
+export function PickupGuide({locale,sectionNumber="05"}:{locale:Locale;sectionNumber?:string}){
  const copy={
   en:{eyebrow:"PICKUP & ROUTE PLANNING",title:"Start with the places that matter.",intro:"Tell us exactly where your journey begins and ends. Share an airport and terminal, a hotel name, or a street address; our team will confirm whether the requested route is covered and explain the arrangements.",cards:[["01","Airport pickup","Include the airport name, terminal and preferred meeting point."],["02","Hotel pickup","Share the hotel name, area and destination."],["03","A location of your choice","Provide the full pickup address and drop-off point."]],note:"Coverage and any applicable additional-zone arrangements are confirmed by our team. A location option is a way to describe your request, not a live service or availability guarantee.",cta:"Share your pickup details"},
   id:{eyebrow:"PENJEMPUTAN & RUTE",title:"Mulai dari lokasi yang penting bagi Anda.",intro:"Beri tahu kami lokasi awal dan tujuan perjalanan secara spesifik. Cantumkan nama bandara dan terminal, nama hotel, atau alamat jalan; tim kami akan mengonfirmasi apakah rute tersebut termasuk cakupan layanan dan menjelaskan pengaturannya.",cards:[["01","Penjemputan bandara","Cantumkan nama bandara, terminal, dan titik temu yang diinginkan."],["02","Penjemputan hotel","Bagikan nama hotel, area, dan tujuan perjalanan."],["03","Lokasi pilihan Anda","Berikan alamat penjemputan lengkap dan lokasi pengantaran."]],note:"Cakupan layanan dan pengaturan zona tambahan, jika berlaku, akan dikonfirmasi oleh tim. Pilihan lokasi hanya membantu menjelaskan permintaan, bukan jaminan layanan atau ketersediaan.",cta:"Bagikan detail penjemputan"},
@@ -22,7 +22,7 @@ export function PickupGuide({locale}:{locale:Locale}){
   "https://cdn.blastness.biz/media/1169/new-top2024/thumbs/full/1920-ingresso2.jpg",
   "https://www.leighday.co.uk/media/0rrfwvd1/mini-cab-fare.jpg?height=480&width=800"
  ];
- return <section className="pickup-guide" aria-labelledby="pickup-guide-title"><div className="pickup-guide-heading"><p className="eyebrow dark-eyebrow"><span>04</span> {copy.eyebrow}</p><h2 id="pickup-guide-title">{copy.title}</h2><p>{copy.intro}</p></div><div className="pickup-guide-grid">{copy.cards.map(([number,title,body],i)=><article className="pickup-guide-card" key={number}><div className="pickup-guide-card-image"><img src={cardImages[i]} alt={title} loading="lazy" decoding="async"/><span>{number}</span></div><div className="pickup-guide-card-copy"><h3>{title}</h3><p>{body}</p></div></article>)}</div><div className="pickup-guide-bottom"><p>{copy.note}</p><Link className="button button-dark" href={"/"+locale+"/services/vehicle-rental#enquire"}>{copy.cta}<span className="arrow-up" aria-hidden="true"/></Link></div></section>;
+ return <section className="pickup-guide" aria-labelledby="pickup-guide-title"><div className="pickup-guide-heading"><p className="eyebrow dark-eyebrow"><span>{sectionNumber}</span> {copy.eyebrow}</p><h2 id="pickup-guide-title">{copy.title}</h2><p>{copy.intro}</p></div><div className="pickup-guide-grid">{copy.cards.map(([number,title,body],i)=><article className="pickup-guide-card" key={number}><div className="pickup-guide-card-image"><img src={cardImages[i]} alt={title} loading="lazy" decoding="async"/><span>{number}</span></div><div className="pickup-guide-card-copy"><h3>{title}</h3><p>{body}</p></div></article>)}</div><div className="pickup-guide-bottom"><p>{copy.note}</p><Link className="button button-dark" href={"/"+locale+"/services/vehicle-rental#enquire"}>{copy.cta}<span className="arrow-up" aria-hidden="true"/></Link></div></section>;
 }
 
 type ServiceKey="vehicle-rental"|"tours-travel"|"event-design"|"gift-boxes";
@@ -31,10 +31,10 @@ const services:Record<Locale,{key:ServiceKey;title:string;body:string}[]> = {
  id:[{key:"vehicle-rental",title:"Sewa kendaraan",body:"Pilihan kendaraan dan pengaturan perjalanan."},{key:"tours-travel",title:"Tur & perjalanan",body:"Perjalanan pribadi dan grup sesuai rencana Anda."},{key:"event-design",title:"Desain acara",body:"Konsep kreatif, styling, dan koordinasi acara."},{key:"gift-boxes",title:"Hadiah buah & bunga",body:"Hadiah penuh perhatian untuk momen personal dan bisnis."}],
  zh:[{key:"vehicle-rental",title:"车辆租赁",body:"车辆选择与出行安排咨询。"},{key:"tours-travel",title:"旅游与行程",body:"根据您的计划了解私人及团体旅程。"},{key:"event-design",title:"活动策划",body:"创意概念、场景设计与活动协调。"},{key:"gift-boxes",title:"水果与鲜花礼盒",body:"适用于个人及商务场合的用心礼赠。"}]
 };
-export function ServiceCrossLinks({locale,current}:{locale:Locale;current?:ServiceKey}){
+export function ServiceCrossLinks({locale,current,sectionNumber="06"}:{locale:Locale;current?:ServiceKey;sectionNumber?:string}){
  const title=locale==="zh"?"探索其他服务":locale==="id"?"Jelajahi layanan lainnya":"Explore the other services";
  const items=services[locale].filter(item=>item.key!==current);
- return <section className="service-crosslinks" aria-labelledby="service-crosslinks-title"><div className="service-crosslinks-heading"><p className="eyebrow dark-eyebrow"><span>04</span> {locale==="zh"?"服务组合":locale==="id"?"PORTOFOLIO LAYANAN":"THE SERVICE PORTFOLIO"}</p><h2 id="service-crosslinks-title">{title}</h2></div><div className="service-crosslinks-grid">{items.map((item,i)=><Link className="service-crosslink-card" href={"/"+locale+"/services/"+item.key} key={item.key}><span>0{i+1} / RENTCAROCEAN</span><h3>{item.title}</h3><p>{item.body}</p><i className="ui-arrow" aria-hidden="true"/></Link>)}</div></section>;
+ return <section className="service-crosslinks" aria-labelledby="service-crosslinks-title"><div className="service-crosslinks-heading"><p className="eyebrow dark-eyebrow"><span>{sectionNumber}</span> {locale==="zh"?"服务组合":locale==="id"?"PORTOFOLIO LAYANAN":"THE SERVICE PORTFOLIO"}</p><h2 id="service-crosslinks-title">{title}</h2></div><div className="service-crosslinks-grid">{items.map((item,i)=><Link className="service-crosslink-card" href={"/"+locale+"/services/"+item.key} key={item.key}><span>0{i+1} / RENTCAROCEAN</span><h3>{item.title}</h3><p>{item.body}</p><i className="ui-arrow" aria-hidden="true"/></Link>)}</div></section>;
 }
 
 export function HowItWorksPreview({locale}:{locale:Locale}){
@@ -105,7 +105,7 @@ export function GuestExperiences({locale}:{locale:Locale}){
  const copy=guestReviews[locale];
  return <section className="guest-experiences" aria-labelledby="guest-experiences-title">
   <div className="guest-experiences-heading">
-   <div><p className="eyebrow dark-eyebrow"><span>04</span> {copy.eyebrow}</p><h2 id="guest-experiences-title">{copy.title}</h2><p className="guest-experiences-intro">{copy.intro}</p></div>
+   <div><p className="eyebrow dark-eyebrow"><span>03</span> {copy.eyebrow}</p><h2 id="guest-experiences-title">{copy.title}</h2><p className="guest-experiences-intro">{copy.intro}</p></div>
    <span className="guest-experiences-count">{locale==="zh"?"体验示例 · 12":locale==="id"?"12 / CONTOH PENGALAMAN":"12 / EXPERIENCE EXAMPLES"}</span>
   </div>
   <ReviewCarousel className="guest-review-carousel">
