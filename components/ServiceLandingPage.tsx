@@ -72,7 +72,7 @@ const editorialPhotos:Record<ServiceLine,{src:string;srcSet:string}>={
  "gift-boxes":{src:"https://images.unsplash.com/photo-1662412837486-b9d201335be3?auto=format&fit=crop&w=960&q=82",srcSet:"https://images.unsplash.com/photo-1662412837486-b9d201335be3?auto=format&fit=crop&w=640&q=78 640w, https://images.unsplash.com/photo-1662412837486-b9d201335be3?auto=format&fit=crop&w=960&q=82 960w, https://images.unsplash.com/photo-1662412837486-b9d201335be3?auto=format&fit=crop&w=1280&q=85 1280w"}
 };
 const symbols:Record<ServiceLine,string[]>={"tours-travel":["","","","","",""],"event-design":["","","","","",""],"gift-boxes":["","","","","",""]};
-export function ServiceLandingPage({locale,service,enabled=false}:{locale:Locale;service:ServiceLine;enabled?:boolean}){
+export function ServiceLandingPage({locale,service,enabled=true}:{locale:Locale;service:ServiceLine;enabled?:boolean}){
  const c=content[service][locale],number="01";
  const labels=locale==="zh"?{discover:"探索服务方向",steps:"合作流程",contact:"联系我们",gallery:"案例作品",disclaimer:"网站信息仅供参考，日期、库存及价格由团队书面确认。",service:"服务方向"}:locale==="id"?{discover:"JELAJAHI LAYANAN",steps:"ALUR KERJA",contact:"HUBUNGI TIM",gallery:"PORTOFOLIO",disclaimer:"Informasi di situs ini hanya sebagai referensi. Tanggal, stok, dan harga dikonfirmasi tim secara tertulis.",service:"PILIHAN LAYANAN"}:{discover:"EXPLORE THE POSSIBILITIES",steps:"HOW WE WORK",contact:"TALK TO OUR TEAM",gallery:"SELECTED WORK",disclaimer:"Website information is indicative. Dates, stock and pricing are confirmed by our team in writing.",service:"SERVICE DIRECTIONS"};
  const giftPackageImages=[
