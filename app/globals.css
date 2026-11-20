@@ -15101,3 +15101,90 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
  .hero-with-search .rental-search-field input{font-size:9px}
  .hero-with-search.hero-zh .hero-content{padding-top:66px}
 }
+
+
+/* Keep the English and Indonesian hero search slightly higher; leave Chinese positioning untouched. */
+@media(min-width:681px){
+ .hero-with-search:not(.hero-zh) .hero-content{top:46.5%;transform:translateY(-50%)}
+}
+@media(min-width:681px) and (max-width:1120px){
+ .hero-with-search:not(.hero-zh) .hero-content{top:45%;transform:translateY(-48%)}
+}
+/* Restore the full search controls and make every optional journey field accessible. */
+.hero-with-search .home-rental-search-options{
+ display:flex!important;
+ align-items:center;
+ justify-content:space-between;
+ flex-wrap:wrap;
+ gap:10px 18px;
+ margin:9px 3px 0;
+ color:#344139;
+}
+.hero-with-search .home-rental-search-note{
+ display:block!important;
+ margin:8px 3px 0;
+ color:#647168;
+ font-size:9px;
+ line-height:1.5;
+}
+.hero-with-search .rental-search-checkbox,
+.hero-with-search .rental-search-more{
+ color:#344139;
+ font-size:10px;
+}
+.hero-with-search .rental-search-more{font-weight:650}
+.hero-with-search .rental-search-extra{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:8px;
+ width:100%;
+ margin-top:8px;
+}
+.hero-with-search .rental-search-compact,
+.hero-with-search .rental-search-stops,
+.hero-with-search .rental-search-special{
+ min-width:0;
+ padding:8px;
+ border:1px solid #d7ddd8;
+ border-radius:6px;
+ background:#fff;
+ color:#344139;
+}
+.hero-with-search .rental-search-compact>span,
+.hero-with-search .rental-search-stops>span,
+.hero-with-search .rental-search-special>span{
+ display:block;
+ margin-bottom:5px;
+ color:#78837b;
+ font-size:8px;
+}
+.hero-with-search .rental-search-compact input,
+.hero-with-search .rental-search-compact select,
+.hero-with-search .rental-search-stop input,
+.hero-with-search .rental-search-special textarea{
+ width:100%;
+ min-width:0;
+ border:0;
+ outline:0;
+ background:transparent;
+ color:#1e2923;
+ font:500 10px/1.4 Arial,Helvetica,sans-serif;
+}
+.hero-with-search .rental-search-stops,
+.hero-with-search .rental-search-special{grid-column:span 3}
+.hero-with-search .rental-search-stop{display:flex;gap:8px;margin:5px 0}
+.hero-with-search .rental-search-stop button,
+.hero-with-search .rental-search-add-stop{color:#344139;font-size:10px}
+@media(max-width:680px){
+ .hero-with-search:not(.hero-zh) .hero-content{padding-top:58px!important}
+ .hero-with-search .home-rental-search-options{gap:8px 12px;margin-top:8px}
+ .hero-with-search .rental-search-checkbox,
+ .hero-with-search .rental-search-more{font-size:9px}
+ .hero-with-search .rental-search-extra{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .hero-with-search .rental-search-stops,
+ .hero-with-search .rental-search-special{grid-column:1/-1}
+ .hero-with-search .home-rental-search-note{font-size:8px}
+}
+@media(max-width:390px){
+ .hero-with-search:not(.hero-zh) .hero-content{padding-top:52px!important}
+}
