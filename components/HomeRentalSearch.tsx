@@ -6,14 +6,11 @@ import type {Locale} from "@/lib/site-data";
 export function HomeRentalSearch({locale}:{locale:Locale}){
  const copy=locale==="zh"?{
   eyebrow:"车辆租赁咨询",title:"从您的行程开始。",location:"上车地点 / 城市",destination:"目的地（选填）",pickup:"取车日期",pickupTime:"取车时间",returnDate:"还车日期",returnTime:"还车时间",oneWay:"单程行程",age:"驾驶员年龄",license:"驾照签发国家 / 地区",choose:"请选择",search:"提交租车咨询",note:"提交后，我们的团队将直接确认车辆可用情况、服务范围及报价。",locationPlaceholder:"机场、城市、酒店或地址",agePlaceholder:"例如 30",invalid:"请检查地点和日期。"
+ } : locale==="id"?{
+  eyebrow:"PERTANYAAN SEWA KENDARAAN",title:"Mulai dari perjalanan Anda.",location:"Lokasi / kota penjemputan",destination:"Tujuan (opsional)",pickup:"Tanggal penjemputan",pickupTime:"Waktu penjemputan",returnDate:"Tanggal pengembalian",returnTime:"Waktu pengembalian",oneWay:"Perjalanan satu arah",age:"Usia pengemudi",license:"Negara / wilayah penerbit SIM",choose:"Pilih negara atau wilayah",search:"Kirim pertanyaan sewa",note:"Tim kami akan mengonfirmasi ketersediaan kendaraan, cakupan layanan, dan penawaran secara langsung. Ini adalah pertanyaan, bukan pemesanan instan.",locationPlaceholder:"Bandara, kota, hotel, atau alamat",agePlaceholder:"mis. 30",invalid:"Periksa lokasi penjemputan dan tanggal."
  }:{
-  en:{
-   eyebrow:"VEHICLE RENTAL ENQUIRY",title:"Start with your journey.",location:"Pickup location / city",destination:"Destination (optional)",pickup:"Pickup date",pickupTime:"Pickup time",returnDate:"Return date",returnTime:"Return time",oneWay:"One-way journey",age:"Driver age",license:"Driving licence country / region",choose:"Select country or region",search:"Send rental enquiry",note:"Our team will confirm vehicle availability, service coverage and a quotation directly. This is an enquiry, not an instant booking.",locationPlaceholder:"Airport, city, hotel or address",agePlaceholder:"e.g. 30",invalid:"Please check the pickup location and dates."
-  }:locale==="id"?{
-   eyebrow:"PERTANYAAN SEWA KENDARAAN",title:"Mulai dari perjalanan Anda.",location:"Lokasi / kota penjemputan",destination:"Tujuan (opsional)",pickup:"Tanggal penjemputan",pickupTime:"Waktu penjemputan",returnDate:"Tanggal pengembalian",returnTime:"Waktu pengembalian",oneWay:"Perjalanan satu arah",age:"Usia pengemudi",license:"Negara / wilayah penerbit SIM",choose:"Pilih negara atau wilayah",search:"Kirim pertanyaan sewa",note:"Tim kami akan mengonfirmasi ketersediaan kendaraan, cakupan layanan, dan penawaran secara langsung. Ini adalah pertanyaan, bukan pemesanan instan.",locationPlaceholder:"Bandara, kota, hotel, atau alamat",agePlaceholder:"mis. 30",invalid:"Periksa lokasi penjemputan dan tanggal."
-  }:{
-   eyebrow:"VEHICLE RENTAL ENQUIRY",title:"Start with your journey.",location:"Pickup location / city",destination:"Destination (optional)",pickup:"Pickup date",pickupTime:"Pickup time",returnDate:"Return date",returnTime:"Return time",oneWay:"One-way journey",age:"Driver age",license:"Driving licence country / region",choose:"Select country or region",search:"Send rental enquiry",note:"Our team will confirm vehicle availability, service coverage and a quotation directly. This is an enquiry, not an instant booking.",locationPlaceholder:"Airport, city, hotel or address",agePlaceholder:"e.g. 30",invalid:"Please check the pickup location and dates."
-  };
+  eyebrow:"VEHICLE RENTAL ENQUIRY",title:"Start with your journey.",location:"Pickup location / city",destination:"Destination (optional)",pickup:"Pickup date",pickupTime:"Pickup time",returnDate:"Return date",returnTime:"Return time",oneWay:"One-way journey",age:"Driver age",license:"Driving licence country / region",choose:"Select country or region",search:"Send rental enquiry",note:"Our team will confirm vehicle availability, service coverage and a quotation directly. This is an enquiry, not an instant booking.",locationPlaceholder:"Airport, city, hotel or address",agePlaceholder:"e.g. 30",invalid:"Please check the pickup location and dates."
+ };
  const countryOptions=["Indonesia","China","Hong Kong","Macau","Taiwan","Japan","Singapore","Malaysia","Thailand","South Korea","United Kingdom","United States","Australia","Other"];
  function submit(event:FormEvent<HTMLFormElement>){
   event.preventDefault();
@@ -23,6 +20,8 @@ export function HomeRentalSearch({locale}:{locale:Locale}){
   const returning=String(data.get("returnDate")||"");
   const oneWay=data.get("oneWay")==="on";
   if(!data.get("pickupLocation")||!pickup||(!oneWay&&(!returning||returning<pickup))){
+   const returnInput=form.elements.namedItem("returnDate") as HTMLInputElement|null;
+   if(returnInput&&!oneWay&&returning<pickup)returnInput.setCustomValidity(copy.invalid);
    form.reportValidity();
    return;
   }
@@ -38,7 +37,7 @@ export function HomeRentalSearch({locale}:{locale:Locale}){
   const raw=process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"087811887555";
   let phone=raw.replace(/[^0-9]/g,"");
   if(phone.startsWith("0"))phone="62"+phone.slice(1);
-  window.location.assign("https://wa.me/"+phone+"?text="+encodeURIComponent(fields.join("\\n")));
+  window.location.assign("https://wa.me/"+phone+"?text="+encodeURIComponent(fields.join("\n")));
  }
  return <section className="home-rental-search" aria-labelledby="home-rental-search-title">
   <div className="home-rental-search-backdrop" aria-hidden="true"/>
@@ -55,7 +54,7 @@ export function HomeRentalSearch({locale}:{locale:Locale}){
      <button className="rental-search-submit" type="submit"><span aria-hidden="true">⌕</span>{copy.search}</button>
     </div>
     <div className="home-rental-search-options">
-     <label className="rental-search-checkbox"><input type="checkbox" name="oneWay" onChange={event=>{const form=event.currentTarget.form;const fields=form?.querySelectorAll<HTMLInputElement>(".rental-return-field input");fields?.forEach(field=>{field.disabled=event.currentTarget.checked;field.required=!event.currentTarget.checked;});}}/><span>{copy.oneWay}</span></label>
+     <label className="rental-search-checkbox"><input type="checkbox" name="oneWay" onChange={event=>{const oneWay=event.currentTarget.checked;const form=event.currentTarget.form;const fields=form?.querySelectorAll<HTMLInputElement>(".rental-return-field input");fields?.forEach(field=>{field.disabled=oneWay;field.required=!oneWay;field.setCustomValidity("");});}}/><span>{copy.oneWay}</span></label>
      <label className="rental-search-compact"><span>{copy.age}</span><input name="driverAge" type="number" min="18" max="100" placeholder={copy.agePlaceholder}/></label>
      <label className="rental-search-compact"><span>{copy.license}</span><select name="licenceCountry" defaultValue=""><option value="">{copy.choose}</option>{countryOptions.map(country=><option key={country} value={country}>{country}</option>)}</select></label>
     </div>
