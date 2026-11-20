@@ -14137,3 +14137,81 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
   .service-detail-band--tours-travel .service-inclusion-grid>div {min-height:0}
   .service-detail-quotation {grid-template-columns:1fr;gap:13px;padding:18px}
 }
+
+
+/* Event design: company-led, end-to-end arrangement assurance. */
+.service-detail-band--event-design .service-company-assurance {
+  margin-top:26px;
+  padding:25px 26px 20px;
+  border:1px solid rgba(49,70,54,.2);
+  background:linear-gradient(135deg,rgba(255,255,255,.7),rgba(229,233,220,.68));
+  box-shadow:0 14px 34px rgba(27,43,33,.055);
+}
+.service-company-assurance-top,
+.service-company-assurance-footer {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+.service-company-assurance-index {
+  color:#84915e;
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:.18em;
+}
+.service-company-assurance-rule {
+  width:42px;
+  height:1px;
+  background:#aab77c;
+}
+.service-detail-band--event-design .service-company-assurance h3 {
+  max-width:580px;
+  margin:20px 0 10px;
+  color:#26392d;
+  font:500 clamp(21px,2.5vw,30px)/1.16 var(--font-display);
+  letter-spacing:-.05em;
+}
+.service-detail-band--event-design .service-company-assurance p {
+  margin:0!important;
+  color:#68746a!important;
+  font-size:11px!important;
+  line-height:1.9!important;
+}
+.service-company-assurance-footer {
+  margin-top:20px;
+  padding-top:14px;
+  border-top:1px solid rgba(49,70,54,.15);
+}
+.service-company-assurance-footer>span:first-child {
+  color:#78836f;
+  font-size:7px;
+  font-weight:700;
+  letter-spacing:.12em;
+  line-height:1.7;
+}
+.service-company-assurance-check {
+  display:grid;
+  place-items:center;
+  flex:0 0 30px;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background:#2b4032;
+  color:#f3f0e8;
+  font-size:14px;
+}
+@media(max-width:480px) {
+  .service-detail-band--event-design .service-company-assurance {
+    margin-top:20px;
+    padding:19px 17px 16px;
+  }
+  .service-detail-band--event-design .service-company-assurance h3 {
+    font-size:23px;
+    line-height:1.2;
+  }
+  .service-company-assurance-footer>span:first-child {
+    max-width:calc(100% - 44px);
+    letter-spacing:.08em;
+  }
+}
