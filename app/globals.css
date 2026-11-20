@@ -14475,3 +14475,13 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
 @media(prefers-reduced-motion:reduce){
  .review-carousel .review-carousel-arrows button{transition:none}
 }
+
+
+/* Vehicle guest-experience sections intentionally share the homepage review layout. */
+.guest-experiences.vehicle-guest-reviews{
+ padding:clamp(3.75rem,7vw,7rem) clamp(1.25rem,6vw,7rem);
+ background:#e8e6de;color:#202923;overflow:hidden
+}
+@media(max-width:680px){
+ .guest-experiences.vehicle-guest-reviews{padding:3.5rem 5% 3.75rem}
+}
