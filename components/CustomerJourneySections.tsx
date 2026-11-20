@@ -18,7 +18,7 @@ export function PickupGuide({locale}:{locale:Locale}){
   zh:{eyebrow:"上车地点与路线安排",title:"从您关心的地点开始规划。",intro:"请具体告知行程的起点与终点。您可以填写机场及航站楼、酒店名称或街道地址；团队会确认该路线是否属于服务范围，并说明相关安排。",cards:[["01","机场接送","请提供机场名称、航站楼及期望的会合地点。"],["02","酒店接送","请提供酒店名称、所在区域及目的地。"],["03","指定地点接送","请填写完整的上车地址及下车地点。"]],note:"服务范围及可能涉及的额外区域安排均由团队确认。地点选项仅用于描述您的需求，并不代表服务或车辆实时可用的保证。",cta:"提交上车地点"}
  }[locale];
  const cardImages=[
-  "https://cdn.prod.website-files.com/681d64378ef7abb3704393e3/6971e0e44b2e9f4dbae96160_1_87TweENycOGXEnak480JhQ.webp",
+  "https://www.bluebirdgroup.com/storage/articles/68a540db32974.jpg",
   "https://cdn.blastness.biz/media/1169/new-top2024/thumbs/full/1920-ingresso2.jpg",
   "https://www.leighday.co.uk/media/0rrfwvd1/mini-cab-fare.jpg?height=480&width=800"
  ];
