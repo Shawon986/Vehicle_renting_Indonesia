@@ -1,0 +1,21 @@
+import {readFileSync,existsSync} from "node:fs";
+const required=(path,needles)=>{
+ if(!existsSync(path))throw new Error("Missing required upgrade file: "+path);
+ const source=readFileSync(path,"utf8");
+ for(const needle of needles)if(!source.includes(needle))throw new Error(path+" is missing required safeguard or feature: "+needle);
+};
+required("components/HomeRentalSearch.tsx",['name="routeStop"','name="tripPurpose"','name="specialRequests"','<VehicleInquiryForm','createPortal']);
+required("components/VehicleCollection.tsx",['vehicle-compare-panel','setCompareSlugs','query.trim()']);
+required("components/VehicleGallery.tsx",["onTouchEnd","previousOverflow","aria-modal"]);
+required("app/api/inquiries/route.ts",['oneWay=value("oneWay",4)==="yes"','vehicle_enquiries','TURNSTILE_SECRET_KEY','UPSTASH_REDIS_REST_TOKEN']);
+required("lib/supabase/server.ts",["auth.getUser()","STAFF_ADMIN_EMAIL","SUPABASE_SERVICE_ROLE_KEY"]);
+required("proxy.ts",["getClaims()","/api/staff/:path*"]);
+required("app/api/staff/enquiries/route.ts",["getCurrentStaff()","Cache-Control","enquiry_status_history"]);
+required("app/api/staff/enquiries/[id]/route.ts",["getCurrentStaff()","Origin verification required","enquiry_status_history"]);
+required("app/api/staff/members/route.ts",["staff.role!==\"admin\"","inviteUserByEmail"]);
+required("components/StaffDashboard.tsx",["Export current page CSV","Save enquiry update","ACCESS CONTROL"]);
+required("app/staff/login/page.tsx",["signInWithPassword","/api/staff/session"]);
+required("supabase/migrations/20261120000100_staff_dashboard.sql",["enable row level security","revoke all","service_role","vehicle_enquiries","enquiry_status_history"]);
+const packageJson=JSON.parse(readFileSync("package.json","utf8"));
+if(packageJson.dependencies?.["@supabase/ssr"]!=="0.12.7"||packageJson.dependencies?.["@supabase/supabase-js"]!=="2.119.2")throw new Error("Supabase dependencies must remain pinned to reviewed versions.");
+if(packageJson.dependencies?.["@supabase/supabase-js"]==="2.119.2"&&packageJson.dependencies?.["@supabase/ssr"]==="0.12.7")console.log("RentCarOcean upgrade static checks passed.");

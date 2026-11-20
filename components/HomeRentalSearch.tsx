@@ -58,6 +58,8 @@ export function HomeRentalSearch({locale,enabled=false}:{locale:Locale;enabled?:
    vehicleCategory:String(data.get("vehicleCategory")||""),
    luggage:String(data.get("luggage")||""),
    routeStops:routeStops.join(" → "),
+   tripPurpose:String(data.get("tripPurpose")||""),
+   specialRequests:String(data.get("specialRequests")||""),
    oneWay:oneWay?"yes":"",
    message:notes.join("\n")
   });
