@@ -7,7 +7,7 @@ const required=(path,needles)=>{
 required("components/HomeRentalSearch.tsx",['name="routeStop"','name="tripPurpose"','name="specialRequests"','<VehicleInquiryForm','createPortal']);
 required("components/VehicleCollection.tsx",['vehicle-compare-panel','setCompareSlugs','query.trim()']);
 required("components/VehicleGallery.tsx",["onTouchEnd","previousOverflow","aria-modal"]);
-required("app/api/inquiries/route.ts",['oneWay=value("oneWay",4)==="yes"',"TURNSTILE_SECRET_KEY","UPSTASH_REDIS_REST_TOKEN"]);
+required("app/api/inquiries/route.ts",['oneWay=value("oneWay",4)==="yes"',"forwardToFormspree"]);
 const packageJson=JSON.parse(readFileSync("package.json","utf8"));
 if(packageJson.dependencies?.["@supabase/ssr"]||packageJson.dependencies?.["@supabase/supabase-js"])throw new Error("Staff dashboard dependencies must not be included.");
 for(const path of ["app/staff","app/api/staff","components/StaffDashboard.tsx","lib/supabase/server.ts","lib/staff-types.ts","proxy.ts","supabase/migrations/20261120000100_staff_dashboard.sql"]){
