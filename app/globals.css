@@ -13849,3 +13849,35 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
  .gift-package-card-content h3{font-size:24px}
  .gift-package-card-content .gift-package-price strong{font-size:21px}
 }
+
+
+/* Gift page responsive safeguards: stable touch behavior and consistent arrows */
+.gift-occasion-arrow{display:inline-block;width:14px;height:14px;flex:0 0 14px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 18 18 6M7 6h11v11' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 18 18 6M7 6h11v11' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .2s ease}
+@media(hover:hover) and (pointer:fine){.gift-package-card:hover{transform:translateY(-5px)}.gift-package-card:hover .gift-package-photo img{transform:scale(1.035)}.gift-occasion-link:hover .gift-occasion-arrow{transform:translate(2px,-2px)}}
+@media(hover:none),(pointer:coarse){.gift-package-card:hover{transform:none;box-shadow:0 18px 42px rgba(30,43,32,.075)}.gift-package-card:hover .gift-package-photo img{transform:none}.gift-occasion-link:hover .gift-occasion-arrow{transform:none}}
+@media(max-width:760px){
+ .gift-package-section{overflow:hidden}
+ .gift-package-grid,.gift-package-card,.gift-package-card-content{min-width:0;width:100%}
+ .gift-package-photo{width:100%;aspect-ratio:1.48/1}
+ .gift-package-card-content .gift-package-size,.gift-package-card-content .gift-package-description{overflow-wrap:anywhere}
+ .gift-package-card-content .gift-package-price{min-width:0;gap:8px}
+ .gift-package-card-content .gift-package-price small{min-width:0;line-height:1.4}
+ .gift-package-card-content .gift-package-price strong{min-width:0;overflow-wrap:anywhere}
+ .gift-fruit-selection ul{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .gift-fruit-selection li{overflow-wrap:anywhere}
+ .gift-benefits>span{min-width:0;justify-content:flex-start;text-align:left}
+ .gift-occasion-tiers>div{grid-template-columns:24px minmax(0,1fr) auto;gap:8px}
+ .gift-occasion-tiers strong{min-width:0;overflow-wrap:anywhere}
+ .gift-occasion-tiers b{font-size:clamp(12px,3.7vw,14px)}
+ .gift-occasion-link{max-width:100%;gap:10px;font-size:clamp(8px,2.3vw,9px);letter-spacing:.12em}
+ .gift-occasion-arrow{width:13px;height:13px;flex-basis:13px}
+}
+@media(max-width:360px){
+ .gift-package-section{padding-left:16px;padding-right:16px}
+ .gift-package-card-content{padding:16px 14px 18px}
+ .gift-package-card-content h3{font-size:22px}
+ .gift-package-card-content .gift-package-price{align-items:flex-start;flex-direction:column}
+ .gift-occasion-tiers>div{grid-template-columns:22px minmax(0,1fr);}
+ .gift-occasion-tiers b{grid-column:2;white-space:normal}
+ .gift-fruit-selection ul{gap:16px 6px}
+}
