@@ -10,19 +10,13 @@ const copy={
  zh:{name:"姓名",email:"电子邮箱",phone:"WhatsApp / 电话号码",company:"公司（选填）",channel:"首选联系渠道",service:"您希望咨询哪项服务？",vehicle:"车辆租赁",travel:"旅游与行程",events:"活动策划",gifts:"水果与鲜花礼盒",multiple:"多项服务 / 尚未确定",date:"期望日期（选填）",location:"地点、目的地或活动场地（选填）",people:"人数 / 宾客数量（选填）",message:"请告诉我们您的需求",consent:"我同意使用所提供的信息来回复本次咨询。",privacy:"隐私政策",marketing:"我愿意偶尔接收服务资讯（选填）。",submit:"提交咨询",sending:"正在发送…",success:"感谢您，咨询已发送给我们的团队。",error:"暂时无法发送咨询，请稍后重试。",hint:"团队将审核您的需求，并直接确认服务详情、可用情况与报价。此表单仅用于咨询，不代表预订成功。",disabled:"咨询提交暂时不可用，请直接联系服务团队。",verify:"安全验证尚未配置，请直接联系我们。"}
 } as const;
 export function GeneralEnquiryForm({locale,enabled=true}:{locale:Locale;enabled?:boolean}){
- const t=copy[locale],path=usePathname(),[status,setStatus]=useState("idle"),[token,setToken]=useState("");
- const slot=useRef<HTMLDivElement>(null),widget=useRef<string|undefined>(undefined),started=useRef(false),submitted=useRef(false),lastField=useRef("name");
- const siteKey=process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
- useEffect(()=>{if(!enabled||!siteKey||!slot.current)return;const w=window as Window&{turnstile?:{render:(el:HTMLElement,opts:Record<string,unknown>)=>string;remove?:(id:string)=>void;reset?:(id:string)=>void}};
- const render=()=>{if(w.turnstile&&slot.current&&!widget.current)widget.current=w.turnstile.render(slot.current,{sitekey:siteKey,callback:(v:string)=>setToken(v),action:"service_enquiry","expired-callback":()=>setToken(""),"error-callback":()=>setToken("")})};
- render();let script=document.getElementById("cf-turnstile") as HTMLScriptElement|null;if(!script){script=document.createElement("script");script.id="cf-turnstile";script.src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";script.async=true;script.defer=true;script.onload=render;document.head.appendChild(script)}else if(!w.turnstile)script.addEventListener("load",render,{once:true});
- return()=>{if(widget.current)w.turnstile?.remove?.(widget.current);widget.current=undefined};
- },[enabled,siteKey]);
+ const t=copy[locale],path=usePathname(),[status,setStatus]=useState("idle");
+ const started=useRef(false),submitted=useRef(false),lastField=useRef("name");
  useEffect(()=>()=>{if(started.current&&!submitted.current)trackEvent("form_abandon",{service_line:"general",last_field:lastField.current})},[]);
  function begin(e:FocusEvent<HTMLFormElement>){const el=e.target;if(el instanceof HTMLInputElement||el instanceof HTMLSelectElement||el instanceof HTMLTextAreaElement){if(!started.current){started.current=true;trackEvent("form_start",{service_line:"general"})}if(lastField.current!==el.name){lastField.current=el.name;trackEvent("form_progress",{field:el.name})}}}
- async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();if(!enabled||!siteKey||!token)return;const form=e.currentTarget,fd=new FormData(form),payload:Record<string,FormDataEntryValue|boolean>=Object.fromEntries(fd.entries());payload.locale=locale;payload.serviceLine="general";payload.pagePath=path;payload.turnstileToken=token;payload.marketingConsent=fd.get("marketingConsent")==="yes";setStatus("sending");
- try{const response=await fetch("/api/service-inquiries",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(payload)});if(!response.ok)throw new Error("Submission failed");const result=await response.json() as {leadId?:string};submitted.current=true;trackEvent("form_submit",{service_line:"general",lead_id:result.leadId||"received"});setStatus("success");form.reset();setToken("");started.current=false;const w=window as Window&{turnstile?:{reset?:(id:string)=>void}};if(widget.current)w.turnstile?.reset?.(widget.current)}
- catch{setStatus("error");setToken("");const w=window as Window&{turnstile?:{reset?:(id:string)=>void}};if(widget.current)w.turnstile?.reset?.(widget.current)}}
+ async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();if(!enabled)return;const form=e.currentTarget,fd=new FormData(form),payload:Record<string,FormDataEntryValue|boolean>=Object.fromEntries(fd.entries());payload.locale=locale;payload.serviceLine="general";payload.pagePath=path;payload.marketingConsent=fd.get("marketingConsent")==="yes";setStatus("sending");
+ try{const response=await fetch("/api/service-inquiries",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(payload)});if(!response.ok)throw new Error("Submission failed");const result=await response.json() as {leadId?:string};submitted.current=true;trackEvent("form_submit",{service_line:"general",lead_id:result.leadId||"received"});setStatus("success");form.reset();;started.current=false;}
+ catch{setStatus("error");;}}
  const channelOptions=[...((process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"6287811887555")?["whatsapp"]:[]),...((process.env.NEXT_PUBLIC_PHONE||"087811887555")?["phone"]:[]),...(locale==="zh"&&(process.env.NEXT_PUBLIC_WECHAT_ID||process.env.NEXT_PUBLIC_WECHAT_QR_URL||"/wechat-qr.svg")?["wechat"]:[]),"email"];
  return <form className="inquiry-form service-inquiry-form general-enquiry-form" onSubmit={submit} onFocusCapture={begin}>
  <div className="inquiry-form-heading"><span className="inquiry-form-index">01 / 02 · RENTCAROCEAN</span><h3>{locale==="zh"?"让我们了解您的计划":locale==="id"?"Ceritakan rencana Anda":"Tell us what you have in mind"}</h3><p>{t.hint}</p></div>
@@ -39,10 +33,10 @@ export function GeneralEnquiryForm({locale,enabled=true}:{locale:Locale;enabled?
  <label className="service-form-field">{t.people}<input name="peopleCount" type="number" min="1" max="10000"/></label>
  <label className="service-form-field service-form-wide">{t.message}<textarea name="message" required maxLength={2000}/></label>
  <div className="consent-row service-form-wide"><label className="consent-check"><input type="checkbox" name="consent" value="yes" required/>{t.consent}<span className="required-field-mark" aria-hidden="true">*</span></label><a className="consent-privacy-link" href={`/${locale}/legal/privacy`}>{t.privacy}<span className="ui-arrow" aria-hidden="true"/></a></div><label className="consent-check marketing-consent service-form-wide"><input type="checkbox" name="marketingConsent" value="yes"/><span>{t.marketing}</span></label>
- <div className="service-form-wide"><div ref={slot} className="turnstile-slot"/>{siteKey?null:<p className="form-config-note" role="status">{t.verify}</p>}</div>
+ 
  <div className="honeypot" aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off"/></label></div>
  </div>
- <button className="button button-dark" type="submit" disabled={!enabled||status==="sending"||!siteKey||!token}>{status==="sending"?t.sending:t.submit}<span className="arrow-up" aria-hidden="true"/></button>
+ <button className="button button-dark" type="submit" disabled={!enabled||status==="sending"}>{status==="sending"?t.sending:t.submit}<span className="arrow-up" aria-hidden="true"/></button>
  {status==="success"?<p role="status" className="form-success">{t.success}</p>:status==="error"?<p role="alert" className="form-error">{t.error}</p>:null}
  <p className="form-note">{t.hint}</p>
  </form>;
