@@ -1,32 +1,30 @@
 "use client";
 
-import {Children, useEffect, useState, type ReactNode} from "react";
+import {Children, useRef, type ReactNode} from "react";
 
-type ReviewCarouselProps = {
-  children: ReactNode;
-  className?: string;
-};
+type ReviewCarouselProps = {children:ReactNode;className?:string};
 
-export function ReviewCarousel({children,className=""}:ReviewCarouselProps) {
-  const slides=Children.toArray(children);
-  const [active,setActive]=useState(0);
-  const [paused,setPaused]=useState(false);
-
-  useEffect(()=>{
-    if(slides.length<2 || paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const timer=window.setInterval(()=>setActive(current=>(current+1)%slides.length),4800);
-    return ()=>window.clearInterval(timer);
-  },[slides.length,paused]);
-
-  return <div className={`review-carousel ${className}`} onMouseEnter={()=>setPaused(true)} onMouseLeave={()=>setPaused(false)}>
-    <div className="review-carousel-viewport" aria-live="polite" aria-atomic="true">
-      <div className="review-carousel-track" style={{transform:`translate3d(-${active*100}%,0,0)`}}>
-        {slides.map((slide,index)=><div className="review-carousel-slide" key={index} aria-hidden={index!==active}>{slide}</div>)}
-      </div>
-    </div>
-    {slides.length>1?<div className="review-carousel-controls" aria-hidden="true">
-      <span className="review-carousel-position">{String(active+1).padStart(2,"0")} <i/> {String(slides.length).padStart(2,"0")}</span>
-      <div className="review-carousel-progress"><span style={{width:`${((active+1)/slides.length)*100}%`}}/></div>
-    </div>:null}
-  </div>;
+export function ReviewCarousel({children,className=""}:ReviewCarouselProps){
+ const viewport=useRef<HTMLDivElement>(null);
+ const slides=Children.toArray(children);
+ function move(direction:-1|1){
+  const node=viewport.current;
+  if(!node)return;
+  const card=node.querySelector<HTMLElement>(".guest-review-card");
+  const gap=16;
+  const amount=card?card.getBoundingClientRect().width+gap:node.clientWidth;
+  node.scrollBy({left:amount*direction,behavior:"smooth"});
+ }
+ return <div className={`review-carousel ${className}`}>
+  <div className="review-carousel-viewport" ref={viewport} tabIndex={0} aria-label="Guest experience examples">
+   <div className="review-carousel-track">{slides.map((slide,index)=><div className="review-carousel-slide" key={index}>{slide}</div>)}</div>
+  </div>
+  <div className="review-carousel-controls">
+   <span className="review-carousel-position">{String(slides.length).padStart(2,"0")} <i/> {slides.length} {className.includes("guest-review")?"EXAMPLES":"REVIEWS"}</span>
+   <div className="review-carousel-arrows">
+    <button type="button" onClick={()=>move(-1)} aria-label="Previous reviews">‹</button>
+    <button type="button" onClick={()=>move(1)} aria-label="Next reviews">›</button>
+   </div>
+  </div>
+ </div>;
 }
