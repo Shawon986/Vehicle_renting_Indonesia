@@ -13778,3 +13778,39 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
 .gift-occasion-link:hover span{transform:translate(3px,-3px)}
 @media(max-width:900px){.gift-occasion-feature{grid-template-columns:1fr;gap:28px}.gift-occasion-image,.gift-occasion-image img{min-height:clamp(360px,78vw,560px)}.gift-occasion-copy{padding:4px 0}}
 @media(max-width:600px){.gift-occasion-feature{margin-top:28px;gap:24px}.gift-occasion-image,.gift-occasion-image img{min-height:390px}.gift-occasion-image{border-radius:4px}.gift-occasion-image>span{left:17px;bottom:17px;font-size:8px}.gift-occasion-copy h3{font-size:36px}.gift-occasion-tiers>div{grid-template-columns:25px minmax(0,1fr) auto;gap:8px;padding:14px 0}.gift-occasion-tiers strong{font-size:16px}.gift-occasion-tiers b{font-size:14px}}
+
+
+/* Gift collection cards — editorial image-led presentation */
+.gift-package-grid{align-items:stretch}
+.gift-package-card{padding:0;overflow:hidden;background:rgba(255,255,255,.68);border:1px solid rgba(98,111,77,.22);border-radius:17px;box-shadow:0 18px 42px rgba(30,43,32,.075);transition:transform .35s ease,box-shadow .35s ease}
+.gift-package-card:hover{transform:translateY(-5px);box-shadow:0 25px 55px rgba(30,43,32,.13)}
+.gift-package-photo{position:relative;aspect-ratio:1.34/1;overflow:hidden;background:#e6e1d4}
+.gift-package-photo:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(0deg,rgba(20,31,23,.32),transparent)}
+.gift-package-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.gift-package-card:hover .gift-package-photo img{transform:scale(1.045)}
+.gift-package-photo>span{position:absolute;z-index:1;left:17px;bottom:14px;color:#fff;font-family:var(--font-serif);font-size:23px}
+.gift-package-card-content{display:flex;flex-direction:column;padding:22px 23px 23px;height:calc(100% - 0px)}
+.gift-package-card-content .gift-package-number{font-size:8px;letter-spacing:.17em;color:#85906c}
+.gift-package-card-content h3{margin:13px 0 8px}
+.gift-package-card-content .gift-package-price{margin-top:auto}
+.gift-occasion-image{min-height:620px}
+.gift-occasion-image img{min-height:620px;object-position:center 54%}
+@media(max-width:760px){
+ .gift-package-card{display:grid;grid-template-columns:minmax(112px,.82fr) minmax(0,1.18fr);align-items:stretch;border-radius:14px}
+ .gift-package-photo{aspect-ratio:auto;min-height:100%;height:100%;grid-row:1}
+ .gift-package-photo img{position:absolute;inset:0}
+ .gift-package-photo>span{left:11px;bottom:10px;font-size:18px}
+ .gift-package-card-content{padding:16px 14px;min-width:0}
+ .gift-package-card-content h3{font-size:23px;line-height:1.12;margin:10px 0 7px}
+ .gift-package-card-content .gift-package-size{font-size:9px;line-height:1.5;margin-bottom:10px}
+ .gift-package-card-content .gift-package-description{font-size:11px;line-height:1.55;margin-bottom:12px}
+ .gift-package-card-content .gift-package-price{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding-top:10px}
+ .gift-package-card-content .gift-package-price strong{font-size:22px;white-space:normal}
+ .gift-occasion-image,.gift-occasion-image img{min-height:420px}
+}
+@media(max-width:380px){
+ .gift-package-card{grid-template-columns:104px minmax(0,1fr)}
+ .gift-package-card-content{padding:13px 11px}
+ .gift-package-card-content h3{font-size:20px}
+ .gift-package-card-content .gift-package-price strong{font-size:19px}
+}
