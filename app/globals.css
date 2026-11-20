@@ -14278,3 +14278,131 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
  .site-promotion{animation:none}
  .service-page .service-direction-card,.service-page .service-process-step,.service-page .service-inclusion-grid>div,.home-service-card,.pickup-guide-card{transition:none}
 }
+
+
+/* Homepage rental search panel */
+.home-rental-search{
+ position:relative;isolation:isolate;overflow:hidden;
+ padding:clamp(2.8rem,5.5vw,5.2rem) clamp(1.25rem,6vw,7rem);
+ background:#1b3029;color:#f5f4ee;
+}
+.home-rental-search-backdrop{
+ position:absolute;inset:0;z-index:-1;
+ background:
+  linear-gradient(105deg,rgba(15,31,26,.92),rgba(22,42,35,.78) 52%,rgba(15,31,26,.68)),
+  url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=78") center 52%/cover;
+ transform:scale(1.015);
+}
+.home-rental-search-inner{width:min(1440px,100%);margin:0 auto}
+.home-rental-search-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:1.35rem}
+.home-rental-search-heading .eyebrow{margin:0 0 .65rem;color:rgba(245,244,238,.68)}
+.home-rental-search-heading h2{margin:0;font-size:clamp(2rem,4vw,3.6rem);line-height:1;letter-spacing:-.055em;font-weight:500}
+.home-rental-search-form{
+ padding:clamp(1rem,2vw,1.5rem);border:1px solid rgba(255,255,255,.55);
+ border-radius:14px;background:rgba(255,255,255,.96);color:#1e2923;
+ box-shadow:0 24px 70px rgba(0,0,0,.18);
+}
+.home-rental-search-main{display:grid;grid-template-columns:1.35fr 1.2fr .9fr .72fr .9fr .72fr auto;gap:9px;align-items:stretch}
+.rental-search-field{display:flex;min-width:0;flex-direction:column;justify-content:center;gap:7px;padding:10px 12px;border:1px solid #d7ddd8;border-radius:7px;background:#fff}
+.rental-search-field>span,.rental-search-compact>span{font-size:10px;font-weight:650;letter-spacing:.035em;color:#78837b}
+.rental-search-field input,.rental-search-compact input,.rental-search-compact select{
+ width:100%;min-width:0;border:0;outline:0;background:transparent;color:#1e2923;font:600 13px/1.35 inherit;
+}
+.rental-search-field input::placeholder,.rental-search-compact input::placeholder{color:#9aa49c;font-weight:400}
+.rental-search-submit{
+ display:flex;align-items:center;justify-content:center;gap:8px;min-width:150px;padding:0 17px;
+ border:0;border-radius:7px;background:#243b31;color:#fff;font:650 13px/1.2 inherit;cursor:pointer;
+ transition:background .2s ease,transform .2s ease;
+}
+.rental-search-submit:hover{background:#365546;transform:translateY(-1px)}
+.rental-search-submit>span{font-size:22px;line-height:1}
+.home-rental-search-options{display:flex;align-items:center;flex-wrap:wrap;gap:clamp(1rem,3vw,2.7rem);padding:17px 2px 0}
+.rental-search-checkbox{display:flex;align-items:center;gap:9px;color:#34433a;font-size:12px}
+.rental-search-checkbox input{width:16px;height:16px;accent-color:#263d32}
+.rental-search-compact{display:flex;align-items:center;gap:10px;color:#4f5b53;font-size:12px}
+.rental-search-compact input,.rental-search-compact select{width:auto;max-width:190px;padding:5px 7px;border:1px solid #dce1dc;border-radius:5px;font-size:12px}
+.home-rental-search-note{margin:12px 2px 0;color:#7a857d;font-size:10px;line-height:1.55}
+.home-rental-search input:focus-visible,.home-rental-search select:focus-visible,.home-rental-search button:focus-visible{outline:2px solid #8b9c8e;outline-offset:3px}
+@media(max-width:1120px){
+ .home-rental-search-main{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .rental-search-submit{min-height:52px}
+}
+@media(max-width:680px){
+ .home-rental-search{padding:3rem 5%}
+ .home-rental-search-heading{display:block;margin-bottom:1.15rem}
+ .home-rental-search-heading h2{font-size:clamp(2rem,9vw,2.8rem)}
+ .home-rental-search-form{padding:12px;border-radius:10px}
+ .home-rental-search-main{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .rental-search-location,.rental-search-submit{grid-column:1/-1}
+ .rental-search-field{min-height:66px;padding:9px 10px}
+ .rental-search-field>span{font-size:9px}
+ .rental-search-field input{font-size:12px}
+ .rental-search-submit{min-height:49px}
+ .home-rental-search-options{align-items:flex-start;flex-direction:column;gap:13px;padding-top:14px}
+ .rental-search-compact{width:100%;justify-content:space-between}
+ .rental-search-compact select,.rental-search-compact input{max-width:58%;flex:0 1 58%}
+ .home-rental-search-note{font-size:9px}
+}
+
+/* Customer-review layout: three editorial cards on desktop, swipeable on mobile. */
+.guest-review-carousel{max-width:1440px}
+.guest-review-carousel .review-carousel-viewport{
+ overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;
+ scrollbar-width:none;padding:2px 2px 10px;
+}
+.guest-review-carousel .review-carousel-viewport::-webkit-scrollbar{display:none}
+.guest-review-carousel .review-carousel-track{display:flex;gap:16px;align-items:stretch}
+.guest-review-carousel .review-carousel-slide{flex:0 0 calc((100% - 32px)/3);min-width:0;scroll-snap-align:start}
+.guest-review-card{
+ display:flex;flex-direction:column;min-height:315px;height:100%;padding:clamp(1.15rem,1.7vw,1.55rem);
+ border:1px solid rgba(34,47,39,.055);border-radius:9px;background:#fff;
+ box-shadow:0 12px 34px rgba(27,39,31,.055);
+}
+.guest-review-author-row{display:flex;align-items:center;gap:14px}
+.guest-review-avatar{
+ flex:0 0 52px;width:52px;height:52px;display:grid;place-items:center;border-radius:50%;
+ background:#e7ece7;color:#536c5c;font-size:14px;font-weight:700;letter-spacing:.03em;
+}
+.guest-review-identity{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:0}
+.guest-review-identity strong{color:#252d28;font-size:15px;font-weight:600}
+.guest-review-rating{
+ display:inline-flex;align-items:center;padding:4px 9px;border-radius:5px;
+ background:#17518d;color:#fff;font-size:11px;font-weight:700;letter-spacing:.015em;
+}
+.guest-review-meta{display:flex;align-items:center;gap:9px;margin:17px 0 14px;color:#7a837d;font-size:11px;line-height:1.5}
+.guest-review-meta i{height:17px;width:1px;background:#d7dcd8;flex:0 0 1px}
+.guest-review-card blockquote{
+ flex:1;margin:0;padding-top:15px;border-top:1px solid #e1e4e1;
+ color:#333d36;font-size:clamp(13px,.98vw,15px);font-family:inherit;line-height:1.8;
+}
+.guest-review-card-footer{display:flex;justify-content:space-between;gap:10px;padding-top:13px;color:#8a948d;font-size:10px}
+.guest-review-card-footer span:last-child{color:#9a8358}
+.guest-review-carousel .review-carousel-controls{display:flex;align-items:center;justify-content:space-between;margin:14px 2px 0}
+.guest-review-carousel .review-carousel-position{color:#78837b;font-size:10px}
+.guest-review-carousel .review-carousel-arrows{display:flex;gap:9px}
+.guest-review-carousel .review-carousel-arrows button{
+ display:grid;place-items:center;width:42px;height:42px;border:1px solid rgba(36,52,43,.22);
+ border-radius:50%;background:transparent;color:#314338;font-size:25px;line-height:1;cursor:pointer;
+ transition:background .2s ease,color .2s ease,border-color .2s ease;
+}
+.guest-review-carousel .review-carousel-arrows button:hover{background:#263d32;color:#fff;border-color:#263d32}
+.guest-review-disclaimer{max-width:1440px;margin:8px auto 0;color:#7d877f;font-size:10px;line-height:1.6}
+@media(max-width:900px){
+ .guest-review-carousel .review-carousel-slide{flex-basis:calc((100% - 16px)/2)}
+ .guest-review-card{min-height:300px}
+}
+@media(max-width:680px){
+ .guest-experiences{padding:3.5rem 5% 3.75rem}
+ .guest-experiences-heading{align-items:flex-start;flex-direction:column;gap:1rem;margin-bottom:1.5rem}
+ .guest-experiences-heading h2{font-size:clamp(2rem,9vw,3rem)}
+ .guest-experiences-count{padding:0}
+ .guest-review-carousel .review-carousel-track{gap:10px}
+ .guest-review-carousel .review-carousel-slide{flex-basis:88%}
+ .guest-review-card{min-height:300px;padding:1.2rem}
+ .guest-review-meta{font-size:10px}
+ .guest-review-carousel .review-carousel-arrows button{width:38px;height:38px}
+}
+@media(prefers-reduced-motion:reduce){
+ .guest-review-carousel .review-carousel-arrows button,.rental-search-submit{transition:none}
+ .guest-review-carousel .review-carousel-viewport{scroll-behavior:auto}
+}
