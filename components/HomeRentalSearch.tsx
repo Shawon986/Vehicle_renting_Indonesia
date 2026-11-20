@@ -2,6 +2,7 @@
 
 import {useEffect,useRef,useState,type FormEvent} from "react";
 import type {Locale} from "@/lib/site-data";
+import {createPortal} from "react-dom";
 import {VehicleInquiryForm} from "@/components/site";
 
 type EnquiryValues=Record<string,string>;
@@ -85,11 +86,11 @@ export function HomeRentalSearch({locale,enabled=false}:{locale:Locale;enabled?:
     </form>
    </div>
   </section>
-  {showEnquiry?<div className="home-enquiry-modal" role="presentation" onMouseDown={event=>{if(event.target===event.currentTarget)setShowEnquiry(false)}}>
+  {showEnquiry?createPortal(<div className="home-enquiry-modal" role="presentation" onMouseDown={event=>{if(event.target===event.currentTarget)setShowEnquiry(false)}}>
    <div className="home-enquiry-dialog" role="dialog" aria-modal="true" aria-labelledby="home-enquiry-modal-title" ref={dialogRef}>
     <div className="home-enquiry-dialog-heading"><div><p className="eyebrow">{copy.eyebrow}</p><h2 id="home-enquiry-modal-title">{copy.modal}</h2></div><button className="home-enquiry-close" type="button" onClick={()=>setShowEnquiry(false)} aria-label={copy.close}>×</button></div>
     <VehicleInquiryForm locale={locale} enabled={enabled} initialValues={initialValues}/>
    </div>
-  </div>:null}
+  </div>,document.body):null}
  </>;
 }
