@@ -14406,3 +14406,72 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
  .guest-review-carousel .review-carousel-arrows button,.rental-search-submit{transition:none}
  .guest-review-carousel .review-carousel-viewport{scroll-behavior:auto}
 }
+
+
+/* Review carousel navigation and consistent vehicle-page review behaviour. */
+.review-carousel .review-carousel-arrows{display:flex!important;align-items:center;gap:10px;margin-left:auto}
+.review-carousel .review-carousel-arrows button{
+ display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;
+ border:1px solid rgba(38,58,46,.28);border-radius:50%;
+ background:rgba(255,255,255,.78);color:#263d32;cursor:pointer;
+ transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
+}
+.review-carousel .review-carousel-arrows button:hover{
+ background:#263d32;border-color:#263d32;color:#fff;transform:translateY(-1px)
+}
+.review-carousel .review-carousel-arrows button:focus-visible{
+ outline:2px solid #8d9c72;outline-offset:3px
+}
+.review-arrow-icon{position:relative;display:block;width:17px;height:17px}
+.review-arrow-icon:before{
+ content:"";position:absolute;left:3px;top:8px;width:11px;height:1.5px;background:currentColor
+}
+.review-arrow-icon:after{
+ content:"";position:absolute;top:4px;width:8px;height:8px;border-top:1.5px solid currentColor;
+ border-right:1.5px solid currentColor
+}
+.review-arrow-next:after{right:3px;transform:rotate(45deg)}
+.review-arrow-previous:after{left:3px;transform:rotate(-135deg)}
+.vehicle-review-carousel .review-carousel-viewport{
+ width:100%;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;
+ scroll-snap-type:x mandatory;scrollbar-width:none;padding:2px 2px 10px
+}
+.vehicle-review-carousel .review-carousel-viewport::-webkit-scrollbar{display:none}
+.vehicle-review-carousel .review-carousel-track{
+ display:flex;width:max-content;max-width:none;gap:16px;transform:none!important;transition:none!important
+}
+.vehicle-review-carousel .review-carousel-slide{
+ flex:0 0 min(100%,900px);width:min(100%,900px);min-width:0;scroll-snap-align:start
+}
+.vehicle-review-carousel .guest-review-card{
+ min-height:300px;height:100%;display:flex;flex-direction:column;justify-content:flex-start;
+ padding:clamp(1.4rem,3vw,2.5rem);border:1px solid rgba(174,151,105,.34);
+ border-radius:9px;background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(246,243,234,.9));
+ box-shadow:0 18px 48px rgba(25,35,28,.07)
+}
+.vehicle-review-carousel .guest-review-stars{margin:22px 0 15px;color:#a98b53;letter-spacing:.2em}
+.vehicle-review-carousel .guest-review-card blockquote{
+ flex:1;margin:0 0 24px;padding:0;border:0;color:#26352c;
+ font:500 clamp(1.05rem,1.8vw,1.35rem)/1.7 var(--font-display)
+}
+.vehicle-review-carousel .guest-review-bottom{
+ display:flex;align-items:center;justify-content:space-between;gap:16px;
+ margin-top:auto;padding-top:17px;border-top:1px solid rgba(32,41,35,.14)
+}
+.vehicle-review-carousel .guest-review-author{display:flex;align-items:center;gap:12px;min-width:0}
+.vehicle-review-carousel .guest-review-author>div{display:grid;gap:5px;min-width:0}
+.vehicle-review-carousel .guest-review-author strong{color:#26352c;font-size:13px}
+.vehicle-review-carousel .guest-review-author>div>span{color:#758077;font-size:11px}
+.vehicle-review-carousel .guest-review-bottom small{color:#8a7650;font-size:9px;letter-spacing:.08em;text-align:right}
+@media(max-width:680px){
+ .review-carousel .review-carousel-arrows button{flex-basis:40px;width:40px;height:40px}
+ .review-carousel .review-carousel-arrows{gap:7px}
+ .vehicle-review-carousel .review-carousel-track{gap:10px}
+ .vehicle-review-carousel .review-carousel-slide{flex-basis:100%;width:100%}
+ .vehicle-review-carousel .guest-review-card{min-height:300px;padding:1.25rem}
+ .vehicle-review-carousel .guest-review-bottom{align-items:flex-start}
+ .vehicle-review-carousel .guest-review-bottom small{max-width:105px}
+}
+@media(prefers-reduced-motion:reduce){
+ .review-carousel .review-carousel-arrows button{transition:none}
+}
