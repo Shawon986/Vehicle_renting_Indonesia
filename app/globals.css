@@ -13881,3 +13881,259 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
  .gift-occasion-tiers b{grid-column:2;white-space:normal}
  .gift-fruit-selection ul{gap:16px 6px}
 }
+
+
+/* Premium editorial treatment for the two bespoke, quotation-led service sections. */
+.service-detail-band--event-design,
+.service-detail-band--tours-travel {
+  position:relative;
+  isolation:isolate;
+  grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);
+  gap:clamp(42px,7vw,108px);
+  align-items:center;
+  padding:clamp(76px,9vw,132px) clamp(7%,10vw,14%);
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 88% 12%,rgba(197,214,107,.13),transparent 32%),
+    linear-gradient(135deg,#e9e7de 0%,#f1efe7 52%,#e3e4d9 100%);
+}
+.service-detail-band--event-design::before,
+.service-detail-band--tours-travel::before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:18px;
+  border:1px solid rgba(35,55,43,.12);
+  pointer-events:none;
+}
+.service-detail-band--event-design .service-detail-symbol,
+.service-detail-band--tours-travel .service-detail-symbol {
+  position:relative;
+  display:block;
+  width:100%;
+  max-width:430px;
+  aspect-ratio:4/5;
+  height:auto;
+  min-height:0;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.58);
+  border-radius:2px;
+  background:#d8ddd1;
+  box-shadow:0 24px 60px rgba(27,43,33,.13);
+}
+.service-detail-band--event-design .service-detail-symbol::before,
+.service-detail-band--event-design .service-detail-symbol::after,
+.service-detail-band--tours-travel .service-detail-symbol::before,
+.service-detail-band--tours-travel .service-detail-symbol::after {
+  content:none;
+}
+.service-detail-band--event-design .service-detail-photo,
+.service-detail-band--tours-travel .service-detail-photo {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:saturate(.78);
+}
+.service-detail-band--event-design .service-detail-symbol::after,
+.service-detail-band--tours-travel .service-detail-symbol::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  display:block;
+  background:linear-gradient(180deg,rgba(13,29,21,.04) 30%,rgba(13,29,21,.58) 100%);
+  pointer-events:none;
+}
+.service-detail-band--event-design .service-symbol-mark,
+.service-detail-band--tours-travel .service-symbol-mark {
+  position:absolute;
+  z-index:2;
+  left:22px;
+  right:22px;
+  bottom:22px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  color:#fff;
+  font:500 10px/1.5 var(--font-sans);
+  letter-spacing:.18em;
+}
+.service-detail-band--event-design .service-symbol-mark::before,
+.service-detail-band--tours-travel .service-symbol-mark::before {
+  content:"RENTCAROCEAN";
+  display:block;
+}
+.service-detail-band--event-design .service-symbol-mark::after,
+.service-detail-band--tours-travel .service-symbol-mark::after {
+  content:"01 / 01";
+  display:block;
+  font-size:8px;
+  opacity:.8;
+}
+.service-detail-band--event-design > div:last-child,
+.service-detail-band--tours-travel > div:last-child {
+  min-width:0;
+  max-width:760px;
+}
+.service-detail-band--event-design .eyebrow,
+.service-detail-band--tours-travel .eyebrow {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#71806e;
+  letter-spacing:.2em;
+  font-size:9px;
+}
+.service-detail-band--event-design .eyebrow > span,
+.service-detail-band--tours-travel .eyebrow > span {
+  display:inline-grid;
+  place-items:center;
+  width:30px;
+  height:30px;
+  margin:0;
+  border:1px solid rgba(38,59,45,.25);
+  border-radius:50%;
+  color:#64764a;
+  font-size:9px;
+}
+.service-detail-band--event-design h2,
+.service-detail-band--tours-travel h2 {
+  max-width:640px;
+  margin:0 0 20px;
+  font:500 clamp(38px,4.6vw,66px)/1.02 var(--font-display);
+  letter-spacing:-.075em;
+  color:#1b2d23;
+}
+.service-detail-band--event-design > div:last-child > p:not(.eyebrow),
+.service-detail-band--tours-travel > div:last-child > p:not(.eyebrow) {
+  max-width:650px;
+  margin:0;
+  color:#657168;
+  font-size:13px;
+  line-height:1.95;
+}
+.service-detail-band--event-design .service-inclusion-grid,
+.service-detail-band--tours-travel .service-inclusion-grid {
+  gap:10px;
+  margin-top:28px;
+}
+.service-detail-band--event-design .service-inclusion-grid > div,
+.service-detail-band--tours-travel .service-inclusion-grid > div {
+  position:relative;
+  min-height:126px;
+  padding:22px 20px 19px;
+  border:1px solid rgba(42,61,47,.16);
+  background:rgba(255,255,255,.42);
+  box-shadow:0 8px 24px rgba(27,43,33,.035);
+}
+.service-detail-band--event-design .service-inclusion-grid strong,
+.service-detail-band--tours-travel .service-inclusion-grid strong {
+  color:#314638;
+  font:600 12px/1.4 var(--font-sans);
+  letter-spacing:.04em;
+}
+.service-detail-band--event-design .service-inclusion-grid p,
+.service-detail-band--tours-travel .service-inclusion-grid p {
+  margin:10px 0 0!important;
+  color:#6c776e;
+  font-size:11px!important;
+  line-height:1.8!important;
+}
+.service-detail-quotation {
+  display:grid;
+  grid-template-columns:42px minmax(0,1fr);
+  gap:16px;
+  align-items:start;
+  margin-top:28px;
+  padding:23px 22px;
+  border:1px solid rgba(49,70,54,.19);
+  background:rgba(255,255,255,.56);
+  box-shadow:0 12px 30px rgba(27,43,33,.045);
+}
+.service-detail-quotation-mark {
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:#263d30;
+  color:#e9eddf;
+  font-size:18px;
+}
+.service-detail-quotation-kicker {
+  display:block;
+  margin:1px 0 9px;
+  color:#82915b;
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:.19em;
+}
+.service-detail-quotation h3 {
+  margin:0;
+  color:#26392d;
+  font:500 clamp(19px,2vw,25px)/1.2 var(--font-display);
+  letter-spacing:-.045em;
+}
+.service-detail-quotation p {
+  margin:10px 0 14px!important;
+  color:#6c776e!important;
+  font-size:11px!important;
+  line-height:1.8!important;
+}
+.service-detail-quotation-link {
+  display:inline-flex;
+  min-height:42px;
+  align-items:center;
+  gap:18px;
+  padding:0 14px;
+  border:1px solid rgba(39,59,45,.35);
+  color:#2b4032;
+  font-size:10px;
+  font-weight:600;
+  transition:background .2s ease,color .2s ease,border-color .2s ease;
+}
+.service-detail-quotation-link:hover {
+  border-color:#263d30;
+  background:#263d30;
+  color:#f3f0e8;
+}
+.service-detail-band--event-design .service-editorial-note,
+.service-detail-band--tours-travel .service-editorial-note {
+  border-left-color:#9eae62;
+  background:rgba(255,255,255,.48);
+}
+.service-detail-band--event-design .service-disclaimer,
+.service-detail-band--tours-travel .service-disclaimer {
+  color:#7b857b;
+}
+@media(max-width:760px) {
+  .service-detail-band--event-design,
+  .service-detail-band--tours-travel {
+    grid-template-columns:minmax(0,1fr);
+    gap:30px;
+    padding:58px 7%;
+  }
+  .service-detail-band--event-design::before,
+  .service-detail-band--tours-travel::before {inset:10px}
+  .service-detail-band--event-design .service-detail-symbol,
+  .service-detail-band--tours-travel .service-detail-symbol {
+    width:100%;
+    max-width:none;
+    aspect-ratio:16/9;
+  }
+  .service-detail-band--event-design .service-inclusion-grid,
+  .service-detail-band--tours-travel .service-inclusion-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+@media(max-width:480px) {
+  .service-detail-band--event-design,
+  .service-detail-band--tours-travel {padding:48px 6%}
+  .service-detail-band--event-design .service-inclusion-grid,
+  .service-detail-band--tours-travel .service-inclusion-grid {grid-template-columns:minmax(0,1fr)}
+  .service-detail-band--event-design .service-inclusion-grid>div,
+  .service-detail-band--tours-travel .service-inclusion-grid>div {min-height:0}
+  .service-detail-quotation {grid-template-columns:1fr;gap:13px;padding:18px}
+}
