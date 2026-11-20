@@ -53,3 +53,16 @@ export function VehicleInquiryForm({locale,vehicleSlug,enabled=false}:{locale:Lo
  </form>;
 }
 export function PageLoader(){const [visible,setVisible]=useState(true);useEffect(()=>{const timer=window.setTimeout(()=>setVisible(false),720);return()=>window.clearTimeout(timer)},[]);const path=usePathname();const locale=(path.split("/")[1]||"id") as Locale;const label=locale==="zh"?"正在准备您的旅程":locale==="id"?"MENYIAPKAN PERJALANAN ANDA":"PREPARING YOUR JOURNEY";return <div className={visible?"page-loader":"page-loader page-loader-done"} aria-hidden={!visible}><img className="loader-brand-logo" src="/rentcarocean-logo-light.svg" alt="RentCarOcean" width="300" height="77" fetchPriority="high"/><span className="loader-progress"><i/></span><small>{label}</small></div>}
+
+export function SitePromotion({locale}:{locale:Locale}){
+ const [visible,setVisible]=useState(false);
+ useEffect(()=>{
+  let timer:number|undefined;
+  try{if(window.sessionStorage.getItem("rentcarocean-promo-dismissed")==="1")return;}catch{}
+  timer=window.setTimeout(()=>{setVisible(true);try{window.sessionStorage.setItem("rentcarocean-promo-dismissed","1")}catch{}},16000);
+  return()=>{if(timer!==undefined)window.clearTimeout(timer)};
+ },[]);
+ if(!visible)return null;
+ const copy=locale==="zh"?{label:"RENTCAROCEAN · 专属安排",title:"让下一段计划，从一次简单沟通开始。",body:"无论是私人旅程、活动策划，还是用心礼赠，我们的团队都可以与您一起梳理细节。",cta:"联系团队",close:"关闭推广",chips:[["私人旅程","/services/tours-travel"],["活动策划","/services/event-design"],["礼赠系列","/services/gift-boxes"]]}:locale==="id"?{label:"RENTCAROCEAN · DIRANCANG UNTUK ANDA",title:"Mulai rencana berikutnya dengan percakapan sederhana.",body:"Untuk perjalanan pribadi, acara, atau hadiah penuh perhatian, tim kami siap membahas detail bersama Anda.",cta:"Hubungi tim",close:"Tutup promosi",chips:[["Tur & perjalanan","/services/tours-travel"],["Desain acara","/services/event-design"],["Kotak hadiah","/services/gift-boxes"]]}:{label:"A NOTE FROM RENTCAROCEAN",title:"A better plan starts with a conversation.",body:"From private journeys to thoughtfully arranged events and gifts, our team is ready to talk through the details with you.",cta:"Talk to our team",close:"Close promotion",chips:[["Private journeys","/services/tours-travel"],["Event design","/services/event-design"],["Thoughtful gifts","/services/gift-boxes"]]};
+ return <aside className="site-promotion" aria-label={copy.label}><button className="site-promotion-close" type="button" onClick={()=>setVisible(false)} aria-label={copy.close}>×</button><span className="site-promotion-label"><i/> {copy.label}</span><h2>{copy.title}</h2><p>{copy.body}</p><div className="site-promotion-chips">{copy.chips.map(([label,path])=><Link key={path} href={"/"+locale+path}>{label}<i className="service-arrow-mark" aria-hidden="true"/></Link>)}</div><Link className="site-promotion-cta" href={"/"+locale+"/contact"}>{copy.cta}<i className="service-arrow-mark" aria-hidden="true"/></Link></aside>;
+}
