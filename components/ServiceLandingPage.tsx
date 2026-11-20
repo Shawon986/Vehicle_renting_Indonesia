@@ -77,8 +77,8 @@ export function ServiceLandingPage({locale,service,enabled=false}:{locale:Locale
  const labels=locale==="zh"?{discover:"探索服务方向",steps:"合作流程",contact:"联系我们",gallery:"案例作品",disclaimer:"网站信息仅供参考，日期、库存及价格由团队书面确认。",service:"服务方向"}:locale==="id"?{discover:"JELAJAHI LAYANAN",steps:"ALUR KERJA",contact:"HUBUNGI TIM",gallery:"PORTOFOLIO",disclaimer:"Informasi di situs ini hanya sebagai referensi. Tanggal, stok, dan harga dikonfirmasi tim secara tertulis.",service:"PILIHAN LAYANAN"}:{discover:"EXPLORE THE POSSIBILITIES",steps:"HOW WE WORK",contact:"TALK TO OUR TEAM",gallery:"SELECTED WORK",disclaimer:"Website information is indicative. Dates, stock and pricing are confirmed by our team in writing.",service:"SERVICE DIRECTIONS"};
  const giftPackageImages=[
   {src:"https://lebliss.co.id/cdn/shop/collections/Parcel_buah_mewah_dengan_pengiriman_cepat_ke_Jakarta_Cirebon_Bintaro_dan_Tangerang.png?v=1747927359",alt:locale==="zh"?"精选水果与鲜花礼盒":"Fresh fruit and flower hamper"},
-  {src:"https://static-assets-prod.fnp.ae/images/pr/l/v20251024220652/flowers-and-fruits-confetti_2.jpg",alt:locale==="zh"?"优雅礼篮与礼品搭配":"Elegant gift basket arrangement"},
-  {src:"https://content2.flowwow-images.com/data/flowers/1000x1000/59/1762353085_86653259.jpg",alt:locale==="zh"?"玫瑰与牡丹花篮":"Rose and peony flower basket"}
+  {src:"https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1200&q=85",alt:locale==="zh"?"优雅礼篮与礼品搭配":"Elegant gift basket arrangement"},
+  {src:"https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=1200&q=85",alt:locale==="zh"?"玫瑰与牡丹花篮":"Rose and peony flower basket"}
  ];
  const giftCatalog=service==="gift-boxes"?{
   heading:locale==="zh"?"水果礼盒系列":locale==="id"?"Pilihan Hampers Buah & Bunga":"Fruit & Flower Gift Collection",
