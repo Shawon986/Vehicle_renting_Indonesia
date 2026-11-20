@@ -12,7 +12,7 @@ Next.js App Router, React 19 and TypeScript. The public site is display + contac
 - Vehicle rental collection with category/capacity/transmission/driver filters, card/table views, responsive comparison table and per-vehicle detail pages.
 - Dedicated Tours & Travel, Event Design, and Fruit & Flower Gift Boxes landing pages in all three locales, plus a unified services hub and homepage service discovery cards.
 - Service-specific enquiry forms for tours (dates, trip length, pax, group type, interests, departure city), events (event/alternate dates, occasion, venue, guest band, multi-select services and flexibility), and gifts (SKU/size, quantity, delivery date/area, recipient, card message, PO and same-day request).
-- Service-aware WhatsApp / WeChat prefill, sticky contact bar, per-service sales inbox routing and a separate anti-spam-protected service enquiry endpoint.
+- Service-aware WhatsApp / WeChat prefill, sticky contact bar, and shared Formspree delivery for every public enquiry form.
 - Vehicle detail service-inclusion matrix, add-on options, verified-only use-case guidance, non-numeric price-on-request slots, multi-image gallery support with keyboard-operable lightbox and breadcrumbs.
 - Locale-aware WhatsApp / WeChat / phone / email / enquiry contact components and mobile sticky contact actions (only verified channels appear when configured).
 - Vehicle enquiry form with pickup/return dates and times (Asia/Jakarta), pickup point and optional destination/drop-off point, passengers, luggage, vehicle model or category, travel style, add-ons, WeChat ID on Chinese pages and configured contact-channel preference.
