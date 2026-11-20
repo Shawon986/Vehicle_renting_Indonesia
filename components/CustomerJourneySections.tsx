@@ -160,18 +160,41 @@ export function VehicleGuestReviews({locale,vehicleSlug}:{locale:Locale;vehicleS
  const copy=vehicleReviewCopy[locale];
  const items=copy.items[vehicleSlug as keyof typeof copy.items] ?? [];
  if(!items.length)return null;
- return <section className="vehicle-guest-reviews" aria-labelledby="vehicle-guest-reviews-title">
-  <div className="vehicle-guest-reviews-heading">
-   <div><p className="eyebrow dark-eyebrow"><span>01</span> {locale==="zh"?"宾客体验":locale==="id"?"PENGALAMAN TAMU":"GUEST EXPERIENCES"}</p><h2 id="vehicle-guest-reviews-title">{copy.title}</h2><p>{copy.intro}</p></div>
-   <span className="guest-experiences-count">VARIED / EXPERIENCES</span>
+ const vehicleNames:Record<string,string>={
+  "new-avanza":"Toyota Avanza",
+  "innova-reborn":"Toyota Innova Reborn",
+  "zenix":"Toyota Zenix",
+  "byd-m6":"BYD M6",
+  "hiace-commuter":"Toyota Hiace Commuter",
+  "hiace-premio":"Toyota Hiace Premio",
+  "fortuner":"Toyota Fortuner",
+  "alphard-gen-3":"Toyota Alphard Gen 3"
+ };
+ const labels={
+  en:{experience:"Vehicle experience",illustrative:"Illustrative example",count:"EXPERIENCE EXAMPLES",disclaimer:"These are illustrative examples for layout purposes, not verified customer reviews."},
+  id:{experience:"Pengalaman kendaraan",illustrative:"Contoh ilustratif",count:"CONTOH PENGALAMAN",disclaimer:"Konten ini merupakan contoh tampilan, bukan ulasan pelanggan yang telah diverifikasi."},
+  zh:{experience:"车型体验",illustrative:"示例内容",count:"体验示例",disclaimer:"展示内容为版式示例，并非经核实的客户评价。"}
+ }[locale];
+ return <section className="guest-experiences vehicle-guest-reviews" aria-labelledby="vehicle-guest-reviews-title">
+  <div className="guest-experiences-heading">
+   <div>
+    <p className="eyebrow dark-eyebrow"><span>01</span> {locale==="zh"?"宾客体验":locale==="id"?"PENGALAMAN TAMU":"GUEST EXPERIENCES"}</p>
+    <h2 id="vehicle-guest-reviews-title">{copy.title}</h2>
+    <p className="guest-experiences-intro">{copy.intro}</p>
+   </div>
+   <span className="guest-experiences-count">{String(items.length).padStart(2,"0")} / {labels.count}</span>
   </div>
-  <ReviewCarousel className="vehicle-review-carousel">
-   {items.map(([name,trip,review],index)=><article className="guest-review-card vehicle-guest-review-card" key={name}>
-    <div className="guest-review-top"><span className="guest-review-index">VEHICLE EXPERIENCE · 0{index+1}</span></div>
-    <div className="guest-review-stars" aria-hidden="true">★★★★★</div>
-    <blockquote>“{review}”</blockquote>
-    <div className="guest-review-bottom"><div className="guest-review-author"><span className="guest-review-avatar" aria-hidden="true">{name.split(" ").map(part=>part[0]).join("").replace(/[^A-Z]/g,"").slice(0,2)}</span><div><strong>{name}</strong><span>{trip}</span></div></div><small>{locale==="zh"?"车型体验":locale==="id"?"Pengalaman kendaraan":"Vehicle experience"}</small></div>
+  <ReviewCarousel className="guest-review-carousel">
+   {items.map(([name,trip,review])=><article className="guest-review-card" key={name}>
+    <div className="guest-review-author-row">
+     <span className="guest-review-avatar" aria-hidden="true">{name.split(" ").map(part=>part[0]).join("").slice(0,2).toUpperCase()}</span>
+     <div className="guest-review-identity"><strong>{name}</strong><span className="guest-review-rating">5.0 / 5.0</span></div>
+    </div>
+    <div className="guest-review-meta"><span>{trip}</span><i/><span>{vehicleNames[vehicleSlug] ?? vehicleSlug}</span></div>
+    <blockquote>{review}</blockquote>
+    <div className="guest-review-card-footer"><span>{labels.experience}</span><span>{labels.illustrative}</span></div>
    </article>)}
   </ReviewCarousel>
+  <p className="guest-review-disclaimer">{labels.disclaimer}</p>
  </section>;
 }
