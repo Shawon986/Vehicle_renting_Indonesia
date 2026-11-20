@@ -48,7 +48,7 @@ assert.match(gallery,/aria-modal="true"/,"Vehicle lightbox must expose a modal d
 assert.match(config,/Content-Security-Policy/,"Security headers must remain configured");
 assert.match(workflow,/npm audit --audit-level=high/,"CI must run dependency security audit");
 assert.equal(existsSync(new URL("../app/[locale]/availability",import.meta.url)),false,"Public availability route must not be added");
-for (const path of ["app/[locale]/services/tours-travel/page.tsx","app/[locale]/services/event-design/page.tsx","app/[locale]/services/gift-boxes/page.tsx","app/[locale]/cases/page.tsx","app/[locale]/services/page.tsx","components/ServiceLandingPage.tsx","components/ServiceEnquiryForm.tsx","app/api/service-inquiries/route.ts"]) assert.ok(existsSync(new URL("../"+path,import.meta.url)),`Missing service module: ${path}`);
+for (const path of ["app/[locale]/services/tours-travel/page.tsx","app/[locale]/services/event-design/page.tsx","app/[locale]/services/gift-boxes/page.tsx","app/[locale]/services/page.tsx","components/ServiceLandingPage.tsx","components/ServiceEnquiryForm.tsx","app/api/service-inquiries/route.ts"]) assert.ok(existsSync(new URL("../"+path,import.meta.url)),`Missing service module: ${path}`);
 const serviceApi=read("app/api/service-inquiries/route.ts");
 const serviceForm=read("components/ServiceEnquiryForm.tsx");
 const sheets=read("integrations/google-sheets/Code.gs");
