@@ -51,52 +51,52 @@ const guestReviews = {
  en: {
   eyebrow:"GUEST EXPERIENCES",title:"The journey, through their eyes.",intro:"Thoughtful journeys, comfortable vehicles and service details that make travelling easier.",
   items:[
-   ["Dewi P.","Family holiday","Toyota Innova","The Innova gave our family plenty of room for everyone and our luggage. The journey from the airport felt relaxed from the start.","Family comfort"],
-   ["Budi Santoso","Business trip","Toyota Zenix","The cabin felt refined and comfortable. A good option for moving between meetings around the city.","Business travel"],
-   ["Rizky Pratama","Trip with friends","Toyota Hiace Premio","We travelled as a group and could all stay together in one vehicle. It made coordinating our stops much easier.","Group journey"],
-   ["Siti Rahmawati","Airport transfer","Toyota Avanza","A practical choice for a short airport transfer. The car was a comfortable size for our small family.","Airport transfer"],
-   ["Agus Setiawan","Family journey","Toyota Fortuner","We liked the elevated seating and roomy feel. It suited our day trip outside the city very well.","Day trip"],
-   ["Nadia Putri","City travel","BYD M6","The quiet cabin made the city ride pleasant. There was enough space for our bags too.","Electric mobility"],
-   ["Fajar Hidayat","Group journey","Toyota Hiace Commuter","Our group could travel together without splitting into several cars. That made the whole plan simpler.","Group transport"],
-   ["Maya Lestari","Family occasion","Toyota Alphard Gen 3","A comfortable and elegant choice for a special family occasion. The spacious interior was a real plus.","Special occasion"],
-   ["Andi Wijaya","Intercity journey","Toyota Innova Reborn","The seats and cabin space worked well for a longer drive. A sensible option for travelling with family.","Intercity journey"],
-   ["Putri Amelia","Weekend getaway","Toyota Avanza","Compact enough for getting around town and convenient for visiting several places in one day.","Weekend travel"],
-   ["Michael Tan","Indonesia visit","Toyota Hiace Premio","We had several suitcases and travelled with friends. Having everyone together made the transfer straightforward.","Visitor experience"],
-   ["Sarah Williams","Private sightseeing","Toyota Fortuner","A comfortable vehicle for a full day of exploring. The space made it easy to bring everything we needed.","Private journey"]
+   ["Dewi P.","Family holiday","Toyota Innova","The Innova gave our family generous room for everyone and all of our luggage, so we did not feel cramped after a long flight. The cabin felt comfortable throughout the airport journey, and having enough space for our bags made the transfer feel organised and relaxed from the very beginning.","Family comfort"],
+   ["Budi Santoso","Business trip","Toyota Zenix","The cabin felt refined, quiet and comfortable, which made moving between several meetings around the city much easier. There was enough room to settle in between appointments, and the overall ride suited a day when we needed a practical vehicle that still felt polished.","Business travel"],
+   ["Rizky Pratama","Trip with friends","Toyota Hiace Premio","We travelled with a group of friends and everyone could stay together in one vehicle rather than arranging separate cars. There was useful room for our bags, and coordinating meeting points and stops became much simpler. It made the whole day feel more connected and less complicated.","Group journey"],
+   ["Siti Rahmawati","Airport transfer","Toyota Avanza","For our small family, the Avanza felt like a practical choice for a short airport transfer. It was easy to manage around the city, had enough room for our everyday luggage and gave us a comfortable place to settle in after arriving. The journey was straightforward and convenient.","Airport transfer"],
+   ["Agus Setiawan","Family journey","Toyota Fortuner","We appreciated the elevated seating position and the roomy feel inside the Fortuner. It made the longer stretches outside the city comfortable, while the cabin had enough space for everyone to settle in. For a full day trip with several stops, it felt like a reassuring and convenient option.","Day trip"],
+   ["Nadia Putri","City travel","BYD M6","The quiet cabin made our city journey feel calm, especially when moving between several places during the day. We also appreciated the generous passenger space and the room for our bags, which meant the interior stayed comfortable without feeling crowded. It was a pleasant way to get around.","Electric mobility"],
+   ["Fajar Hidayat","Group journey","Toyota Hiace Commuter","Our group could travel together instead of splitting into several cars, which made meeting up and keeping to the day's plan much easier. The passenger space was useful for everyone, and travelling as one group helped the journey feel more coordinated from pickup through to the final stop.","Group transport"],
+   ["Maya Lestari","Family occasion","Toyota Alphard Gen 3","We wanted a vehicle that felt comfortable and elegant for a special family occasion, and the spacious interior was a real advantage. Everyone had room to settle in, the cabin felt refined, and the journey between locations was part of the occasion rather than just a transfer.","Special occasion"],
+   ["Andi Wijaya","Intercity journey","Toyota Innova Reborn","The seating and cabin space worked well for our longer intercity drive, particularly with family members and luggage on board. There was room to relax during the journey, and the practical interior made it a sensible choice for travelling between destinations without feeling squeezed.","Intercity journey"],
+   ["Putri Amelia","Weekend getaway","Toyota Avanza","The compact size made getting around town and stopping at several places in one day convenient. It felt manageable on busy city roads, while the cabin still gave our passengers a comfortable space for the journey. It was a practical choice for a flexible weekend itinerary.","Weekend travel"],
+   ["Michael Tan","Indonesia visit","Toyota Hiace Premio","We were travelling with friends and had several suitcases, so having everyone together in one vehicle made the transfer much more straightforward. It was easier to coordinate our arrival, keep our belongings together and continue the journey as a group without arranging multiple pickups.","Visitor experience"],
+   ["Sarah Williams","Private sightseeing","Toyota Fortuner","For a full day of exploring, we appreciated having a comfortable cabin and enough room for the things we wanted to bring along. The seating position and overall space suited a day with several stops, making it easier to enjoy the itinerary without constantly rearranging our bags.","Private journey"]
   ]
  },
  id: {
   eyebrow:"PENGALAMAN TAMU",title:"Cerita perjalanan dari sudut pandang mereka.",intro:"Perjalanan yang nyaman, pilihan kendaraan yang tepat, dan layanan yang memudahkan perjalanan Anda.",
   items:[
-   ["Dewi P.","Liburan keluarga","Toyota Innova","Innova memberi ruang yang cukup untuk keluarga dan barang bawaan kami. Perjalanan dari bandara terasa santai sejak awal.","Kenyamanan keluarga"],
-   ["Budi Santoso","Perjalanan bisnis","Toyota Zenix","Kabin terasa nyaman dan berkelas. Cocok untuk berpindah dari satu pertemuan ke pertemuan lain di dalam kota.","Perjalanan bisnis"],
-   ["Rizky Pratama","Wisata bersama teman","Toyota Hiace Premio","Kami bepergian bersama rombongan dan bisa tetap berada dalam satu kendaraan. Mengatur beberapa tempat tujuan jadi lebih mudah.","Perjalanan grup"],
-   ["Siti Rahmawati","Antar jemput bandara","Toyota Avanza","Pilihan praktis untuk perjalanan singkat dari bandara. Ukuran mobilnya nyaman untuk keluarga kecil kami.","Antar jemput bandara"],
-   ["Agus Setiawan","Perjalanan keluarga","Toyota Fortuner","Kami menyukai posisi duduk yang lebih tinggi dan kabin yang lega. Sangat cocok untuk perjalanan sehari ke luar kota.","Wisata sehari"],
-   ["Nadia Putri","Perjalanan dalam kota","BYD M6","Kabin yang senyap membuat perjalanan di dalam kota terasa menyenangkan. Ruang untuk tas kami juga cukup.","Mobilitas listrik"],
-   ["Fajar Hidayat","Perjalanan rombongan","Toyota Hiace Commuter","Rombongan kami bisa bepergian bersama tanpa harus membagi menjadi beberapa mobil. Rencana perjalanan jadi lebih sederhana.","Transportasi grup"],
-   ["Maya Lestari","Acara keluarga","Toyota Alphard Gen 3","Pilihan yang nyaman dan elegan untuk acara keluarga istimewa. Interiornya yang luas menjadi nilai tambah.","Acara istimewa"],
-   ["Andi Wijaya","Perjalanan antarkota","Toyota Innova Reborn","Kursi dan ruang kabinnya cocok untuk perjalanan jauh. Pilihan yang masuk akal untuk bepergian bersama keluarga.","Perjalanan antarkota"],
-   ["Putri Amelia","Liburan akhir pekan","Toyota Avanza","Cukup ringkas untuk berkeliling kota dan praktis saat mengunjungi beberapa tempat dalam satu hari.","Liburan akhir pekan"],
-   ["Michael Tan","Kunjungan ke Indonesia","Toyota Hiace Premio","Kami membawa beberapa koper dan bepergian bersama teman. Berada dalam satu kendaraan membuat perjalanan lebih praktis.","Pengalaman wisatawan"],
-   ["Sarah Williams","Wisata privat","Toyota Fortuner","Kendaraan yang nyaman untuk menjelajahi berbagai tempat sepanjang hari. Ruangnya cukup untuk semua perlengkapan kami.","Perjalanan privat"]
+   ["Dewi P.","Liburan keluarga","Toyota Innova","Innova memberi ruang yang lega untuk seluruh keluarga dan barang bawaan kami, sehingga perjalanan setelah penerbangan panjang tidak terasa sempit. Kabinnya nyaman selama perjalanan dari bandara, dan ruang bagasi yang memadai membuat proses antar jemput terasa lebih rapi, tenang, dan praktis sejak awal.","Kenyamanan keluarga"],
+   ["Budi Santoso","Perjalanan bisnis","Toyota Zenix","Kabin terasa nyaman, tenang, dan berkelas, sehingga perjalanan dari satu pertemuan ke pertemuan lain di dalam kota terasa lebih mudah. Ruangnya cukup untuk beristirahat sejenak di antara agenda, dan pengalaman berkendaranya cocok untuk hari yang padat namun tetap membutuhkan kenyamanan.","Perjalanan bisnis"],
+   ["Rizky Pratama","Wisata bersama teman","Toyota Hiace Premio","Kami bepergian bersama teman-teman dan semua orang bisa tetap berada dalam satu kendaraan tanpa perlu mengatur beberapa mobil. Ruang untuk penumpang dan tas cukup membantu, sementara koordinasi titik jemput serta beberapa tempat tujuan menjadi lebih sederhana. Perjalanan terasa lebih praktis sebagai satu rombongan.","Perjalanan grup"],
+   ["Siti Rahmawati","Antar jemput bandara","Toyota Avanza","Untuk keluarga kecil kami, Avanza terasa praktis untuk perjalanan singkat dari bandara. Ukurannya mudah digunakan di dalam kota, ruangnya cukup untuk barang bawaan, dan kabinnya nyaman setelah perjalanan panjang. Perjalanan menuju tujuan terasa sederhana dan tidak merepotkan.","Antar jemput bandara"],
+   ["Agus Setiawan","Perjalanan keluarga","Toyota Fortuner","Kami menyukai posisi duduk yang lebih tinggi dan kabin Fortuner yang terasa lega. Hal itu membuat perjalanan ke luar kota lebih nyaman, sementara ruang di dalam kendaraan cukup untuk semua penumpang. Untuk perjalanan sehari dengan beberapa tempat singgah, kendaraan ini terasa meyakinkan dan praktis.","Wisata sehari"],
+   ["Nadia Putri","Perjalanan dalam kota","BYD M6","Kabin yang senyap membuat perjalanan di dalam kota terasa tenang, terutama saat berpindah ke beberapa lokasi sepanjang hari. Kami juga menghargai ruang penumpang dan tempat untuk tas, sehingga bagian dalam kendaraan tetap terasa nyaman tanpa sesak. Pengalaman berkendaranya menyenangkan untuk aktivitas harian.","Mobilitas listrik"],
+   ["Fajar Hidayat","Perjalanan rombongan","Toyota Hiace Commuter","Seluruh rombongan kami dapat bepergian bersama tanpa harus dibagi ke beberapa mobil. Hal ini memudahkan koordinasi titik pertemuan dan menjaga jadwal perjalanan tetap teratur. Ruang penumpangnya membantu semua orang merasa nyaman, dan perjalanan bersama terasa lebih praktis dari penjemputan hingga tujuan terakhir.","Transportasi grup"],
+   ["Maya Lestari","Acara keluarga","Toyota Alphard Gen 3","Kami membutuhkan kendaraan yang nyaman dan elegan untuk acara keluarga istimewa, dan interior yang luas menjadi nilai tambah. Setiap penumpang memiliki ruang untuk duduk dengan nyaman, kabinnya terasa berkelas, dan perjalanan antar lokasi menjadi bagian yang menyenangkan dari acara tersebut.","Acara istimewa"],
+   ["Andi Wijaya","Perjalanan antarkota","Toyota Innova Reborn","Kursi dan ruang kabinnya cocok untuk perjalanan antarkota yang lebih panjang, terutama saat bepergian bersama keluarga dan membawa barang. Penumpang memiliki ruang untuk bersantai selama perjalanan, sementara tata ruang interiornya tetap praktis dan tidak terasa sempit.","Perjalanan antarkota"],
+   ["Putri Amelia","Liburan akhir pekan","Toyota Avanza","Ukurannya yang ringkas memudahkan kami berkeliling kota dan berhenti di beberapa tempat dalam satu hari. Kendaraan terasa mudah digunakan di jalan yang ramai, sementara kabinnya tetap menyediakan ruang yang nyaman bagi penumpang. Pilihan yang praktis untuk agenda akhir pekan yang fleksibel.","Liburan akhir pekan"],
+   ["Michael Tan","Kunjungan ke Indonesia","Toyota Hiace Premio","Kami bepergian bersama teman dan membawa beberapa koper, sehingga berada dalam satu kendaraan membuat perjalanan jauh lebih praktis. Koordinasi saat tiba menjadi lebih mudah, barang bawaan tetap bersama, dan kami dapat melanjutkan perjalanan sebagai satu kelompok tanpa mengatur beberapa penjemputan.","Pengalaman wisatawan"],
+   ["Sarah Williams","Wisata privat","Toyota Fortuner","Untuk menjelajahi berbagai tempat sepanjang hari, kami menghargai kabin yang nyaman dan ruang yang cukup untuk perlengkapan yang dibawa. Posisi duduk dan ruang interiornya sesuai untuk perjalanan dengan beberapa pemberhentian, sehingga kami dapat menikmati rencana perjalanan tanpa terus menata ulang barang.","Perjalanan privat"]
   ]
  },
  zh: {
   eyebrow:"宾客体验",title:"从旅客的视角，感受每一段旅程。",intro:"舒适的车辆、周到的安排，让每一段旅程更加轻松。",
   items:[
-   ["Dewi P.","家庭假期","Toyota Innova","Innova 为全家和行李提供了充足空间。从机场出发的旅程一开始就很轻松。","家庭舒适"],
-   ["Budi Santoso","商务出行","Toyota Zenix","车厢舒适且精致，适合在城市中往返不同会议地点。","商务出行"],
-   ["Rizky Pratama","朋友结伴旅行","Toyota Hiace Premio","我们一行人可以乘坐同一辆车，协调多个停靠地点也容易得多。","团体旅程"],
-   ["Siti Rahmawati","机场接送","Toyota Avanza","短途机场接送的实用选择。对于我们的小家庭来说，车辆尺寸很合适。","机场接送"],
-   ["Agus Setiawan","家庭出行","Toyota Fortuner","我们喜欢较高的座椅视野和宽敞感，非常适合当天的城外行程。","一日游"],
-   ["Nadia Putri","城市出行","BYD M6","安静的车厢让城市旅程更加愉快，也有足够空间放置行李。","电动出行"],
+   ["Dewi P.","家庭假期","Toyota Innova","Innova 为全家和行李提供了宽敞空间，长途飞行后乘坐也不会觉得拥挤。机场接送途中，车厢始终舒适，充足的行李空间也让上下车和整理物品更加从容，让旅程从一开始就显得轻松有序。","家庭舒适"],
+   ["Budi Santoso","商务出行","Toyota Zenix","车厢安静、舒适且富有质感，让我们在城市中往返多个会议地点时更加轻松。行程间隙也有足够空间稍作休息，整体乘坐体验很适合安排紧凑、同时重视舒适度的一天。","商务出行"],
+   ["Rizky Pratama","朋友结伴旅行","Toyota Hiace Premio","我们和朋友结伴出行，所有人都能乘坐同一辆车，不必另外安排多辆车。车内有足够的乘客及行李空间，协调集合地点和多个停靠点也简单了许多，让整段团体行程更加连贯、轻松。","团体旅程"],
+   ["Siti Rahmawati","机场接送","Toyota Avanza","对于我们这样的小家庭来说，Avanza 是短途机场接送的实用选择。车辆尺寸适合城市道路，行李也有足够空间，长途飞行后坐进车厢能够舒适地休息，整个接送过程简单又方便。","机场接送"],
+   ["Agus Setiawan","家庭出行","Toyota Fortuner","我们很喜欢 Fortuner 较高的座椅视野和宽敞的车厢感受。即使当天需要前往城外并经过多个地点，乘坐过程依然舒适，车内空间也足够让每位乘客自在安坐，是实用而安心的出行选择。","一日游"],
+   ["Nadia Putri","城市出行","BYD M6","安静的车厢让城市出行更加平和，尤其适合一天内往返多个地点的安排。乘客空间宽敞，随身行李也有合适的位置，车内不会显得拥挤，让我们能够更轻松地享受整段城市旅程。","电动出行"],
    ["Fajar Hidayat","团体出行","Toyota Hiace Commuter","团队可以一起出行，不必分乘几辆车，整个行程安排简单了许多。","团体交通"],
-   ["Maya Lestari","家庭活动","Toyota Alphard Gen 3","适合特别家庭场合的舒适优雅之选。宽敞的内饰是一大优点。","特别场合"],
-   ["Andi Wijaya","城际旅程","Toyota Innova Reborn","座椅和车厢空间很适合长途驾驶，是家庭出行的实用选择。","城际出行"],
-   ["Putri Amelia","周末假期","Toyota Avanza","在城市中穿行很方便，一天内前往多个地点也很实用。","周末出行"],
-   ["Michael Tan","印尼之旅","Toyota Hiace Premio","我们和朋友同行并带了几件行李，所有人乘坐同一辆车让接送更加简单。","游客体验"],
-   ["Sarah Williams","私人观光","Toyota Fortuner","适合全天探索行程的舒适车辆，空间足以放置所需物品。","私人行程"]
+   ["Maya Lestari","家庭活动","Toyota Alphard Gen 3","我们希望为特别的家庭活动选择一辆舒适又优雅的车，宽敞的内饰确实带来了很大帮助。每位乘客都有足够空间，车厢氛围精致，往返活动地点的路程也成为这次特别体验的一部分。","特别场合"],
+   ["Andi Wijaya","城际旅程","Toyota Innova Reborn","座椅和车厢空间很适合较长时间的城际驾驶，尤其是全家同行并携带行李时。乘客可以在途中舒适休息，内部空间布局也兼顾实用性，让家庭旅程不会显得局促。","城际出行"],
+   ["Putri Amelia","周末假期","Toyota Avanza","车辆尺寸紧凑，在城市道路中穿行以及一天内前往多个地点都很方便。乘客仍然拥有舒适的乘坐空间，行程安排也更灵活，是周末城市出行的实用选择。","周末出行"],
+   ["Michael Tan","印尼之旅","Toyota Hiace Premio","我们和朋友一起出行，还带了几件行李。所有人乘坐同一辆车，让抵达后的接送和后续安排简单许多，行李也能集中放置，不必协调多辆车或分开接送。","游客体验"],
+   ["Sarah Williams","私人观光","Toyota Fortuner","对于全天探索多个地点的行程来说，舒适的车厢和充足的储物空间非常实用。座椅视野和内部空间都适合长时间出行，也能妥善放置随身物品，让我们更自在地享受当天的安排。","私人行程"]
   ]
  }
 } as const;
