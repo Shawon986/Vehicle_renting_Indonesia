@@ -70,7 +70,7 @@ export function HomeRentalSearch({locale,enabled=true}:{locale:Locale;enabled?:b
    <div className="home-rental-search-backdrop" aria-hidden="true"/>
    <div className="home-rental-search-inner">
     <div className="home-rental-search-heading"><p className="eyebrow">{copy.eyebrow}</p><h2 id="home-rental-search-title">{copy.title}</h2></div>
-    <form className="home-rental-search-form" onSubmit={submit}>
+    <form className="home-rental-search-form" noValidate onSubmit={submit}>
      <div className="home-rental-search-main">
       <label className="rental-search-field rental-search-location"><span>{copy.location}</span><input name="pickupLocation" placeholder={copy.locationPlaceholder} required maxLength={180}/></label>
       <label className="rental-search-field"><span>{copy.destination}</span><input name="destination" placeholder={copy.locationPlaceholder} maxLength={180}/></label>
