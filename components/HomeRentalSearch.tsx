@@ -17,7 +17,7 @@ export function HomeRentalSearch({locale,enabled=true}:{locale:Locale;enabled?:b
  };
  const categories=[["Car",locale==="zh"?"轿车":locale==="id"?"Mobil":"Car"],["MPV","MPV"],["SUV","SUV"]];
  const countryOptions=["Indonesia","China","Hong Kong","Macau","Taiwan","Japan","Singapore","Malaysia","Thailand","South Korea","United Kingdom","United States","Australia","Other"];
- const [more,setMore]=useState(false),[showEnquiry,setShowEnquiry]=useState(false),[initialValues,setInitialValues]=useState<EnquiryValues>({}),[stops,setStops]=useState<string[]>([]);
+ const [more,setMore]=useState(false),[showEnquiry,setShowEnquiry]=useState(false),[initialValues,setInitialValues]=useState<EnquiryValues>({}),[stops,setStops]=useState<string[]>([]),[formOneWay,setFormOneWay]=useState(false);
  const dialogRef=useRef<HTMLDivElement>(null);
  useEffect(()=>{
   if(!showEnquiry)return;
@@ -72,16 +72,16 @@ export function HomeRentalSearch({locale,enabled=true}:{locale:Locale;enabled?:b
     <div className="home-rental-search-heading"><p className="eyebrow">{copy.eyebrow}</p><h2 id="home-rental-search-title">{copy.title}</h2></div>
     <form className="home-rental-search-form" noValidate onSubmit={submit}>
      <div className="home-rental-search-main">
-      <label className="rental-search-field rental-search-location"><span>{copy.location}</span><input name="pickupLocation" placeholder={copy.locationPlaceholder} required maxLength={180}/></label>
+      <label className="rental-search-field rental-search-location"><span>{copy.location} <span className="required-field-mark" aria-hidden="true">*</span></span><input name="pickupLocation" placeholder={copy.locationPlaceholder} required maxLength={180}/></label>
       <label className="rental-search-field"><span>{copy.destination}</span><input name="destination" placeholder={copy.locationPlaceholder} maxLength={180}/></label>
-      <label className="rental-search-field"><span>{copy.pickup}</span><input name="pickupDate" type="date" required/></label>
-      <label className="rental-search-field"><span>{copy.pickupTime}</span><input name="pickupTime" type="time" defaultValue="10:00" required/></label>
-      <label className="rental-search-field rental-return-field"><span>{copy.returnDate}</span><input name="returnDate" type="date" required/></label>
-      <label className="rental-search-field rental-return-field"><span>{copy.returnTime}</span><input name="returnTime" type="time" defaultValue="10:00" required/></label>
+      <label className="rental-search-field"><span>{copy.pickup} <span className="required-field-mark" aria-hidden="true">*</span></span><input name="pickupDate" type="date" required/></label>
+      <label className="rental-search-field"><span>{copy.pickupTime} <span className="required-field-mark" aria-hidden="true">*</span></span><input name="pickupTime" type="time" defaultValue="10:00" required/></label>
+      <label className="rental-search-field rental-return-field"><span>{copy.returnDate}{!formOneWay?<span className="required-field-mark" aria-hidden="true">*</span>:null}</span><input name="returnDate" type="date" required/></label>
+      <label className="rental-search-field rental-return-field"><span>{copy.returnTime}{!formOneWay?<span className="required-field-mark" aria-hidden="true">*</span>:null}</span><input name="returnTime" type="time" defaultValue="10:00" required/></label>
       <button className="rental-search-submit" type="submit"><span aria-hidden="true">⌕</span>{copy.search}</button>
      </div>
      <div className="home-rental-search-options">
-      <label className="rental-search-checkbox"><input type="checkbox" name="oneWay" value="yes" onChange={event=>{const oneWay=event.currentTarget.checked;const input=event.currentTarget.form?.querySelector<HTMLInputElement>('[name="returnDate"]');if(input){input.disabled=oneWay;input.required=!oneWay;input.setCustomValidity("")}}}/><span>{copy.oneWay}</span></label>
+      <label className="rental-search-checkbox"><input type="checkbox" name="oneWay" value="yes" onChange={event=>{const oneWay=event.currentTarget.checked;setFormOneWay(oneWay);const input=event.currentTarget.form?.querySelector<HTMLInputElement>('[name="returnDate"]');if(input){input.disabled=oneWay;input.required=!oneWay;input.setCustomValidity("")}}}/><span>{copy.oneWay}</span></label>
       <button className="rental-search-more" type="button" aria-expanded={more} onClick={()=>setMore(value=>!value)}>{more?copy.less:copy.more}<span aria-hidden="true">{more?"−":"+"}</span></button>
       {more?<div className="rental-search-extra">
        <label className="rental-search-compact"><span>{copy.pickupTime}</span><input name="pickupTime" type="time" defaultValue="10:00"/></label>
