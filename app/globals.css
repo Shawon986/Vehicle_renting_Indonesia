@@ -15290,7 +15290,7 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
 }
 .vehicle-collection .vehicle-view-tools,
 .locale-zh .vehicle-collection-zh .vehicle-view-tools {
-  grid-column: 1 / -1;
+  grid-column: span 2;
   display: flex;
   align-items: center;
   justify-content: flex-end;
