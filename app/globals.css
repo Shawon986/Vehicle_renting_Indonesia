@@ -10711,13 +10711,16 @@ main .vehicle-filter label {
   .vehicle-guidance>div:not(.vehicle-coverage) {grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
-/* Consistent required-field indicator across every enquiry form. */
-.inquiry-form label:has(:required)::before {
-  content: "* ";
+/* Explicit required-field markers are rendered once in each form label. */
+.required-field-mark {
+  display: inline-block;
+  margin-left: 4px;
   color: #b64b3d;
-  font-size: 1.05em;
+  font-size: 1em;
   font-weight: 800;
+  line-height: 1;
 }
+.home-rental-search .required-field-mark { margin-left: 5px; color: #b64b3d; }
 
 /* Final enquiry-form control polish: preserve select arrows and align every field. */
 .inquiry-form .form-grid,
