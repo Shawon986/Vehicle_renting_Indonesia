@@ -15132,12 +15132,20 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
 .vehicle-collection .vehicle-filters,
 .locale-zh .vehicle-collection-zh .vehicle-filters {
   display: grid;
-  grid-template-columns: minmax(210px, 1.45fr) repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: start;
   gap: 16px 14px;
   width: 100%;
   margin: 0;
   padding: 0;
+}
+.vehicle-collection .vehicle-search-control,
+.locale-zh .vehicle-collection-zh .vehicle-search-control {
+  grid-column: span 2;
+}
+.vehicle-collection .vehicle-view-tools,
+.locale-zh .vehicle-collection-zh .vehicle-view-tools {
+  grid-column: span 2;
 }
 .vehicle-collection .vehicle-filter-control,
 .locale-zh .vehicle-collection-zh .vehicle-filter-control {
