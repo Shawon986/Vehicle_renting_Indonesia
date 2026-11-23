@@ -22,16 +22,16 @@ export function GeneralEnquiryForm({locale,enabled=true}:{locale:Locale;enabled?
  <div className="inquiry-form-heading"><span className="inquiry-form-index">01 / 02 · RENTCAROCEAN</span><h3>{locale==="zh"?"让我们了解您的计划":locale==="id"?"Ceritakan rencana Anda":"Tell us what you have in mind"}</h3><p>{t.hint}</p></div>
  {!enabled?<p className="service-form-disabled" role="status">{t.disabled}</p>:null}
  <div className="form-grid service-form-grid">
- <label className="service-form-field">{t.name}<input name="name" autoComplete="name" required maxLength={100}/></label>
- <label className="service-form-field">{t.email}<input name="email" type="email" autoComplete="email" required maxLength={160}/></label>
- <label className="service-form-field">{t.phone}<input name="phone" type="tel" autoComplete="tel" required maxLength={40}/></label>
+ <label className="service-form-field">{t.name}<span className="required-field-mark" aria-hidden="true">*</span><input name="name" autoComplete="name" required maxLength={100}/></label>
+ <label className="service-form-field">{t.email}<span className="required-field-mark" aria-hidden="true">*</span><input name="email" type="email" autoComplete="email" required maxLength={160}/></label>
+ <label className="service-form-field">{t.phone}<span className="required-field-mark" aria-hidden="true">*</span><input name="phone" type="tel" autoComplete="tel" required maxLength={40}/></label>
  <label className="service-form-field">{t.company}<input name="company" autoComplete="organization" maxLength={160}/></label>
  <label className="service-form-field">{t.channel}<select name="preferredChannel" defaultValue={channelOptions[0]}>{channelOptions.map(x=><option key={x} value={x}>{x==="wechat"?"WeChat / 微信":x==="whatsapp"?"WhatsApp":x==="phone"?(locale==="zh"?"电话":locale==="id"?"Telepon":"Phone"):"Email"}</option>)}</select></label>
- <label className="service-form-field">{t.service}<select className="service-interest-select" name="serviceInterest" defaultValue="vehicle-rental" required><option value="vehicle-rental">{t.vehicle}</option><option value="tours-travel">{t.travel}</option><option value="event-design">{t.events}</option><option value="gift-boxes">{t.gifts}</option><option value="multiple">{t.multiple}</option></select></label>
+ <label className="service-form-field">{t.service}<span className="required-field-mark" aria-hidden="true">*</span><select className="service-interest-select" name="serviceInterest" defaultValue="vehicle-rental" required><option value="vehicle-rental">{t.vehicle}</option><option value="tours-travel">{t.travel}</option><option value="event-design">{t.events}</option><option value="gift-boxes">{t.gifts}</option><option value="multiple">{t.multiple}</option></select></label>
  <label className="service-form-field">{t.date}<input name="preferredDate" type="date"/></label>
  <label className="service-form-field">{t.location}<input name="location" maxLength={180}/></label>
  <label className="service-form-field">{t.people}<input name="peopleCount" type="number" min="1" max="10000"/></label>
- <label className="service-form-field service-form-wide">{t.message}<textarea name="message" required maxLength={2000}/></label>
+ <label className="service-form-field service-form-wide">{t.message}<span className="required-field-mark" aria-hidden="true">*</span><textarea name="message" required maxLength={2000}/></label>
  <div className="consent-row service-form-wide"><label className="consent-check"><input type="checkbox" name="consent" value="yes" required/>{t.consent}<span className="required-field-mark" aria-hidden="true">*</span></label><a className="consent-privacy-link" href={`/${locale}/legal/privacy`}>{t.privacy}<span className="ui-arrow" aria-hidden="true"/></a></div><label className="consent-check marketing-consent service-form-wide"><input type="checkbox" name="marketingConsent" value="yes"/><span>{t.marketing}</span></label>
  
  <div className="honeypot" aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off"/></label></div>
