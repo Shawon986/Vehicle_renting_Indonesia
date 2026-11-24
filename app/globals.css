@@ -16314,26 +16314,26 @@ form input[type="button"] {
   }
 }
 
-/* Mobile only: stack the three service chips vertically above the launcher,
-   sharing its right edge. Preserve the existing chip appearance and scroll behavior. */
+/* Mobile only: keep all three service chips in one horizontal row,
+   positioned at the right edge above the Explore Our Services launcher. */
 @media screen and (max-width: 680px) {
   .site-promotion-dock {
     align-items: flex-end !important;
   }
   .site-promotion-dock .site-promotion-floating-chips {
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: row !important;
     flex-wrap: nowrap !important;
-    align-items: flex-end !important;
+    align-items: center !important;
     justify-content: flex-end !important;
-    width: auto !important;
+    width: 100% !important;
     max-width: 100% !important;
-    gap: 6px !important;
+    gap: 5px !important;
   }
   .site-promotion-dock .site-promotion-float-chip {
-    width: fit-content !important;
-    max-width: calc(100vw - 28px) !important;
-    flex: 0 0 auto !important;
-    justify-content: flex-start !important;
+    width: auto !important;
+    max-width: 31% !important;
+    flex: 0 1 auto !important;
+    justify-content: center !important;
   }
 }
