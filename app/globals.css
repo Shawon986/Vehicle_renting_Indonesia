@@ -16302,3 +16302,28 @@ form input[type="button"] {
     box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
   }
 }
+
+
+/* Desktop/laptop: keep all three promotion chips fully visible at all times.
+   Mobile scrolling and idle visibility rules above remain unchanged. */
+@media (min-width: 681px) {
+  .site-promotion-dock .site-promotion-floating-chips {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+  .site-promotion-dock .site-promotion-float-chip-1 {
+    background: rgba(224, 232, 194, .96) !important;
+    border-color: rgba(255, 255, 255, .7) !important;
+    box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
+  }
+  .site-promotion-dock .site-promotion-float-chip-2 {
+    background: rgba(247, 222, 202, .96) !important;
+    border-color: rgba(255, 255, 255, .7) !important;
+    box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
+  }
+  .site-promotion-dock .site-promotion-float-chip-3 {
+    background: rgba(207, 229, 222, .96) !important;
+    border-color: rgba(255, 255, 255, .7) !important;
+    box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
+  }
+}
