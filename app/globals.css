@@ -17398,3 +17398,37 @@ form input[type="button"] {
     pointer-events: none !important;
   }
 }
+
+
+/* Ensure the mobile date input remains a real native date control.
+   Keep the native picker hit-area transparent but stretched across the field,
+   so tapping anywhere opens the picker without displaying a calendar glyph. */
+@media screen and (max-width: 680px) {
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(3) input[type="date"],
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(5) input[type="date"] {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: 46px !important;
+    min-height: 46px !important;
+    box-sizing: border-box !important;
+    -webkit-appearance: auto !important;
+    appearance: auto !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    padding-right: 8px !important;
+  }
+
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(3) input[type="date"]::-webkit-calendar-picker-indicator,
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(5) input[type="date"]::-webkit-calendar-picker-indicator {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 0 !important;
+    cursor: pointer !important;
+  }
+}
