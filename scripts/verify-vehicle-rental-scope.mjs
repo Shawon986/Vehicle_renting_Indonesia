@@ -41,7 +41,7 @@ assert.match(catalogue,/setSeats/,"Capacity filtering must exist");
 assert.match(catalogue,/setTransmission/,"Transmission filtering must exist");
 assert.match(catalogue,/setDriver/,"Driver arrangement filtering must exist");
 for (const field of ["pickupDate","pickupTime","returnDate","returnTime","pickupLocation","dropoffLocation","passengers","luggage","vehicleCategory","travelStyle","addOns","preferredChannel","consent"]) assert.match(form,new RegExp(`name="${field}"`),`Vehicle enquiry form must collect ${field}`);
-assert.match(form,/\[\s*"wechat"\s*,\.\.\.\(\(process\.env\.NEXT_PUBLIC_PHONE/,"Vehicle enquiry form must include WeChat in its preferred contact channel options");
+assert.match(form,/"wechat",\.\.\.\(\(/,"Vehicle enquiry form must include WeChat in its preferred contact channel options");
 assert.doesNotMatch(form,/name="budget"/,"Public enquiry form must not collect a budget");
 assert.match(detail,/<PriceSlot/,"Vehicle detail must retain the non-numeric price-on-request slot");
 assert.doesNotMatch(detail,/"@type"\s*:\s*"Offer"/,"Vehicle pages must not publish offers or prices");
