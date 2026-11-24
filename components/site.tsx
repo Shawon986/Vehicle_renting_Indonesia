@@ -46,8 +46,8 @@ export function VehicleInquiryForm({locale,vehicleSlug,enabled=true,initialValue
  <div className="consent-row"><label className="consent-check"><input type="checkbox" name="consent" value="yes" required/>{t.consent}<span className="required-field-mark" aria-hidden="true">*</span></label><Link className="consent-privacy-link" href={"/"+locale+"/legal/privacy"}>{locale==="zh"?"隐私政策":locale==="id"?"Kebijakan privasi":"Privacy policy"}<span className="ui-arrow" aria-hidden="true" /></Link></div>
  <label className="consent-check marketing-consent"><input type="checkbox" name="marketingConsent" value="yes"/>{labels.marketing}</label>
  <div className="honeypot" aria-hidden="true"><label>Leave empty<input name="website" tabIndex={-1} autoComplete="off"/></label></div>
- {!enabled?<p className="form-config-note">{locale==="zh"?"隐私政策及三种语言内容审核完成后，咨询表单才会启用。":locale==="id"?"Formulir akan diaktifkan setelah kebijakan privasi dan konten tiga bahasa disetujui.":"The enquiry form will be enabled after the privacy policy and all three language versions are approved."}</p>:null}
- <button className="button button-dark" type="submit" disabled={status==="sending"||!enabled}>{status==="sending"?"…":t.submit}<span className="arrow-up" aria-hidden="true" /></button>
+ 
+ <button className="button button-dark" type="submit" disabled={status==="sending"}>{status==="sending"?"…":t.submit}<span className="arrow-up" aria-hidden="true" /></button>
  <p className="form-note">{t.formNote}</p>
  {status==="success"&&<p role="status" aria-live="polite" className="form-success">{t.formSuccess}</p>}
  {status==="error"&&<p role="alert" className="form-error">{t.formError}</p>}
