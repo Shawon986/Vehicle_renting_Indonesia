@@ -60,7 +60,7 @@ export function SitePromotion({locale}:{locale:Locale}){
  const [visible,setVisible]=useState(false);
  const [isScrolling,setIsScrolling]=useState(false);
  useEffect(()=>{
-  let settleTimer:ReturnType<typeof setTimeout>|undefined;
+  let settleTimer:number|undefined;
   const onScroll=()=>{
    setIsScrolling(true);
    if(settleTimer)window.clearTimeout(settleTimer);
