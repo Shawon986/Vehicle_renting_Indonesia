@@ -15640,3 +15640,130 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
   .gift-service-assurance-footer { align-items: flex-start; flex-direction: column; gap: 14px; }
   .gift-service-assurance-footer > span { font-size: 8px; }
 }
+
+
+/* Elevated editorial finish for the personalised gifting panel */
+.gift-service-assurance {
+  padding: clamp(28px, 4.6vw, 58px);
+  background:
+    linear-gradient(115deg, transparent 0 68%, rgba(211, 184, 143, .045) 68% 68.2%, transparent 68.2%),
+    radial-gradient(ellipse at 88% 16%, rgba(201, 170, 125, .2), transparent 31%),
+    linear-gradient(128deg, #14231d 0%, #1c3027 48%, #20372d 100%);
+  border: 1px solid rgba(207, 177, 132, .48);
+  box-shadow: 0 28px 70px rgba(16, 29, 22, .18), inset 0 1px 0 rgba(255, 255, 255, .07);
+}
+.gift-service-assurance::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(223, 202, 171, .12);
+  pointer-events: none;
+}
+.gift-service-assurance::after {
+  width: 350px;
+  height: 350px;
+  right: -135px;
+  bottom: -205px;
+  border-color: rgba(211, 183, 140, .25);
+  box-shadow: 0 0 0 32px rgba(211, 183, 140, .045), 0 0 0 68px rgba(211, 183, 140, .025), 0 0 0 104px rgba(211, 183, 140, .015);
+}
+.gift-service-assurance-heading {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 17px;
+  border-bottom: 1px solid rgba(225, 207, 177, .2);
+}
+.gift-service-assurance-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.gift-service-assurance-kicker::before {
+  content: "";
+  width: 25px;
+  height: 1px;
+  background: #c9a878;
+}
+.gift-service-assurance-index {
+  color: #d8c4a4;
+  font-size: 9px;
+  letter-spacing: .2em;
+}
+.gift-service-assurance-main {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr);
+  gap: clamp(34px, 6vw, 88px);
+  padding: clamp(36px, 5vw, 66px) 0;
+}
+.gift-service-assurance-copy h3 {
+  max-width: 620px;
+  margin-bottom: 22px;
+  font-size: clamp(34px, 4.4vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -.045em;
+}
+.gift-service-assurance-copy p {
+  max-width: 590px;
+  color: rgba(247, 243, 235, .72);
+  font-size: 13px;
+  line-height: 2;
+}
+.gift-service-assurance-steps {
+  position: relative;
+  border-top-color: rgba(219, 195, 159, .34);
+}
+.gift-service-assurance-steps > div {
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 16px;
+  padding: 19px 0;
+  border-bottom-color: rgba(219, 195, 159, .25);
+}
+.gift-service-assurance-steps > div > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  border: 1px solid rgba(213, 185, 143, .45);
+  border-radius: 50%;
+  color: #e0c69d;
+  font-size: 9px;
+}
+.gift-service-assurance-steps p {
+  padding-top: 3px;
+  color: rgba(255, 250, 241, .9);
+  font-size: 12px;
+  letter-spacing: .015em;
+}
+.gift-service-assurance-footer {
+  position: relative;
+  z-index: 1;
+  padding-top: 22px;
+}
+.gift-service-assurance-footer a {
+  min-height: 42px;
+  padding: 0 17px;
+  border: 1px solid rgba(222, 194, 153, .52);
+  color: #f0d7ae;
+  transition: background .25s ease, border-color .25s ease, color .25s ease, transform .25s ease;
+}
+.gift-service-assurance-footer a:hover {
+  gap: 14px;
+  color: #19281f;
+  background: #dfc39a;
+  border-color: #dfc39a;
+  transform: translateY(-2px);
+}
+@media (max-width: 760px) {
+  .gift-service-assurance { padding: 27px 24px; }
+  .gift-service-assurance-main { grid-template-columns: 1fr; gap: 30px; padding: 34px 0; }
+}
+@media (max-width: 480px) {
+  .gift-service-assurance { padding: 24px 19px; }
+  .gift-service-assurance::before { inset: 8px; }
+  .gift-service-assurance-main { padding: 29px 0; }
+  .gift-service-assurance-copy h3 { font-size: clamp(31px, 9vw, 40px); }
+  .gift-service-assurance-steps > div { padding: 15px 0; }
+  .gift-service-assurance-footer a { width: 100%; justify-content: space-between; }
+}
