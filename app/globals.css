@@ -16274,16 +16274,18 @@ form input[type="button"] {
   .site-promotion-floating-chips { transition: none !important; }
 }
 
-/* Laptop screens only: promotion chips are permanently fully visible.
-   The mobile visibility/scroll behavior above is intentionally untouched. */
-@media screen and (min-width: 1024px) {
+
+/* FINAL LAPTOP OVERRIDE (681px+): do not use scroll state to style chips.
+   Mobile rules (680px and below) retain their existing fade/scroll behavior. */
+@media screen and (min-width: 681px) {
   .site-promotion-dock .site-promotion-floating-chips,
-  .site-promotion-dock:not(.is-scrolling) .site-promotion-floating-chips,
-  .site-promotion-dock.is-scrolling .site-promotion-floating-chips,
   .site-promotion-dock .site-promotion-float-chip,
   .site-promotion-dock .site-promotion-float-chip:link,
   .site-promotion-dock .site-promotion-float-chip:visited,
-  .site-promotion-dock .site-promotion-float-chip > span {
+  .site-promotion-dock .site-promotion-float-chip:hover,
+  .site-promotion-dock .site-promotion-float-chip:active,
+  .site-promotion-dock .site-promotion-float-chip > span,
+  .site-promotion-dock .site-promotion-float-chip > span:last-child {
     opacity: 1 !important;
     filter: none !important;
     visibility: visible !important;
