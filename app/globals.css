@@ -17432,3 +17432,126 @@ form input[type="button"] {
     cursor: pointer !important;
   }
 }
+
+
+/* Final mobile-wide date/time consistency pass across every form.
+   Native controls now use the same full-width box sizing as text/select fields,
+   with a visible native calendar/clock affordance and no CSS icon overlays. */
+@media screen and (max-width: 680px) {
+  form:not(.home-rental-search-form) :is(
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"]
+  ),
+  .home-rental-search-form :is(
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"]
+  ) {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    inline-size: 100% !important;
+    min-width: 0 !important;
+    min-inline-size: 0 !important;
+    max-width: 100% !important;
+    max-inline-size: 100% !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    margin: 0 !important;
+    padding: 0 34px 0 10px !important;
+    border-width: 1px !important;
+    font-family: inherit !important;
+    font-size: 16px !important;
+    line-height: normal !important;
+    letter-spacing: normal !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    background-image: none !important;
+    -webkit-appearance: auto !important;
+    appearance: auto !important;
+    color-scheme: light !important;
+  }
+
+  /* Keep the control itself aligned with its label and sibling fields. */
+  form:not(.home-rental-search-form) :is(
+    label, .form-field, .service-form-field, .form-group, .field-group
+  ) {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  form :is(
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"]
+  )::-webkit-calendar-picker-indicator {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 20px !important;
+    min-width: 20px !important;
+    max-width: 20px !important;
+    height: 20px !important;
+    min-height: 20px !important;
+    margin: 0 0 0 6px !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    filter: none !important;
+  }
+
+  form :is(
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"]
+  )::-webkit-date-and-time-value {
+    display: inline-block !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+
+  form :is(
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"]
+  )::-webkit-datetime-edit,
+  form :is(
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"]
+  )::-webkit-datetime-edit-fields-wrapper {
+    padding: 0 !important;
+    font-size: 16px !important;
+  }
+
+  /* The home hero sits on a dark surface, so retain a contrasting native icon. */
+  .home-rental-search-form :is(input[type="date"], input[type="time"]) {
+    color-scheme: dark !important;
+    height: 46px !important;
+    min-height: 46px !important;
+    max-height: 46px !important;
+    padding-inline: 8px !important;
+  }
+
+  .home-rental-search-form :is(input[type="date"], input[type="time"])::-webkit-calendar-picker-indicator {
+    filter: invert(1) !important;
+  }
+}
