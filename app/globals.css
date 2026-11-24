@@ -16313,3 +16313,27 @@ form input[type="button"] {
     box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
   }
 }
+
+/* Mobile only: stack the three service chips vertically above the launcher,
+   sharing its right edge. Preserve the existing chip appearance and scroll behavior. */
+@media screen and (max-width: 680px) {
+  .site-promotion-dock {
+    align-items: flex-end !important;
+  }
+  .site-promotion-dock .site-promotion-floating-chips {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-end !important;
+    justify-content: flex-end !important;
+    width: auto !important;
+    max-width: 100% !important;
+    gap: 6px !important;
+  }
+  .site-promotion-dock .site-promotion-float-chip {
+    width: fit-content !important;
+    max-width: calc(100vw - 28px) !important;
+    flex: 0 0 auto !important;
+    justify-content: flex-start !important;
+  }
+}
