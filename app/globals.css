@@ -16848,3 +16848,100 @@ form input[type="button"] {
     filter: none !important;
   }
 }
+
+
+/* Mobile date/time fields: reserve a fixed icon lane inside the control.
+   Draw a dependable calendar/clock glyph in the input itself and keep the
+   native picker hit-area transparent but clickable on Chromium/WebKit. */
+@media screen and (max-width: 680px) {
+  form :is(input[type="date"], input[type="datetime-local"], input[type="month"], input[type="week"]),
+  .home-rental-search-form :is(input[type="date"], input[type="datetime-local"]) {
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-inline-size: 0 !important;
+    max-inline-size: 100% !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    padding: 0 38px 0 10px !important;
+    margin: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    background-repeat: no-repeat !important;
+    background-position: right 10px center !important;
+    background-size: 18px 18px !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2337473D' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='16' rx='2'/%3E%3Cpath d='M16 3v4M8 3v4M3 10h18'/%3E%3C/svg%3E") !important;
+    color-scheme: light !important;
+  }
+
+  form :is(input[type="time"]),
+  .home-rental-search-form :is(input[type="time"]) {
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-inline-size: 0 !important;
+    max-inline-size: 100% !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    padding: 0 38px 0 10px !important;
+    margin: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    background-repeat: no-repeat !important;
+    background-position: right 10px center !important;
+    background-size: 18px 18px !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2337473D' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 7v5l3 2'/%3E%3C/svg%3E") !important;
+    color-scheme: light !important;
+  }
+
+  form :is(input[type="date"], input[type="time"], input[type="datetime-local"],
+    input[type="month"], input[type="week"])::-webkit-calendar-picker-indicator {
+    display: block !important;
+    width: 28px !important;
+    min-width: 28px !important;
+    max-width: 28px !important;
+    height: 100% !important;
+    margin: 0 -30px 0 0 !important;
+    padding: 0 !important;
+    opacity: 0 !important;
+    cursor: pointer !important;
+  }
+
+  form :is(input[type="date"], input[type="time"], input[type="datetime-local"],
+    input[type="month"], input[type="week"])::-webkit-date-and-time-value {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    text-align: left !important;
+  }
+
+  form :is(input[type="date"], input[type="time"], input[type="datetime-local"],
+    input[type="month"], input[type="week"])::-webkit-datetime-edit {
+    padding: 0 !important;
+    font-size: 14px !important;
+  }
+
+  form :is(input[type="date"], input[type="time"], input[type="datetime-local"],
+    input[type="month"], input[type="week"])::-webkit-datetime-edit-fields-wrapper {
+    padding: 0 !important;
+  }
+
+  form :is(label, .form-field, .service-form-field, .form-group, .field-group,
+    .rental-search-field) {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  form :is(input[type="date"], input[type="time"], input[type="datetime-local"],
+    input[type="month"], input[type="week"]) {
+    flex: 0 1 auto !important;
+    align-self: stretch !important;
+  }
+}
