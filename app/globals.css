@@ -17165,3 +17165,36 @@ form input[type="button"] {
     cursor: pointer !important;
   }
 }
+
+
+/* Prevent mobile browser focus-zoom in every field of the home hero search.
+   Mobile Safari zooms inputs whose computed font-size is below 16px, so keep
+   the resting and focused control typography at 16px without scaling the UI. */
+@media screen and (max-width: 680px) {
+  .hero-with-search .home-rental-search-form .rental-search-field input,
+  .hero-with-search .home-rental-search-form .rental-search-field input:focus,
+  .hero-with-search .home-rental-search-form .rental-search-field input:focus-visible,
+  .hero-with-search .home-rental-search-form .rental-search-compact input,
+  .hero-with-search .home-rental-search-form .rental-search-compact input:focus,
+  .hero-with-search .home-rental-search-form .rental-search-compact select,
+  .hero-with-search .home-rental-search-form .rental-search-compact select:focus {
+    box-sizing: border-box !important;
+    font-size: 16px !important;
+    line-height: 1.25 !important;
+    -webkit-text-size-adjust: 100% !important;
+    touch-action: manipulation;
+  }
+
+  .hero-with-search .home-rental-search-form .rental-search-field input::placeholder,
+  .hero-with-search .home-rental-search-form .rental-search-compact input::placeholder {
+    font-size: 16px !important;
+    opacity: 1;
+  }
+
+  .hero-with-search .home-rental-search-form .rental-search-field input[type="date"],
+  .hero-with-search .home-rental-search-form .rental-search-field input[type="date"]:focus,
+  .hero-with-search .home-rental-search-form .rental-search-field input[type="date"]:focus-visible {
+    font-size: 16px !important;
+    line-height: 48px !important;
+  }
+}
