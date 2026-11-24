@@ -16554,3 +16554,29 @@ form input[type="button"] {
     gap: 10px !important;
   }
 }
+
+/* Mobile service hero slide indicators: keep a constant touch-target and
+   a constant visible bar height while only the active indicator changes width. */
+@media (max-width: 680px) {
+  .service-page .service-gallery-controls button,
+  .service-page .service-gallery-controls button.is-active {
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+    height: 24px !important;
+    min-height: 24px !important;
+    max-height: 24px !important;
+    padding: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    line-height: 0 !important;
+    transform: none !important;
+  }
+  .service-page .service-gallery-controls button::before,
+  .service-page .service-gallery-controls button.is-active::before {
+    top: 50% !important;
+    height: 3px !important;
+    min-height: 3px !important;
+    max-height: 3px !important;
+    transform: translateY(-50%) !important;
+  }
+}
