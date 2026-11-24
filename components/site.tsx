@@ -43,7 +43,6 @@ export function VehicleInquiryForm({locale,vehicleSlug,initialValues={}}:{locale
  <fieldset className="full-field form-addons"><legend>{labels.addons}</legend><label><input type="checkbox" name="addOns" value="child-seat"/>{labels.child}</label><label><input type="checkbox" name="addOns" value="cooler-box"/>{labels.cooler}</label><label><input type="checkbox" name="addOns" value="wifi"/>{labels.wifi}</label></fieldset>
  <label className="full-field">{t.message}<textarea name="message" rows={4} maxLength={2000} defaultValue={initialValues.message??""} onBlur={e=>progressField("message",e.currentTarget.value)}/></label>
  </div>
- <p className="form-date-hint">{labels.dateHint} {labels.timeZoneNote}</p>
  <div className="consent-row"><label className="consent-check"><input type="checkbox" name="consent" value="yes" required/>{t.consent}<span className="required-field-mark" aria-hidden="true">*</span></label><Link className="consent-privacy-link" href={"/"+locale+"/legal/privacy"}>{locale==="zh"?"隐私政策":locale==="id"?"Kebijakan privasi":"Privacy policy"}<span className="ui-arrow" aria-hidden="true" /></Link></div>
  <label className="consent-check marketing-consent"><input type="checkbox" name="marketingConsent" value="yes"/>{labels.marketing}</label>
  <div className="honeypot" aria-hidden="true"><label>Leave empty<input name="website" tabIndex={-1} autoComplete="off"/></label></div>
