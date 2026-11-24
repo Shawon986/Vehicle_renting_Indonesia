@@ -17,12 +17,17 @@ const vehiclePage=read("app/[locale]/services/vehicle-rental/page.tsx");
 const servicePages=["app/[locale]/services/tours-travel/page.tsx","app/[locale]/services/event-design/page.tsx","app/[locale]/services/gift-boxes/page.tsx"].map(read);
 const sticky=read("components/StickyContactBar.tsx");
 const generalForm=read("components/GeneralEnquiryForm.tsx");
+const serviceForm=read("components/ServiceEnquiryForm.tsx");
+const formspree=read("lib/formspree.ts");
 const homeSearch=read("components/HomeRentalSearch.tsx");
 assert.match(homepage,/CONTENT_APPROVED==="true"/,"Homepage enquiry flow must follow content approval");
 assert.match(contactPage,/CONTENT_APPROVED==="true"/,"General enquiry page must follow content approval");
 assert.match(vehiclePage,/CONTENT_APPROVED==="true"/,"Vehicle enquiry page must follow content approval");
 for(const source of servicePages)assert.match(source,/CONTENT_APPROVED==="true"/,"Service enquiry pages must follow content approval");
-for(const source of [form,channels,sticky,generalForm])for(const fallback of ["6287811887555","087811887555","ocean.zenithgroup101@gmail.com","/wechat-qr.svg"])assert.equal(source.includes(fallback),false,"Unverified fallback contact details must not be exposed: "+fallback);
+for(const fallback of ["6287811887555","087811887555","ocean.zenithgroup101@gmail.com","/wechat-qr.svg"])assert.ok(form.includes(fallback),"Footer and vehicle form must retain original contact detail: "+fallback);
+for(const fallback of ["6287811887555","ocean.zenithgroup101@gmail.com","/wechat-qr.svg"])assert.ok(channels.includes(fallback),"Contact channels must retain original contact detail: "+fallback);
+for(const fallback of ["6287811887555","087811887555","/wechat-qr.svg"])assert.ok(sticky.includes(fallback),"Sticky contact bar must retain original contact detail: "+fallback);
+for(const source of [generalForm,serviceForm])for(const fallback of ["6287811887555","087811887555","/wechat-qr.svg"])assert.ok(source.includes(fallback),"All enquiry forms must retain original contact choices: "+fallback);
 assert.equal([...homeSearch.matchAll(/<input name="pickupTime"/g)].length,1,"Homepage journey search must have a single pickup-time field");
 assert.equal([...homeSearch.matchAll(/<input name="returnTime"/g)].length,1,"Homepage journey search must have a single return-time field");
 
@@ -47,6 +52,13 @@ assert.match(api,/vehicleSupportsDriver/,"Driver selection must match the select
 assert.match(api,/vehicleCategory/,"Enquiries must capture vehicle category when the exact model is unknown");
 assert.ok(api.includes('timeZone:"Asia/Jakarta"'),"Enquiry timestamps must use the declared operating timezone");
 assert.match(api,/forwardToFormspree/,"Vehicle enquiries must be forwarded to the shared Formspree inbox");
+assert.match(api,/\["email",\.\.\.\(\(process\.env\.NEXT_PUBLIC_WHATSAPP_NUMBER\|\|"6287811887555"\)/,"Vehicle API must accept the restored default WhatsApp contact");
+assert.match(formspree,/https:\/\/formspree\.io\/f\/xqpqlryl/,"Shared Formspree endpoint must be configured");
+assert.match(formspree,/method:\s*"POST"/,"Formspree handoff must use POST");
+assert.match(formspree,/Accept:\s*"application\/json"/,"Formspree handoff must request JSON responses");
+assert.match(formspree,/Content-Type:\s*"application\/x-www-form-urlencoded"/,"Formspree handoff must send encoded form fields");
+assert.match(api,/if\(!sent\)return NextResponse\.json\(\{error:"Enquiry delivery failed"\},\{status:502\}\)/,"Vehicle API must report Formspree delivery failures");
+
 assert.match(form,/enabled=true/,"Vehicle enquiry form must be enabled by default");
 assert.match(api,/website/,"Vehicle enquiries must retain the honeypot field");
 assert.match(api,/INQUIRY_SHEETS_SHARED_SECRET/,"Spreadsheet handoff must use a server-side secret");
