@@ -5366,7 +5366,17 @@ input[type="checkbox"]::before {width:11px;height:11px}
 }
 .inquiry-form input[type=date], .inquiry-form input[type=time],
 .service-inquiry-form input[type=date], .service-inquiry-form input[type=time] {
-  display:block; min-height:48px; -webkit-appearance:none; appearance:none;
+  display:block; min-height:48px; -webkit-appearance:auto; appearance:auto;
+}
+/* Keep the browser calendar control visible and easy to tap on rental date fields. */
+.inquiry-form input[type=date]::-webkit-calendar-picker-indicator,
+.service-inquiry-form input[type=date]::-webkit-calendar-picker-indicator {
+  display:block;
+  width:18px;
+  height:18px;
+  margin-left:6px;
+  opacity:.82;
+  cursor:pointer;
 }
 .inquiry-form .turnstile-slot, .service-inquiry-form .turnstile-slot {
   width:100%; max-width:100%; min-width:0; overflow-x:auto; overflow-y:hidden;
