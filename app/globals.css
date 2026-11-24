@@ -16539,7 +16539,7 @@ form input[type="button"] {
   .vehicle-collection .vehicle-filter-panel,
   .locale-zh .vehicle-collection-zh .vehicle-filter-panel {
     box-sizing: border-box !important;
-    padding: 12px 0 14px !important;
+    padding: 12px 14px 14px !important;
     margin: 0 0 18px !important;
   }
   .vehicle-collection .vehicle-filter-heading,
