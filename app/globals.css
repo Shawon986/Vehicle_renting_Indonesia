@@ -16274,43 +16274,22 @@ form input[type="button"] {
   .site-promotion-floating-chips { transition: none !important; }
 }
 
-/* Laptop/desktop only: promotion chips become fully visible during scrolling
-   and remain clear for four seconds after the final scroll event. */
-@media (min-width: 681px) {
-  .site-promotion-dock .site-promotion-floating-chips {
-    opacity: .22;
-    filter: saturate(.55);
-    transition: opacity .28s ease, filter .28s ease;
-  }
-  .site-promotion-dock.is-scrolling .site-promotion-floating-chips {
-    opacity: 1;
-    filter: none;
-  }
-  .site-promotion-dock.is-scrolling .site-promotion-float-chip-1 {
-    background: rgba(224, 232, 194, .96) !important;
-    border-color: rgba(255, 255, 255, .7) !important;
-    box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
-  }
-  .site-promotion-dock.is-scrolling .site-promotion-float-chip-2 {
-    background: rgba(247, 222, 202, .96) !important;
-    border-color: rgba(255, 255, 255, .7) !important;
-    box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
-  }
-  .site-promotion-dock.is-scrolling .site-promotion-float-chip-3 {
-    background: rgba(207, 229, 222, .96) !important;
-    border-color: rgba(255, 255, 255, .7) !important;
-    box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
-  }
-}
-
-
-/* Desktop/laptop: keep all three promotion chips fully visible at all times.
-   Mobile scrolling and idle visibility rules above remain unchanged. */
-@media (min-width: 681px) {
-  .site-promotion-dock .site-promotion-floating-chips {
+/* Laptop screens only: promotion chips are permanently fully visible.
+   The mobile visibility/scroll behavior above is intentionally untouched. */
+@media screen and (min-width: 1024px) {
+  .site-promotion-dock .site-promotion-floating-chips,
+  .site-promotion-dock:not(.is-scrolling) .site-promotion-floating-chips,
+  .site-promotion-dock.is-scrolling .site-promotion-floating-chips,
+  .site-promotion-dock .site-promotion-float-chip,
+  .site-promotion-dock .site-promotion-float-chip:link,
+  .site-promotion-dock .site-promotion-float-chip:visited,
+  .site-promotion-dock .site-promotion-float-chip > span {
     opacity: 1 !important;
     filter: none !important;
+    visibility: visible !important;
+    transition: none !important;
   }
+
   .site-promotion-dock .site-promotion-float-chip-1 {
     background: rgba(224, 232, 194, .96) !important;
     border-color: rgba(255, 255, 255, .7) !important;
@@ -16325,19 +16304,5 @@ form input[type="button"] {
     background: rgba(207, 229, 222, .96) !important;
     border-color: rgba(255, 255, 255, .7) !important;
     box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
-  }
-}
-
-
-/* Definitive desktop override: never dim or fade the promotion chips when scrolling stops. */
-@media screen and (min-width: 681px) {
-  .site-promotion-dock .site-promotion-floating-chips,
-  .site-promotion-dock:not(.is-scrolling) .site-promotion-floating-chips,
-  .site-promotion-dock.is-scrolling .site-promotion-floating-chips,
-  .site-promotion-dock .site-promotion-float-chip {
-    opacity: 1 !important;
-    filter: none !important;
-    visibility: visible !important;
-    transition: none !important;
   }
 }
