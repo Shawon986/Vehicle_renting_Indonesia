@@ -16273,3 +16273,32 @@ form input[type="button"] {
 @media (prefers-reduced-motion: reduce) {
   .site-promotion-floating-chips { transition: none !important; }
 }
+
+/* Laptop/desktop only: promotion chips become fully visible during scrolling
+   and remain clear for four seconds after the final scroll event. */
+@media (min-width: 681px) {
+  .site-promotion-dock .site-promotion-floating-chips {
+    opacity: .22;
+    filter: saturate(.55);
+    transition: opacity .28s ease, filter .28s ease;
+  }
+  .site-promotion-dock.is-scrolling .site-promotion-floating-chips {
+    opacity: 1;
+    filter: none;
+  }
+  .site-promotion-dock.is-scrolling .site-promotion-float-chip-1 {
+    background: rgba(224, 232, 194, .96) !important;
+    border-color: rgba(255, 255, 255, .7) !important;
+    box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
+  }
+  .site-promotion-dock.is-scrolling .site-promotion-float-chip-2 {
+    background: rgba(247, 222, 202, .96) !important;
+    border-color: rgba(255, 255, 255, .7) !important;
+    box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
+  }
+  .site-promotion-dock.is-scrolling .site-promotion-float-chip-3 {
+    background: rgba(207, 229, 222, .96) !important;
+    border-color: rgba(255, 255, 255, .7) !important;
+    box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
+  }
+}
