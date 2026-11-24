@@ -16159,3 +16159,48 @@ form input[type="button"] {
  .hero-with-search .home-rental-search-main>.rental-search-submit{padding:0 3px!important;font-size:8px!important;gap:3px}
  .hero-with-search .home-rental-search-main>.rental-search-submit>span{font-size:14px}
 }
+
+
+/* Final mobile promotion-chip sizing: compact individual pills, not three stretched columns. */
+@media (max-width: 680px) {
+  .site-promotion-dock .site-promotion-floating-chips {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    width: 100% !important;
+  }
+  .site-promotion-dock .site-promotion-float-chip {
+    display: inline-flex !important;
+    flex: 0 1 auto !important;
+    width: auto !important;
+    max-width: 31% !important;
+    min-width: 0 !important;
+    min-height: 27px !important;
+    padding: 4px 7px !important;
+    gap: 4px !important;
+    border-radius: 999px !important;
+    font-size: 7px !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+  .site-promotion-dock .site-promotion-float-chip > span:last-child {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  .site-promotion-dock .site-promotion-float-dot {
+    width: 4px !important;
+    height: 4px !important;
+    flex: 0 0 4px !important;
+  }
+}
+@media (max-width: 390px) {
+  .site-promotion-dock .site-promotion-floating-chips { gap: 5px !important; }
+  .site-promotion-dock .site-promotion-float-chip {
+    max-width: 30% !important;
+    min-height: 25px !important;
+    padding: 3px 5px !important;
+    font-size: 6px !important;
+  }
+}
