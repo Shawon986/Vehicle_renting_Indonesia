@@ -45,7 +45,7 @@ assert.doesNotMatch(form,/name="budget"/,"Public enquiry form must not collect a
 assert.match(detail,/<PriceSlot/,"Vehicle detail must retain the non-numeric price-on-request slot");
 assert.doesNotMatch(detail,/"@type"\s*:\s*"Offer"/,"Vehicle pages must not publish offers or prices");
 assert.doesNotMatch(detail,/"@type"\s*:\s*"Product"/,"Vehicle pages must not publish product/inventory schema");
-assert.match(api,/CONTENT_APPROVED!=="true"/,"Vehicle enquiry API must enforce the content/legal approval gate");
+assert.doesNotMatch(api,/CONTENT_APPROVED!=="true"/,"Vehicle enquiry API must accept submissions without a deployment-only approval gate");
 assert.match(api,/Origin verification required/,"API must require an origin header");
 assert.match(api,/validTime\(pickupTime\)/,"Pickup time must be range-validated");
 assert.match(api,/vehicleSupportsDriver/,"Driver selection must match the selected vehicle");
@@ -59,7 +59,7 @@ assert.match(formspree,/Accept:\s*"application\/json"/,"Formspree handoff must r
 assert.match(formspree,/"Content-Type":\s*"application\/x-www-form-urlencoded"/,"Formspree handoff must send encoded form fields");
 assert.match(api,/if\(!sent\)return NextResponse\.json\(\{error:"Enquiry delivery failed"\},\{status:502\}\)/,"Vehicle API must report Formspree delivery failures");
 
-assert.match(form,/enabled=true/,"Vehicle enquiry form must be enabled by default");
+assert.doesNotMatch(form,/disabled=\{status==="sending"\|\|!enabled\}/,"Vehicle enquiry form must not be blocked by a page-level enabled flag");
 assert.match(api,/website/,"Vehicle enquiries must retain the honeypot field");
 assert.match(api,/INQUIRY_SHEETS_SHARED_SECRET/,"Spreadsheet handoff must use a server-side secret");
 assert.match(api,/sheetResult\.ok!==true/,"Spreadsheet errors must not be treated as successful saves");
@@ -76,15 +76,19 @@ assert.equal(existsSync(new URL("../app/[locale]/availability",import.meta.url))
 for (const path of ["app/[locale]/services/tours-travel/page.tsx","app/[locale]/services/event-design/page.tsx","app/[locale]/services/gift-boxes/page.tsx","app/[locale]/services/page.tsx","components/ServiceLandingPage.tsx","components/ServiceEnquiryForm.tsx","app/api/service-inquiries/route.ts"]) assert.ok(existsSync(new URL("../"+path,import.meta.url)),`Missing service module: ${path}`);
 const serviceApi=read("app/api/service-inquiries/route.ts");
 const sheets=read("integrations/google-sheets/Code.gs");
-assert.match(serviceApi,/CONTENT_APPROVED!=="true"/,"Service enquiry API must enforce the content/legal approval gate");
+assert.doesNotMatch(serviceApi,/CONTENT_APPROVED!=="true"/,"Service enquiry API must accept submissions without a deployment-only approval gate");
 assert.match(serviceApi,/forwardToFormspree/,"Service enquiries must be forwarded to the shared Formspree inbox");
 assert.match(serviceApi,/website/,"Service enquiries must retain the honeypot field");
+assert.match(serviceApi,/wechatId:value\("wechatId",100\)/,"Service enquiries must accept and forward WeChat IDs in every locale");
 assert.match(serviceApi,/serviceLine/,"Service enquiries must retain service-line attribution");
 assert.match(sheets,/tours-travel/,"Sheets handoff must accept tour enquiries");
 assert.match(sheets,/event-design/,"Sheets handoff must accept event enquiries");
 assert.match(sheets,/gift-boxes/,"Sheets handoff must accept gift enquiries");
 assert.match(serviceForm,/name="marketingConsent"/,"Service forms must keep marketing consent separate and optional");
-assert.match(serviceForm,/enabled=true/,"Service enquiry form must be enabled by default");
+assert.match(generalForm,/name="wechatId"/,"General enquiry form must collect an optional WeChat ID");
+assert.match(generalForm,/\["wechat"\]/,"General enquiry form must offer WeChat in every locale");
+assert.match(serviceForm,/\["wechat"\]/,"Service enquiry form must offer WeChat in every locale");
+assert.doesNotMatch(serviceForm,/if\(!enabled\)return|disabled=\{!enabled/,"Service enquiry form must not be blocked by a page-level enabled flag");
 assert.doesNotMatch(serviceForm,/name="budget"/,"Public service forms must not collect budgets");
 assert.match(serviceForm,/name="startDate"/,"Tour enquiries must capture start date");
 assert.match(serviceForm,/name="eventDate"/,"Event enquiries must capture event date");
