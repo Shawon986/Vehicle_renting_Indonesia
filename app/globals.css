@@ -16204,3 +16204,72 @@ form input[type="button"] {
     font-size: 6px !important;
   }
 }
+
+
+/* Transparent glass rental search: keep every label and control readable over the hero. */
+.hero-with-search .home-rental-search-form {
+  background: rgba(12, 27, 21, .48) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, .38) !important;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, .16) !important;
+  backdrop-filter: blur(16px) saturate(125%);
+  -webkit-backdrop-filter: blur(16px) saturate(125%);
+}
+.hero-with-search .home-rental-search-form .rental-search-field {
+  background: rgba(255, 255, 255, .11) !important;
+  border-color: rgba(255, 255, 255, .3) !important;
+}
+.hero-with-search .home-rental-search-form .rental-search-field > span,
+.hero-with-search .home-rental-search-form .rental-search-compact,
+.hero-with-search .home-rental-search-form .rental-search-checkbox {
+  color: rgba(255, 255, 255, .88) !important;
+}
+.hero-with-search .home-rental-search-form .rental-search-field input,
+.hero-with-search .home-rental-search-form .rental-search-compact input,
+.hero-with-search .home-rental-search-form .rental-search-compact select {
+  color: #fff !important;
+  color-scheme: dark;
+}
+.hero-with-search .home-rental-search-form .rental-search-field input::placeholder {
+  color: rgba(255, 255, 255, .66) !important;
+}
+.hero-with-search .home-rental-search-form .rental-search-submit {
+  background: rgba(202, 220, 137, .94) !important;
+  color: #17271f !important;
+  border: 1px solid rgba(255, 255, 255, .42) !important;
+}
+.hero-with-search .home-rental-search-form .home-rental-search-note {
+  color: rgba(255, 255, 255, .76) !important;
+}
+.hero-with-search .home-rental-search-form .rental-search-checkbox input {
+  accent-color: #d2e39a;
+}
+
+/* Floating service chips stay discreet at rest and become clear while scrolling on mobile. */
+.site-promotion-floating-chips {
+  opacity: .48;
+  transition: opacity .28s ease, filter .28s ease;
+}
+.site-promotion-dock:not(.is-scrolling) .site-promotion-float-chip {
+  background: rgba(230, 236, 218, .42) !important;
+  border-color: rgba(255, 255, 255, .24) !important;
+  box-shadow: 0 5px 14px rgba(13, 27, 19, .07) !important;
+}
+@media (max-width: 680px) {
+  .site-promotion-dock:not(.is-scrolling) .site-promotion-floating-chips {
+    opacity: .22 !important;
+    filter: saturate(.55);
+  }
+  .site-promotion-dock.is-scrolling .site-promotion-floating-chips {
+    opacity: 1 !important;
+    filter: none;
+  }
+  .site-promotion-dock.is-scrolling .site-promotion-float-chip {
+    background: rgba(230, 236, 218, .96) !important;
+    border-color: rgba(255, 255, 255, .7) !important;
+    box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-promotion-floating-chips { transition: none !important; }
+}
