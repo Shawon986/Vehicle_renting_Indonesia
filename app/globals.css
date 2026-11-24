@@ -17555,3 +17555,57 @@ form input[type="button"] {
     filter: invert(1) !important;
   }
 }
+
+
+/* Mobile-only hard constraint for native date/time controls.
+   These controls can keep an intrinsic minimum width on mobile browsers even
+   when width:100% is set. Constrain the grid tracks, field wrappers and the
+   native input itself so its border box cannot exceed the form content width. */
+@media screen and (max-width: 680px) {
+  form:not(.home-rental-search-form) .form-grid,
+  form:not(.home-rental-search-form) .service-form-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  form .form-grid > *,
+  form .service-form-grid > *,
+  form .service-form-field,
+  form .service-inquiry-form label,
+  .home-rental-search-form .rental-search-field {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  form :is(
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"]
+  ) {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    inline-size: 100% !important;
+    min-width: 0 !important;
+    min-inline-size: 0 !important;
+    max-width: 100% !important;
+    max-inline-size: 100% !important;
+    flex: 0 1 100% !important;
+    margin-inline: 0 !important;
+  }
+
+  .home-rental-search-form .home-rental-search-main {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .home-rental-search-form .home-rental-search-main > .rental-search-field {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}
