@@ -14246,6 +14246,16 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
  .service-page .service-inclusion-grid{width:100%;min-width:0}
  .service-page .service-inclusion-grid>div{min-width:0;overflow-wrap:anywhere}
 }
+.site-promotion-launcher{position:fixed;z-index:69;right:22px;bottom:24px;display:flex;align-items:center;gap:11px;max-width:min(610px,calc(100vw - 36px));min-height:52px;padding:9px 13px;border:1px solid rgba(225,232,214,.72);border-radius:999px;background:rgba(28,48,38,.94);color:#f3f0e8;box-shadow:0 12px 34px rgba(13,27,19,.22);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);cursor:pointer;text-align:left;animation:sitePromotionFloat 4.5s ease-in-out infinite}
+.site-promotion-launcher-dot{position:relative;width:8px;height:8px;flex:0 0 8px;border-radius:50%;background:#c4d47b;box-shadow:0 0 0 4px rgba(196,212,123,.14)}
+.site-promotion-launcher-dot:after{content:"";position:absolute;inset:-5px;border:1px solid rgba(196,212,123,.5);border-radius:50%;animation:sitePromotionPulse 2.4s ease-out infinite}
+.site-promotion-launcher-copy{font-size:10px;font-weight:650;letter-spacing:.025em;white-space:nowrap}
+.site-promotion-launcher-tags{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.site-promotion-launcher-tags span{padding:5px 8px;border:1px solid rgba(243,240,232,.2);border-radius:999px;color:#dce3d6;font-size:8px;line-height:1.2;white-space:nowrap}
+.site-promotion-launcher-arrow{display:grid;place-items:center;width:27px;height:27px;flex:0 0 27px;border-radius:50%;background:#c4d47b;color:#1d3028;font-size:15px;transition:transform .2s}
+.site-promotion-launcher:hover .site-promotion-launcher-arrow{transform:translate(2px,-2px)}
+@keyframes sitePromotionFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes sitePromotionPulse{0%{transform:scale(.65);opacity:.8}100%{transform:scale(1.65);opacity:0}}
 .site-promotion{position:fixed;z-index:70;right:22px;bottom:96px;width:min(390px,calc(100vw - 32px));padding:22px 22px 19px;border:1px solid rgba(231,235,222,.72);background:rgba(246,245,237,.96);color:#203328;box-shadow:0 22px 65px rgba(13,27,19,.2);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);animation:sitePromotionIn .55s cubic-bezier(.2,.75,.25,1) both}
 .site-promotion:before{content:"";position:absolute;inset:7px;border:1px solid rgba(42,65,48,.1);pointer-events:none}
 .site-promotion-close{position:absolute;z-index:2;top:11px;right:12px;display:grid;place-items:center;width:32px;height:32px;border:1px solid rgba(37,57,43,.2);border-radius:50%;background:transparent;color:#314537;font-size:21px;line-height:1;cursor:pointer}
@@ -14260,6 +14270,11 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
 .site-promotion-cta .service-arrow-mark{width:13px;height:13px}
 @keyframes sitePromotionIn{from{opacity:0;transform:translate3d(0,18px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
 @media(max-width:600px){
+ .site-promotion-launcher{right:12px;bottom:82px;left:12px;max-width:none;min-height:48px;gap:8px;padding:8px 10px}
+ .site-promotion-launcher-copy{font-size:9px}
+ .site-promotion-launcher-tags{gap:4px}
+ .site-promotion-launcher-tags span{padding:4px 6px;font-size:7px}
+ .site-promotion-launcher-arrow{width:25px;height:25px;flex-basis:25px}
  .site-promotion{right:12px;bottom:90px;width:calc(100vw - 24px);padding:19px 18px 16px}
  .site-promotion h2{max-width:calc(100% - 12px);font-size:22px}
  .site-promotion>p{font-size:10px}
@@ -14267,6 +14282,8 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
  .site-promotion-chips a{font-size:7px;padding:6px 8px}
 }
 @media(prefers-reduced-motion:reduce){
+ .site-promotion-launcher{animation:none}
+ .site-promotion-launcher-dot:after{animation:none}
  .site-promotion{animation:none}
  .service-page .service-direction-card,.service-page .service-process-step,.service-page .service-inclusion-grid>div,.home-service-card,.pickup-guide-card{transition:none}
 }
