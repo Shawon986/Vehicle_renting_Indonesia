@@ -16555,28 +16555,54 @@ form input[type="button"] {
   }
 }
 
-/* Mobile service hero slide indicators: keep a constant touch-target and
-   a constant visible bar height while only the active indicator changes width. */
+/* Final mobile fix: the visible hero indicators themselves stay exactly 3px
+   high on every slide; only their width and color may change for the active slide. */
 @media (max-width: 680px) {
-  .service-page .service-gallery-controls button,
-  .service-page .service-gallery-controls button.is-active {
-    box-sizing: border-box !important;
-    flex-shrink: 0 !important;
-    height: 24px !important;
-    min-height: 24px !important;
-    max-height: 24px !important;
-    padding: 0 !important;
-    border-top: 0 !important;
-    border-bottom: 0 !important;
-    line-height: 0 !important;
-    transform: none !important;
+  .service-page .service-gallery-controls,
+  .services-hub-page .service-gallery-controls {
+    align-items: center !important;
   }
-  .service-page .service-gallery-controls button::before,
-  .service-page .service-gallery-controls button.is-active::before {
-    top: 50% !important;
+  .service-page .service-gallery-controls button,
+  .service-page .service-gallery-controls button.is-active,
+  .services-hub-page .service-gallery-controls button,
+  .services-hub-page .service-gallery-controls button.is-active {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    flex: 0 0 14px !important;
+    width: 14px !important;
+    min-width: 14px !important;
+    max-width: 14px !important;
     height: 3px !important;
     min-height: 3px !important;
     max-height: 3px !important;
-    transform: translateY(-50%) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    line-height: 0 !important;
+    vertical-align: middle !important;
+    transform: none !important;
+    background: rgba(255,255,255,.5) !important;
+    transition: width .25s ease, background-color .25s ease !important;
+  }
+  .service-page .service-gallery-controls button.is-active,
+  .services-hub-page .service-gallery-controls button.is-active {
+    flex-basis: 25px !important;
+    width: 25px !important;
+    min-width: 25px !important;
+    max-width: 25px !important;
+    height: 3px !important;
+    min-height: 3px !important;
+    max-height: 3px !important;
+    background: #d5dfaa !important;
+  }
+  .service-page .service-gallery-controls button::before,
+  .service-page .service-gallery-controls button::after,
+  .services-hub-page .service-gallery-controls button::before,
+  .services-hub-page .service-gallery-controls button::after {
+    content: none !important;
+    display: none !important;
   }
 }
