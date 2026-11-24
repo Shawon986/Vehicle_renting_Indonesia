@@ -17294,3 +17294,80 @@ form input[type="button"] {
     max-width: 100% !important;
   }
 }
+
+
+/* Home hero search mobile refinement:
+   smaller location placeholders on the top row, and a clearly separated
+   US-style date string with the native calendar control pinned to the right. */
+@media screen and (max-width: 680px) {
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(1) input::placeholder,
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(2) input::placeholder {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0 !important;
+    opacity: .88 !important;
+  }
+
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(3) input[type="date"],
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(5) input[type="date"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    direction: ltr !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: 46px !important;
+    min-height: 46px !important;
+    padding: 0 8px 0 9px !important;
+    font-size: 14px !important;
+    line-height: normal !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    background-image: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    color-scheme: dark !important;
+  }
+
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(3) input[type="date"]::-webkit-datetime-edit,
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(5) input[type="date"]::-webkit-datetime-edit {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    font-size: 14px !important;
+  }
+
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(3) input[type="date"]::-webkit-date-and-time-value,
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(5) input[type="date"]::-webkit-date-and-time-value {
+    width: auto !important;
+    min-width: 0 !important;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(3) input[type="date"]::-webkit-calendar-picker-indicator,
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(5) input[type="date"]::-webkit-calendar-picker-indicator {
+    display: block !important;
+    flex: 0 0 18px !important;
+    width: 18px !important;
+    min-width: 18px !important;
+    max-width: 18px !important;
+    height: 18px !important;
+    margin: 0 0 0 6px !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    cursor: pointer !important;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(1) input::placeholder,
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(2) input::placeholder {
+    font-size: 11px !important;
+  }
+}
