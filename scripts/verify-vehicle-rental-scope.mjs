@@ -31,10 +31,11 @@ for(const source of [generalForm,serviceForm])for(const channel of ["whatsapp","
 assert.equal([...homeSearch.matchAll(/<input name="pickupTime"/g)].length,1,"Homepage journey search must have a single pickup-time field");
 assert.equal([...homeSearch.matchAll(/<input name="returnTime"/g)].length,1,"Homepage journey search must have a single return-time field");
 
-assert.match(data,/["id","en","zh"]/,"All three locales must remain enabled");
-assert.match(data,/formatIDR(locale:Locale,amount:number)/,"Locale-aware IDR formatter must be available without exposing prices");
-assert.match(catalogue,/setView("cards")/,"Vehicle card view must exist");
-assert.match(catalogue,/setView("table")/,"Vehicle table view must exist");
+
+assert.match(data,/\["id","en","zh"\]/,"All three locales must remain enabled");
+assert.match(data,/formatIDR\(locale:Locale,amount:number\)/,"Locale-aware IDR formatter must be available without exposing prices");
+assert.match(catalogue,/setView\("cards"\)/,"Vehicle card view must exist");
+assert.match(catalogue,/setView\("table"\)/,"Vehicle table view must exist");
 assert.match(catalogue,/setCategory/,"Category filtering must exist");
 assert.match(catalogue,/setSeats/,"Capacity filtering must exist");
 assert.match(catalogue,/setTransmission/,"Transmission filtering must exist");
