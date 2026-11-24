@@ -11386,18 +11386,7 @@ main .vehicle-filter label {
   content: none !important;
   display: none !important;
 }
-.inquiry-form .form-grid > label:has(> input:required, > select:required, > textarea:required):not(.service-form-check):not(.consent-check):not(.marketing-consent)::after,
-.service-inquiry-form .form-grid > label.service-form-field:has(> input:required, > select:required, > textarea:required)::after {
-  content: "*";
-  grid-column: 2;
-  grid-row: 1;
-  justify-self: end;
-  align-self: center;
-  color: #b64b3d;
-  font-size: 15px;
-  font-weight: 800;
-  line-height: 1;
-}
+/* Required asterisks are rendered once in JSX via .required-field-mark. */
 .inquiry-form .form-grid > label:has(> input:required, > select:required, > textarea:required) > input,
 .inquiry-form .form-grid > label:has(> input:required, > select:required, > textarea:required) > select,
 .inquiry-form .form-grid > label:has(> input:required, > select:required, > textarea:required) > textarea,
@@ -15842,3 +15831,7 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
   }
   .gift-service-assurance-steps p { font-size: 12px !important; line-height: 1.4 !important; }
 }
+
+
+/* Keep the single visible required marker consistently red across every form. */
+.required-field-mark { color: #b64b3d !important; }
