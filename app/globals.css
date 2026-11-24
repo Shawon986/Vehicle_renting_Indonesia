@@ -15836,10 +15836,19 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
 /* Keep the single visible required marker consistently red across every form. */
 .required-field-mark { color: #b64b3d !important; }
 
-/* Keep editable form controls at 16px so mobile browsers do not auto-zoom on focus. */
+/* Keep form controls compact on desktop while preventing mobile focus zoom. */
 form input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="submit"]):not([type="button"]),
 form select,
 form textarea {
-  font-size: 16px !important;
+  font-size: 14px !important;
   -webkit-text-size-adjust: 100%;
+}
+
+/* iOS Safari zooms inputs smaller than 16px; retain this safe size on mobile. */
+@media (max-width: 680px) {
+  form input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="submit"]):not([type="button"]),
+  form select,
+  form textarea {
+    font-size: 16px !important;
+  }
 }
