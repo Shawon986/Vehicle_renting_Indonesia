@@ -16292,17 +16292,22 @@ form input[type="button"] {
     transition: none !important;
   }
 
-  .site-promotion-dock .site-promotion-float-chip-1 {
+  /* Override the more-specific idle-state selector that was dimming chips
+     as soon as the 4-second scroll timer removed .is-scrolling. */
+  .site-promotion-dock:not(.is-scrolling) .site-promotion-float-chip-1,
+  .site-promotion-dock.is-scrolling .site-promotion-float-chip-1 {
     background: rgba(224, 232, 194, .96) !important;
     border-color: rgba(255, 255, 255, .7) !important;
     box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
   }
-  .site-promotion-dock .site-promotion-float-chip-2 {
+  .site-promotion-dock:not(.is-scrolling) .site-promotion-float-chip-2,
+  .site-promotion-dock.is-scrolling .site-promotion-float-chip-2 {
     background: rgba(247, 222, 202, .96) !important;
     border-color: rgba(255, 255, 255, .7) !important;
     box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
   }
-  .site-promotion-dock .site-promotion-float-chip-3 {
+  .site-promotion-dock:not(.is-scrolling) .site-promotion-float-chip-3,
+  .site-promotion-dock.is-scrolling .site-promotion-float-chip-3 {
     background: rgba(207, 229, 222, .96) !important;
     border-color: rgba(255, 255, 255, .7) !important;
     box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
