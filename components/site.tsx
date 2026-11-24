@@ -64,7 +64,7 @@ export function SitePromotion({locale}:{locale:Locale}){
   const onScroll=()=>{
    setIsScrolling(true);
    if(settleTimer)window.clearTimeout(settleTimer);
-   settleTimer=window.setTimeout(()=>setIsScrolling(false),1100);
+   settleTimer=window.setTimeout(()=>setIsScrolling(false),2500);
   };
   window.addEventListener("scroll",onScroll,{passive:true});
   return()=>{window.removeEventListener("scroll",onScroll);if(settleTimer)window.clearTimeout(settleTimer)};
