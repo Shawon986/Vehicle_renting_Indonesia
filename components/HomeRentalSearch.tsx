@@ -81,11 +81,9 @@ export function HomeRentalSearch({locale,enabled=true}:{locale:Locale;enabled?:b
       <button className="rental-search-submit" type="submit"><span aria-hidden="true">⌕</span>{copy.search}</button>
      </div>
      <div className="home-rental-search-options">
-      <label className="rental-search-checkbox"><input type="checkbox" name="oneWay" value="yes" onChange={event=>{const oneWay=event.currentTarget.checked;setFormOneWay(oneWay);const input=event.currentTarget.form?.querySelector<HTMLInputElement>('[name="returnDate"]');if(input){input.disabled=oneWay;input.required=!oneWay;input.setCustomValidity("")}}}/><span>{copy.oneWay}</span></label>
+      <label className="rental-search-checkbox"><input type="checkbox" name="oneWay" value="yes" onChange={event=>{const oneWay=event.currentTarget.checked;setFormOneWay(oneWay);const fields=event.currentTarget.form?.querySelectorAll<HTMLInputElement>('[name="returnDate"], [name="returnTime"]');fields?.forEach(input=>{input.disabled=oneWay;input.required=!oneWay;input.setCustomValidity("")})}}/><span>{copy.oneWay}</span></label>
       <button className="rental-search-more" type="button" aria-expanded={more} onClick={()=>setMore(value=>!value)}>{more?copy.less:copy.more}<span aria-hidden="true">{more?"−":"+"}</span></button>
       {more?<div className="rental-search-extra">
-       <label className="rental-search-compact"><span>{copy.pickupTime}</span><input name="pickupTime" type="time" defaultValue="10:00"/></label>
-       <label className="rental-search-compact rental-return-extra"><span>{copy.returnTime}</span><input name="returnTime" type="time" defaultValue="10:00"/></label>
        <label className="rental-search-compact"><span>{copy.age}</span><input name="driverAge" type="number" min="18" max="100" placeholder="30"/></label>
        <label className="rental-search-compact"><span>{copy.license}</span><select name="licenceCountry" defaultValue=""><option value="">{copy.choose}</option>{countryOptions.map(country=><option key={country} value={country}>{country}</option>)}</select></label>
        <label className="rental-search-compact"><span>{copy.purpose}</span><select name="tripPurpose" defaultValue=""><option value="">{copy.choose}</option>{copy.purposeOptions.map((purpose:string)=><option key={purpose} value={purpose}>{purpose}</option>)}</select></label>
