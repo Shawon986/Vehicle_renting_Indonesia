@@ -74,9 +74,9 @@ export function HomeRentalSearch({locale}:{locale:Locale}){
      <div className="home-rental-search-main">
       <label className="rental-search-field rental-search-location"><span>{copy.location} <span className="required-field-mark" aria-hidden="true">*</span></span><input name="pickupLocation" placeholder={copy.locationPlaceholder} required maxLength={180}/></label>
       <label className="rental-search-field"><span>{copy.destination}</span><input name="destination" placeholder={copy.locationPlaceholder} maxLength={180}/></label>
-      <label className="rental-search-field"><span>{copy.pickup} <span className="required-field-mark" aria-hidden="true">*</span></span><input name="pickupDate" type="date" required/></label>
+      <label className="rental-search-field"><span>{copy.pickup} <span className="required-field-mark" aria-hidden="true">*</span></span><input name="pickupDate" type="date" lang="en-US" required/></label>
       <label className="rental-search-field"><span>{copy.pickupTime} <span className="required-field-mark" aria-hidden="true">*</span></span><input name="pickupTime" type="time" defaultValue="10:00" required/></label>
-      <label className="rental-search-field rental-return-field"><span>{copy.returnDate}{!formOneWay?<span className="required-field-mark" aria-hidden="true">*</span>:null}</span><input name="returnDate" type="date" required/></label>
+      <label className="rental-search-field rental-return-field"><span>{copy.returnDate}{!formOneWay?<span className="required-field-mark" aria-hidden="true">*</span>:null}</span><input name="returnDate" type="date" lang="en-US" required/></label>
       <label className="rental-search-field rental-return-field"><span>{copy.returnTime}{!formOneWay?<span className="required-field-mark" aria-hidden="true">*</span>:null}</span><input name="returnTime" type="time" defaultValue="10:00" required/></label>
       <button className="rental-search-submit" type="submit"><span aria-hidden="true">⌕</span>{copy.search}</button>
      </div>
