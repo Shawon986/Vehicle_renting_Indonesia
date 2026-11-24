@@ -15835,3 +15835,11 @@ main.inner-page.how-page.how-premium-page .how-premium-glass-copy .button{
 
 /* Keep the single visible required marker consistently red across every form. */
 .required-field-mark { color: #b64b3d !important; }
+
+/* Keep editable form controls at 16px so mobile browsers do not auto-zoom on focus. */
+form input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="submit"]):not([type="button"]),
+form select,
+form textarea {
+  font-size: 16px !important;
+  -webkit-text-size-adjust: 100%;
+}
