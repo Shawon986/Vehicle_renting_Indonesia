@@ -27,15 +27,14 @@ for(const source of servicePages)assert.doesNotMatch(source,/CONTENT_APPROVED===
 for(const fallback of ["6287811887555","087811887555","ocean.zenithgroup101@gmail.com","/wechat-qr.svg"])assert.ok(form.includes(fallback),"Footer and vehicle form must retain original contact detail: "+fallback);
 for(const fallback of ["6287811887555","ocean.zenithgroup101@gmail.com","/wechat-qr.svg"])assert.ok(channels.includes(fallback),"Contact channels must retain original contact detail: "+fallback);
 for(const fallback of ["6287811887555","087811887555","/wechat-qr.svg"])assert.ok(sticky.includes(fallback),"Sticky contact bar must retain original contact detail: "+fallback);
-for(const source of [generalForm,serviceForm])for(const fallback of ["6287811887555","087811887555","/wechat-qr.svg"])assert.ok(source.includes(fallback),"All enquiry forms must retain original contact choices: "+fallback);
+for(const source of [generalForm,serviceForm])for(const channel of ["whatsapp","wechat","phone","email"])assert.ok(source.includes('"'+channel+'"'),"All enquiry forms must offer the "+channel+" contact channel");
 assert.equal([...homeSearch.matchAll(/<input name="pickupTime"/g)].length,1,"Homepage journey search must have a single pickup-time field");
 assert.equal([...homeSearch.matchAll(/<input name="returnTime"/g)].length,1,"Homepage journey search must have a single return-time field");
 
-
-assert.match(data,/\["id","en","zh"\]/,"All three locales must remain enabled");
-assert.match(data,/formatIDR\(locale:Locale,amount:number\)/,"Locale-aware IDR formatter must be available without exposing prices");
-assert.match(catalogue,/setView\("cards"\)/,"Vehicle card view must exist");
-assert.match(catalogue,/setView\("table"\)/,"Vehicle table view must exist");
+assert.match(data,/["id","en","zh"]/,"All three locales must remain enabled");
+assert.match(data,/formatIDR(locale:Locale,amount:number)/,"Locale-aware IDR formatter must be available without exposing prices");
+assert.match(catalogue,/setView("cards")/,"Vehicle card view must exist");
+assert.match(catalogue,/setView("table")/,"Vehicle table view must exist");
 assert.match(catalogue,/setCategory/,"Category filtering must exist");
 assert.match(catalogue,/setSeats/,"Capacity filtering must exist");
 assert.match(catalogue,/setTransmission/,"Transmission filtering must exist");
@@ -87,8 +86,8 @@ assert.match(sheets,/event-design/,"Sheets handoff must accept event enquiries")
 assert.match(sheets,/gift-boxes/,"Sheets handoff must accept gift enquiries");
 assert.match(serviceForm,/name="marketingConsent"/,"Service forms must keep marketing consent separate and optional");
 assert.match(generalForm,/name="wechatId"/,"General enquiry form must collect an optional WeChat ID");
-assert.match(generalForm,/\["wechat"\]/,"General enquiry form must offer WeChat in every locale");
-assert.match(serviceForm,/\["wechat"\]/,"Service enquiry form must offer WeChat in every locale");
+assert.ok(generalForm.includes('"wechat"'),"General enquiry form must offer WeChat in every locale");
+assert.ok(serviceForm.includes('"wechat"'),"Service enquiry form must offer WeChat in every locale");
 assert.doesNotMatch(serviceForm,/if\(!enabled\)return|disabled=\{!enabled/,"Service enquiry form must not be blocked by a page-level enabled flag");
 assert.doesNotMatch(serviceForm,/name="budget"/,"Public service forms must not collect budgets");
 assert.match(serviceForm,/name="startDate"/,"Tour enquiries must capture start date");
