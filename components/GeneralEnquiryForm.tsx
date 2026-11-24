@@ -14,18 +14,18 @@ export function GeneralEnquiryForm({locale,enabled=true}:{locale:Locale;enabled?
  const started=useRef(false),submitted=useRef(false),lastField=useRef("name");
  useEffect(()=>()=>{if(started.current&&!submitted.current)trackEvent("form_abandon",{service_line:"general",last_field:lastField.current})},[]);
  function begin(e:FocusEvent<HTMLFormElement>){const el=e.target;if(el instanceof HTMLInputElement||el instanceof HTMLSelectElement||el instanceof HTMLTextAreaElement){if(!started.current){started.current=true;trackEvent("form_start",{service_line:"general"})}if(lastField.current!==el.name){lastField.current=el.name;trackEvent("form_progress",{field:el.name})}}}
- async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();if(!enabled)return;const form=e.currentTarget,fd=new FormData(form),payload:Record<string,FormDataEntryValue|boolean>=Object.fromEntries(fd.entries());payload.locale=locale;payload.serviceLine="general";payload.pagePath=path;payload.marketingConsent=fd.get("marketingConsent")==="yes";setStatus("sending");
+ async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();const form=e.currentTarget,fd=new FormData(form),payload:Record<string,FormDataEntryValue|boolean>=Object.fromEntries(fd.entries());payload.locale=locale;payload.serviceLine="general";payload.pagePath=path;payload.marketingConsent=fd.get("marketingConsent")==="yes";setStatus("sending");
  try{const response=await fetch("/api/service-inquiries",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(payload)});if(!response.ok)throw new Error("Submission failed");const result=await response.json() as {leadId?:string};submitted.current=true;trackEvent("form_submit",{service_line:"general",lead_id:result.leadId||"received"});setStatus("success");form.reset();;started.current=false;}
  catch{setStatus("error");;}}
- const channelOptions=[...((process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"6287811887555")?["whatsapp"]:[]),...((process.env.NEXT_PUBLIC_PHONE||"087811887555")?["phone"]:[]),...(locale==="zh"&&(process.env.NEXT_PUBLIC_WECHAT_ID||process.env.NEXT_PUBLIC_WECHAT_QR_URL||"/wechat-qr.svg")?["wechat"]:[]),"email"];
+ const channelOptions=[...((process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"6287811887555")?["whatsapp"]:[]),...((process.env.NEXT_PUBLIC_PHONE||"087811887555")?["phone"]:[]),...((process.env.NEXT_PUBLIC_WECHAT_ID||process.env.NEXT_PUBLIC_WECHAT_QR_URL||"/wechat-qr.svg")?["wechat"]:[]),"email"];
  return <form className="inquiry-form service-inquiry-form general-enquiry-form" onSubmit={submit} onFocusCapture={begin}>
  <div className="inquiry-form-heading"><span className="inquiry-form-index">01 / 02 · RENTCAROCEAN</span><h3>{locale==="zh"?"让我们了解您的计划":locale==="id"?"Ceritakan rencana Anda":"Tell us what you have in mind"}</h3><p>{t.hint}</p></div>
- {!enabled?<p className="service-form-disabled" role="status">{t.disabled}</p>:null}
+ 
  <div className="form-grid service-form-grid">
  <label className="service-form-field">{t.name}<span className="required-field-mark" aria-hidden="true">*</span><input name="name" autoComplete="name" required maxLength={100}/></label>
  <label className="service-form-field">{t.email}<span className="required-field-mark" aria-hidden="true">*</span><input name="email" type="email" autoComplete="email" required maxLength={160}/></label>
  <label className="service-form-field">{t.phone}<span className="required-field-mark" aria-hidden="true">*</span><input name="phone" type="tel" autoComplete="tel" required maxLength={40}/></label>
- <label className="service-form-field">{t.company}<input name="company" autoComplete="organization" maxLength={160}/></label>
+ <label className="service-form-field">{t.company}<input name="company" autoComplete="organization" maxLength={160}/></label><label className="service-form-field">{locale==="zh"?"微信号（选填）":locale==="id"?"ID WeChat (opsional)":"WeChat ID (optional)"}<input name="wechatId" maxLength={100} autoComplete="off"/></label>
  <label className="service-form-field">{t.channel}<select name="preferredChannel" defaultValue={channelOptions[0]}>{channelOptions.map(x=><option key={x} value={x}>{x==="wechat"?"WeChat / 微信":x==="whatsapp"?"WhatsApp":x==="phone"?(locale==="zh"?"电话":locale==="id"?"Telepon":"Phone"):"Email"}</option>)}</select></label>
  <label className="service-form-field">{t.service}<span className="required-field-mark" aria-hidden="true">*</span><select className="service-interest-select" name="serviceInterest" defaultValue="vehicle-rental" required><option value="vehicle-rental">{t.vehicle}</option><option value="tours-travel">{t.travel}</option><option value="event-design">{t.events}</option><option value="gift-boxes">{t.gifts}</option><option value="multiple">{t.multiple}</option></select></label>
  <label className="service-form-field">{t.date}<input name="preferredDate" type="date"/></label>
@@ -36,7 +36,7 @@ export function GeneralEnquiryForm({locale,enabled=true}:{locale:Locale;enabled?
  
  <div className="honeypot" aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off"/></label></div>
  </div>
- <button className="button button-dark" type="submit" disabled={!enabled||status==="sending"}>{status==="sending"?t.sending:t.submit}<span className="arrow-up" aria-hidden="true"/></button>
+ <button className="button button-dark" type="submit" disabled={status==="sending"}>{status==="sending"?t.sending:t.submit}<span className="arrow-up" aria-hidden="true"/></button>
  {status==="success"?<p role="status" className="form-success">{t.success}</p>:status==="error"?<p role="alert" className="form-error">{t.error}</p>:null}
  <p className="form-note">{t.hint}</p>
  </form>;
