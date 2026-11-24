@@ -17,7 +17,7 @@ export function GeneralEnquiryForm({locale}:{locale:Locale}){
  async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();const form=e.currentTarget,fd=new FormData(form),payload:Record<string,FormDataEntryValue|boolean>=Object.fromEntries(fd.entries());payload.locale=locale;payload.serviceLine="general";payload.pagePath=path;payload.marketingConsent=fd.get("marketingConsent")==="yes";setStatus("sending");
  try{const response=await fetch("/api/service-inquiries",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(payload)});if(!response.ok)throw new Error("Submission failed");const result=await response.json() as {leadId?:string};submitted.current=true;trackEvent("form_submit",{service_line:"general",lead_id:result.leadId||"received"});setStatus("success");form.reset();;started.current=false;}
  catch{setStatus("error");;}}
- const channelOptions=[...((process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"6287811887555")?["whatsapp"]:[]),...((process.env.NEXT_PUBLIC_PHONE||"087811887555")?["phone"]:[]),["wechat"],"email"];
+ const channelOptions=[...((process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"6287811887555")?["whatsapp"]:[]),...((process.env.NEXT_PUBLIC_PHONE||"087811887555")?["phone"]:[]),"wechat","email"];
  return <form className="inquiry-form service-inquiry-form general-enquiry-form" onSubmit={submit} onFocusCapture={begin}>
  <div className="inquiry-form-heading"><span className="inquiry-form-index">01 / 02 · RENTCAROCEAN</span><h3>{locale==="zh"?"让我们了解您的计划":locale==="id"?"Ceritakan rencana Anda":"Tell us what you have in mind"}</h3><p>{t.hint}</p></div>
  
