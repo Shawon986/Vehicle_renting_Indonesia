@@ -17371,3 +17371,30 @@ form input[type="button"] {
     font-size: 11px !important;
   }
 }
+
+
+/* Home search date fields: remove the visible calendar glyph and make the
+   complete date control the tap target. The native picker is opened by the
+   input's click handler, with focus as a safe browser fallback. */
+@media screen and (max-width: 680px) {
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(3) input[type="date"],
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(5) input[type="date"] {
+    cursor: pointer !important;
+    padding-right: 9px !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+  }
+
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(3) input[type="date"]::-webkit-calendar-picker-indicator,
+  .hero-with-search .home-rental-search-form .home-rental-search-main > .rental-search-field:nth-child(5) input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    pointer-events: none !important;
+  }
+}
