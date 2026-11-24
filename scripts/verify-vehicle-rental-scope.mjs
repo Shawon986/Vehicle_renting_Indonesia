@@ -11,6 +11,21 @@ const channels=read("components/ContactChannels.tsx");
 const gallery=read("components/VehicleGallery.tsx");
 const config=read("next.config.ts");
 const workflow=read(".github/workflows/ci.yml");
+const homepage=read("app/[locale]/page.tsx");
+const contactPage=read("app/[locale]/[...slug]/page.tsx");
+const vehiclePage=read("app/[locale]/services/vehicle-rental/page.tsx");
+const servicePages=["app/[locale]/services/tours-travel/page.tsx","app/[locale]/services/event-design/page.tsx","app/[locale]/services/gift-boxes/page.tsx"].map(read);
+const sticky=read("components/StickyContactBar.tsx");
+const generalForm=read("components/GeneralEnquiryForm.tsx");
+const homeSearch=read("components/HomeRentalSearch.tsx");
+assert.match(homepage,/CONTENT_APPROVED==="true"/,"Homepage enquiry flow must follow content approval");
+assert.match(contactPage,/CONTENT_APPROVED==="true"/,"General enquiry page must follow content approval");
+assert.match(vehiclePage,/CONTENT_APPROVED==="true"/,"Vehicle enquiry page must follow content approval");
+for(const source of servicePages)assert.match(source,/CONTENT_APPROVED==="true"/,"Service enquiry pages must follow content approval");
+for(const source of [form,channels,sticky,generalForm,serviceForm])assert.doesNotMatch(source,/6287811887555|087811887555|ocean\\.zenithgroup101@gmail\\.com|\\/wechat-qr\\.svg/,"Unverified fallback contact details must not be exposed");
+assert.equal([...homeSearch.matchAll(/name="pickupTime"/g)].length,1,"Homepage journey search must have a single pickup-time field");
+assert.equal([...homeSearch.matchAll(/name="returnTime"/g)].length,1,"Homepage journey search must have a single return-time field");
+
 
 assert.match(data,/\["id","en","zh"\]/,"All three locales must remain enabled");
 assert.match(data,/formatIDR\(locale:Locale,amount:number\)/,"Locale-aware IDR formatter must be available without exposing prices");
@@ -25,7 +40,7 @@ assert.doesNotMatch(form,/name="budget"/,"Public enquiry form must not collect a
 assert.match(detail,/<PriceSlot/,"Vehicle detail must retain the non-numeric price-on-request slot");
 assert.doesNotMatch(detail,/"@type"\s*:\s*"Offer"/,"Vehicle pages must not publish offers or prices");
 assert.doesNotMatch(detail,/"@type"\s*:\s*"Product"/,"Vehicle pages must not publish product/inventory schema");
-assert.doesNotMatch(api,/CONTENT_APPROVED/,"Customer vehicle enquiries must not be blocked by a manual approval flag");
+assert.match(api,/CONTENT_APPROVED!=="true"/,"Vehicle enquiry API must enforce the content/legal approval gate");
 assert.match(api,/Origin verification required/,"API must require an origin header");
 assert.match(api,/validTime\(pickupTime\)/,"Pickup time must be range-validated");
 assert.match(api,/vehicleSupportsDriver/,"Driver selection must match the selected vehicle");
@@ -50,7 +65,7 @@ for (const path of ["app/[locale]/services/tours-travel/page.tsx","app/[locale]/
 const serviceApi=read("app/api/service-inquiries/route.ts");
 const serviceForm=read("components/ServiceEnquiryForm.tsx");
 const sheets=read("integrations/google-sheets/Code.gs");
-assert.doesNotMatch(serviceApi,/CONTENT_APPROVED/,"Customer service enquiries must not be blocked by a manual approval flag");
+assert.match(serviceApi,/CONTENT_APPROVED!=="true"/,"Service enquiry API must enforce the content/legal approval gate");
 assert.match(serviceApi,/forwardToFormspree/,"Service enquiries must be forwarded to the shared Formspree inbox");
 assert.match(serviceApi,/website/,"Service enquiries must retain the honeypot field");
 assert.match(serviceApi,/serviceLine/,"Service enquiries must retain service-line attribution");
