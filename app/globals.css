@@ -16347,3 +16347,174 @@ form input[type="button"] {
     justify-content: center !important;
   }
 }
+
+ 
+/* Mobile form system: consistent spacing, readable controls and no horizontal overflow. */
+@media (max-width: 680px) {
+  form:not(.home-rental-search-form) {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  form:not(.home-rental-search-form) :is(.form-grid, .service-form-grid, .form-row, .form-fields) {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 14px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  form:not(.home-rental-search-form) :is(label, .form-field, .service-form-field) {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-wrap: anywhere;
+  }
+  form:not(.home-rental-search-form) :is(input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="submit"]):not([type="button"]), select, textarea) {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 48px !important;
+    padding: 12px 13px !important;
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+    border-radius: 3px;
+    -webkit-appearance: auto;
+    appearance: auto;
+  }
+  form:not(.home-rental-search-form) textarea {
+    min-height: 116px !important;
+    resize: vertical;
+  }
+  form:not(.home-rental-search-form) input[type="date"],
+  form:not(.home-rental-search-form) input[type="time"] {
+    min-height: 50px !important;
+    padding-right: 9px !important;
+    color-scheme: light;
+  }
+  form:not(.home-rental-search-form) :is(input[type="checkbox"], input[type="radio"]) {
+    flex: 0 0 18px !important;
+    width: 18px !important;
+    min-width: 18px !important;
+    height: 18px !important;
+    min-height: 18px !important;
+    margin: 2px 0 0 !important;
+  }
+  form:not(.home-rental-search-form) :is(fieldset, .form-addons) {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding: 14px 12px !important;
+  }
+  form:not(.home-rental-search-form) :is(.consent-row, .consent-check, .marketing-consent, .one-way-form-option) {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-wrap: anywhere;
+  }
+  form:not(.home-rental-search-form) :is(button[type="submit"], input[type="submit"], .button) {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 50px !important;
+    white-space: normal !important;
+  }
+  .inquiry-form,
+  .service-inquiry-form,
+  .form-page > form,
+  .form-section > form,
+  .contact-page > form,
+  .home-enquiry-dialog form {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 18px 14px !important;
+    box-sizing: border-box !important;
+  }
+  .inquiry-form-heading h3,
+  .service-inquiry-form h3 {
+    font-size: clamp(20px, 5.8vw, 24px) !important;
+    line-height: 1.2 !important;
+    overflow-wrap: anywhere;
+  }
+  .inquiry-form .consent-row {
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+  .inquiry-form .consent-row .consent-check {
+    flex: 1 1 100% !important;
+  }
+  .consent-privacy-link { margin-left: 27px !important; }
+  .inquiry-form .form-addons label,
+  .service-inquiry-form .form-addons label {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 9px !important;
+    width: 100% !important;
+    line-height: 1.5 !important;
+  }
+  .inquiry-form .one-way-form-option {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+  .inquiry-form .honeypot { max-width: 1px !important; }
+  .inquiry-form .turnstile-slot,
+  .service-inquiry-form .turnstile-slot {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+  }
+
+  /* The vehicle collection's "Refine the fleet" filter panel needs tighter
+     outer spacing while keeping each filter comfortably tappable. */
+  .vehicle-collection .vehicle-filter-panel,
+  .locale-zh .vehicle-collection-zh .vehicle-filter-panel {
+    padding: 13px 0 16px !important;
+    margin: 0 !important;
+  }
+  .vehicle-collection .vehicle-filter-heading,
+  .locale-zh .vehicle-collection-zh .vehicle-filter-heading {
+    margin-bottom: 12px !important;
+  }
+  .vehicle-collection .vehicle-filters,
+  .locale-zh .vehicle-collection-zh .vehicle-filters {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 11px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .vehicle-collection .vehicle-filter-control,
+  .locale-zh .vehicle-collection-zh .vehicle-filter-control {
+    gap: 5px !important;
+    min-width: 0 !important;
+  }
+  .vehicle-collection .vehicle-filter-control select,
+  .locale-zh .vehicle-collection-zh .vehicle-filter-control select,
+  .vehicle-collection .vehicle-search-control input {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 46px !important;
+    height: 46px !important;
+    font-size: 16px !important;
+  }
+  .vehicle-collection .vehicle-view-tools,
+  .locale-zh .vehicle-collection-zh .vehicle-view-tools {
+    grid-column: 1 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    gap: 9px !important;
+    min-width: 0 !important;
+  }
+}
+@media (max-width: 390px) {
+  .inquiry-form,
+  .service-inquiry-form,
+  .form-page > form,
+  .form-section > form,
+  .contact-page > form,
+  .home-enquiry-dialog form {
+    padding: 15px 12px !important;
+  }
+  form:not(.home-rental-search-form) :is(input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="submit"]):not([type="button"]), select, textarea) {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
