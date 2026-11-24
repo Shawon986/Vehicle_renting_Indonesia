@@ -14,7 +14,6 @@ const fieldNames={
 };
 
 export async function POST(request:NextRequest){
- if(process.env.CONTENT_APPROVED!=="true")return NextResponse.json({error:"Enquiry submissions are temporarily unavailable"},{status:503});
  const origin=request.headers.get("origin"),host=request.headers.get("host");
  if(!origin||!host)return NextResponse.json({error:"Origin verification required"},{status:403});
  try{if(new URL(origin).host!==host)return NextResponse.json({error:"Invalid origin"},{status:403})}catch{return NextResponse.json({error:"Invalid origin"},{status:403})}
