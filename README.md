@@ -14,7 +14,7 @@ Next.js App Router, React 19 and TypeScript. The public site is display + contac
 - Service-specific enquiry forms for tours (dates, trip length, pax, group type, interests, departure city), events (event/alternate dates, occasion, venue, guest band, multi-select services and flexibility), and gifts (SKU/size, quantity, delivery date/area, recipient, card message, PO and same-day request).
 - Service-aware WhatsApp / WeChat prefill, sticky contact bar, and shared Formspree delivery for every public enquiry form.
 - Vehicle detail service-inclusion matrix, add-on options, verified-only use-case guidance, non-numeric price-on-request slots, multi-image gallery support with keyboard-operable lightbox and breadcrumbs.
-- Locale-aware WhatsApp / WeChat / phone / email / enquiry contact components and mobile sticky contact actions (only verified channels appear when configured).
+- Locale-aware WhatsApp / WeChat / phone / email / enquiry contact components and mobile sticky contact actions. Original default contact details remain available, and hosting environment values can override them.
 - Vehicle enquiry form with pickup/return dates and times (Asia/Jakarta), pickup point and optional destination/drop-off point, passengers, luggage, vehicle model or category, travel style, add-ons, WeChat ID on Chinese pages and configured contact-channel preference.
 - Inquiry APIs with strict same-origin checks, bounded fields, service-specific validation, vehicle/driver compatibility checks, honeypot protection and a shared Formspree inbox for vehicle, tour, event, gift and general enquiries.
 - About, Contact, FAQ, Services hub and legal placeholder routes, with all service pages included in the localized sitemap.
@@ -59,6 +59,6 @@ If the webhook variable is not configured, the site continues to deliver enquiri
 
 ## Contact and analytics configuration
 
-Set the verified public values in the hosting environment: `NEXT_PUBLIC_WHATSAPP_NUMBER` (international digits only, e.g. country code without a leading plus), `NEXT_PUBLIC_WECHAT_ID`, `NEXT_PUBLIC_WECHAT_QR_URL` (prefer a self-hosted image path), `NEXT_PUBLIC_PHONE`, and `NEXT_PUBLIC_CONTACT_EMAIL`. The WeChat QR and ID are shown only when configured; no contact identity is invented.
+The original default public contact details are WhatsApp `6287811887555`, phone `087811887555`, email `ocean.zenithgroup101@gmail.com`, and WeChat QR `/wechat-qr.svg`. Set `NEXT_PUBLIC_WHATSAPP_NUMBER`, `NEXT_PUBLIC_WECHAT_ID`, `NEXT_PUBLIC_WECHAT_QR_URL`, `NEXT_PUBLIC_PHONE`, and `NEXT_PUBLIC_CONTACT_EMAIL` in the hosting environment only when replacing a default with updated company contact details.
 
 Set `NEXT_PUBLIC_GA_MEASUREMENT_ID` to enable GA4. The analytics script is not loaded until a visitor accepts analytics cookies. Set `CONTENT_APPROVED=true` only after Legal and the human-reviewed locale content are ready.
