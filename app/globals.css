@@ -17108,3 +17108,60 @@ form input[type="button"] {
     filter: none !important;
   }
 }
+
+
+/* Final alignment + tap behavior for the mobile home-search date field.
+   Keep the date text and the single native calendar affordance on one
+   centered line, with enough room between them; 16px prevents iOS focus zoom. */
+@media screen and (max-width: 680px) {
+  .hero-with-search .home-rental-search-form .rental-search-field input[type="date"] {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    padding: 0 34px 0 9px !important;
+    margin: 0 !important;
+    font-family: inherit !important;
+    font-size: 16px !important;
+    line-height: 48px !important;
+    letter-spacing: 0 !important;
+    text-align: left !important;
+    vertical-align: middle !important;
+    background-image: none !important;
+    -webkit-appearance: auto !important;
+    appearance: auto !important;
+    color-scheme: dark !important;
+    touch-action: manipulation;
+  }
+
+  .hero-with-search .home-rental-search-form .rental-search-field input[type="date"]::-webkit-datetime-edit,
+  .hero-with-search .home-rental-search-form .rental-search-field input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+  .hero-with-search .home-rental-search-form .rental-search-field input[type="date"]::-webkit-date-and-time-value {
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: normal !important;
+    text-align: left !important;
+    min-width: 0 !important;
+  }
+
+  .hero-with-search .home-rental-search-form .rental-search-field input[type="date"]::-webkit-calendar-picker-indicator {
+    display: block !important;
+    position: relative !important;
+    flex: 0 0 18px !important;
+    width: 18px !important;
+    min-width: 18px !important;
+    max-width: 18px !important;
+    height: 18px !important;
+    margin: 0 0 0 6px !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    cursor: pointer !important;
+  }
+}
