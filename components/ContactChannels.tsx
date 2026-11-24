@@ -9,10 +9,10 @@ import {trackEvent} from "@/lib/analytics";
 export function ContactChannels({locale,itemTitle,serviceLine="vehicle-rental",primaryOnly=false}:{locale:Locale;itemTitle?:string;serviceLine?:string;primaryOnly?:boolean}){
  const path=usePathname();
  const wechatRef=useRef<HTMLDivElement>(null);
- const number=(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"").replace(/[^0-9]/g,"");
- const email=process.env.NEXT_PUBLIC_CONTACT_EMAIL||"";
+ const number=(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER||"6287811887555").replace(/[^0-9]/g,"");
+ const email=process.env.NEXT_PUBLIC_CONTACT_EMAIL||"ocean.zenithgroup101@gmail.com";
  const wechatId=process.env.NEXT_PUBLIC_WECHAT_ID||"";
- const qr=process.env.NEXT_PUBLIC_WECHAT_QR_URL||"";
+ const qr=process.env.NEXT_PUBLIC_WECHAT_QR_URL||"/wechat-qr.svg";
  const labels={
   id:{wa:"Tanya melalui WhatsApp",wechat:"Hubungi melalui WeChat",copy:"Salin ID WeChat",email:"Kirim email",missing:"Saluran kontak resmi akan ditampilkan setelah diverifikasi.",instruction:"Simpan kode QR atau salin ID WeChat untuk menghubungi tim kami.",form:"Isi formulir pertanyaan",qr:"Buka kode QR WeChat"},
   en:{wa:"Enquire on WhatsApp",wechat:"Contact us on WeChat",copy:"Copy WeChat ID",email:"Email our team",missing:"Official contact channels will appear here once verified.",instruction:"Save the QR code or copy the WeChat ID to contact our team.",form:"Use the enquiry form",qr:"Open WeChat QR code"},
