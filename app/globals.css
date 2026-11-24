@@ -15991,3 +15991,112 @@ form input[type="button"] {
     font-size: 8px !important;
   }
 }
+
+
+/* Mobile refinement: keep promotion pills aligned and the hero enquiry in one compact bar. */
+@media(max-width:680px){
+ .site-promotion-dock{
+  right:10px;
+  bottom:78px;
+  left:10px;
+  width:auto;
+  max-width:none;
+  align-items:stretch;
+  gap:7px;
+ }
+ .site-promotion-floating-chips{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  align-items:stretch;
+  gap:6px;
+  width:100%;
+ }
+ .site-promotion-float-chip{
+  display:flex;
+  justify-content:center;
+  min-width:0;
+  min-height:34px;
+  padding:6px 5px;
+  gap:5px;
+  overflow:hidden;
+  white-space:nowrap;
+  font-size:8px;
+  line-height:1.15;
+ }
+ .site-promotion-float-dot{width:5px;height:5px;flex-basis:5px}
+ .site-promotion-launcher{
+  align-self:flex-end;
+  min-height:36px;
+  padding:6px 11px;
+  gap:7px;
+ }
+ .site-promotion-launcher-copy{font-size:9px}
+ .site-promotion-launcher-arrow{display:none!important}
+ .hero-with-search .home-rental-search{
+  width:100%;
+  margin:0 0 17px!important;
+ }
+ .hero-with-search .home-rental-search-form{
+  padding:5px!important;
+  border-radius:7px;
+ }
+ .hero-with-search .home-rental-search-main{
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr) minmax(0,.9fr) auto;
+  align-items:stretch;
+  gap:4px;
+ }
+ .hero-with-search .home-rental-search-main>.rental-search-field:nth-child(2),
+ .hero-with-search .home-rental-search-main>.rental-search-field:nth-child(4),
+ .hero-with-search .home-rental-search-main>.rental-search-field:nth-child(6){
+  display:none!important;
+ }
+ .hero-with-search .home-rental-search-main>.rental-search-field:nth-child(1),
+ .hero-with-search .home-rental-search-main>.rental-search-field:nth-child(3),
+ .hero-with-search .home-rental-search-main>.rental-search-field:nth-child(5){
+  display:flex;
+  min-width:0;
+  min-height:46px;
+  padding:4px 5px;
+  gap:2px;
+  border-radius:5px;
+ }
+ .hero-with-search .rental-search-field>span{
+  overflow:hidden;
+  font-size:7px!important;
+  line-height:1.1;
+  text-overflow:ellipsis;
+ }
+ .hero-with-search .rental-search-field input{
+  display:block;
+  width:100%;
+  min-width:0;
+  padding:0;
+  font-size:9px!important;
+  line-height:1.2;
+ }
+ .hero-with-search .rental-search-submit{
+  grid-column:auto!important;
+  min-width:38px;
+  width:38px;
+  min-height:46px!important;
+  padding:0 5px;
+  gap:0;
+  overflow:hidden;
+  font-size:0!important;
+  border-radius:5px;
+ }
+ .hero-with-search .rental-search-submit>span{
+  font-size:20px;
+ }
+}
+@media(max-width:390px){
+ .site-promotion-dock{right:8px;left:8px}
+ .site-promotion-floating-chips{gap:4px}
+ .site-promotion-float-chip{padding:5px 3px;font-size:7px}
+ .hero-with-search .home-rental-search-main{
+  grid-template-columns:minmax(0,1.15fr) minmax(0,.9fr) minmax(0,.9fr) 34px;
+  gap:3px;
+ }
+ .hero-with-search .rental-search-submit{min-width:34px;width:34px}
+}
