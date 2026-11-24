@@ -17198,3 +17198,99 @@ form input[type="button"] {
     line-height: 48px !important;
   }
 }
+
+
+/* Final mobile form sizing for the three service subpages.
+   Keep every field, date control, checkbox group and textarea inside the
+   form card without changing desktop layout or visual styling. */
+@media screen and (max-width: 680px) {
+  .service-page .service-inquiry-form,
+  .service-page .service-inquiry-form .service-form-grid,
+  .service-page .service-inquiry-form .service-form-field,
+  .service-page .service-inquiry-form .service-form-wide,
+  .service-page .service-inquiry-form fieldset {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .service-page .service-inquiry-form .service-form-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    gap: 13px !important;
+  }
+
+  .service-page .service-inquiry-form label.service-form-field {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .service-page .service-inquiry-form .service-form-field > input:not([type="checkbox"]):not([type="radio"]),
+  .service-page .service-inquiry-form .service-form-field > select,
+  .service-page .service-inquiry-form .service-form-field > textarea,
+  .service-page .service-inquiry-form fieldset,
+  .service-page .service-inquiry-form .service-check-grid {
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .service-page .service-inquiry-form .service-form-field > input:not([type="checkbox"]):not([type="radio"]),
+  .service-page .service-inquiry-form .service-form-field > select {
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    padding-left: 10px !important;
+    padding-right: 38px !important;
+    font-size: 16px !important;
+  }
+
+  .service-page .service-inquiry-form .service-form-field > textarea {
+    min-height: 112px !important;
+    padding: 11px 10px !important;
+    font-size: 16px !important;
+    resize: vertical !important;
+  }
+
+  .service-page .service-inquiry-form .service-form-field > input[type="date"] {
+    padding-right: 34px !important;
+    background-image: none !important;
+    color-scheme: light !important;
+  }
+
+  .service-page .service-inquiry-form .service-form-field > input[type="date"]::-webkit-calendar-picker-indicator {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 20px !important;
+    min-width: 20px !important;
+    max-width: 20px !important;
+    height: 20px !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+  }
+
+  .service-page .service-inquiry-form .service-form-wide,
+  .service-page .service-inquiry-form .consent-row,
+  .service-page .service-inquiry-form .consent-check,
+  .service-page .service-inquiry-form .service-check-grid > label {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .service-page .service-inquiry-form button[type="submit"] {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
