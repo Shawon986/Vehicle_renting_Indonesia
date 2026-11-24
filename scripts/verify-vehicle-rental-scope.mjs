@@ -22,7 +22,7 @@ assert.match(homepage,/CONTENT_APPROVED==="true"/,"Homepage enquiry flow must fo
 assert.match(contactPage,/CONTENT_APPROVED==="true"/,"General enquiry page must follow content approval");
 assert.match(vehiclePage,/CONTENT_APPROVED==="true"/,"Vehicle enquiry page must follow content approval");
 for(const source of servicePages)assert.match(source,/CONTENT_APPROVED==="true"/,"Service enquiry pages must follow content approval");
-for(const source of [form,channels,sticky,generalForm,serviceForm])for(const fallback of ["6287811887555","087811887555","ocean.zenithgroup101@gmail.com","/wechat-qr.svg"])assert.equal(source.includes(fallback),false,"Unverified fallback contact details must not be exposed: "+fallback);
+for(const source of [form,channels,sticky,generalForm])for(const fallback of ["6287811887555","087811887555","ocean.zenithgroup101@gmail.com","/wechat-qr.svg"])assert.equal(source.includes(fallback),false,"Unverified fallback contact details must not be exposed: "+fallback);
 assert.equal([...homeSearch.matchAll(/<input name="pickupTime"/g)].length,1,"Homepage journey search must have a single pickup-time field");
 assert.equal([...homeSearch.matchAll(/<input name="returnTime"/g)].length,1,"Homepage journey search must have a single return-time field");
 
@@ -64,6 +64,7 @@ assert.equal(existsSync(new URL("../app/[locale]/availability",import.meta.url))
 for (const path of ["app/[locale]/services/tours-travel/page.tsx","app/[locale]/services/event-design/page.tsx","app/[locale]/services/gift-boxes/page.tsx","app/[locale]/services/page.tsx","components/ServiceLandingPage.tsx","components/ServiceEnquiryForm.tsx","app/api/service-inquiries/route.ts"]) assert.ok(existsSync(new URL("../"+path,import.meta.url)),`Missing service module: ${path}`);
 const serviceApi=read("app/api/service-inquiries/route.ts");
 const serviceForm=read("components/ServiceEnquiryForm.tsx");
+for(const fallback of ["6287811887555","087811887555","ocean.zenithgroup101@gmail.com","/wechat-qr.svg"])assert.equal(serviceForm.includes(fallback),false,"Service forms must not expose unverified contact defaults: "+fallback);
 const sheets=read("integrations/google-sheets/Code.gs");
 assert.match(serviceApi,/CONTENT_APPROVED!=="true"/,"Service enquiry API must enforce the content/legal approval gate");
 assert.match(serviceApi,/forwardToFormspree/,"Service enquiries must be forwarded to the shared Formspree inbox");
