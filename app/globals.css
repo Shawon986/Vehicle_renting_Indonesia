@@ -16093,7 +16093,21 @@ form input[type="button"] {
 @media(max-width:390px){
  .site-promotion-dock{right:8px;left:8px}
  .site-promotion-floating-chips{gap:4px}
- .site-promotion-float-chip{padding:5px 3px;font-size:7px}
+ .site-promotion-float-chip{
+  display:flex;
+  justify-content:center;
+  min-width:0;
+  width:fit-content;
+  max-width:100%;
+  min-height:30px;
+  justify-self:center;
+  padding:5px 7px;
+  gap:4px;
+  overflow:hidden;
+  white-space:nowrap;
+  font-size:7px;
+  line-height:1.15;
+ }
  .hero-with-search .home-rental-search-main{
   grid-template-columns:minmax(0,1.15fr) minmax(0,.9fr) minmax(0,.9fr) 34px;
   gap:3px;
