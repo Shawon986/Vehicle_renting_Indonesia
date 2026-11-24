@@ -56,7 +56,7 @@ assert.match(api,/\["email",\.\.\.\(\(process\.env\.NEXT_PUBLIC_WHATSAPP_NUMBER\
 assert.match(formspree,/https:\/\/formspree\.io\/f\/xqpqlryl/,"Shared Formspree endpoint must be configured");
 assert.match(formspree,/method:\s*"POST"/,"Formspree handoff must use POST");
 assert.match(formspree,/Accept:\s*"application\/json"/,"Formspree handoff must request JSON responses");
-assert.match(formspree,/Content-Type:\s*"application\/x-www-form-urlencoded"/,"Formspree handoff must send encoded form fields");
+assert.match(formspree,/"Content-Type":\s*"application\/x-www-form-urlencoded"/,"Formspree handoff must send encoded form fields");
 assert.match(api,/if\(!sent\)return NextResponse\.json\(\{error:"Enquiry delivery failed"\},\{status:502\}\)/,"Vehicle API must report Formspree delivery failures");
 
 assert.match(form,/enabled=true/,"Vehicle enquiry form must be enabled by default");
