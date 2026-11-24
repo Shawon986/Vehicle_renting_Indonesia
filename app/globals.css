@@ -16327,3 +16327,17 @@ form input[type="button"] {
     box-shadow: 0 9px 24px rgba(13, 27, 19, .16) !important;
   }
 }
+
+
+/* Definitive desktop override: never dim or fade the promotion chips when scrolling stops. */
+@media screen and (min-width: 681px) {
+  .site-promotion-dock .site-promotion-floating-chips,
+  .site-promotion-dock:not(.is-scrolling) .site-promotion-floating-chips,
+  .site-promotion-dock.is-scrolling .site-promotion-floating-chips,
+  .site-promotion-dock .site-promotion-float-chip {
+    opacity: 1 !important;
+    filter: none !important;
+    visibility: visible !important;
+    transition: none !important;
+  }
+}
