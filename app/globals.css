@@ -16518,3 +16518,39 @@ form input[type="button"] {
     padding-right: 10px !important;
   }
 }
+
+ 
+/* Mobile form selects: hide the browser's tiny native chevron and use one
+   consistent, larger custom chevron on every form dropdown. */
+@media (max-width: 680px) {
+  form select,
+  form select:focus,
+  form select:focus-visible {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='m6 9 6 6 6-6' stroke='%2337473D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 13px center !important;
+    background-size: 20px 20px !important;
+    padding-right: 44px !important;
+  }
+
+  /* Correct the fleet filter panel's mobile inset and vertical rhythm. */
+  .vehicle-collection .vehicle-filter-panel,
+  .locale-zh .vehicle-collection-zh .vehicle-filter-panel {
+    box-sizing: border-box !important;
+    padding: 12px 0 14px !important;
+    margin: 0 0 18px !important;
+  }
+  .vehicle-collection .vehicle-filter-heading,
+  .locale-zh .vehicle-collection-zh .vehicle-filter-heading {
+    margin: 0 0 11px !important;
+    padding: 0 !important;
+  }
+  .vehicle-collection .vehicle-filters,
+  .locale-zh .vehicle-collection-zh .vehicle-filters {
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 10px !important;
+  }
+}
