@@ -17766,3 +17766,46 @@ form input[type="button"] {
     max-width: 100% !important;
   }
 }
+
+/* Mobile form overflow containment: constrain the form itself and every nested layout item. */
+@media screen and (max-width: 680px) {
+  /* The form element can itself be a flex/grid item with an intrinsic width. */
+  form {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Also shrink every nested wrapper, not only the input and known field classes. */
+  form *,
+  form *::before,
+  form *::after {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  form :is(input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="submit"]):not([type="button"]), select, textarea) {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin-inline: 0 !important;
+  }
+
+  form :is(input[type="date"], input[type="time"], input[type="datetime-local"], input[type="month"], input[type="week"]) {
+    width: 100% !important;
+    inline-size: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    flex: 1 1 0% !important;
+  }
+
+  /* Prevent grid/flex field rows and their children from retaining intrinsic widths. */
+  form :is([class*="grid"], [class*="row"], [class*="field"], [class*="group"]) {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}
