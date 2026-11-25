@@ -15,6 +15,7 @@ const securityPolicy=[
  ...(process.env.VERCEL_ENV==="production"?["upgrade-insecure-requests"]:[])
 ].join("; ");
 const nextConfig:NextConfig={
+ allowedDevOrigins: process.env.NODE_ENV === "development" ? ["192.168.0.19"] : [],
  poweredByHeader:false,
  images:{remotePatterns:[{protocol:"https",hostname:"images.unsplash.com"},{protocol:"https",hostname:"commons.wikimedia.org"},{protocol:"https",hostname:"upload.wikimedia.org"},{protocol:"https",hostname:"img.autofun.co.id"},{protocol:"https",hostname:"astradigitaldigiroomprd.blob.core.windows.net"},{protocol:"https",hostname:"astradigitaldigiroomuat.blob.core.windows.net"},{protocol:"https",hostname:"karyapratamatravelindo.com"},{protocol:"https",hostname:"www.toyotaintercom.com"},{protocol:"https",hostname:"photo.znews.vn"},{protocol:"https",hostname:"www.static-src.com"},{protocol:"https",hostname:"media.auto5.vn"},{protocol:"https",hostname:"www.kliktoyotabekasi.com"},{protocol:"https",hostname:"www.toyota.co.kr"},{protocol:"https",hostname:"www.toyota.co.th"},{protocol:"https",hostname:"melalibalitransport.com"}]},
  async headers(){
