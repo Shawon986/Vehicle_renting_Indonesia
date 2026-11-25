@@ -17609,3 +17609,65 @@ form input[type="button"] {
     max-width: 100% !important;
   }
 }
+
+/* Root-cause mobile form fix: prevent date/time controls from forcing
+   intrinsic min-content widths into their grid tracks or field labels.
+   Keep all existing desktop styles and native picker behavior unchanged. */
+@media screen and (max-width: 680px) {
+  .inquiry-form,
+  .inquiry-form .form-grid,
+  .inquiry-form .service-form-grid,
+  .home-rental-search-form,
+  .home-rental-search-form .home-rental-search-main {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .inquiry-form .form-grid,
+  .inquiry-form .service-form-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-columns: minmax(0, 1fr) !important;
+  }
+
+  .inquiry-form .form-grid > *,
+  .inquiry-form .service-form-grid > *,
+  .inquiry-form .form-grid > label,
+  .inquiry-form .service-form-grid > label,
+  .home-rental-search-form .home-rental-search-main > .rental-search-field {
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  form input[type="date"],
+  form input[type="time"],
+  form input[type="datetime-local"],
+  form input[type="month"],
+  form input[type="week"] {
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-inline-size: 0 !important;
+    max-width: 100% !important;
+    max-inline-size: 100% !important;
+    flex: 0 1 auto !important;
+    align-self: stretch !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .home-rental-search-form .home-rental-search-main > .rental-search-field > input[type="date"],
+  .home-rental-search-form .home-rental-search-main > .rental-search-field > input[type="time"] {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    flex: 0 1 auto !important;
+  }
+}
