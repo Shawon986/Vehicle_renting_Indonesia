@@ -18035,3 +18035,31 @@ form input[type="button"] {
     max-width: 100% !important;
   }
 }
+
+/* Final alignment correction: inset mobile date/time controls to the same content edge as sibling fields. */
+@media screen and (max-width: 680px) {
+  /* Reserve the same tiny inner gutter used by the other form controls.
+     This avoids native date/time input borders sitting underneath the card edge
+     on iOS while leaving the field wrapper and every desktop rule unchanged. */
+  form input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"]) {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: calc(100% - 2px) !important;
+    inline-size: calc(100% - 2px) !important;
+    min-width: 0 !important;
+    min-inline-size: 0 !important;
+    max-width: calc(100% - 2px) !important;
+    max-inline-size: calc(100% - 2px) !important;
+    flex: 0 1 calc(100% - 2px) !important;
+    align-self: flex-start !important;
+    margin-inline: 0 !important;
+  }
+
+  form label:has(> input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"])),
+  form .rental-search-field:has(> input:is([type="date"], [type="time"], [type="datetime-local"])) {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+}
