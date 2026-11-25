@@ -17671,3 +17671,98 @@ form input[type="button"] {
     flex: 0 1 auto !important;
   }
 }
+
+/* Final mobile date/time field sizing override — keep native picker controls within their form columns. */
+@media screen and (max-width: 680px) {
+  /* Keep the form column and the field containing a native date/time input shrinkable. */
+  form,
+  form :is(.form-grid, .service-form-grid, .form-row, .form-fields) {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  form :is(.form-grid, .service-form-grid, .form-row, .form-fields) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  form :is(label, .form-field, .service-form-field, .form-group, .field-group):has(> input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"])) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  form input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"]) {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    inline-size: 100% !important;
+    min-width: 0 !important;
+    min-inline-size: 0 !important;
+    max-width: 100% !important;
+    max-inline-size: 100% !important;
+    flex: 0 1 100% !important;
+    align-self: stretch !important;
+    margin: 0 !important;
+    padding: 0 10px !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    font-size: 16px !important;
+    line-height: normal !important;
+    letter-spacing: normal !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    background-image: none !important;
+    -webkit-appearance: auto !important;
+    appearance: auto !important;
+  }
+
+  form input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"])::-webkit-date-and-time-value {
+    display: inline-flex !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+
+  form input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"])::-webkit-datetime-edit,
+  form input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"])::-webkit-datetime-edit-fields-wrapper {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  form input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"])::-webkit-calendar-picker-indicator {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    flex: 0 0 18px !important;
+    width: 18px !important;
+    min-width: 18px !important;
+    max-width: 18px !important;
+    height: 18px !important;
+    margin: 0 0 0 6px !important;
+    padding: 0 !important;
+    pointer-events: auto !important;
+  }
+
+  .home-rental-search-form .rental-search-field {
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .home-rental-search-form .rental-search-field > input:is([type="date"], [type="time"], [type="datetime-local"]) {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}
