@@ -17610,98 +17610,19 @@ form input[type="button"] {
   }
 }
 
-/* Root-cause mobile form fix: prevent date/time controls from forcing
-   intrinsic min-content widths into their grid tracks or field labels.
-   Keep all existing desktop styles and native picker behavior unchanged. */
+
+/* Narrow mobile fix: only date/time field wrappers and controls are changed.
+   Checkbox rows, one-way options and all other controls retain their existing styles. */
 @media screen and (max-width: 680px) {
-  .inquiry-form,
-  .inquiry-form .form-grid,
-  .inquiry-form .service-form-grid,
-  .home-rental-search-form,
-  .home-rental-search-form .home-rental-search-main {
-    box-sizing: border-box !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-  }
-
-  .inquiry-form .form-grid,
-  .inquiry-form .service-form-grid {
-    grid-template-columns: minmax(0, 1fr) !important;
-    grid-auto-columns: minmax(0, 1fr) !important;
-  }
-
-  .inquiry-form .form-grid > *,
-  .inquiry-form .service-form-grid > *,
-  .inquiry-form .form-grid > label,
-  .inquiry-form .service-form-grid > label,
-  .home-rental-search-form .home-rental-search-main > .rental-search-field {
-    box-sizing: border-box !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-  }
-
-  form input[type="date"],
-  form input[type="time"],
-  form input[type="datetime-local"],
-  form input[type="month"],
-  form input[type="week"] {
-    box-sizing: border-box !important;
-    display: block !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    min-inline-size: 0 !important;
-    max-width: 100% !important;
-    max-inline-size: 100% !important;
-    flex: 0 1 auto !important;
-    align-self: stretch !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  .home-rental-search-form .home-rental-search-main > .rental-search-field > input[type="date"],
-  .home-rental-search-form .home-rental-search-main > .rental-search-field > input[type="time"] {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    flex: 0 1 auto !important;
-  }
-}
-
-
-/* Unified mobile form sizing for native date and time controls.
-   Use the form's actual content column and preserve the browser's native picker UI. */
-@media screen and (max-width: 680px) {
-  .inquiry-form,
-  .service-inquiry-form {
-    display: block !important;
-    box-sizing: border-box !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-  }
-
-  .inquiry-form .form-grid,
-  .inquiry-form .service-form-grid,
-  .service-inquiry-form .form-grid,
-  .service-inquiry-form .service-form-grid {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    grid-auto-columns: minmax(0, 1fr) !important;
-    box-sizing: border-box !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-  }
-
-  .inquiry-form .form-grid > label,
-  .inquiry-form .service-form-grid > label,
-  .service-inquiry-form .form-grid > label,
-  .service-inquiry-form .service-form-grid > label {
+  form:not(.home-rental-search-form) .form-grid > label:has(> input[type="date"]),
+  form:not(.home-rental-search-form) .form-grid > label:has(> input[type="time"]),
+  form:not(.home-rental-search-form) .form-grid > label:has(> input[type="datetime-local"]),
+  form:not(.home-rental-search-form) .service-form-grid > label:has(> input[type="date"]),
+  form:not(.home-rental-search-form) .service-form-grid > label:has(> input[type="time"]),
+  form:not(.home-rental-search-form) .service-form-grid > label:has(> input[type="datetime-local"]),
+  form:not(.home-rental-search-form) label.service-form-field:has(> input[type="date"]),
+  form:not(.home-rental-search-form) label.service-form-field:has(> input[type="time"]),
+  form:not(.home-rental-search-form) label.vehicle-form-date-field {
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
@@ -17711,27 +17632,8 @@ form input[type="button"] {
     max-width: 100% !important;
   }
 
-  .inquiry-form .form-grid > label > input,
-  .inquiry-form .form-grid > label > select,
-  .inquiry-form .service-form-grid > label > input,
-  .inquiry-form .service-form-grid > label > select,
-  .service-inquiry-form .form-grid > label > input,
-  .service-inquiry-form .form-grid > label > select,
-  .service-inquiry-form .service-form-grid > label > input,
-  .service-inquiry-form .service-form-grid > label > select {
+  form:not(.home-rental-search-form) input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"]) {
     display: block !important;
-    box-sizing: border-box !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    flex: 0 1 auto !important;
-    align-self: stretch !important;
-  }
-
-  .inquiry-form input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"]),
-  .service-inquiry-form input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"]) {
-    display: block !important;
-    position: static !important;
     box-sizing: border-box !important;
     width: 100% !important;
     inline-size: 100% !important;
@@ -17741,71 +17643,43 @@ form input[type="button"] {
     max-inline-size: 100% !important;
     flex: 0 1 auto !important;
     align-self: stretch !important;
-    height: 48px !important;
-    min-height: 48px !important;
-    max-height: 48px !important;
     margin: 0 !important;
-    padding: 0 12px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
     font-size: 16px !important;
-    line-height: normal !important;
-    color-scheme: light !important;
     -webkit-appearance: auto !important;
     appearance: auto !important;
-    background-image: none !important;
+    color-scheme: light !important;
   }
 
-  /* Do not hide or replace iOS/Chrome's native calendar and clock affordances. */
-  .inquiry-form input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"])::-webkit-calendar-picker-indicator,
-  .service-inquiry-form input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"])::-webkit-calendar-picker-indicator {
-    display: block !important;
+  form:not(.home-rental-search-form) input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"])::-webkit-calendar-picker-indicator {
+    display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    position: static !important;
-    width: auto !important;
-    min-width: 18px !important;
-    max-width: none !important;
-    height: auto !important;
-    margin: 0 !important;
+    width: 20px !important;
+    min-width: 20px !important;
+    max-width: 20px !important;
+    height: 20px !important;
+    margin: 0 0 0 6px !important;
     padding: 0 !important;
     pointer-events: auto !important;
   }
 
-  /* Homepage rental search has a separate compact two-column layout. */
-  .home-rental-search-form,
-  .home-rental-search-main,
-  .home-rental-search-main .rental-search-field {
+  /* Keep the home search's existing two-row layout; only size its date/time controls. */
+  .home-rental-search-form .home-rental-search-main > .rental-search-field:has(> input:is([type="date"], [type="time"], [type="datetime-local"])) {
     box-sizing: border-box !important;
     min-width: 0 !important;
     max-width: 100% !important;
   }
 
-  .home-rental-search-main .rental-search-field {
-    width: 100% !important;
-  }
-
-  .home-rental-search-main .rental-search-field > input:is([type="date"], [type="time"], [type="datetime-local"]) {
+  .home-rental-search-form .home-rental-search-main > .rental-search-field > input:is([type="date"], [type="time"], [type="datetime-local"]) {
     display: block !important;
     box-sizing: border-box !important;
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
     font-size: 16px !important;
-    color-scheme: light !important;
     -webkit-appearance: auto !important;
     appearance: auto !important;
-    background-image: none !important;
-  }
-
-  .home-rental-search-main .rental-search-field > input:is([type="date"], [type="time"], [type="datetime-local"])::-webkit-calendar-picker-indicator {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: static !important;
-    width: auto !important;
-    min-width: 18px !important;
-    max-width: none !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
   }
 }
