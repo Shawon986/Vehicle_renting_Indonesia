@@ -87,6 +87,11 @@ export function ServiceLandingPage({locale,service}:{locale:Locale;service:Servi
    {name:locale==="zh"?"文具礼盒":locale==="id"?"Gift Box Stationery":"Stationery Gift Box",description:locale==="zh"?"为创意、书写与日常灵感准备的礼盒。":locale==="id"?"Pilihan hadiah untuk kreativitas, menulis, dan inspirasi sehari-hari.":"A considered gift for creativity, writing and everyday inspiration.",src:"/gift-box-photos/stationery-gift-box.jpg"}
   ]
  }:null;
+ const giftPackageImages=[
+  {src:"https://basketeer.com/cdn/shop/files/Healthy-Fresh-Fruit-Basket-Bangkok-Delivery-FRB26-0053-1.jpg?v=1773915887&width=1445",alt:locale==="zh"?"经典藤编篮装满新鲜水果与鲜花":locale==="id"?"Hampers klasik berisi buah segar dan bunga dalam keranjang anyaman":"Classic woven hamper with fresh mixed fruit and flowers"},
+  {src:"https://basketeer.com/cdn/shop/files/flower-fruit-basket-with-melon-grapes-and-apples-fbb21-079.png?v=1781862756&width=1946",alt:locale==="zh"?"中号优雅水果花篮，搭配更多精选水果":locale==="id"?"Keranjang elegan ukuran sedang dengan pilihan buah dan bunga yang lebih beragam":"Elegant medium fruit basket with a wider selection of fruit and flowers"},
+  {src:"https://lebliss.co.id/cdn/shop/files/Fruit_and_flower_arrangement_in_a_decorative_box_with_a_bottle_of_champagne._Fruit_hamper_with_flowers_and_a_bottle_of_champagne_on_a_light_background._Fruit_basket_with_flowers_and_a_bottle_of_champagne_on_a_light_surface._Bottega_Grand_Round_F.jpg?v=1761049510&width=1946",alt:locale==="zh"?"高级水果鲜花礼盒，搭配一瓶饮品":locale==="id"?"Hampers premium berisi buah, bunga, dan sebotol minuman":"Premium fruit and flower arrangement with a beverage bottle"}
+ ];
  const giftCatalog=service==="gift-boxes"?{
   heading:locale==="zh"?"水果礼盒系列":locale==="id"?"Pilihan Hampers Buah & Bunga":"Fruit & Flower Gift Collection",
   intro:locale==="zh"?"三种礼盒规格，适合个人赠礼、庆祝时刻及商务心意。":locale==="id"?"Tiga pilihan hampers untuk hadiah personal, perayaan, dan momen bisnis.":"Three hamper options for personal gifting, celebrations and business occasions.",
