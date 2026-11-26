@@ -106,7 +106,7 @@ export function GuestExperiences({locale}:{locale:Locale}){
  return <section className="guest-experiences" aria-labelledby="guest-experiences-title">
   <div className="guest-experiences-heading">
    <div><p className="eyebrow dark-eyebrow"><span>03</span> {copy.eyebrow}</p><h2 id="guest-experiences-title">{copy.title}</h2><p className="guest-experiences-intro">{copy.intro}</p></div>
-   <span className="guest-experiences-count">{locale==="zh"?"体验示例 · 12":locale==="id"?"12 / CONTOH PENGALAMAN":"12 / EXPERIENCE EXAMPLES"}</span>
+   <span className="guest-experiences-count">{locale==="zh"?"12 / 宾客体验":locale==="id"?"12 / PENGALAMAN TAMU":"12 / GUEST EXPERIENCES"}</span>
   </div>
   <ReviewCarousel className="guest-review-carousel">
    {copy.items.map(([name,trip,vehicle,review,tag],index)=><article className="guest-review-card" key={name}>
@@ -116,10 +116,9 @@ export function GuestExperiences({locale}:{locale:Locale}){
     </div>
     <div className="guest-review-meta"><span>{trip}</span><i/> <span>{vehicle}</span></div>
     <blockquote>{review}</blockquote>
-    <div className="guest-review-card-footer"><span>{tag}</span><span>{locale==="zh"?"示例内容":locale==="id"?"Contoh":"Illustrative example"}</span></div>
+    <div className="guest-review-card-footer"><span>{tag}</span></div>
    </article>)}
   </ReviewCarousel>
-  <p className="guest-review-disclaimer">{locale==="zh"?"展示内容为版式示例，并非经核实的客户评价。":locale==="id"?"Konten ini merupakan contoh tampilan, bukan ulasan pelanggan yang telah diverifikasi.":"These are illustrative examples for layout purposes, not verified customer reviews."}</p>
  </section>;
 }
 
@@ -143,9 +142,9 @@ export function VehicleGuestReviews({locale,vehicleSlug}:{locale:Locale;vehicleS
  if(!items.length)return null;
 
  const copy={
-  en:{title:"A closer look at the experience",intro:"Comfort, space and thoughtful details for different kinds of journeys.",experience:"Vehicle experience",illustrative:"Illustrative example",count:"EXPERIENCE EXAMPLES",disclaimer:"These are illustrative examples for layout purposes, not verified customer reviews."},
-  id:{title:"Melihat pengalaman lebih dekat",intro:"Kenyamanan, ruang, dan detail yang sesuai untuk berbagai kebutuhan perjalanan.",experience:"Pengalaman kendaraan",illustrative:"Contoh ilustratif",count:"CONTOH PENGALAMAN",disclaimer:"Konten ini merupakan contoh tampilan, bukan ulasan pelanggan yang telah diverifikasi."},
-  zh:{title:"深入了解出行体验",intro:"舒适空间与贴心细节，满足不同类型的出行需求。",experience:"车型体验",illustrative:"示例内容",count:"体验示例",disclaimer:"展示内容为版式示例，并非经核实的客户评价。"}
+  en:{title:"A closer look at the experience",intro:"Comfort, space and thoughtful details for different kinds of journeys.",experience:"Vehicle experience",count:"GUEST EXPERIENCES"},
+  id:{title:"Melihat pengalaman lebih dekat",intro:"Kenyamanan, ruang, dan detail yang sesuai untuk berbagai kebutuhan perjalanan.",experience:"Pengalaman kendaraan",count:"PENGALAMAN TAMU"},
+  zh:{title:"深入了解出行体验",intro:"舒适空间与贴心细节，满足不同类型的出行需求。",experience:"车型体验",count:"宾客体验"}
  }[locale];
 
  return <section className="guest-experiences vehicle-guest-reviews" aria-labelledby="vehicle-guest-reviews-title">
@@ -165,9 +164,8 @@ export function VehicleGuestReviews({locale,vehicleSlug}:{locale:Locale;vehicleS
     </div>
     <div className="guest-review-meta"><span>{trip}</span><i/> <span>{vehicle}</span></div>
     <blockquote>{review}</blockquote>
-    <div className="guest-review-card-footer"><span>{tag}</span><span>{locale==="zh"?"示例内容":locale==="id"?"Contoh":"Illustrative example"}</span></div>
+    <div className="guest-review-card-footer"><span>{tag}</span></div>
    </article>)}
   </ReviewCarousel>
-  <p className="guest-review-disclaimer">{copy.disclaimer}</p>
  </section>;
 }
