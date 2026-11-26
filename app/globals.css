@@ -17752,3 +17752,6 @@ form input[type="button"] {
   .gift-showcase-grid .gift-package-card-content{padding:12px 10px 14px}
   .gift-showcase-grid .gift-package-card-content h3{font-size:16px}
 }
+
+/* Keep the fifth gift showcase card in place; adjust only its image crop. */
+.gift-showcase-grid .gift-showcase-card:nth-child(5) .gift-package-photo img{object-position:center 68%;}
