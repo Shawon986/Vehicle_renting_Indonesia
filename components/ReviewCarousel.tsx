@@ -21,7 +21,7 @@ export function ReviewCarousel({children,className=""}:ReviewCarouselProps){
    <div className="review-carousel-track">{slides.map((slide,index)=><div className="review-carousel-slide" key={index}>{slide}</div>)}</div>
   </div>
   <div className="review-carousel-controls">
-   <span className="review-carousel-position">{String(slides.length).padStart(2,"0")} <i/> {slides.length} {className.includes("guest-review")?"EXAMPLES":"REVIEWS"}</span>
+   <span className="review-carousel-position">{String(slides.length).padStart(2,"0")} <i/> {slides.length} "REVIEWS"</span>
    <div className="review-carousel-arrows">
     <button type="button" onClick={()=>move(-1)} aria-label="Previous reviews"><span className="review-arrow-icon review-arrow-previous" aria-hidden="true"/></button>
     <button type="button" onClick={()=>move(1)} aria-label="Next reviews"><span className="review-arrow-icon review-arrow-next" aria-hidden="true"/></button>
