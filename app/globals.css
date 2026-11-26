@@ -17754,4 +17754,4 @@ form input[type="button"] {
 }
 
 /* Keep the fifth gift showcase card in place; adjust only its image crop. */
-.gift-showcase-grid .gift-showcase-card:nth-child(5) .gift-package-photo img{object-position:center 68%;}
+.gift-showcase-grid .gift-showcase-card:nth-child(5) .gift-package-photo img{object-position:center 84%;}
