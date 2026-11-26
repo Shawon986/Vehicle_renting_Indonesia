@@ -1,0 +1,123 @@
+:root{
+  --ink:#17241F;
+  --forest:#1D3028;
+  --cream:#F3F0E8;
+  --paper:#E9E5DB;
+  --lime:#C5D66B;
+  --ocean-accent:#B64B3D;
+  --ocean-blue:#E9E5DB;
+}
+::selection{background:#C5D66B;color:#17241F}
+body{background:var(--cream);color:var(--ink)}
+.site-header{background:rgba(245,247,245,.94);backdrop-filter:blur(18px);border-bottom-color:rgba(23,42,40,.1)}
+.topline,.announcement{background:#1D3028}
+.header-cta{border-radius:999px;border-color:rgba(23,42,40,.34)}
+.header-cta:hover{background:#1D3028;color:#fff}
+.button{border-radius:999px;font-weight:700;letter-spacing:.025em}
+.button-dark{background:#1D3028;color:#fff}
+.button-dark:hover{background:#263A32;color:#fff}
+.button-light{background:#F3F0E8;color:#17241F}
+.button-light:hover{background:#C5D66B;color:#17241F}
+.intro-section,.fleet-section,.home-services-section,.home-journal-section,.contact-section{position:relative}
+.fleet-section{background:linear-gradient(145deg,#E9E5DB 0%,#E6E8DC 52%,#F3F0E8 100%)}
+.vehicle-image-wrap,.service-direction-art,.home-service-card,.vehicle-gallery-stage,.detail-photo{border-radius:18px;overflow:hidden}
+.vehicle-image-wrap{box-shadow:0 14px 38px rgba(23,42,40,.11)}
+.vehicle-info h3,.vehicle-card h3{color:#17241F}
+.filter-chip{border-radius:999px}
+.filter-chip.active{background:#1D3028;color:#fff;box-shadow:0 5px 15px rgba(23,60,54,.2)}
+.vehicle-filter-panel,.vehicle-compare-panel{border-radius:18px;border:1px solid rgba(23,60,54,.12);background:rgba(255,255,255,.66);padding:22px}
+.vehicle-filter-control input,.vehicle-filter-control select{border-radius:10px;border-color:rgba(23,42,40,.18);background:#fff}
+.vehicle-compare-primary{border-radius:999px;background:#1D3028;color:white}
+.vehicle-compare-selected button{border-radius:999px}
+.vehicle-card{background:rgba(255,255,255,.66);border:1px solid rgba(23,60,54,.1);border-radius:20px;padding:12px;box-shadow:0 12px 35px rgba(23,42,40,.06);transition:transform .28s ease,box-shadow .28s ease}
+.vehicle-card:hover{transform:translateY(-5px);box-shadow:0 22px 45px rgba(23,42,40,.12)}
+.vehicle-card .vehicle-image-wrap{border-radius:13px}
+.vehicle-info{padding:18px 8px 8px}
+.vehicle-card-facts{background:#E6E8DC;border-radius:12px;padding:12px}
+.view-details-button{border-radius:999px;background:#E6E8DC;padding:12px 16px;color:#1D3028}
+.vehicle-card-pricing{border-top-color:rgba(23,60,54,.13)}
+.trust-principles{background:linear-gradient(135deg,#D8DFD4,#F3F0E8)}
+.trust-principle{border-radius:16px}
+.trust-principle-number,.principle-no{color:#D6A53E}
+.home-service-card{border:1px solid rgba(23,60,54,.12);box-shadow:0 14px 35px rgba(23,42,40,.08)}
+.home-service-card:hover{transform:translateY(-5px);box-shadow:0 20px 42px rgba(23,42,40,.13)}
+.service-page .service-hero{background:#1D3028}
+.service-page .service-hero:after{background:linear-gradient(110deg,rgba(16,43,37,.9),rgba(16,43,37,.3))}
+.detail-specs{background:#E9E5DB;border-radius:18px;padding:24px}
+.detail-specs>div{border-color:rgba(23,60,54,.15)}
+.vehicle-gallery-thumbs button{border-radius:9px;overflow:hidden}
+.vehicle-gallery-trigger{border-radius:18px;overflow:hidden}
+.vehicle-lightbox{background:rgba(7,25,32,.96)}
+.vehicle-inclusion-table-wrap,.vehicle-guidance,.vehicle-detail-lower>div{border-radius:16px}
+.service-form-section{background:linear-gradient(135deg,#E9E5DB,#F3F0E8)}
+.service-form-editorial{border-radius:18px;overflow:hidden}
+.service-form-field input,.service-form-field select,.service-form-field textarea{border-radius:10px}
+.site-footer{background:#17241F}
+.footer-whatsapp{border-radius:999px}
+.journey-purpose-section{padding:108px 10.4%;background:linear-gradient(145deg,#D8DFD4 0%,#E9E5DB 55%,#F3F0E8 100%);position:relative;overflow:hidden}
+.journey-purpose-heading{display:grid;grid-template-columns:1.1fr .7fr;gap:8%;align-items:end;margin-bottom:44px}
+.journey-purpose-heading h2,.rental-guide-heading h2,.related-vehicle-heading h2{font-size:clamp(38px,4.7vw,64px);line-height:1.02;letter-spacing:-.065em;font-weight:500;margin:0;max-width:720px}
+.journey-purpose-heading>p{font-size:13px;line-height:1.9;color:#778078;max-width:420px;margin:0 0 4px}
+.journey-purpose-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.journey-purpose-card{min-height:250px;position:relative;overflow:hidden;padding:24px 22px;border-radius:18px;background:linear-gradient(145deg,#1D3028,#263A32);color:#F3F0E8;box-shadow:0 16px 36px rgba(23,60,54,.13)}
+.journey-purpose-card-2{background:linear-gradient(145deg,#344B3F,#778078)}
+.journey-purpose-card-3{background:linear-gradient(145deg,#536058,#9BAD4F)}
+.journey-purpose-card-4{background:linear-gradient(145deg,#8A3F2E,#B64B3D)}
+.journey-purpose-number{position:relative;z-index:1;font-size:10px;letter-spacing:.18em;color:#D6A53E}
+.journey-purpose-orbit{position:absolute;right:-32px;top:28px;width:126px;height:126px;border:1px solid rgba(255,255,255,.25);border-radius:50%}
+.journey-purpose-orbit:before,.journey-purpose-orbit:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.18);border-radius:50%;inset:14px}
+.journey-purpose-orbit:after{inset:29px}
+.journey-purpose-card h3{position:relative;z-index:1;font-size:21px;line-height:1.2;letter-spacing:-.04em;margin:78px 0 10px;max-width:230px}
+.journey-purpose-card p{position:relative;z-index:1;color:rgba(255,255,255,.78);font-size:11px;line-height:1.8;margin:0;max-width:250px}
+.journey-purpose-cta{margin-top:28px}
+.rental-guide-section{padding:110px 10.4%;display:grid;grid-template-columns:.75fr 1.25fr;gap:10%;background:#F3F0E8}
+.rental-guide-heading>p:last-child{font-size:13px;line-height:1.9;color:#778078;max-width:330px;margin-top:20px}
+.rental-guide-list{border-top:1px solid rgba(23,42,40,.17)}
+.rental-guide-item{border-bottom:1px solid rgba(23,42,40,.17);padding:0}
+.rental-guide-item summary{display:grid;grid-template-columns:42px minmax(0,1fr) 24px;gap:14px;align-items:center;list-style:none;cursor:pointer;padding:22px 0;font-size:15px;font-weight:650;color:#17241F}
+.rental-guide-item summary::-webkit-details-marker{display:none}
+.rental-guide-index{font-size:9px;letter-spacing:.12em;color:#D6A53E}
+.rental-guide-item summary i{width:20px;height:20px;border:1px solid rgba(23,60,54,.3);border-radius:50%;position:relative}
+.rental-guide-item summary i:before,.rental-guide-item summary i:after{content:"";position:absolute;background:#D6A53E;left:5px;right:5px;top:9px;height:1px}
+.rental-guide-item summary i:after{transform:rotate(90deg);transition:transform .2s}
+.rental-guide-item[open] summary i:after{transform:rotate(0)}
+.rental-guide-item>p{margin:0 38px 22px 56px;color:#778078;font-size:12px;line-height:1.9;max-width:620px}
+.rental-guide-section>.text-link{grid-column:2;justify-self:start;margin-top:8px}
+.related-vehicle-section{padding:92px 10.4%;background:#D8DFD4}
+.related-vehicle-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:34px}
+.related-vehicle-heading>span{font-size:8px;letter-spacing:.18em;color:#778078}
+.related-vehicle-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.related-vehicle-card{border:1px solid rgba(23,60,54,.1);border-radius:17px;background:#fff;padding:10px;box-shadow:0 12px 30px rgba(23,42,40,.06)}
+.related-vehicle-image{height:190px;display:block;position:relative;overflow:hidden;border-radius:11px;background:#E9E5DB}
+.related-vehicle-image img{object-fit:cover;transition:transform .7s ease}
+.related-vehicle-card:hover .related-vehicle-image img{transform:scale(1.05)}
+.related-vehicle-image>span{position:absolute;top:12px;left:12px;color:#fff;background:rgba(16,43,37,.72);border-radius:30px;padding:6px 9px;font-size:9px}
+.related-vehicle-copy{padding:15px 8px 9px}
+.related-vehicle-copy>p{font-size:9px;letter-spacing:.1em;color:#778078;text-transform:uppercase;margin:0 0 7px}
+.related-vehicle-copy h3{font-size:20px;letter-spacing:-.04em;margin:0 0 15px;color:#17241F}
+.related-vehicle-copy>a{display:inline-flex;align-items:center;gap:9px;color:#D6A53E;font-size:10px;font-weight:700}
+@media(max-width:900px){
+ .journey-purpose-section,.rental-guide-section,.related-vehicle-section{padding:76px 6%}
+ .journey-purpose-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .journey-purpose-heading{grid-template-columns:1fr;gap:18px}
+ .rental-guide-section{grid-template-columns:1fr;gap:32px}
+ .rental-guide-section>.text-link{grid-column:1}
+}
+@media(max-width:600px){
+ .journey-purpose-section,.rental-guide-section,.related-vehicle-section{padding:62px 5%}
+ .journey-purpose-grid{grid-template-columns:1fr;gap:10px}
+ .journey-purpose-card{min-height:210px;padding:21px}
+ .journey-purpose-card h3{margin-top:58px;font-size:20px}
+ .related-vehicle-heading{display:block}
+ .related-vehicle-heading>span{display:block;margin-top:18px}
+ .related-vehicle-grid{grid-template-columns:1fr;gap:12px}
+ .related-vehicle-image{height:210px}
+ .rental-guide-item summary{grid-template-columns:30px minmax(0,1fr) 22px;font-size:13px;gap:9px;padding:19px 0}
+ .rental-guide-item>p{margin:0 8px 20px 39px;font-size:11px}
+ .detail-specs{padding:16px;border-radius:14px}
+ .vehicle-filter-panel,.vehicle-compare-panel{padding:15px;border-radius:14px}
+}
+@media(prefers-reduced-motion:reduce){
+ .vehicle-card,.home-service-card,.related-vehicle-image img{transition:none!important}
+ .vehicle-card:hover,.home-service-card:hover{transform:none!important}
+}

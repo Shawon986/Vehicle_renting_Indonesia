@@ -1,0 +1,43 @@
+"use client";
+import {useEffect,useRef,useState,FormEvent,FocusEvent} from "react";
+import {usePathname} from "next/navigation";
+import {Locale} from "@/lib/site-data";
+import {trackEvent} from "@/lib/analytics";
+
+const copy={
+ en:{name:"Full name",email:"Email address",phone:"WhatsApp / phone number",company:"Company (optional)",channel:"Preferred contact channel",service:"Which service are you interested in?",vehicle:"Vehicle rental",travel:"Tours & travel",events:"Event design",gifts:"Fruit & flower gifts",multiple:"Multiple services / not sure yet",date:"Preferred date (optional)",location:"Location, destination or venue (optional)",people:"Number of people / guests (optional)",message:"Tell us what you need",consent:"I agree to the use of my information to respond to this enquiry.",privacy:"Privacy policy",marketing:"I would like to receive occasional service updates (optional).",submit:"Send enquiry",sending:"Sending…",success:"Thank you. Your enquiry has been sent to our team.",error:"We could not send your enquiry. Please try again.",hint:"Our team will review your requirements and confirm service details, availability and pricing directly. This form is an enquiry, not a booking.",disabled:"Enquiry submissions are temporarily unavailable. Please contact our team directly.",verify:"Security verification is not configured. Please contact our team."},
+ id:{name:"Nama lengkap",email:"Alamat email",phone:"Nomor WhatsApp / telepon",company:"Perusahaan (opsional)",channel:"Saluran kontak pilihan",service:"Layanan apa yang Anda minati?",vehicle:"Sewa kendaraan",travel:"Tur & perjalanan",events:"Desain acara",gifts:"Hadiah buah & bunga",multiple:"Beberapa layanan / belum yakin",date:"Tanggal pilihan (opsional)",location:"Lokasi, tujuan, atau venue (opsional)",people:"Jumlah orang / tamu (opsional)",message:"Ceritakan kebutuhan Anda",consent:"Saya setuju informasi saya digunakan untuk menanggapi pertanyaan ini.",privacy:"Kebijakan privasi",marketing:"Saya bersedia menerima informasi layanan sesekali (opsional).",submit:"Kirim pertanyaan",sending:"Mengirim…",success:"Terima kasih. Pertanyaan Anda telah dikirim kepada tim kami.",error:"Pertanyaan belum dapat dikirim. Silakan coba lagi.",hint:"Tim kami akan meninjau kebutuhan Anda dan mengonfirmasi detail layanan, ketersediaan, serta harga secara langsung. Formulir ini adalah pertanyaan, bukan pemesanan.",disabled:"Pengiriman pertanyaan sementara belum tersedia. Silakan hubungi tim kami secara langsung.",verify:"Verifikasi keamanan belum dikonfigurasi. Silakan hubungi tim kami."},
+ zh:{name:"姓名",email:"电子邮箱",phone:"WhatsApp / 电话号码",company:"公司（选填）",channel:"首选联系渠道",service:"您希望咨询哪项服务？",vehicle:"车辆租赁",travel:"旅游与行程",events:"活动策划",gifts:"水果与鲜花礼盒",multiple:"多项服务 / 尚未确定",date:"期望日期（选填）",location:"地点、目的地或活动场地（选填）",people:"人数 / 宾客数量（选填）",message:"请告诉我们您的需求",consent:"我同意使用所提供的信息来回复本次咨询。",privacy:"隐私政策",marketing:"我愿意偶尔接收服务资讯（选填）。",submit:"提交咨询",sending:"正在发送…",success:"感谢您，咨询已发送给我们的团队。",error:"暂时无法发送咨询，请稍后重试。",hint:"团队将审核您的需求，并直接确认服务详情、可用情况与报价。此表单仅用于咨询，不代表预订成功。",disabled:"咨询提交暂时不可用，请直接联系服务团队。",verify:"安全验证尚未配置，请直接联系我们。"}
+} as const;
+export function GeneralEnquiryForm({locale}:{locale:Locale}){
+ const t=copy[locale],path=usePathname(),[status,setStatus]=useState("idle");
+ const started=useRef(false),submitted=useRef(false),lastField=useRef("name");
+ useEffect(()=>()=>{if(started.current&&!submitted.current)trackEvent("form_abandon",{service_line:"general",last_field:lastField.current})},[]);
+ function begin(e:FocusEvent<HTMLFormElement>){const el=e.target;if(el instanceof HTMLInputElement||el instanceof HTMLSelectElement||el instanceof HTMLTextAreaElement){if(!started.current){started.current=true;trackEvent("form_start",{service_line:"general"})}if(lastField.current!==el.name){lastField.current=el.name;trackEvent("form_progress",{field:el.name})}}}
+ async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault();const form=e.currentTarget,fd=new FormData(form),payload:Record<string,FormDataEntryValue|boolean>=Object.fromEntries(fd.entries());payload.locale=locale;payload.serviceLine="general";payload.pagePath=path;payload.marketingConsent=fd.get("marketingConsent")==="yes";setStatus("sending");
+ try{const response=await fetch("/api/service-inquiries",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(payload)});if(!response.ok)throw new Error("Submission failed");const result=await response.json() as {leadId?:string};submitted.current=true;trackEvent("form_submit",{service_line:"general",lead_id:result.leadId||"received"});setStatus("success");form.reset();;started.current=false;}
+ catch{setStatus("error");;}}
+ const channelOptions=["whatsapp","wechat","phone","email"] as const;
+ return <form className="inquiry-form service-inquiry-form general-enquiry-form" onSubmit={submit} onFocusCapture={begin}>
+ <div className="inquiry-form-heading"><span className="inquiry-form-index">01 / 02 · RENTCAROCEAN</span><h3>{locale==="zh"?"让我们了解您的计划":locale==="id"?"Ceritakan rencana Anda":"Tell us what you have in mind"}</h3><p>{t.hint}</p></div>
+ 
+ <div className="form-grid service-form-grid">
+ <label className="service-form-field">{t.name}<span className="required-field-mark" aria-hidden="true">*</span><input name="name" autoComplete="name" required maxLength={100}/></label>
+ <label className="service-form-field">{t.email}<span className="required-field-mark" aria-hidden="true">*</span><input name="email" type="email" autoComplete="email" required maxLength={160}/></label>
+ <label className="service-form-field">{t.phone}<span className="required-field-mark" aria-hidden="true">*</span><input name="phone" type="tel" autoComplete="tel" required maxLength={40}/></label>
+ <label className="service-form-field">{t.company}<input name="company" autoComplete="organization" maxLength={160}/></label><label className="service-form-field">{locale==="zh"?"微信号（选填）":locale==="id"?"ID WeChat (opsional)":"WeChat ID (optional)"}<input name="wechatId" maxLength={100} autoComplete="off"/></label>
+ <label className="service-form-field">{t.channel}<select name="preferredChannel" defaultValue={channelOptions[0]}>{channelOptions.map(x=><option key={x} value={x}>{x==="wechat"?(locale==="zh"?"微信":"WeChat"):x==="whatsapp"?"WhatsApp":x==="phone"?(locale==="zh"?"电话":locale==="id"?"Telepon":"Phone"):locale==="zh"?"电子邮件":"Email"}</option>)}</select></label>
+ <label className="service-form-field">{t.service}<span className="required-field-mark" aria-hidden="true">*</span><select className="service-interest-select" name="serviceInterest" defaultValue="vehicle-rental" required><option value="vehicle-rental">{t.vehicle}</option><option value="tours-travel">{t.travel}</option><option value="event-design">{t.events}</option><option value="gift-boxes">{t.gifts}</option><option value="multiple">{t.multiple}</option></select></label>
+ <label className="service-form-field">{t.date}<input name="preferredDate" type="date" lang="en-US" onClick={event=>{const input=event.currentTarget;try{if(typeof input.showPicker==="function")input.showPicker();else input.focus()}catch{input.focus()}}}/></label>
+ <label className="service-form-field">{t.location}<input name="location" maxLength={180}/></label>
+ <label className="service-form-field">{t.people}<input name="peopleCount" type="number" min="1" max="10000"/></label>
+ <label className="service-form-field service-form-wide">{t.message}<span className="required-field-mark" aria-hidden="true">*</span><textarea name="message" required maxLength={2000}/></label>
+ <div className="consent-row service-form-wide"><label className="consent-check"><input type="checkbox" name="consent" value="yes" required/>{t.consent}<span className="required-field-mark" aria-hidden="true">*</span></label><a className="consent-privacy-link" href={`/${locale}/legal/privacy`}>{t.privacy}<span className="ui-arrow" aria-hidden="true"/></a></div><label className="consent-check marketing-consent service-form-wide"><input type="checkbox" name="marketingConsent" value="yes"/><span>{t.marketing}</span></label>
+ 
+ <div className="honeypot" aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off"/></label></div>
+ </div>
+ <button className="button button-dark" type="submit" disabled={status==="sending"}>{status==="sending"?t.sending:t.submit}<span className="arrow-up" aria-hidden="true"/></button>
+ {status==="success"?<p role="status" className="form-success">{t.success}</p>:status==="error"?<p role="alert" className="form-error">{t.error}</p>:null}
+ <p className="form-note">{t.hint}</p>
+ </form>;
+}
